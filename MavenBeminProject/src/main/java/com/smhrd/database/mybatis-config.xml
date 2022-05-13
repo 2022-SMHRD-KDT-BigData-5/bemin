@@ -10,14 +10,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <dataSource type="POOLED">
                 <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
                 <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
-                <property name="username" value="hr"/>
-                <property name="password" value="hr"/>
+                <property name="username" value="campus_c_0509_4"/>
+                <property name="password" value="smhrd4"/>
             </dataSource>
         </environment>
     </environments>
  	<mappers>
- 		<mapper resource="com/smhrd/database/MemberMapper.xml"/>
- 		<mapper resource="com/smhrd/database/MessageMapper.xml"/>
+ 		<mapper resource="com/smhrd/database/MATCHING_LISTMapper.xml"/>
+ 		<mapper resource="com/smhrd/database/MATCHINGMapper.xml"/>
+ 		<mapper resource="com/smhrd/database/RESERVATIONMapper.xml"/>
+ 		<mapper resource="com/smhrd/database/TIERMapper.xml"/>
+ 		<mapper resource="com/smhrd/database/USER_INFO.xml"/>
  	</mappers>
  	
 </configuration>
