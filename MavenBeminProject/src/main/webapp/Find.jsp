@@ -135,16 +135,16 @@
 					<div class="find-input-container">
 						<div class="find-input-wrap input-name">
 							<i class="far fa-envelope"></i> <input
-								placeholder="가입한 이름을 입력하세요." name="name" type="text">
+								placeholder="가입한 이름을 입력하세요." id="FindIdName" name="name" type="text">
 						</div>
 						<div class="find-input-wrap input-tel">
 							<i class="fas fa-key"></i> <input
-							placeholder="가입한 전화번호를 입력하세요." name="tel" type="number">
+							placeholder="가입한 전화번호를 입력하세요." id="FindIdTel" name="tel" type="number">
 						</div>
 						<p>'-'제외하고 입력</p>
 					</div>
 					<div class="find-btn-wrap">
-						<button class="find-btn">아이디 찾기</button>
+						<button class="find-btn" onclick="IdCheck()">아이디 찾기</button>
 					</div>
 				</div>
 				<div class="find-form-left-side">
@@ -186,39 +186,25 @@
 		<script src="assets/css/slick/slick.min.js"></script>
 		<script src="assets/js/jquery.collapse.js"></script>
 		<script src="assets/js/bootsnav.js"></script>
-        <script>
-        $(document).on("click",".find-btn",function(){ 
-        	
-        	let name = $(input[type=text]).val();
-        	let tel = $(input[type=number]).val();
-            $.ajax({
-				data : {name:name, tel:tel},
-				url : "FindCon",
-				method : "post",
-				context : this,
-				success: function(){
-					alert(u_vo.getID())
-				},
-				error: function(){
-					alert("통신실패!")
-				}
-			}) 
-        });
-		function emailCheck(){
-			let email = $("#email").val();
+       
+        <script type="text/javascript">
+		function IdCheck(){
+			alert('클릭성공')
+			let name = $("#FindIdName").val();
+			let tel = $("#FindIdTel").val();
 			
 			//jquery로 ajax(비동기통신)작성
 			$.ajax({
- 				method : 'get',
-				url : 'emailCheckCon',
-				data : {'email' : email},
+ 				method : 'post',
+				url : 'FindCon',
+				data : {'name' : name,'tel' : tel},
 				contentType : 'application/json; charset=utf-8',
 				dataType : 'text',
 				success : function(data){
-					if(data=='true'){
-						$('#check').text('사용할 수 있는 아이디')
+					if(data != null){
+						alert('회원님의 ID는 '+data+'입니다')
 					}else{
-						$('#check').text('사용할 수 없는 아이디')
+						alert('일치하는 정보가 없습니다')
 					}
 				},
 				error : function(){
