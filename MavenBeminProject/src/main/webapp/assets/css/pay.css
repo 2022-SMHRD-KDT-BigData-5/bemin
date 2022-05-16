@@ -79,17 +79,17 @@ body{
 
 .list-left{
     background-color: rgb(231, 231, 231);
-    border-radius: 15px;
-    border-radius: 50px;
+    border-radius: 5px;
+    border-radius: 10px;
     font-weight: bolder;
-    text-align: center;
+   ;
 
 }
 .section_title{
-    text-align: center;
+    
     background-color: rgb(231, 231, 231);
-    border-radius: 15px;
-    border-radius: 50px;
+    border-radius: 5px;
+    border-radius: 10px;
 }
 /* .recipt{
     background-color: rgb(231, 231, 231);
@@ -107,3 +107,4 @@ body{
 .list_radio{
     text-align: center;
 }
+
