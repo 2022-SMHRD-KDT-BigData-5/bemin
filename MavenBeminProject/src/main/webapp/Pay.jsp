@@ -45,7 +45,7 @@
 
 	<form class="fom">
 		<div class="logoName">
-			<h1>플라이트</h1>
+			 <a href="main.jsp"><h1>플라이트</h1></a>
 		</div>
 		<div class="content_wrap">
 			<div class="content_header">
