@@ -1,10 +1,13 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
+<html>
+<head>
+<meta charset="utf-8">
         <title>Made One</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,9 +46,8 @@
         <link rel="stylesheet" href="assets/css/responsive.css" />
 
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
-
-    <body data-spy="scroll" data-target=".navbar-collapse">
+</head>
+<body data-spy="scroll" data-target=".navbar-collapse">
 
 
         <!-- Preloader -->
@@ -114,7 +116,7 @@
                     </div><!-- /.navbar-collapse -->
                 </div> 
             </nav>
-
+	</div>
             <!--Login Sections-->
     <div class="page-container">
         <div class="login-form-container shadow">
@@ -142,7 +144,7 @@
                 </div>
                 <div class="login-btn-wrap">
                     <button class="login-btn">로그인</button>
-                    <a href="./아이디비번찾기.html">아이디/비밀번호를 잊으셨나요?</a>
+                    <a href="#" >비밀번호를 잊으셨나요?</a>
                 </div>
             </div>
         </div>
@@ -168,5 +170,5 @@
         <script src="assets/js/plugins.js"></script>
         <script src="assets/js/main.js"></script>
 
-    </body>
+</body>
 </html>

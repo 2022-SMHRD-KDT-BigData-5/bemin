@@ -1,10 +1,13 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
+<html>
+<head>
+<meta charset="utf-8">
         <title>Made One</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,7 +25,6 @@
         <link rel="stylesheet" href="assets/css/bootstrap.css">
         <link rel="stylesheet" href="assets/css/magnific-popup.css">
         <link rel="stylesheet" href="assets/css/bootsnav.css">
-        <link rel="stylesheet" href="assets/css/로그인.css">
 
         <!-- xsslider slider css -->
 
@@ -43,9 +45,9 @@
         <link rel="stylesheet" href="assets/css/responsive.css" />
 
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
+</head>
+<body data-spy="scroll" data-target=".navbar-collapse">
 
-    <body data-spy="scroll" data-target=".navbar-collapse">
 
 
         <!-- Preloader -->
@@ -66,7 +68,32 @@
 
 
             <nav class="navbar navbar-default bootsnav navbar-fixed">
-                
+                <!-- <div class="navbar-top bg-grey fix">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="navbar-callus text-left sm-text-center">
+                                    <ul class="list-inline">
+                                        <li><a href=""><i class="fa fa-phone"></i> Call us: 1234 5678 90</a></li>
+                                        <li><a href=""><i class="fa fa-envelope-o"></i> Contact us: your@email.com</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="navbar-socail text-right sm-text-center">
+                                    <ul class="list-inline">
+                                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a href=""><i class="fa fa-behance"></i></a></li>
+                                        <li><a href=""><i class="fa fa-dribbble"></i></a></li>vbar--default
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
 
                 <!-- Start Top Search -->
                 <div class="top-search">
@@ -82,18 +109,18 @@
 
 
                 <div class="container"> 
-                    <!-- <div class="attr-nav">
+                    <div class="attr-nav">
                         <ul>
                             <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                         </ul>
-                    </div> -->
+                    </div>
 
                     <!-- Start Header Navigation -->
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                             <i class="fa fa-bars"></i>
                         </button>
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="#brand">
                             <img src="assets/images/logo1.png" class="logo" alt="">
                             <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
                         </a>
@@ -115,39 +142,9 @@
                 </div> 
             </nav>
 
-            <!--Login Sections-->
-    <div class="page-container">
-        <div class="login-form-container shadow">
-            <div class="login-form-right-side">
-                <div class="top-logo-wrap">
-                    
-                </div>
-                <h1>로그인 페이지 입니다.</h1>
-                <p>플라이트</p>
-            </div>
-            <div class="login-form-left-side">
-                <div class="login-top-wrap">
-                    <span>회원이아니신가요?</span>
-                    <button class="create-account-btn shadow-light">회원가입</button>
-                </div>
-                <div class="login-input-container">
-                    <div class="login-input-wrap input-id">
-                        <i class="far fa-envelope"></i>
-                        <input placeholder="ID" type="text">
-                    </div>
-                    <div class="login-input-wrap input-password">
-                        <i class="fas fa-key"></i>
-                        <input placeholder="Password"  type="password">
-                    </div>
-                </div>
-                <div class="login-btn-wrap">
-                    <button class="login-btn">로그인</button>
-                    <a href="./아이디비번찾기.html">아이디/비밀번호를 잊으셨나요?</a>
-                </div>
-            </div>
-        </div>
-    </div>
-            
+            <!--Join Sections-->
+ 
+
         
 
         <!-- JS includes -->
@@ -168,5 +165,5 @@
         <script src="assets/js/plugins.js"></script>
         <script src="assets/js/main.js"></script>
 
-    </body>
+</body>
 </html>
