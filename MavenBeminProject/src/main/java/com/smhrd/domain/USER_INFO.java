@@ -30,6 +30,17 @@ public class USER_INFO {
 		USER_TIER = uSER_TIER;
 		USER_MANNER = uSER_MANNER;
 	}
+	public USER_INFO(String iD, String nAME, String tEL) {
+		super();
+		ID = iD;		
+		NAME = nAME;
+		TEL = tEL;
+	}
+	public USER_INFO(String nAME, String tEL) {
+		super();		
+		NAME = nAME;
+		TEL = tEL;
+	}
 
 	public String getID() {
 		return ID;

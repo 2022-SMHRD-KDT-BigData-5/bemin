@@ -144,7 +144,7 @@
                 </div>
                 <div class="login-btn-wrap">
                     <button class="login-btn">로그인</button>
-                    <a href="#" >비밀번호를 잊으셨나요?</a>
+                    <a href="Find.jsp" >비밀번호를 잊으셨나요?</a>
                 </div>
             </div>
         </div>

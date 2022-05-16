@@ -21,7 +21,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  		<mapper resource="com/smhrd/database/MATCHINGMapper.xml"/>
  		<mapper resource="com/smhrd/database/RESERVATIONMapper.xml"/>
  		<mapper resource="com/smhrd/database/TIERMapper.xml"/>
- 		<mapper resource="com/smhrd/database/USER_INFO.xml"/>
+ 		<mapper resource="com/smhrd/database/USER_INFOMapper.xml"/>
  	</mappers>
  	
 </configuration>
