@@ -24,7 +24,7 @@ public class FindCon extends HttpServlet {
 		//아이디 찾기 입력 값
 		String id = request.getParameter("id");
 		String name = request.getParameter("name");
-		String tel = request.getParameter("tel");
+		int tel = Integer.parseInt(request.getParameter("tel"));
 		
 		USER_INFO user = new USER_INFO(name, tel);
 		
@@ -34,11 +34,8 @@ public class FindCon extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		
-		if(u_vo!=null) {
-			out.print(u_vo.getID());
-		}else {
-			System.out.println("오류");
-		}
+		out.print(u_vo.getID());
+
 		
 		
 		

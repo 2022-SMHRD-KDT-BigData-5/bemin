@@ -51,6 +51,7 @@
 <link rel="stylesheet" href="assets/css/responsive.css" />
 
 <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body data-spy="scroll" data-target=".navbar-collapse">
 
@@ -134,12 +135,12 @@
 					<h3>아이디 찾기</h3>
 					<div class="find-input-container">
 						<div class="find-input-wrap input-name">
-							<i class="far fa-envelope"></i> <input
-								placeholder="가입한 이름을 입력하세요." id="FindIdName" name="name" type="text">
+							<i class="far fa-envelope"></i>
+							<input placeholder="가입한 이름을 입력하세요." id="FindIdName" name="name" type="text">
 						</div>
 						<div class="find-input-wrap input-tel">
-							<i class="fas fa-key"></i> <input
-							placeholder="가입한 전화번호를 입력하세요." id="FindIdTel" name="tel" type="number">
+							<i class="fas fa-key"></i>
+							<input placeholder="가입한 전화번호를 입력하세요." id="FindIdTel" name="tel" type="number">
 						</div>
 						<p>'-'제외하고 입력</p>
 					</div>
@@ -188,24 +189,20 @@
 		<script src="assets/js/bootsnav.js"></script>
        
         <script type="text/javascript">
-		function IdCheck(){
-			alert('클릭성공')
+		
+        function IdCheck() {
+        	alert('클릭 성공')
 			let name = $("#FindIdName").val();
 			let tel = $("#FindIdTel").val();
 			
-			//jquery로 ajax(비동기통신)작성
 			$.ajax({
  				method : 'post',
 				url : 'FindCon',
-				data : {'name' : name,'tel' : tel},
+				data : {'name' : name, 'tel' : tel},
 				contentType : 'application/json; charset=utf-8',
-				dataType : 'text',
+				dataType : 'text'
 				success : function(data){
-					if(data != null){
-						alert('회원님의 ID는 '+data+'입니다')
-					}else{
-						alert('일치하는 정보가 없습니다')
-					}
+					alert(data)
 				},
 				error : function(){
 					alert('응답 실패')

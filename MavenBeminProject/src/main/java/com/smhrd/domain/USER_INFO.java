@@ -1,21 +1,23 @@
 package com.smhrd.domain;
 
+import java.sql.Timestamp;
+
 public class USER_INFO {
 	private String ID;
 	private String PW;
 	private String NAME;
 	private String EMAIL;
 	private String GENDER;
-	private String TEL;
+	private int TEL;
 	private String ADDRESS;
-	private String JOIN_DATE;
-	private String CASH;
-	private String MANAGER;
-	private String USER_TIER;
-	private String USER_MANNER;
+	private Timestamp JOIN_DATE;
+	private int CASH;
+	private int MANAGER;
+	private int USER_TIER;
+	private int USER_MANNER;
 	
-	public USER_INFO(String iD, String pW, String nAME, String eMAIL, String gENDER, String tEL, String aDDRESS,
-			String jOIN_DATE, String cASH, String mANAGER, String uSER_TIER, String uSER_MANNER) {
+	public USER_INFO(String iD, String pW, String nAME, String eMAIL, String gENDER, int tEL, String aDDRESS,
+			Timestamp jOIN_DATE, int cASH, int mANAGER, int uSER_TIER, int uSER_MANNER) {
 		super();
 		ID = iD;
 		PW = pW;
@@ -30,13 +32,13 @@ public class USER_INFO {
 		USER_TIER = uSER_TIER;
 		USER_MANNER = uSER_MANNER;
 	}
-	public USER_INFO(String iD, String nAME, String tEL) {
+	public USER_INFO(String iD, String nAME, int tEL) {
 		super();
 		ID = iD;		
 		NAME = nAME;
 		TEL = tEL;
 	}
-	public USER_INFO(String nAME, String tEL) {
+	public USER_INFO(String nAME, int tEL) {
 		super();		
 		NAME = nAME;
 		TEL = tEL;
@@ -82,11 +84,11 @@ public class USER_INFO {
 		GENDER = gENDER;
 	}
 
-	public String getTEL() {
+	public int getTEL() {
 		return TEL;
 	}
 
-	public void setTEL(String tEL) {
+	public void setTEL(int tEL) {
 		TEL = tEL;
 	}
 
@@ -98,43 +100,43 @@ public class USER_INFO {
 		ADDRESS = aDDRESS;
 	}
 
-	public String getJOIN_DATE() {
+	public Timestamp getJOIN_DATE() {
 		return JOIN_DATE;
 	}
 
-	public void setJOIN_DATE(String jOIN_DATE) {
+	public void setJOIN_DATE(Timestamp jOIN_DATE) {
 		JOIN_DATE = jOIN_DATE;
 	}
 
-	public String getCASH() {
+	public int getCASH() {
 		return CASH;
 	}
 
-	public void setCASH(String cASH) {
+	public void setCASH(int cASH) {
 		CASH = cASH;
 	}
 
-	public String getMANAGER() {
+	public int getMANAGER() {
 		return MANAGER;
 	}
 
-	public void setMANAGER(String mANAGER) {
+	public void setMANAGER(int mANAGER) {
 		MANAGER = mANAGER;
 	}
 
-	public String getUSER_TIER() {
+	public int getUSER_TIER() {
 		return USER_TIER;
 	}
 
-	public void setUSER_TIER(String uSER_TIER) {
+	public void setUSER_TIER(int uSER_TIER) {
 		USER_TIER = uSER_TIER;
 	}
 
-	public String getUSER_MANNER() {
+	public int getUSER_MANNER() {
 		return USER_MANNER;
 	}
 
-	public void setUSER_MANNER(String uSER_MANNER) {
+	public void setUSER_MANNER(int uSER_MANNER) {
 		USER_MANNER = uSER_MANNER;
 	}
 

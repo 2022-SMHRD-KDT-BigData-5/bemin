@@ -15,7 +15,7 @@ public class USER_INFO_DAO {
 		
 		USER_INFO u_vo =null;
 		try {
-			u_vo = sqlSession.selectOne("com.smhrd.domain.USER_INFO_DAO.USER_INFO",u);
+			u_vo = sqlSession.selectOne("com.smhrd.domain.USER_INFO_DAO.selectUSER_INFO",u);
 		
 			if(u_vo!=null) {
 				sqlSession.commit();
