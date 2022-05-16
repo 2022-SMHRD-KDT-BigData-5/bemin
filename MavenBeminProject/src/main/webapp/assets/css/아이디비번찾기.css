@@ -144,4 +144,4 @@ background: linear-gradient(287deg, rgba(255,255,255,1) 0%, rgba(243,244,244,1) 
 }
 
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button 
-{ -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+{ -webkit-appearance: none; -moz-appearance: none; appearance: none;}
