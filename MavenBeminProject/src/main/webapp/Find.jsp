@@ -150,18 +150,17 @@
 								<i class="fas fa-key"></i> 
 								<input placeholder="가입한 전화번호를 입력하세요." name="tel" type="number">
 							</div>
-							<p>'-'제외하고 입력</p>
+							<p>'-' 제외하고 입력</p>
 						</div>
 						<div class="find-btn-wrap">
 							<input type="submit" value="아이디찾기" class="find-btn">
 						</div>
-<<<<<<< HEAD
 						<p>'-' 제외하고 입력</p>
 					</div>
 					<div class="find-btn-wrap">
 						<button class="find-btn" onclick="IdCheck()">아이디 찾기</button>
 					</div>
-=======
+
 					</form>
 					<c:choose>
 						<c:when test="${empty FindID}">
@@ -171,9 +170,7 @@
 							<script>alert('찾음')</script>
 						</c:otherwise>
 					</c:choose>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 				</div>
-
 				<div class="find-form-left-side">
 					<h3>비밀번호 찾기</h3>
 					<div class="find-input-container">
@@ -215,7 +212,7 @@
 		<script src="assets/js/bootsnav.js"></script>
 
 		<script type="text/javascript">
-			})
+		
 		</script>
 
 
