@@ -207,7 +207,6 @@
 		<script src="assets/js/bootsnav.js"></script>
 
 		<script type="text/javascript">
-			})
 		</script>
 
 

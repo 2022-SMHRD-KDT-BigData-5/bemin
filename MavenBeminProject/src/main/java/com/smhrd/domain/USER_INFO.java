@@ -1,5 +1,6 @@
 package com.smhrd.domain;
 
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 public class USER_INFO {
@@ -11,13 +12,15 @@ public class USER_INFO {
 	private String TEL;
 	private String ADDRESS;
 	private Timestamp JOIN_DATE;
-	private int CASH;
-	private int MANAGER;
-	private int USER_TIER;
-	private int USER_MANNER;
+	private BigDecimal CASH;
+	private BigDecimal MANAGER;
+	private BigDecimal USER_TIER;
+	private BigDecimal USER_MANNER;
+	
+
 	
 	public USER_INFO(String iD, String pW, String nAME, String eMAIL, String gENDER, String tEL, String aDDRESS,
-			Timestamp jOIN_DATE, int cASH, int mANAGER, int uSER_TIER, int uSER_MANNER) {
+			Timestamp jOIN_DATE, BigDecimal cASH, BigDecimal mANAGER, BigDecimal uSER_TIER, BigDecimal uSER_MANNER) {
 		super();
 		ID = iD;
 		PW = pW;
@@ -32,12 +35,14 @@ public class USER_INFO {
 		USER_TIER = uSER_TIER;
 		USER_MANNER = uSER_MANNER;
 	}
+
 	public USER_INFO(String iD, String nAME, String tEL) {
 		super();
 		ID = iD;		
 		NAME = nAME;
 		TEL = tEL;
 	}
+	
 	public USER_INFO(String nAME, String tEL) {
 		super();		
 		NAME = nAME;
@@ -108,35 +113,35 @@ public class USER_INFO {
 		JOIN_DATE = jOIN_DATE;
 	}
 
-	public int getCASH() {
+	public BigDecimal getCASH() {
 		return CASH;
 	}
 
-	public void setCASH(int cASH) {
+	public void setCASH(BigDecimal cASH) {
 		CASH = cASH;
 	}
 
-	public int getMANAGER() {
+	public BigDecimal getMANAGER() {
 		return MANAGER;
 	}
 
-	public void setMANAGER(int mANAGER) {
+	public void setMANAGER(BigDecimal mANAGER) {
 		MANAGER = mANAGER;
 	}
 
-	public int getUSER_TIER() {
+	public BigDecimal getUSER_TIER() {
 		return USER_TIER;
 	}
 
-	public void setUSER_TIER(int uSER_TIER) {
+	public void setUSER_TIER(BigDecimal uSER_TIER) {
 		USER_TIER = uSER_TIER;
 	}
 
-	public int getUSER_MANNER() {
+	public BigDecimal getUSER_MANNER() {
 		return USER_MANNER;
 	}
 
-	public void setUSER_MANNER(int uSER_MANNER) {
+	public void setUSER_MANNER(BigDecimal uSER_MANNER) {
 		USER_MANNER = uSER_MANNER;
 	}
 
