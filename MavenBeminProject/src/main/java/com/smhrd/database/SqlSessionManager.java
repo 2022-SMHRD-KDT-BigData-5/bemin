@@ -18,6 +18,7 @@ public class SqlSessionManager {
 	         reader = Resources.getResourceAsReader(resource);
 	         sqlSession = new SqlSessionFactoryBuilder().build(reader);
 	      } catch (IOException e) {
+	    	  System.out.println("sqlSession 예외처리");
 	         e.printStackTrace();
 	      }
 	   }

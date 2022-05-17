@@ -5,7 +5,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.smhrd.database.SqlSessionManager;
 
-
 public class USER_INFO_DAO {
 	SqlSessionFactory SqlSessionFactory = SqlSessionManager.getSqlSession();
 
@@ -19,8 +18,10 @@ public class USER_INFO_DAO {
 		
 			if(u_vo!=null) {
 				sqlSession.commit();
+				System.out.println("커밋");
 			}else {
 				sqlSession.rollback();
+				System.out.println("롤백");
 			}
 		
 		} catch (Exception e) {
