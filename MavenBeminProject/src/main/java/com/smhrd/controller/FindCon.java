@@ -22,7 +22,6 @@ public class FindCon extends HttpServlet {
 		
 		request.setCharacterEncoding("utf-8");
 		
-		HttpSession session = request.getSession();
 		//아이디 찾기 입력 값
 		String id = request.getParameter("id");
 		String name = request.getParameter("name");
@@ -34,12 +33,14 @@ public class FindCon extends HttpServlet {
 		
 		USER_INFO Find = dao.FindID(user_vo);
 		
-		if(Find!=null) {
-			session.setAttribute("FindID", Find);
-			response.sendRedirect("Find.jsp");
+		PrintWriter out = response.getWriter();
+		
+		if(id != null) {
+			out.print(Find.getPW());			
 		}else {
-			response.sendRedirect("Find.jsp");
+			out.print(Find.getID());			
 		}
+		
 		
 		
 
