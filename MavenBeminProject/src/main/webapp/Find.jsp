@@ -54,10 +54,6 @@
 <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<%
-
-
-%>
 
 </head>
 <body data-spy="scroll" data-target=".navbar-collapse">

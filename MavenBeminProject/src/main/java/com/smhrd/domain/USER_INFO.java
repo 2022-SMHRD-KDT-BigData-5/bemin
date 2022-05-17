@@ -42,11 +42,12 @@ public class USER_INFO {
 		NAME = nAME;
 		TEL = tEL;
 	}
-	
-	public USER_INFO(String nAME, String tEL) {
-		super();		
-		NAME = nAME;
-		TEL = tEL;
+		
+
+	public USER_INFO(String iD, String pW) {
+		super();
+		ID = iD;
+		PW = pW;
 	}
 
 	public String getID() {

@@ -28,16 +28,14 @@ public class FindCon extends HttpServlet {
 		String name = request.getParameter("name");
 		String tel = request.getParameter("tel");
 		
-		USER_INFO userID = new USER_INFO(name, tel);
-		USER_INFO userPW = new USER_INFO(id, name, tel);
+		USER_INFO user_vo = new USER_INFO(id, name, tel);
 		
 		USER_INFO_DAO dao = new USER_INFO_DAO();
 		
-		USER_INFO FindID = dao.FindID(userID);
-		USER_INFO FindPW = dao.FindID(userPW);
+		USER_INFO Find = dao.FindID(user_vo);
 		
-		if(FindID!=null) {
-			session.setAttribute("FindID", FindID);
+		if(Find!=null) {
+			session.setAttribute("FindID", Find);
 			response.sendRedirect("Find.jsp");
 		}else {
 			response.sendRedirect("Find.jsp");
