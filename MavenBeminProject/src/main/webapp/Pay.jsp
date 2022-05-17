@@ -38,7 +38,7 @@
 
 	<form class="fom">
 		<div class="logoName">
-			<a href="main.html"><h1>플라이트</h1></a>
+			<a href="main.jsp"><h1>플라이트</h1></a>
 		</div>
 		<div class="content_wrap">
 			<div class="content_header">
@@ -83,7 +83,7 @@
 					</section>
 
 					<section>
-						<div class="section_title" style="margin-bottom: 2%;">
+						<div class="section_title" >
 							<h4 style="text-align: left">🚩결제</h4>
 
 							<div class="section_body">
