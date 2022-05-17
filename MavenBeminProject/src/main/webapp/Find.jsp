@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.domain.USER_INFO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -52,6 +53,12 @@
 
 <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<%
+
+
+%>
+
 </head>
 <body data-spy="scroll" data-target=".navbar-collapse">
 
@@ -133,21 +140,40 @@
 			<div class="find-form-container shadow">
 				<div class="find-form-right-side">
 					<h3>아이디 찾기</h3>
-					<div class="find-input-container">
-						<div class="find-input-wrap input-name">
-							<i class="far fa-envelope"></i>
-							<input placeholder="가입한 이름을 입력하세요." id="FindIdName" name="name" type="text">
+					<form action="FindCon" method="post">
+						<div class="find-input-container">
+							<div class="find-input-wrap input-name">
+								<i class="far fa-envelope"></i>
+								<input placeholder="가입한 이름을 입력하세요." name="name" type="text">
+							</div>
+							<div class="find-input-wrap input-tel">
+								<i class="fas fa-key"></i> 
+								<input placeholder="가입한 전화번호를 입력하세요." name="tel" type="number">
+							</div>
+							<p>'-'제외하고 입력</p>
 						</div>
-						<div class="find-input-wrap input-tel">
-							<i class="fas fa-key"></i>
-							<input placeholder="가입한 전화번호를 입력하세요." id="FindIdTel" name="tel" type="number">
+						<div class="find-btn-wrap">
+							<input type="submit" value="아이디찾기" class="find-btn">
 						</div>
+<<<<<<< HEAD
 						<p>'-' 제외하고 입력</p>
 					</div>
 					<div class="find-btn-wrap">
 						<button class="find-btn" onclick="IdCheck()">아이디 찾기</button>
 					</div>
+=======
+					</form>
+					<c:choose>
+						<c:when test="${empty FindID}">
+							<script>alert('없음')</script>
+						</c:when>
+						<c:otherwise>
+							<script>alert('찾음')</script>
+						</c:otherwise>
+					</c:choose>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 				</div>
+
 				<div class="find-form-left-side">
 					<h3>비밀번호 찾기</h3>
 					<div class="find-input-container">
@@ -187,29 +213,10 @@
 		<script src="assets/css/slick/slick.min.js"></script>
 		<script src="assets/js/jquery.collapse.js"></script>
 		<script src="assets/js/bootsnav.js"></script>
-       
-        <script type="text/javascript">
-		
-        function IdCheck() {
-        	alert('클릭 성공')
-			let name = $("#FindIdName").val();
-			let tel = $("#FindIdTel").val();
-			
-			$.ajax({
- 				method : 'post',
-				url : 'FindCon',
-				data : {'name' : name, 'tel' : tel},
-				contentType : 'application/json; charset=utf-8',
-				dataType : 'text'
-				success : function(data){
-					alert(data)
-				},
-				error : function(){
-					alert('응답 실패')
-				}
+
+		<script type="text/javascript">
 			})
-		}
-        </script>
+		</script>
 
 
 		<script src="assets/js/plugins.js"></script>
