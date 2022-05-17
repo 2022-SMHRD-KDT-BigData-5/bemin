@@ -142,7 +142,7 @@
 							<i class="fas fa-key"></i>
 							<input placeholder="가입한 전화번호를 입력하세요." id="FindIdTel" name="tel" type="number">
 						</div>
-						<p>'-'제외하고 입력</p>
+						<p>'-' 제외하고 입력</p>
 					</div>
 					<div class="find-btn-wrap">
 						<button class="find-btn" onclick="IdCheck()">아이디 찾기</button>
@@ -152,18 +152,18 @@
 					<h3>비밀번호 찾기</h3>
 					<div class="find-input-container">
 						<div class="find-input-wrap input-id">
-							<i class="far fa-envelope"></i> <input
-								placeholder="가입한 아이디를 입력하세요." name="id" type="text">
+							<i class="far fa-envelope"></i>
+							<input placeholder="가입한 아이디를 입력하세요." name="id" type="text">
 						</div>
 						<div class="find-input-wrap input-name">
-							<i class="far fa-envelope"></i> <input
-								placeholder="가입한 이름을 입력하세요." name="name" type="text">
+							<i class="far fa-envelope"></i> 
+							<input placeholder="가입한 이름을 입력하세요." name="name" type="text">
 						</div>
 						<div class="find-input-wrap input-tel">
-							<i class="fas fa-key"></i> <input placeholder="가입한 전화번호를 입력하세요."
-								name="tel" type="number">
+							<i class="fas fa-key"></i> 
+							<input placeholder="가입한 전화번호를 입력하세요." name="tel" type="number">
 						</div>
-						<p>'-'제외하고 입력</p>
+						<p>'-' 제외하고 입력</p>
 					</div>
 					<div class="find-btn-wrap">
 						<button class="find-btn">비밀번호 찾기</button>
