@@ -68,32 +68,6 @@
 
 
             <nav class="navbar navbar-default bootsnav navbar-fixed">
-                <!-- <div class="navbar-top bg-grey fix">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="navbar-callus text-left sm-text-center">
-                                    <ul class="list-inline">
-                                        <li><a href=""><i class="fa fa-phone"></i> Call us: 1234 5678 90</a></li>
-                                        <li><a href=""><i class="fa fa-envelope-o"></i> Contact us: your@email.com</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="navbar-socail text-right sm-text-center">
-                                    <ul class="list-inline">
-                                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                        <li><a href=""><i class="fa fa-behance"></i></a></li>
-                                        <li><a href=""><i class="fa fa-dribbble"></i></a></li>vbar--default
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
 
                 <!-- Start Top Search -->
                 <div class="top-search">
