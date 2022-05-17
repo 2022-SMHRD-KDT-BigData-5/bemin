@@ -38,7 +38,7 @@
 
 	<form class="fom">
 		<div class="logoName">
-			<a href="메인.html"><h1>플라이트</h1></a>
+			<a href="main.html"><h1>플라이트</h1></a>
 		</div>
 		<div class="content_wrap">
 			<div class="content_header">
@@ -64,7 +64,7 @@
 							<div class="recipt">
 								<!---->
 								<p class="list_menu">
-								<div class="list-left">
+								<div class="list-left" style="margin-bottom: 2%;">
 									<h4 style="text-align: left">🚩캐시</h4>
 
 									<div class="list-right">
@@ -83,7 +83,7 @@
 					</section>
 
 					<section>
-						<div class="section_title">
+						<div class="section_title" style="margin-bottom: 2%;">
 							<h4 style="text-align: left">🚩결제</h4>
 
 							<div class="section_body">
@@ -104,10 +104,10 @@
 						</div>
 					</section>
 
-					<!-- 결제수단 -->
-					<section class="title-1">
+				
+					<section class="pay_c">
 						<div class="section_title_1">
-							<h4>🚩결제 수단</h4>
+							<h4 style="text-align: left;">🚩결제 수단</h4>
 						</div>
 						<div class="section_body">
 							<div class="list">
