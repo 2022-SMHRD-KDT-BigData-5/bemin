@@ -150,11 +150,17 @@
 								<i class="fas fa-key"></i> 
 								<input placeholder="가입한 전화번호를 입력하세요." name="tel" type="number">
 							</div>
-							<p>'-'제외하고 입력</p>
+							<p>'-' 제외하고 입력</p>
 						</div>
 						<div class="find-btn-wrap">
 							<input type="submit" value="아이디찾기" class="find-btn">
 						</div>
+						<p>'-' 제외하고 입력</p>
+					</div>
+					<div class="find-btn-wrap">
+						<button class="find-btn" onclick="IdCheck()">아이디 찾기</button>
+					</div>
+
 					</form>
 					<c:choose>
 						<c:when test="${empty FindID}">
@@ -165,23 +171,22 @@
 						</c:otherwise>
 					</c:choose>
 				</div>
-
 				<div class="find-form-left-side">
 					<h3>비밀번호 찾기</h3>
 					<div class="find-input-container">
 						<div class="find-input-wrap input-id">
-							<i class="far fa-envelope"></i> <input
-								placeholder="가입한 아이디를 입력하세요." name="id" type="text">
+							<i class="far fa-envelope"></i>
+							<input placeholder="가입한 아이디를 입력하세요." name="id" type="text">
 						</div>
 						<div class="find-input-wrap input-name">
-							<i class="far fa-envelope"></i> <input
-								placeholder="가입한 이름을 입력하세요." name="name" type="text">
+							<i class="far fa-envelope"></i> 
+							<input placeholder="가입한 이름을 입력하세요." name="name" type="text">
 						</div>
 						<div class="find-input-wrap input-tel">
-							<i class="fas fa-key"></i> <input placeholder="가입한 전화번호를 입력하세요."
-								name="tel" type="number">
+							<i class="fas fa-key"></i> 
+							<input placeholder="가입한 전화번호를 입력하세요." name="tel" type="number">
 						</div>
-						<p>'-'제외하고 입력</p>
+						<p>'-' 제외하고 입력</p>
 					</div>
 					<div class="find-btn-wrap">
 						<button class="find-btn">비밀번호 찾기</button>
@@ -207,7 +212,7 @@
 		<script src="assets/js/bootsnav.js"></script>
 
 		<script type="text/javascript">
-			})
+		
 		</script>
 
 
