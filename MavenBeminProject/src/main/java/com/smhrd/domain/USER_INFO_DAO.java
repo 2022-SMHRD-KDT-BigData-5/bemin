@@ -1,12 +1,13 @@
 package com.smhrd.domain;
 
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import com.smhrd.database.SqlSessionManager;
+import com.smhrd.database.sqlSessionManager;
 
 public class USER_INFO_DAO {
-	SqlSessionFactory SqlSessionFactory = SqlSessionManager.getSqlSession();
+	SqlSessionFactory SqlSessionFactory = sqlSessionManager.getSqlSession();
 
 	//아이디 찾기
 	public USER_INFO FindID(USER_INFO u) {

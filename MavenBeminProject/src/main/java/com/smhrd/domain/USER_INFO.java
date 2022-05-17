@@ -8,7 +8,7 @@ public class USER_INFO {
 	private String NAME;
 	private String EMAIL;
 	private String GENDER;
-	private int TEL;
+	private String TEL;
 	private String ADDRESS;
 	private Timestamp JOIN_DATE;
 	private int CASH;
@@ -16,7 +16,7 @@ public class USER_INFO {
 	private int USER_TIER;
 	private int USER_MANNER;
 	
-	public USER_INFO(String iD, String pW, String nAME, String eMAIL, String gENDER, int tEL, String aDDRESS,
+	public USER_INFO(String iD, String pW, String nAME, String eMAIL, String gENDER, String tEL, String aDDRESS,
 			Timestamp jOIN_DATE, int cASH, int mANAGER, int uSER_TIER, int uSER_MANNER) {
 		super();
 		ID = iD;
@@ -32,13 +32,13 @@ public class USER_INFO {
 		USER_TIER = uSER_TIER;
 		USER_MANNER = uSER_MANNER;
 	}
-	public USER_INFO(String iD, String nAME, int tEL) {
+	public USER_INFO(String iD, String nAME, String tEL) {
 		super();
 		ID = iD;		
 		NAME = nAME;
 		TEL = tEL;
 	}
-	public USER_INFO(String nAME, int tEL) {
+	public USER_INFO(String nAME, String tEL) {
 		super();		
 		NAME = nAME;
 		TEL = tEL;
@@ -84,11 +84,11 @@ public class USER_INFO {
 		GENDER = gENDER;
 	}
 
-	public int getTEL() {
+	public String getTEL() {
 		return TEL;
 	}
 
-	public void setTEL(int tEL) {
+	public void setTEL(String tEL) {
 		TEL = tEL;
 	}
 
