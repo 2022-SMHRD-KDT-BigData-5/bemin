@@ -1,0 +1,43 @@
+#con-info{
+    font-weight: 400;
+    text-align: center;
+
+}
+
+.confim-header_base{
+    background-color: rgb(231, 231, 231);
+    border-radius: 5px;
+    border-radius: 10px;
+
+}
+
+.confim-fi{
+    text-align: center;
+}
+
+#confim-main {
+    font-size: 30px;
+    text-align: left;
+    background-color: rgb(43, 43, 223);
+    border-radius: 1px;
+    border-radius: 10px;
+    font-weight: bolder;
+    color: aliceblue;
+    margin-left: 26%;
+    
+}
+
+#confim-check{
+    font-size: 30px;
+    text-align: right;
+    margin-left: 150px;
+    background-color: rgb(43, 43, 223);
+    border-radius: 5px;
+    border-radius: 10px;
+    font-weight: bolder;
+    color: aliceblue;
+}
+
+.confim-mov{
+    margin-bottom: 20%;
+}
