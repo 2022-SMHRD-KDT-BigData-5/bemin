@@ -1,17 +1,16 @@
 package com.smhrd.domain;
 
-
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.smhrd.database.sqlSessionManager;
 
 public class USER_INFO_DAO {
-	SqlSessionFactory SqlSessionFactory = sqlSessionManager.getSqlSession();
-
+	SqlSessionFactory sqlSessionFactory = sqlSessionManager.getSqlSession();
+	SqlSession sqlSession = sqlSessionFactory.openSession();
+	
 	//아이디 찾기
 	public USER_INFO FindID(USER_INFO u) {
-		SqlSession sqlSession = SqlSessionFactory.openSession();
 		
 		USER_INFO u_vo =null;
 		try {
@@ -31,5 +30,23 @@ public class USER_INFO_DAO {
 		return u_vo;
 		
 	}//아이디 찾기 끝
+	
+	// 로그인 -------------------------------------------------------
+	public USER_INFO selectMember(USER_INFO member) {
+		USER_INFO loginMember = null;
+		try {
+			loginMember = sqlSession.selectOne("com.smhrd.domain.USER_INFO_DAO.LoginUSER_INFO", member);
+			if(loginMember != null) {
+				sqlSession.commit();
+			} else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return loginMember;
+	} // 로그인 끝 ----------------------------------------------------
 	
 }

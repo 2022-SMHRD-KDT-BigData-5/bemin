@@ -145,7 +145,7 @@
                     </div>
                 </div>
                 <div class="login-btn-wrap">
-                    <input class="login-btn" type="submit" value="로그인">
+                    <input class="login-btn" type="submit" value="로그인" href="main.jsp">
                     <a href="Find.jsp" >아이디/비밀번호를 잊으셨나요?</a>
                 </div>
                 </form>
