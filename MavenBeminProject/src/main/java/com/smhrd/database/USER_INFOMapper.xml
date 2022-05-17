@@ -6,7 +6,7 @@
 
 <mapper namespace ="com.smhrd.domain.USER_INFO_DAO">
 	<select id="selectUSER_INFO" resultType = "com.smhrd.domain.USER_INFO" parameterType = "com.smhrd.domain.USER_INFO">
-		select * from USER_INFO where name=#{name} and tel=#{tel}
+		select * from USER_INFO where name=#{NAME} and tel=#{TEL}
 	</select>
 
 </mapper>

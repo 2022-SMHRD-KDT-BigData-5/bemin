@@ -54,10 +54,6 @@
 <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<%
-
-
-%>
 
 </head>
 <body data-spy="scroll" data-target=".navbar-collapse">
@@ -212,7 +208,10 @@
 		<script src="assets/js/bootsnav.js"></script>
 
 		<script type="text/javascript">
+<<<<<<< HEAD
+=======
 		
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 		</script>
 
 

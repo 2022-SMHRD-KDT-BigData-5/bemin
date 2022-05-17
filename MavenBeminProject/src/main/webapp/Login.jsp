@@ -132,20 +132,23 @@
                     <span>회원이아니신가요?</span>
                     <button class="create-account-btn shadow-light">회원가입</button>
                 </div>
+                <form action ="LoginCon" method="post">
                 <div class="login-input-container">
+                
                     <div class="login-input-wrap input-id">
                         <i class="far fa-envelope"></i>
-                        <input placeholder="ID" type="text">
+                        <input placeholder="ID" name="id" type="text">
                     </div>
                     <div class="login-input-wrap input-password">
                         <i class="fas fa-key"></i>
-                        <input placeholder="Password"  type="password">
+                        <input placeholder="Password" name="pw"  type="password">
                     </div>
                 </div>
                 <div class="login-btn-wrap">
-                    <button class="login-btn">로그인</button>
+                    <input class="login-btn" type="submit" value="로그인">
                     <a href="Find.jsp" >아이디/비밀번호를 잊으셨나요?</a>
                 </div>
+                </form>
             </div>
         </div>
     </div>
