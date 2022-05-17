@@ -1,0 +1,148 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Alata', sans-serif;
+}
+
+
+
+.shadow{
+    -webkit-box-shadow: 27px 43px 43px -26px rgba(89,89,89,0.39);
+    -moz-box-shadow: 27px 43px 43px -26px rgba(89,89,89,0.39);
+    box-shadow: 27px 43px 43px -26px rgba(89,89,89,0.39);
+}/*
+.shadow-light{
+    -webkit-box-shadow: 45px 45px 104px -33px rgba(38,38,38,0.92);
+    -moz-box-shadow: 45px 45px 104px -33px rgba(38,38,38,0.92);
+    box-shadow: 45px 45px 104px -33px rgba(38,38,38,0.92);
+    
+}*/
+.mypage-form-container{
+    
+    background:#f5f5f5 ;
+    width:70%;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 10px black;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 20%;
+    
+}
+.mypage-container{
+    width: 100%;
+    height: 70%;
+    background: white;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    border-radius: 10px;
+}
+.mypage-form-right-side{
+    width: 50%; 
+    border-radius: 10px;
+    padding:50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    border-width: 3px;
+    border-style: solid none solid solid;
+    border-color: #5d9dff;
+}
+.mypage-form-left-side{
+    width: 50%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:50px;
+    border-width: 3px;
+    border-style: solid solid solid dashed;
+    border-color: #5d9dff;
+}
+.mypage-form-right-side h3{
+    color: #2178ff;
+    width:100%;
+    text-align: right;
+    opacity: 0.9;
+    font-weight: bold
+}
+
+.mypage-form-left-side p{
+    color: #2178ff;
+    width:100%;
+    text-align: center;
+    opacity: 0.9;
+    font-size: 21px;
+    font-weight: bold
+}
+
+.mypage-form-right-side p{
+    padding-top: 50px;
+    font-size:15px;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.mypage-form-right-side a{
+    padding-top: 50px;
+    font-size:10px;
+    text-align: center;
+    opacity: 0.8;
+}
+.mypage-form-left-side a{
+    font-size:10px;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.mypage-form-left-side .mypage-top-wrap .create-account-btn {
+    border:  0;
+    width:85px;
+    height: 35px;
+    font-size: 11px;
+    color: #2178ff;
+    border-radius: 3px;
+
+}
+.mypage-input-container{
+    padding:20px;
+    width:70px;
+}
+.mypage-input-container .mypage-input-wrap{
+    width:300px;
+    height: 45px;
+    margin-top: 20px;
+    border-radius: 2px;
+    border-bottom: solid 2px #2178ff;
+   
+}
+.mypage-input-container .mypage-input-wrap i{
+    color: #2178ff;
+    line-height: 45px;
+}
+
+.mypage-input-container .mypage-input-wrap input{
+    background: none;
+   
+    border: none;
+    line-height: 45px;
+    padding-left:10px;
+    width:267px;
+}
+.mypage-input-container .mypage-input-wrap input:focus{
+    outline: none;
+}
+.mypage-btn-wrap{
+    width:70px;
+    height: 20px;
+    color:white;
+    border: 0;
+    border-radius: 4px;
+    background: rgb(105,163,255);
+    background: linear-gradient(162deg, rgba(105,163,255,1) 0%, rgba(43,125,254,1) 50%, rgba(43,125,254,1) 100%);
+
+}
