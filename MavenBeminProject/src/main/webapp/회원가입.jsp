@@ -103,6 +103,7 @@
 			<!-- ID -->
 			<div>
 				<h3 class="join_title">
+				<form action="Join1Con" method="post">
 					<label for="id">아이디</label>
 				</h3>
 				<span class="box int_id"> <input type="text" id="id"
@@ -222,6 +223,15 @@
 					class="int" maxlength="16" placeholder="전화번호 입력">
 				</span> <span class="error_next_box"></span>
 			</div>
+			<!-- adress -->
+			<div>
+				<h3 class="join_title">
+					<label for="adress">주소</label>
+				</h3>
+				<span class="box int_adress"> <input type="text" id="adress"
+					class="int" maxlength="16" placeholder="주소 입력">
+				</span> <span class="error_next_box"></span>
+			</div>
 			
 			<div>
                 <h3 class="join_title"><label for="slef_evaluation">자기평가</label></h3>
@@ -285,7 +295,7 @@
 			
 
 
-
+</form>
 		</div>
 		<!-- content-->
 

@@ -50,6 +50,16 @@ public class USER_INFO {
 		this.PW = PW;
 	}
 
+	public USER_INFO(String ID, String PW,String NAME, String EMAIL, String GENDER, String TEL,BigDecimal USER_TIER,String ADDRESS) {
+		super();
+		this.ID = ID;
+		this.PW = PW;
+		this.NAME = NAME;
+		this.EMAIL = EMAIL;
+		this.TEL = TEL;
+		this.USER_TIER = USER_TIER;
+		this.ADDRESS=ADDRESS;
+	}
 	public String getID() {
 		return ID;
 	}

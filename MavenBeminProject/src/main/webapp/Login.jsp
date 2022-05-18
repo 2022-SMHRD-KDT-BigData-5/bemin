@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -106,9 +107,14 @@
                     <!-- navbar menu -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="./index.html">Home</a></li>                    
-                            <li><a href="./join.jsp">회원가입</a></li>
-                            <li><a href="./로그인.html">로그인</a></li>
+                          
+                            <li><a href="./Login.jsp">로그인</a></li>
+                           
+                           
+                          
+                            <li><a href="./index.html">Home</a></li>
+                                             
+                      		<li><a href="./회원가입.html">회원가입</a></li>	
                             <li><a href="./마이페이지.html">마이페이지</a></li>
                             <!-- <li><a href="#test">Blog</a></li> -->
                             <!-- <li><a href="#contact">Contact</a></li> -->
@@ -129,10 +135,10 @@
             </div>
             <div class="login-form-left-side">
                 <div class="login-top-wrap">
+                <form action ="LoginCon" method="post">
                     <span>회원이아니신가요?</span>
                     <button class="create-account-btn shadow-light">회원가입</button>
                 </div>
-                <form action ="LoginCon" method="post">
                 <div class="login-input-container">
                 
                     <div class="login-input-wrap input-id">
@@ -145,10 +151,10 @@
                     </div>
                 </div>
                 <div class="login-btn-wrap">
-                    <input class="login-btn" type="submit" value="로그인" href="main.jsp">
+                    <input class="login-btn" type="submit" value="로그인" >
                     <a href="Find.jsp" >아이디/비밀번호를 잊으셨나요?</a>
-                </div>
                 </form>
+                </div>
             </div>
         </div>
     </div>

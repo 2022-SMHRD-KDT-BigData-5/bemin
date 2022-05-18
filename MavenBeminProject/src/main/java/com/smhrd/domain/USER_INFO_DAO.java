@@ -50,11 +50,21 @@ public class USER_INFO_DAO {
 	} // 로그인 끝 ----------------------------------------------------
 	
 	//회원가입 ----------------------------------------------------------
-	// 회원가입 끝 --------------------------------------------------------
-	
-	
-	
-	
-	
+	public int insertUSER_INFO(USER_INFO member) {
+		int cnt=0;
+		try {
+			cnt=sqlSession.insert("com.smhrd.domain.USER_INFO_DAO.insertUSER_INFO",member);
+			if(cnt>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}// 회원가입 끝 --------------------------------------------------------	
 	
 }

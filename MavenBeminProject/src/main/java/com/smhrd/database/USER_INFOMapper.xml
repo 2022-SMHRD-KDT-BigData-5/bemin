@@ -13,11 +13,11 @@
 	
 	<!-- 로그인 -->
 	<select id="LoginUSER_INFO" resultType="com.smhrd.domain.USER_INFO" parameterType="com.smhrd.domain.USER_INFO">
-		select * from USER_INFO where id=#{ID} and pw=#{PW}
+		select * from USER_INFO where USER_ID=#{ID} and USER_PW=#{PW}
 	</select>
 	<!-- 회원가입 -->
 	<insert id="insertUSER_INFO" parameterType="com.smhrd.domain.USER_INFO">
-		insert into USER_INFO values (#{ID},#{PW},#{NAME},#{GENDER},#{EMAIL},#{TEL},#{USER_TIER})
+		insert into USER_INFO values (#{ID},#{PW},#{NAME},#{GENDER},#{EMAIL},#{ADRESS},#{TEL},#{USER_TIER},sysdate)
 	</insert>
 </mapper>
 
