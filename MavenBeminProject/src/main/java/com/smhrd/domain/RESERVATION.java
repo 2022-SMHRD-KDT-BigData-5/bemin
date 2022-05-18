@@ -9,8 +9,7 @@ public class RESERVATION {
 	private Date RES_DATE;
 	private Time RES_TIME;
 	private String RES_PLACE;
-	private String RES_ADD;
-	private int RES_COOD;
+
 	public RESERVATION(int rES_NUM, Date rES_DATE, Time rES_TIME, String rES_PLACE, String rES_ADD, int rES_COOD) {
 		super();
 		RES_NUM = rES_NUM;

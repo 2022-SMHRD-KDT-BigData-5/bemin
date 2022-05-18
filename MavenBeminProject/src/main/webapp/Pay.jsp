@@ -1,5 +1,6 @@
+<%@page import="com.smhrd.domain.USER_INFO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +37,13 @@
 
 <body data-spy="scroll" data-target=".navbar-collapse">
 
+<%
+USER_INFO loginMember = (USER_INFO)session.getAttribute("loginMember");
+pageContext.setAttribute("loginMember", loginMember);
+
+
+%>
+
 	<form class="fom">
 		<div class="logoName">
 			<a href="main.jsp"><h1>플라이트</h1></a>
@@ -68,14 +76,17 @@
 									<h4 style="text-align: left">🚩캐시</h4>
 
 									<div class="list-right">
-										<h5>0원 사용</h5>
-										<img
-											src="https://plab-football.s3.amazonaws.com/static/img/ic_arrow_right.svg">
+									<% 
+									//USER_INFO에서 로그인한 세션 받아오기(캐시)
+									%>
+										<input type="text" name="useCash" >
+										<p>원 사용</p>
+										<input type="image" src="https://plab-football.s3.amazonaws.com/static/img/ic_arrow_right.svg" alt="캐시사용버튼">
 									</div>
 									</p>
 									<div style="text-align: right; padding-bottom: 20px;">
 										<span style="color: rgb(159, 177, 189); font-size: 12px;">잔액
-											0원</span>
+											<${loginMember.getCASH()}원</span>
 									</div>
 								</div>
 							</div>
