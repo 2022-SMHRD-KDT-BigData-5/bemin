@@ -15,6 +15,12 @@
   	<display-name>LoginCon</display-name>
   	<description></description>
   	<servlet-class>com.smhrd.controller.LoginCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Join1Con</servlet-name>
+  	<display-name>Join1Con</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.Join1Con</servlet-class>
   </servlet> 
   <servlet-mapping>
   	<servlet-name>FindCon</servlet-name>
@@ -23,6 +29,10 @@
   <servlet-mapping>
   	<servlet-name>LoginCon</servlet-name>
   	<url-pattern>/LoginCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Join1Con</servlet-name>
+  	<url-pattern>/Join1Con</url-pattern>
   </servlet-mapping>
   
 </web-app>
