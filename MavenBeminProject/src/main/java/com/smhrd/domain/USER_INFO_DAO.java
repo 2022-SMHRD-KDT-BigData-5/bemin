@@ -8,35 +8,35 @@ import com.smhrd.database.sqlSessionManager;
 public class USER_INFO_DAO {
 	SqlSessionFactory sqlSessionFactory = sqlSessionManager.getSqlSession();
 	SqlSession sqlSession = sqlSessionFactory.openSession();
-	
-	//아이디 찾기
+
+	// 아이디 찾기
 	public USER_INFO FindID(USER_INFO u) {
-		
-		USER_INFO u_vo =null;
+
+		USER_INFO u_vo = null;
 		try {
-			u_vo = sqlSession.selectOne("com.smhrd.domain.USER_INFO_DAO.selectUSER_INFO",u);
-		
-			if(u_vo!=null) {
+			u_vo = sqlSession.selectOne("com.smhrd.domain.USER_INFO_DAO.selectUSER_INFO", u);
+
+			if (u_vo != null) {
 				sqlSession.commit();
-			}else {
+			} else {
 				sqlSession.rollback();
 			}
-		
+
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			sqlSession.close();
 		}
 		return u_vo;
-		
-	}//아이디 찾기 끝
-	
+
+	}// 아이디 찾기 끝
+
 	// 로그인 -------------------------------------------------------
 	public USER_INFO selectMember(USER_INFO member) {
 		USER_INFO loginMember = null;
 		try {
 			loginMember = sqlSession.selectOne("com.smhrd.domain.USER_INFO_DAO.LoginUSER_INFO", member);
-			if(loginMember != null) {
+			if (loginMember != null) {
 				sqlSession.commit();
 			} else {
 				sqlSession.rollback();
@@ -48,6 +48,7 @@ public class USER_INFO_DAO {
 		}
 		return loginMember;
 	} // 로그인 끝 ----------------------------------------------------
+
 	
 	//회원가입 ----------------------------------------------------------
 	public int insertUSER_INFO(USER_INFO member) {
@@ -67,4 +68,7 @@ public class USER_INFO_DAO {
 		return cnt;
 	}// 회원가입 끝 --------------------------------------------------------	
 	
+
+
+
 }

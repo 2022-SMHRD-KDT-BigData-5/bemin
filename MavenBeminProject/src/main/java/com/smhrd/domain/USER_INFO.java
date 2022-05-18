@@ -16,9 +16,7 @@ public class USER_INFO {
 	private BigDecimal MANAGER;
 	private BigDecimal USER_TIER;
 	private BigDecimal USER_MANNER;
-	
 
-	
 	public USER_INFO(String ID, String PW, String NAME, String EMAIL, String GENDER, String TEL, String ADDRESS,
 			Timestamp JOIN_DATE, BigDecimal CASH, BigDecimal MANAGER, BigDecimal USER_TIER, BigDecimal USER_MANNER) {
 		super();
@@ -38,11 +36,10 @@ public class USER_INFO {
 
 	public USER_INFO(String ID, String NAME, String TEL) {
 		super();
-		this.ID = ID;		
+		this.ID = ID;
 		this.NAME = NAME;
 		this.TEL = TEL;
 	}
-		
 
 	public USER_INFO(String ID, String PW) {
 		super();
@@ -156,6 +153,4 @@ public class USER_INFO {
 		this.USER_MANNER = USER_MANNER;
 	}
 
-		
-	
 }
