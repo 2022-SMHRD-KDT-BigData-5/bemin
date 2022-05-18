@@ -16,7 +16,7 @@ public class matchingDAO {
 	public List<MATCHING> selectMatchig(String ID){
 		List<MATCHING> MatchingList = null;
 		try {
-			MatchingList = sqlSession.selectList("com.smhrd.domain.MATCHING.selectMatching", ID);
+			MatchingList = sqlSession.selectList("com.smhrd.domain.matchingDAO.selectMatching", ID);
 			if(MatchingList != null) {
 				sqlSession.commit();
 		}else {
@@ -29,6 +29,7 @@ public class matchingDAO {
 	} 
 	return MatchingList;
 	}// 로그인한 신청자의 매칭 내역보기 끝--------------------------------------------------------------
+	
 	
 
 }

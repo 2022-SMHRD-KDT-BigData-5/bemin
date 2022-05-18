@@ -1,29 +1,41 @@
 package com.smhrd.domain;
 
 import java.math.BigDecimal;
-import java.sql.Time;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+
+import oracle.sql.TIMESTAMP;
+
 
 public class MATCHING {
 	private BigDecimal MAT_NO;
 	private Timestamp RES_DATE;
-	private Time RES_TIME;
+	private TIMESTAMP RES_TIME;
 	private String RES_PLACE;
-	private String ID;
-	private BigDecimal UNIT;
+	private String USER_ID;
+	private String UNIT;
 	private BigDecimal MAT_MEMBER;
 	private BigDecimal STN_TIER;
 	private BigDecimal STN_MANNER;
 	private BigDecimal MAT_CPL;
 	
-	public MATCHING(BigDecimal MAT_NO, Timestamp RES_DATE, Time RES_TIME, String RES_PLACE, String ID, BigDecimal UNIT, BigDecimal MAT_MEMBER,
+	
+	public MATCHING(Timestamp RES_DATE, TIMESTAMP RES_TIME, String RES_PLACE, BigDecimal MAT_MEMBER) {
+		super();
+		this.RES_DATE = RES_DATE;
+		this.RES_TIME = RES_TIME;
+		this.RES_PLACE = RES_PLACE;
+		this.MAT_MEMBER = MAT_MEMBER;
+	}
+
+	public MATCHING(BigDecimal MAT_NO, Timestamp RES_DATE, TIMESTAMP RES_TIME, String RES_PLACE, String USER_ID, String UNIT, BigDecimal MAT_MEMBER,
 			BigDecimal STN_TIER, BigDecimal STN_MANNER, BigDecimal MAT_CPL) {
 		super();
 		this.MAT_NO = MAT_NO;
 		this.RES_DATE = RES_DATE;
 		this.RES_TIME = RES_TIME;
 		this.RES_PLACE = RES_PLACE;
-		this.ID = ID;
+		this.USER_ID = USER_ID;
 		this.UNIT = UNIT;
 		this.MAT_MEMBER = MAT_MEMBER;
 		this.STN_TIER = STN_TIER;
@@ -42,10 +54,10 @@ public class MATCHING {
 	public void setRES_DATE(Timestamp RES_DATE) {
 		this.RES_DATE = RES_DATE;
 	}
-	public Time getRES_TIME() {
+	public TIMESTAMP getRES_TIME() {
 		return RES_TIME;
 	}
-	public void setRES_TIME(Time RES_TIME) {
+	public void setRES_TIME(TIMESTAMP RES_TIME) {
 		this.RES_TIME = RES_TIME;
 	}
 	public String getRES_PLACE() {
@@ -54,16 +66,16 @@ public class MATCHING {
 	public void setRES_PLACE(String RES_PLACE) {
 		this.RES_PLACE = RES_PLACE;
 	}
-	public String getID() {
-		return ID;
+	public String getUSER_ID() {
+		return USER_ID;
 	}
-	public void setID(String ID) {
-		this.ID = ID;
+	public void setUSER_ID(String USER_ID) {
+		this.USER_ID = USER_ID;
 	}
-	public BigDecimal getUNIT() {
+	public String getUNIT() {
 		return UNIT;
 	}
-	public void setUNIT(BigDecimal UNIT) {
+	public void setUNIT(String UNIT) {
 		this.UNIT = UNIT;
 	}
 	public BigDecimal getMAT_MEMBER() {
@@ -91,6 +103,12 @@ public class MATCHING {
 		this.MAT_CPL = MAT_CPL;
 	}
 	
-	
+    public String getDateStr() {
+        return new SimpleDateFormat("yyyy-MM-dd").format(this.RES_DATE);
+    }
+    
+    public String getTimeStr() {
+        return new SimpleDateFormat("HH:mm:ss").format(this.RES_TIME);
+    }
 	
 }

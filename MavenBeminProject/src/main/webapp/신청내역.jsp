@@ -1,10 +1,14 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.smhrd.domain.matchingDAO"%>
 <%@page import="com.smhrd.domain.MATCHING"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.domain.USER_INFO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
-<html lnag="ko">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>신청내역</title>
@@ -46,8 +50,6 @@
 		<div class="collapse navbar-collapse" id="navbar-menu">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="./index.html">Home</a></li>
-				<li><a href="./회원가입.html">회원가입</a></li>
-				<li><a href="./로그인.html">로그인</a></li>
 				<li><a href="./마이페이지.html">마이페이지</a></li>
 			</ul>
 		</div>
@@ -87,8 +89,8 @@
 					List<MATCHING> matList = dao.selectMatchig(u_vo.getID());
 					pageContext.setAttribute("matList", matList);
 				%>
-				<table>
-					<li><a href="DeleteAllMessageCon" class="button next scrolly">전체삭제하기</a></li>
+				<table class="table table-striped">
+					<!-- <li><a href="DeleteAllMessageCon" class="button next scrolly">전체삭제하기</a></li> -->
 					<tr>
 						<th>번호</th>
 						<th>날짜</th>
@@ -99,18 +101,17 @@
 					<c:forEach var="mat" items="${matList}" varStatus="status">
 						<tr>
 							<td>${status.count}</td>
-							<td><c:out value="${mat.MAT_NO}" /></td>
-							<td><c:out value="${mat.RES_DATE}" /></td>
-							<td><c:out value="${mat.RES_TIME}" /></td>
-							<td><c:out value="${mat.RES_PLACE}" /></td>
-							<td><c:out value="${mat.MAT_MEMBER}" /></td>
-							<td><a href="DeleteMessageCon?msgNum=${mat.num}">삭제</a></td>
-						</tr>
-				</table>
-				</c:forEach>
+							<td><c:out value="${mat.RES_DATE}"/></td>
+							<td><c:out value="${mat.RES_TIME}"/></td>
+					<td><c:out value="${mat.RES_PLACE}"/></td>		
+							<td><c:out value="${mat.MAT_MEMBER}"/></td>
+							<!-- <td><a href="#">삭제</a></td> -->
+						</tr>				
+					</c:forEach>
 				</table>
 			</c:otherwise>
 		</c:choose>
+		</div>
 
 		<div class="text-center">
 			<ul class="pagination">
@@ -122,7 +123,6 @@
 				<li><a href="#">6</a></li>
 			</ul>
 		</div>
-	</div>
 
 	<!-- wrapper -->
 	<div id="wrapper">
@@ -130,22 +130,13 @@
 		<!-- content-->
 		<div id="content">
 
-
-
-
-
 			<!-- 일정보기 BTN-->
 			<div class="btn_area">
 				<button type="button" id="btnJoin">
 					<a href="main.jsp">일정보기</a>
 				</button>
 			</div>
-
-
-
 		</div>
-
-
 
 	</div>
 	<!-- content-->
