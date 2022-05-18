@@ -5,7 +5,6 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<html>
 <head>
 <meta charset="utf-8">
         <title>Made One</title>
@@ -141,6 +140,7 @@
                     </div><!-- /.navbar-collapse -->
                 </div> 
             </nav>
+        </div>
 
             <!--Join Sections-->
  
