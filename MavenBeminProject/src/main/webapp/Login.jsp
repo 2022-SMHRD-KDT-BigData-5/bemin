@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
+<<<<<<< HEAD
 	pageEncoding="UTF-8"%>
+=======
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -109,6 +114,7 @@
 				</div>
 				<!-- End Header Navigation -->
 
+<<<<<<< HEAD
 				<!-- navbar menu -->
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
@@ -123,7 +129,28 @@
 				<!-- /.navbar-collapse -->
 			</div>
 		</nav>
+=======
+                    <!-- navbar menu -->
+                    <div class="collapse navbar-collapse" id="navbar-menu">
+                        <ul class="nav navbar-nav navbar-right">
+                          
+                            <li><a href="./Login.jsp">로그인</a></li>
+                           
+                           
+                          
+                            <li><a href="./index.html">Home</a></li>
+                                             
+                      		<li><a href="./회원가입.html">회원가입</a></li>	
+                            <li><a href="./마이페이지.html">마이페이지</a></li>
+                            <!-- <li><a href="#test">Blog</a></li> -->
+                            <!-- <li><a href="#contact">Contact</a></li> -->
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div> 
+            </nav>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 	</div>
+<<<<<<< HEAD
 	<!--Login Sections-->
 	<div class="page-container">
 		<div class="login-form-container shadow">
@@ -139,6 +166,45 @@
 				</div>
 				<form action="LoginCon" method="post">
 					<div class="login-input-container">
+=======
+            <!--Login Sections-->
+    <div class="page-container">
+        <div class="login-form-container shadow">
+            <div class="login-form-right-side">
+                <div class="top-logo-wrap">
+                    
+                </div>
+                <h1>로그인 페이지 입니다.</h1>
+                <p>플라이트</p>
+            </div>
+            <div class="login-form-left-side">
+                <div class="login-top-wrap">
+                <form action ="LoginCon" method="post">
+                    <span>회원이아니신가요?</span>
+                    <button class="create-account-btn shadow-light">회원가입</button>
+                </div>
+                <div class="login-input-container">
+                
+                    <div class="login-input-wrap input-id">
+                        <i class="far fa-envelope"></i>
+                        <input placeholder="ID" name="id" type="text">
+                    </div>
+                    <div class="login-input-wrap input-password">
+                        <i class="fas fa-key"></i>
+                        <input placeholder="Password" name="pw"  type="password">
+                    </div>
+                </div>
+                <div class="login-btn-wrap">
+                    <input class="login-btn" type="submit" value="로그인" >
+                    <a href="Find.jsp" >아이디/비밀번호를 잊으셨나요?</a>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+        
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 
 						<div class="login-input-wrap input-id">
 							<i class="far fa-envelope"></i> <input placeholder="ID" name="id"
