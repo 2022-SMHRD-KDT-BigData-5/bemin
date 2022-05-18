@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"  isELIgnored="false"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -106,12 +107,26 @@
                     <!-- navbar menu -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#home">Home</a></li>                    
+                         <c:choose>
+                           <c:when test="${empty loginMember}">
+                            <li><a href="./Login.jsp">로그인</a></li>
                             <li><a href="./회원가입.html">회원가입</a></li>
-                            <li><a href="./로그인.html">로그인</a></li>
-                            <li><a href="./마이페이지.html">마이페이지</a></li>
+                            
+                            <li><a href="./MyPage">마이페이지</a></li>
+                           </c:when>
+                           <c:otherwise>
+                           	
+                            <li><a href="LogoutCon">로그아웃</a></li>                       
+                            <li><a href="./회원가입.html">회원가입</a></li>
+                           
+                           	<li><a href="./회원정보수정.jsp">회원정보수정</a></li>
+                            <li><a href="./MyPage.jsp">마이페이지</a></li>
+                            
                             <!-- <li><a href="#test">Blog</a></li> -->
                             <!-- <li><a href="#contact">Contact</a></li> -->
+                          </c:otherwise>
+                          </c:choose> 
+                            
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div> 
