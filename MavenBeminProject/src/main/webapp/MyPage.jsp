@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<html>
-<head>
-<meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
         <title>Made One</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,6 +24,7 @@
         <link rel="stylesheet" href="assets/css/bootstrap.css">
         <link rel="stylesheet" href="assets/css/magnific-popup.css">
         <link rel="stylesheet" href="assets/css/bootsnav.css">
+        <link rel="stylesheet" href="assets/css/마이페이지.css">
 
         <!-- xsslider slider css -->
 
@@ -45,9 +45,9 @@
         <link rel="stylesheet" href="assets/css/responsive.css" />
 
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-</head>
-<body data-spy="scroll" data-target=".navbar-collapse">
+    </head>
 
+    <body data-spy="scroll" data-target=".navbar-collapse">
 
 
         <!-- Preloader -->
@@ -68,46 +68,7 @@
 
 
             <nav class="navbar navbar-default bootsnav navbar-fixed">
-                <!-- <div class="navbar-top bg-grey fix">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="navbar-callus text-left sm-text-center">
-                                    <ul class="list-inline">
-                                        <li><a href=""><i class="fa fa-phone"></i> Call us: 1234 5678 90</a></li>
-                                        <li><a href=""><i class="fa fa-envelope-o"></i> Contact us: your@email.com</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="navbar-socail text-right sm-text-center">
-                                    <ul class="list-inline">
-                                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                        <li><a href=""><i class="fa fa-behance"></i></a></li>
-                                        <li><a href=""><i class="fa fa-dribbble"></i></a></li>vbar--default
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- Start Top Search -->
-                <div class="top-search">
-                    <div class="container">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                            <input type="text" class="form-control" placeholder="Search">
-                            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Top Search -->
-
-
+               
                 <div class="container"> 
                     <div class="attr-nav">
                         <ul>
@@ -127,26 +88,66 @@
 
                     </div>
                     <!-- End Header Navigation -->
-
+                    
                     <!-- navbar menu -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="./index.html">Home</a></li>                    
-                            <li><a href="./회원가입.html">회원가입</a></li>
-                            <li><a href="./로그인.html">로그인</a></li>
-                            <li><a href="./마이페이지.html">마이페이지</a></li>
-                            <!-- <li><a href="#test">Blog</a></li> -->
-                            <!-- <li><a href="#contact">Contact</a></li> -->
+                            <li><a href="./index.html">로그아웃</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div> 
             </nav>
+        </div>
 
-            <!--Join Sections-->
- 
-
-        
-
+            <!--mypage Sections-->   
+            <div class="mypage-form-container">
+            <div class="mypage-container shadow">
+                <span class="mypage-form-right-side">
+                    <div class="mypage-form-myname">
+                        <h3>이름</h3>
+                    </div>
+                    <div class="mypage-form-email">
+                        <p>이메일</p>
+                        <div class="mypage-form-change">
+                            <a href="#">내정보 수정</a>
+                        </div>
+                    </div>
+                    <div class="mypage-form-tier">
+                        <p>티어</p>
+                        <a href="#">티어 알아보기</a>
+                    </div>
+                    <div class="mypage-form-manner">
+                        <p>매너 점수</p>
+                        <a href="#">매너 점수 알아보기</a>
+                    </div>
+                    <div class="mypage-form-cash">
+                        <p>캐시</p>
+                        <button class="mypage-btn-wrap shadow"> 충전 </button>
+                    </div>
+                </span>
+                <span class="mypage-form-left-side">
+                    <div class="mypage-top-wrap">
+                        <p>신청내역</p>
+                        <a href="./신청내역.jsp">신청내역 더보기</a>
+                    </div>
+                    <div class="mypage-input-wrap list">
+                    	<table class="table table-striped">
+           	 				<tr>
+								<th>날짜</th>
+                				<th>시간</th>
+                				<th>경기장</th>
+							</tr>
+							<tr>
+                				<td>5/17</td>
+                				<td>3:00</td>
+               					<td>광주</td>
+           		 			</tr>
+        				</table>
+                    </div>
+                </span>
+            </div>
+        </div>    
         <!-- JS includes -->
 
         <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
@@ -165,5 +166,5 @@
         <script src="assets/js/plugins.js"></script>
         <script src="assets/js/main.js"></script>
 
-</body>
+    </body>
 </html>
