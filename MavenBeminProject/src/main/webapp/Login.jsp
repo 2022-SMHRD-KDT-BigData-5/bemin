@@ -100,8 +100,8 @@
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="./index.html">Home</a></li>
-						<li><a href="./join.jsp">회원가입</a></li>
-						<li><a href="./로그인.html">로그인</a></li>
+						<li><a href="./회원가입.jsp">회원가입</a></li>
+						<li><a href="./Login.jsp">로그인</a></li>
 						<li><a href="./마이페이지.html">마이페이지</a></li>
 
 					</ul>
@@ -160,11 +160,13 @@
 	<script src="assets/css/slick/slick.min.js"></script>
 	<script src="assets/js/jquery.collapse.js"></script>
 	<script src="assets/js/bootsnav.js"></script>
-
-
-
 	<script src="assets/js/plugins.js"></script>
 	<script src="assets/js/main.js"></script>
-
+	
+	<script>
+	
+	
+	
+	</script>
 </body>
 </html>

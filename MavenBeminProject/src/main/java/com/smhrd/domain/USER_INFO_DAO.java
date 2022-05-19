@@ -68,6 +68,31 @@ public class USER_INFO_DAO {
 		return cnt;
 	}// 회원가입 끝 --------------------------------------------------------	
 	
+	//아이디 중복체크
+	public boolean idCheck(String id) {
+		boolean result=false;
+		
+		try {
+			String id2=sqlSession.selectOne("com.smhrd.domain.USER_INFO_DAO.selectId",id);
+			
+			if(id2!=null) {
+				result=false;
+				sqlSession.commit();
+			}else {
+				result=true;
+				sqlSession.commit();
+			}
+			
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				sqlSession.close();
+			}
+			return result;
+	
+	
+		}
+	
 
 
 

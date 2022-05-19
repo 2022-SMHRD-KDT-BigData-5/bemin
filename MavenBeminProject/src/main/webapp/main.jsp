@@ -117,7 +117,7 @@
                            <c:otherwise>
                            	
                             <li><a href="LogoutCon">로그아웃</a></li>                       
-                            <li><a href="./회원가입.html">회원가입</a></li>
+                            <li><a href="./회원가입.jsp">회원가입</a></li>
                            
                            	<li><a href="./회원정보수정.jsp">회원정보수정</a></li>
                             <li><a href="./MyPage.jsp">마이페이지</a></li>

@@ -73,8 +73,8 @@
 			<div class="collapse navbar-collapse" id="navbar-menu">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="./index.html">Home</a></li>
-					<li><a href="./회원가입.html">회원가입</a></li>
-					<li><a href="./로그인.html">로그인</a></li>
+					<li><a href="./회원가입.jsp">회원가입</a></li>
+					<li><a href="./Login.jsp">로그인</a></li>
 					<li><a href="./마이페이지.html">마이페이지</a></li>
 					<!-- <li><a href="#test">Blog</a></li> -->
 					<!-- <li><a href="#contact">Contact</a></li> -->
@@ -106,8 +106,13 @@
 				<form action="Join1Con" method="post">
 					<label for="id">아이디</label>
 				</h3>
-				<span class="box int_id"> <input type="text" id="id"
-					class="int" maxlength="20"> <span class="step_url"></span>
+				<span class="box int_id"> <input type="text" name="id" id="id"
+					class="int" maxlength="20"> <span class="step_url">
+					<input type="button" value="중복검사" onclick="idCheck()"
+					style="color: black;">
+						<span id="result"></span></span>
+					<!-- 아이디 중복체크 -->
+					
 				</span> <span class="error_next_box"></span>
 			</div>
 
@@ -116,7 +121,7 @@
 				<h3 class="join_title">
 					<label for="pswd1">비밀번호</label>
 				</h3>
-				<span class="box int_pass"> <input type="text" id="pswd1"
+				<span class="box int_pass"> <input type="text" name="pw" id="pswd1"
 					class="int" maxlength="20"> <span id="alertTxt">사용불가</span>
 					<img src="./assets/images/m_icon_pass.png" id="pswd1_img1"
 					class="pswdImg">
@@ -129,7 +134,7 @@
 					<label for="pswd2">비밀번호 재확인</label>
 				</h3>
 				<span class="box int_pass_check"> <input type="text"
-					id="pswd2" class="int" maxlength="20"> <img
+					id="pswd2" name="pw" class="int" maxlength="20"> <img
 					src="./assets/images/m_icon_check_disable.png" id="pswd2_img1"
 					class="pswdImg">
 				</span> <span class="error_next_box"></span>
@@ -140,7 +145,7 @@
 				<h3 class="join_title">
 					<label for="name">이름</label>
 				</h3>
-				<span class="box int_name"> <input type="text" id="name"
+				<span class="box int_name"> <input type="text" name="name" id="name"
 					class="int" maxlength="20">
 				</span> <span class="error_next_box"></span>
 			</div>
@@ -195,11 +200,11 @@
 				<h3 class="join_title">
 					<label for="gender">성별</label>
 				</h3>
-				<span class="box gender_code"> <select id="gender"
+				<span class="box gender_code"> <select id="gender" name="gender"
 					class="sel">
 						<option>성별</option>
-						<option value="M">남자</option>
-						<option value="F">여자</option>
+						<option value="남">남자</option>
+						<option value="여">여자</option>
 				</select>
 				</span> <span class="error_next_box">필수 정보입니다.</span>
 			</div>
@@ -209,7 +214,7 @@
 				<h3 class="join_title">
 					<label for="email">본인확인 이메일<span class="optional">(선택)</span></label>
 				</h3>
-				<span class="box int_email"> <input type="text" id="email"
+				<span class="box int_email"> <input type="text" name="email" id="email"
 					class="int" maxlength="100" placeholder="선택입력">
 				</span> <span class="error_next_box">이메일 주소를 다시 확인해주세요.</span>
 			</div>
@@ -219,7 +224,7 @@
 				<h3 class="join_title">
 					<label for="phoneNo">휴대전화</label>
 				</h3>
-				<span class="box int_mobile"> <input type="tel" id="mobile"
+				<span class="box int_mobile"> <input type="tel" name="tel" id="mobile"
 					class="int" maxlength="16" placeholder="전화번호 입력">
 				</span> <span class="error_next_box"></span>
 			</div>
@@ -228,7 +233,7 @@
 				<h3 class="join_title">
 					<label for="adress">주소</label>
 				</h3>
-				<span class="box int_adress"> <input type="text" id="adress"
+				<span class="box int_adress"> <input type="text" name="address" id="adress"
 					class="int" maxlength="16" placeholder="주소 입력">
 				</span> <span class="error_next_box"></span>
 			</div>
@@ -238,43 +243,43 @@
                     
                     <div class="startRadio">
                         <label class="startRadio__box">
-                            <input type="radio" name="star" id="">
+                            <input type="radio" name="star" value="50">
                             <span class="startRadio__img"><span class="blind">별 1개</span></span>
                         </label>
                         <label class="startRadio__box">
-                            <input type="radio" name="star" id="">
+                            <input type="radio" name="star" value="100">
                             <span class="startRadio__img"><span class="blind">별 1.5개</span></span>
                         </label>
                         <label class="startRadio__box">
-                            <input type="radio" name="star" id="">
+                            <input type="radio" name="star" value="150">
                             <span class="startRadio__img"><span class="blind">별 2개</span></span>
                         </label>
                         <label class="startRadio__box">
-                            <input type="radio" name="star" id="">
+                            <input type="radio" name="star" value="200">
                             <span class="startRadio__img"><span class="blind">별 2.5개</span></span>
                         </label>
                         <label class="startRadio__box">
-                            <input type="radio" name="star" id="">
+                            <input type="radio" name="star" value="250">
                             <span class="startRadio__img"><span class="blind">별 3개</span></span>
                         </label>
                         <label class="startRadio__box">
-                            <input type="radio" name="star" id="">
+                            <input type="radio" name="star" value="300">
                             <span class="startRadio__img"><span class="blind">별 3.5개</span></span>
                         </label>
                         <label class="startRadio__box">
-                            <input type="radio" name="star" id="">
+                            <input type="radio" name="star" value="350">
                             <span class="startRadio__img"><span class="blind">별 4개</span></span>
                         </label>
                         <label class="startRadio__box">
-                            <input type="radio" name="star" id="">
+                            <input type="radio" name="star" value="400">
                             <span class="startRadio__img"><span class="blind">별 4.5개</span></span>
                         </label>
                         <label class="startRadio__box">
-                            <input type="radio" name="star" id="">
+                            <input type="radio" name="star" value="450">
                             <span class="startRadio__img"><span class="blind">별 5개</span></span>
                         </label>
                         <label class="startRadio__box">
-                            <input type="radio" name="star" id="">
+                            <input type="radio" name="star" value="500">
                             <span class="startRadio__img"><span class="blind">별 5.5개</span></span>
                         </label>
                     </div>
@@ -289,7 +294,7 @@
 			<!-- JOIN BTN-->
 			<div class="btn_area">
                     <button type="button" id="btnJoin">
-                        <a href="main.jsp" style="color: white;">가입하기</a>
+                        <input type="submit" value="가입하기" style="color: white;">
                     </button>
             </div>
 			
@@ -314,11 +319,47 @@
 	<script src="assets/css/slick/slick.min.js"></script>
 	<script src="assets/js/jquery.collapse.js"></script>
 	<script src="assets/js/bootsnav.js"></script>
-
-
-
 	<script src="assets/js/plugins.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+	
+	<script>
+	function idCheck(){
+		let id=$('#id').val();
+		$.ajax({
+			//요청 방식(get/post)
+			method:'get',
+			//요청 경로(url매핑값)
+			url:'IdCheckCon',
+			//전송데이터(json)
+			data : {'id':id},
+			//전송데이터 정보(형식/인코딩방식)
+			contentType : 'application/json; charset=utf-8',
+			//응답데이터 형식지정
+			dataType : 'text',
+			success : function(data){
+				if(data=='true'){
+					alert('사용할 수 있는 아이디입니다!')
+				}else{
+					alert('중복된 아이디입니다!')
+				}
+			},
+			error : function(){
+				alert("통신실패!!")
+			}
+		})
+	}
+	
+			
+	
+	
+	</script>
+	
+	
+	
+	
+	
+	
+	
 </body>
 </html>

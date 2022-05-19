@@ -1,6 +1,7 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.math.BigDecimal;
 
 import javax.servlet.RequestDispatcher;
@@ -26,15 +27,21 @@ public class Join1Con extends HttpServlet {
 		String id=request.getParameter("id");
 		String pw=request.getParameter("pw");
 		String name=request.getParameter("name");
-		String gender=request.getParameter("gender");
 		String email=request.getParameter("email");
+		String gender=request.getParameter("gender");
+		
 		String tel=request.getParameter("tel");
-		String tier =request.getParameter("user_tier");
-		BigDecimal user_tier = new BigDecimal(tier);
 		String address =request.getParameter("address");
+		String tier =request.getParameter("star");
+		BigDecimal user_tier = new BigDecimal(tier);
+		System.out.println(user_tier);
 		
-		USER_INFO m_vo = new USER_INFO(id,pw,name,gender,email,tel,user_tier,address);
 		
+		System.out.println(tier);
+		USER_INFO m_vo = new USER_INFO(id,pw,name,email,gender,tel,address,user_tier);
+		
+		
+		System.out.println("controller m_vo : "+ m_vo.toString());
 		USER_INFO_DAO dao = new USER_INFO_DAO();
 		int cnt=dao.insertUSER_INFO(m_vo);	
 		if(cnt>0) {

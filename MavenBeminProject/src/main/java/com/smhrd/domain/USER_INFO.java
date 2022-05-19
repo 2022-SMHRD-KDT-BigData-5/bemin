@@ -47,15 +47,16 @@ public class USER_INFO {
 		this.PW = PW;
 	}
 
-	public USER_INFO(String ID, String PW,String NAME, String EMAIL, String GENDER, String TEL,BigDecimal USER_TIER,String ADDRESS) {
+	public USER_INFO(String ID, String PW,String NAME, String EMAIL, String GENDER, String TEL,String ADDRESS,BigDecimal USER_TIER) {
 		super();
 		this.ID = ID;
 		this.PW = PW;
 		this.NAME = NAME;
 		this.EMAIL = EMAIL;
+		this.GENDER=GENDER;
 		this.TEL = TEL;
-		this.USER_TIER = USER_TIER;
 		this.ADDRESS=ADDRESS;
+		this.USER_TIER = USER_TIER;		
 	}
 	public String getID() {
 		return ID;
@@ -152,5 +153,14 @@ public class USER_INFO {
 	public void setUSER_MANNER(BigDecimal USER_MANNER) {
 		this.USER_MANNER = USER_MANNER;
 	}
+
+	@Override
+	public String toString() {
+		return "USER_INFO [ID=" + ID + ", PW=" + PW + ", NAME=" + NAME + ", EMAIL=" + EMAIL + ", GENDER=" + GENDER
+				+ ", TEL=" + TEL + ", ADDRESS=" + ADDRESS + ", JOIN_DATE=" + JOIN_DATE + ", CASH=" + CASH + ", MANAGER="
+				+ MANAGER + ", USER_TIER=" + USER_TIER + ", USER_MANNER=" + USER_MANNER + "]";
+	}
+	
+	
 
 }
