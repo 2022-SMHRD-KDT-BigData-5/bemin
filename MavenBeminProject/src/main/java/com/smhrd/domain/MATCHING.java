@@ -1,16 +1,11 @@
 package com.smhrd.domain;
 
 import java.math.BigDecimal;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-
-import oracle.sql.TIMESTAMP;
-
 
 public class MATCHING {
 	private BigDecimal MAT_NO;
-	private Timestamp RES_DATE;
-	private TIMESTAMP RES_TIME;
+	private String RES_DATE;
+	private String RES_TIME;
 	private String RES_PLACE;
 	private String USER_ID;
 	private String UNIT;
@@ -20,7 +15,7 @@ public class MATCHING {
 	private BigDecimal MAT_CPL;
 	
 	
-	public MATCHING(Timestamp RES_DATE, TIMESTAMP RES_TIME, String RES_PLACE, BigDecimal MAT_MEMBER) {
+	public MATCHING(String RES_DATE, String RES_TIME, String RES_PLACE, BigDecimal MAT_MEMBER) {
 		super();
 		this.RES_DATE = RES_DATE;
 		this.RES_TIME = RES_TIME;
@@ -28,7 +23,7 @@ public class MATCHING {
 		this.MAT_MEMBER = MAT_MEMBER;
 	}
 
-	public MATCHING(BigDecimal MAT_NO, Timestamp RES_DATE, TIMESTAMP RES_TIME, String RES_PLACE, String USER_ID, String UNIT, BigDecimal MAT_MEMBER,
+	public MATCHING(BigDecimal MAT_NO, String RES_DATE, String RES_TIME, String RES_PLACE, String USER_ID, String UNIT, BigDecimal MAT_MEMBER,
 			BigDecimal STN_TIER, BigDecimal STN_MANNER, BigDecimal MAT_CPL) {
 		super();
 		this.MAT_NO = MAT_NO;
@@ -48,16 +43,16 @@ public class MATCHING {
 	public void setMAT_NO(BigDecimal MAT_NO) {
 		this.MAT_NO = MAT_NO;
 	}
-	public Timestamp getRES_DATE() {
+	public String getRES_DATE() {
 		return RES_DATE;
 	}
-	public void setRES_DATE(Timestamp RES_DATE) {
+	public void setRES_DATE(String RES_DATE) {
 		this.RES_DATE = RES_DATE;
 	}
-	public TIMESTAMP getRES_TIME() {
+	public String getRES_TIME() {
 		return RES_TIME;
 	}
-	public void setRES_TIME(TIMESTAMP RES_TIME) {
+	public void setRES_TIME(String RES_TIME) {
 		this.RES_TIME = RES_TIME;
 	}
 	public String getRES_PLACE() {
@@ -103,12 +98,7 @@ public class MATCHING {
 		this.MAT_CPL = MAT_CPL;
 	}
 	
-    public String getDateStr() {
-        return new SimpleDateFormat("yyyy-MM-dd").format(this.RES_DATE);
-    }
-    
-    public String getTimeStr() {
-        return new SimpleDateFormat("HH:mm:ss").format(this.RES_TIME);
-    }
+
+
 	
 }

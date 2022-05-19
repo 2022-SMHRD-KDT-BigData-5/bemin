@@ -10,5 +10,15 @@
 	<select id="selectMatching" resultType="com.smhrd.domain.MATCHING" parameterType="String">
 		select * from MATCHING where USER_ID=#{USER_ID}
 	</select>
+	
+	<!-- 페이징 -->
+	<select id="selectAllMatching" resultType="com.smhrd.domain.MATCHING">
 
+	</select>
+	
+	<!-- 레코드 갯수 -->
+	<select id="MatchingCount" resultType="com.smhrd.domain.MATCHING">
+		select count(user_id) count from (select ROWNUM mat_no from USER_ID=#{USER_ID})
+	</select>
+	
 </mapper>
