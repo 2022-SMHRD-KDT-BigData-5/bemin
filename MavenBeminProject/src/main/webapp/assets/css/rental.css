@@ -1,0 +1,307 @@
+.main--match--container{
+    background-color: #eff0f2;
+    width: 100%;
+    height: 100%;
+    padding: 5% 20% 5% 20%;
+}
+.sub-header{
+    background-color: white;
+    padding: 3% 5% 3% 5%;
+    text-align: center;
+}
+.list--match-schedule--container{
+    background-color: white;
+    padding: 3% 5% 3% 5%;
+}
+.list--match-schedule__time{
+    background-color: white;
+    margin-right: 20px;
+    float: left;
+    width: 90px;
+    height: 57px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 10px;
+    padding-top: 17px;
+    color: black;
+}
+.list--match-schedule__status{
+    position: absolute;
+    background-color: #2178ff;
+    width: 90px;
+    height: 57px;
+    margin-left: 48%;
+    font-size: 17px;
+    padding-top: 18px;
+    color: white;
+    border-radius: 30px;
+}
+/* 참가, 마감 */
+.list--match-schedule__status_b{
+    position: absolute;
+    background-color: #cbced4;
+    width: 90px;
+    height: 57px;
+    margin-left: 48%;
+    font-size: 17px;
+    padding-top: 18px;
+    color: white;
+    border-radius: 30px;
+}
+.label--match-option{
+    position: relative;
+    margin-left: 55px;
+    margin-bottom: 30px;
+}
+.match-status__join{
+    text-align: center;
+
+}
+.match-status__deadline{
+    text-align: center;
+}
+.match-list__title{
+    width: 100%;
+    height: 100%;
+}
+.list--match-schedule--item{
+    border-top: 2px solid #eff0f2;
+    padding-top: 30px;
+}
+/* .placelist{
+    width: 80px;
+    height: 50px;
+    position: relative;
+    padding-top: 13px;
+    margin-top: 50px;
+    font-size: 17px;
+    color: white;
+    background-color: #3282fa;
+    border-radius: 30px;
+} */
+
+
+.mat-re{
+    font-size: 25px;
+    border-bottom: 2px solid #eff0f2;
+    text-align: left;
+}
+#m2{
+    margin-left: 20px;
+}
+
+/* 리셋 CSS */
+* {margin:0;padding:0;box-sizing:border-box;}
+ul, li {list-style:none;}
+
+
+.slidebox {max-width:700px;margin:0 auto;position:relative;}
+.slidebox .slidelist {position:relative;white-space:nowrap;font-size:0;overflow:hidden;}
+.slidebox .slidelist .slideitem {position:relative;display:inline-block;vertical-align:middle;background-color:#fff;width:100%;transition:all 1s;}
+.slidebox .slidelist .slideitem > a {display:block;width:auto;position:relative;}
+.slidebox .slidelist .slideitem > a img {max-width:100%;}
+
+.slidebox .slide-control [class*="control"] label {position:absolute;z-index:10;top:50%;transform:translateY(-50%);padding:20px;border-radius:50%;cursor:pointer;}
+.slidebox .slide-control [class*="control"] label.prev {left:-50px;background:#2178ff url('../images/left-arrow.png') center center / 50% no-repeat;}
+.slidebox .slide-control [class*="control"] label.next {right:-50px;background:#2178ff url('../images/right-arrow.png') center center / 50% no-repeat;}
+
+[name="slide"] {display:none;}
+#slide01:checked ~ .slidelist .slideitem {left:0;}
+#slide02:checked ~ .slidelist .slideitem {left:-100%;}
+#slide03:checked ~ .slidelist .slideitem {left:-200%;}
+#slide04:checked ~ .slidelist .slideitem {left:-300%;}
+
+.slide-control [class*="control"] {display:none;}
+#slide01:checked ~ .slide-control .control01 {display:block;}
+#slide02:checked ~ .slide-control .control02 {display:block;}
+#slide03:checked ~ .slide-control .control03 {display:block;}
+#slide04:checked ~ .slide-control .control04 {display:block;}
+
+.slidebox{
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    padding-top: 75px;
+}
+.pt1{
+    color: black;
+    border-radius: 10px;
+    background-color: white;
+    border: 0px;
+    width: 100px;
+    height: 50px;
+}
+.pt1:focus{
+    background-color: #2178ff;
+    color: white;
+}
+.pt1-text{
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.top-m{
+    
+    text-decoration-line: none;
+    background-color: bisque;
+    border-radius: 15px;
+}
+
+/* #m1{
+    color: black;
+    text-decoration-line: none;
+    font-weight: bolder;
+    font-size: 30px;
+    margin-bottom: 10%;
+   
+    
+}
+
+#m2{
+    color: black;
+    text-decoration-line: none;
+    text-decoration-line: none;
+    border-radius: 15px;
+    padding: 3px;
+    margin-bottom: 10%;
+    font-size: 30px;
+    margin-left: 20px;
+    font-weight: bolder;
+
+} */
+    
+.slider-1{
+    width: 100%;
+    height: 100%;
+    
+    
+   
+    
+}
+
+
+.slider-form{
+    max-width: 50%;
+    margin: 0 auto;
+    margin-top:10%;
+    margin-bottom: 25%;
+}
+
+.test-a{
+    display: flex;
+    margin-left:75px;
+    }
+
+/* .pt1{
+
+    background-color: #1570FF; 
+    border-radius: 30%;
+    border-radius: 15px;
+    
+    margin-top: 17px;
+    margin-left: 60px;
+    padding: 25px;
+    text-align: center;
+    font-size: larger;
+  
+}
+
+.pt1-text{
+    
+   
+    color: rgb(255, 255, 255); 
+    text-decoration-line: none;
+} */
+
+
+
+.time{
+
+
+    size: 50%;
+    /* margin-top: 5%; */
+    margin-top: 50px;
+    width: 15%;
+    background-color: rgb(123, 107, 212);
+    color: white;
+    border-radius: 15px;
+    border-radius: 50px;
+    padding: 1%;
+    text-decoration-line: none;
+  
+}
+
+.t1{
+    margin-left: 15px;
+    margin-bottom: 15px;
+    background-color: #E9F6FF;
+    border-radius: 15px;
+    padding: 1%;
+    color: black;
+}
+
+#t2{
+    margin-left: 15px;
+    margin-bottom: 15px;
+    background-color: #E9F6FF;
+    border-radius: 15px;
+    padding: 1%;
+    color: black;
+
+
+}
+
+.time1{
+    text-decoration-line: none;
+    display: flex;
+}
+
+.time-mem{
+    border-bottom: 2px solid gray;
+}
+
+/* .mat-re{
+    border-bottom: 2px solid gray;
+    margin-bottom: 3%;
+    margin-top: 10%;
+    margin-right: 80%;
+} */
+
+.place-info{
+   
+    margin-left: 80%;
+   
+    font-size: 15px;
+    border-radius: 15px;
+    background-color: rgb(207, 207, 207);
+}
+
+.pi-bnt{
+    text-decoration-line: none;
+    color: rgba(0, 0, 0, 0.904);
+}
+
+
+.select-c{
+    /* margin-right: 100%;
+    margin-top: 40px; */
+    padding: 8px;
+    border-radius: 15px;
+    size: 200px;
+   float: left;
+}
+
+.select-lv{
+    /* margin-right: 100%;
+    margin-top: 40px; */
+    padding: 8px;
+    border-radius: 15px;
+    size: 200px;
+    float: left;
+    margin-left: 12px;
+}
+
+.plc-in{
+
+    margin-bottom: 15px;
+}

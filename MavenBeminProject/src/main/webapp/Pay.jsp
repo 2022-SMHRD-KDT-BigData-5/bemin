@@ -205,7 +205,7 @@
 							<div class="content_footer">
 								<div class="btn-wrap bottom-fixed">
 									<p style="text-decoration: underline">위 내용을 동의하고 결제를 진행합니다.</p>
-									<button id="flex">결제하기</button>
+									<button id="flex"><a href="PayFin.jsp" style="color: white;">결제하기</a></button>
 								</div>
 							</div>
 						</div>
