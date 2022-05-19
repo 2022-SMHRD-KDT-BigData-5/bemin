@@ -1,10 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
- <html class="no-js" lang="en"> 
-<head>
-<meta charset="UTF-8">
- <title>Made One</title>
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>Made One</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="favicon.ico">
@@ -24,14 +27,14 @@
         <link rel="stylesheet" href="assets/css/메인.css">
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="assets/css/responsive.css" />
-        <!-- <link rel="stylesheet" href="assets/css/슬라이드.css" />     -->
-        <link rel="stylesheet" href="assets/css/rental.css" />
+        <link rel="stylesheet" href="assets/css/슬라이드.css" />
         <!---->
         
 
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
-<body data-spy="scroll" data-target=".navbar-collapse">
+
+    <body data-spy="scroll" data-target=".navbar-collapse">
 
 
         <!-- Preloader -->
@@ -52,7 +55,32 @@
 
 
             <nav class="navbar navbar-default bootsnav navbar-fixed">
-         
+                <!-- <div class="navbar-top bg-grey fix">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="navbar-callus text-left sm-text-center">
+                                    <ul class="list-inline">
+                                        <li><a href=""><i class="fa fa-phone"></i> Call us: 1234 5678 90</a></li>
+                                        <li><a href=""><i class="fa fa-envelope-o"></i> Contact us: your@email.com</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="navbar-socail text-right sm-text-center">
+                                    <ul class="list-inline">
+                                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a href=""><i class="fa fa-behance"></i></a></li>
+                                        <li><a href=""><i class="fa fa-dribbble"></i></a></li>vbar--default
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
 
                 <!-- Start Top Search -->
                 <div class="top-search">
@@ -74,18 +102,18 @@
                         </ul>
                     </div> -->
 
-               <!-- Start Header Navigation -->
-               <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="메인.html">
-                    <img src="assets/images/bluelogo.png" class="logo" alt="">
-                    <!-- <a>FLIGHT</a> -->
-                    <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
-                </a>
+                    <!-- Start Header Navigation -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <a class="navbar-brand" href="메인.jsp">
+                            <img src="assets/images/logo1.png" class="logo" alt="">
+                            <!-- <a>FLIGHT</a> -->
+                            <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
+                        </a>
 
-            </div>
+                    </div>
                     <!-- End Header Navigation -->
 
                     <!-- navbar menu -->
@@ -105,6 +133,58 @@
 
             <!--Home Sections-->
 
+            <section id="home" class="home bg-black fix">
+                <div class="overlay"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="main_home text-center">
+                            <div class="col-md-12">
+                                <div class="hello_slid">
+                                    <div class="slid_item">
+                                        <div class="home_text ">
+                                            <h2 class="text-white">Welcome to <strong>Made</strong></h2>
+                                            <h1 class="text-white">We Do Business All Of Time</h1>
+                                            <h3 class="text-white">- We Create a <strong>Concept</strong> into The Market -</h3>
+                                        </div>
+
+                                        <div class="home_btns m-top-40">
+                                            <a href="" class="btn btn-primary m-top-20">Buy Now</a>
+                                            <a href="" class="btn btn-default m-top-20">Take a Tour</a>
+                                        </div>
+                                    </div><!-- End off slid item -->
+                                    <div class="slid_item">
+                                        <div class="home_text ">
+                                            <h2 class="text-white">Welcome to <strong>Made</strong></h2>
+                                            <h1 class="text-white">We Do Business All Of Time</h1>
+                                            <h3 class="text-white">- We Create a <strong>Concept</strong> into The Market -</h3>
+                                        </div>
+
+                                        <div class="home_btns m-top-40">
+                                            <a href="" class="btn btn-primary m-top-20">Buy Now</a>
+                                            <a href="" class="btn btn-default m-top-20">Take a Tour</a>
+                                        </div>
+                                    </div><!-- End off slid item -->
+                                    <div class="slid_item">
+                                        <div class="home_text ">
+                                            <h2 class="text-white">Welcome to <strong>Made</strong></h2>
+                                            <h1 class="text-white">We Do Business All Of Time</h1>
+                                            <h3 class="text-white">- We Create a <strong>Concept</strong> into The Market -</h3>
+                                        </div>
+
+                                        <div class="home_btns m-top-40">
+                                            <a href="" class="btn btn-primary m-top-20">Buy Now</a>
+                                            <a href="" class="btn btn-default m-top-20">Take a Tour</a>
+                                        </div>
+                                    </div><!-- End off slid item -->
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div><!--End off row-->
+                </div><!--End off container -->
+            </section> <!--End off Home Sections-->
 
 
             <section class="match_container">
@@ -112,8 +192,8 @@
                     <div id="dateNav" class="sub-header" style="padding-bottom: 10px;">
                         <div class="mat-re">
                             <span id="m1">
-                                <a href="main.jsp">매치</a>
-                                <a href="Rental.jsp" id="m2">구장 예약</a>
+                                <a href="메인.html">매치</a>
+                                <a href="경기장 예약.html" id="m2">구장 예약</a>
                             </span>
                         </div>
                         <!---->
@@ -183,9 +263,7 @@
                             <div class="main--match--filter">
                                 <div class="filter--wrapper">
                                     <div class="placelist">
-                                       
-                                        <div>
-                                            <select name="select" class="select-c" style=" font-size: 15px;">
+                                        <select name="select" class="select-c">
                                             <option>내 지역</option>
                                             <option>서구</option>
                                             <option>북구</option>
@@ -193,17 +271,15 @@
                                             <option>동구</option>
                                             <option>광산구</option>
                                         </select>
-                                        <select name="select" class="select-lv" style=" font-size: 15x;">
-                                            <option>레벨 선택</option>
-                                            <option>비기너 이상</option>
-                                            <option>루키 이상</option>
-                                            <option>주니어 이상</option>
-                                            <option>시니어 이상</option>
-                                            <option>프로 이상</option>
-                                            <option> 플라이트</option>                                          
+                                        <select name="select" class="select-c">
+                                            <option>레벨</option>
+                                            <option>루키</option>
+                                            <option>비기너</option>
+                                            <option>주니어</option>
+                                            <option>시니어</option>
+                                            <option>프로</option>
+                                            <option>플라이트</option>
                                         </select>
-                                    </div>
-                           
                                     </div>
                                 </div>
                             </div>
@@ -212,100 +288,51 @@
                     <!--match list-->
                     <div id="list" class="list--match-schedule--container">
                         <ul>
-                            <li>
-                            <div>
-                                <p><h3>광주 배드민턴장</h3></p>
-                                
-                                <div class="plc-in">
-                                    <a style="font-size: medium;">구장</a>
-                                    <a style="font-size: small;">규격</a>
-                                    <button  class="place-info"><a href="#" class="pi-bnt" >경기장정보</a></button> 
-                    
-                                </div>
-                                <div class="time-mem">
-                                 <a href="결제.html" class="time1">
-                                        <p class="t1">09:00 ~ 11:00 </p>
-                                        <p class="t1">12:00 ~ 14:00 </p>
-                                        <p class="t1">15:00 ~ 17:00 </p>
-                                        <p class="t1">18:00 ~ 20:00 </p>
-                                        <p class="t1">20:00 ~ 22:00 </p>
-                                        <p id="t2">22:00 ~ 24:00 </p>
-                                    </a>
-                                </div>
-                            </div>
-                         </li>
-                         
-                    
-                         <li>
-                            <div>
-                                <p><h3>광주 배드민턴장</h3></p>
-                                <div class="plc-in">
-                                    <a style="font-size: medium;">구장</a>
-                                    <a style="font-size: small;">규격</a>
-                                    <button  class="place-info"><a href="#" class="pi-bnt" >경기장정보</a></button> 
-                    
-                                </div>
-                                <div class="time-mem">
-                                 <a href="결제.html" class="time1">
-                                        <p class="t1">09:00 ~ 11:00 </p>
-                                        <p class="t1">12:00 ~ 14:00 </p>
-                                        <p class="t1">15:00 ~ 17:00 </p>
-                                        <p class="t1">18:00 ~ 20:00 </p>
-                                        <p class="t1">20:00 ~ 22:00 </p>
-                                        <p id="t2">22:00 ~ 24:00 </p>
-                                    </a>
-                                </div>
-                            </div>
-                         </li>
-                         
-                    
-                         <li>
-                            <div>
-                                <p><h3>광주 배드민턴장</h3></p>
-                                <div class="plc-in">
-                                    <a style="font-size: medium;">구장</a>
-                                    <a style="font-size: small;">규격</a>
-                                    <button  class="place-info"><a href="#" class="pi-bnt" >경기장정보</a></button> 
-                    
-                                </div>
-                                <div class="time-mem">
-                                 <a href="결제.html" class="time1">
-                                        <p class="t1">09:00 ~ 11:00 </p>
-                                        <p class="t1">12:00 ~ 14:00 </p>
-                                        <p class="t1">15:00 ~ 17:00 </p>
-                                        <p class="t1">18:00 ~ 20:00 </p>
-                                        <p class="t1">20:00 ~ 22:00 </p>
-                                        <p id="t2">22:00 ~ 24:00 </p>
-                                    </a>
-                                </div>
-                            </div>
-                         </li>
-                         
-                    
-                         <li>
-                            <div>
-                                <p><h3>광주 배드민턴장</h3></p>
-                                <div class="plc-in">
-                                    <a style="font-size: medium;">구장</a>
-                                    <a style="font-size: small;">규격</a>
-                                    <button  class="place-info"><a href="#" class="pi-bnt" >경기장정보</a></button> 
-                    
-                                </div>
-                                <div class="time-mem">
-                                 <a href="결제.html" class="time1">
-                                        <p class="t1">09:00 ~ 11:00 </p>
-                                        <p class="t1">12:00 ~ 14:00 </p>
-                                        <p class="t1">15:00 ~ 17:00 </p>
-                                        <p class="t1">18:00 ~ 20:00 </p>
-                                        <p class="t1">20:00 ~ 22:00 </p>
-                                        <p id="t2">22:00 ~ 24:00 </p>
-                                    </a>
-                                </div>
-                            </div>
-                         </li>
-                         
-                    
-                    
+                            <li class="list--match-schedule--item">
+                                <a href="참가.html">
+                                    <div class="list--match-schedule__time">
+                                        <p>18:00</p>
+                                    </div>
+                                    <div class="list--match-schedule__status">
+                                        <div class="match-status__join">
+                                            <p>참가하기</p>
+                                        </div>
+                                    </div>
+                                    <div class="list--match-schedule__info">
+                                        <div class="match-list__title">
+                                            <h3>HM풋살파크 인천 청라점 *주차15자리*</h3>
+                                        </div>
+                                        <div class="label--match-option">
+                                            <span class="match--option isMix">남녀모두</span>
+                                            <span>1vs1</span>
+                                            <span>모든 레벨</span>
+                                        </div>
+                                    </div>                                    
+                                </a>
+                            </li>
+                            <li class="list--match-schedule--item">
+                                <a href="#">
+                                    <div class="list--match-schedule__time">
+                                        <p style>20:00</p>
+                                    </div>
+                                    <div class="list--match-schedule__status_b">
+                                        <div class="match-status__deadline">
+                                            <p>마감</p>
+                                        </div>
+                                    </div>
+                                    <div class="list--match-schedule__info">
+                                        <div class="match-list__title">
+                                            <h3>인천 송도 트리플 스트리트 풋살장 B구장</h3>
+                                        </div>
+                                        <div class="label--match-option">
+                                            <span class="match--option isMix">남자</span>
+                                            <span>2vs2</span>
+                                            <span></span>
+                                            <span>프로 이상</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -321,17 +348,12 @@
                             <div class="col-md-3">
                                 <div class="widget_item widget_about">
                                     <h5 class="text-white">About Us</h5>
-                                    <p class="m-top-20">Lorem ipsum dolor sit amet consec tetur adipiscing elit 
-                                        nulla aliquet pretium nisi in cursus 
-                                        maecenas nec eleifen.</p>
+                                    <p class="m-top-20"></p>
                                     <div class="widget_ab_item m-top-30">
                                         <div class="item_icon"><i class="fa fa-location-arrow"></i></div>
                                         <div class="widget_ab_item_text">
                                             <h6 class="text-white">Location</h6>
-                                            <p>
-                                                123 suscipit ipsum nam auctor
-                                                mauris dui, ac sollicitudin mauris,
-                                                Bandung</p>
+                                            <p>광주 동구 예술길 31-15 4층</p>
                                         </div>
                                     </div>
                                     <div class="widget_ab_item m-top-30">
@@ -345,7 +367,7 @@
                                         <div class="item_icon"><i class="fa fa-envelope-o"></i></div>
                                         <div class="widget_ab_item_text">
                                             <h6 class="text-white">Email Address :</h6>
-                                            <p>youremail@mail.com</p>
+                                            <p>FLIGHT@flight.com</p>
                                         </div>
                                     </div>
                                 </div><!-- End off widget item -->
@@ -380,14 +402,14 @@
 
                             <div class="col-md-3">
                                 <div class="widget_item widget_service sm-m-top-50">
-                                    <h5 class="text-white">Latest News</h5>
+                                    <h5 class="text-white">Shortcut</h5>
                                     <ul class="m-top-20">
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> Web Design</a></li>
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> User Interface Design</a></li>
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> E- Commerce</a></li>
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> Web Hosting</a></li>
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> Themes</a></li>
-                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> Support Forums</a></li>
+                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 매치</a></li>
+                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 구장 예약</a></li>
+                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 마이페이지</a></li>
+                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 회원가입</a></li>
+                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 로그인</a></li>
+                                        <li class="m-top-20"><a href=""><i class="fa fa-angle-right"></i> 티어, 매너 안내</a></li>
                                     </ul>
                                 </div><!-- End off widget item -->
                             </div><!-- End off col-md-3 -->
@@ -403,9 +425,8 @@
 
                                     </form>
                                     <div class="widget_brand m-top-40">
-                                        <a href="" class="text-uppercase">Your Logo</a>
-                                        <p>Lorem ipsum dolor sit amet consec tetur 
-                                            adipiscing elit nulla aliquet pretium nisi in</p>
+                                        <a href="" class="text-uppercase"><img src="assets/images/logo1.png" class="logo" alt=""></a>
+                                        <p>배드민턴치고 싶을 땐 플라이트</p>
                                     </div>
                                     <ul class="list-inline m-top-20">
                                         <li>-  <a href=""><i class="fa fa-facebook"></i></a></li>
