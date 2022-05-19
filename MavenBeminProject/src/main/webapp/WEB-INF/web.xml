@@ -27,7 +27,13 @@
   	<display-name>PayCon</display-name>
   	<description></description>
   	<servlet-class>com.smhrd.controller.PayCon</servlet-class>
-  </servlet> 
+  </servlet>
+  <servlet>
+  	<servlet-name>RentalCon</servlet-name>
+  	<display-name>RentalCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.RentalCon</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>FindCon</servlet-name>
   	<url-pattern>/FindCon</url-pattern>
@@ -43,6 +49,10 @@
   <servlet-mapping>
   	<servlet-name>PayCon</servlet-name>
   	<url-pattern>/PayCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RentalCon</servlet-name>
+  	<url-pattern>/RentalCon</url-pattern>
   </servlet-mapping>
   
 </web-app>

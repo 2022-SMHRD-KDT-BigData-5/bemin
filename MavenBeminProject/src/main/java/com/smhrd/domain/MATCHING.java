@@ -1,94 +1,126 @@
 package com.smhrd.domain;
 
-import java.sql.Date;
-import java.sql.Time;
+import java.math.BigDecimal;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+
+import oracle.sql.TIMESTAMP;
+
 
 public class MATCHING {
-	private int MAT_NO;
-	private Date RES_DATE;
-	private Time RES_TIME;
+	private BigDecimal MAT_NO;
+	private String RES_DATE;
+	private String RES_TIME;
 	private String RES_PLACE;
-	private String ID;
-	private int UNIT;
-	private int MAT_MEMBER;
-	private int STN_TIER;
-	private int STN_MANNER;
-	private int MAT_CPL;
-	public MATCHING(int mAT_NO, Date rES_DATE, Time rES_TIME, String rES_PLACE, String iD, int uNIT, int mAT_MEMBER,
-			int sTN_TIER, int sTN_MANNER, int mAT_CPL) {
+	private String USER_ID;
+	private String UNIT;
+	private BigDecimal MAT_MEMBER;
+	private BigDecimal STN_TIER;
+	private BigDecimal STN_MANNER;
+	private BigDecimal MAT_CPL;
+	
+	
+	public MATCHING(String RES_DATE, String RES_TIME, String RES_PLACE, BigDecimal MAT_MEMBER) {
 		super();
-		MAT_NO = mAT_NO;
+		this.RES_DATE = RES_DATE;
+		this.RES_TIME = RES_TIME;
+		this.RES_PLACE = RES_PLACE;
+		this.MAT_MEMBER = MAT_MEMBER;
+	}
+
+	public MATCHING(BigDecimal MAT_NO, String RES_DATE, String RES_TIME, String RES_PLACE, String USER_ID, String UNIT, BigDecimal MAT_MEMBER,
+			BigDecimal STN_TIER, BigDecimal STN_MANNER, BigDecimal MAT_CPL) {
+		super();
+		this.MAT_NO = MAT_NO;
+		this.RES_DATE = RES_DATE;
+		this.RES_TIME = RES_TIME;
+		this.RES_PLACE = RES_PLACE;
+		this.USER_ID = USER_ID;
+		this.UNIT = UNIT;
+		this.MAT_MEMBER = MAT_MEMBER;
+		this.STN_TIER = STN_TIER;
+		this.STN_MANNER = STN_MANNER;
+		this.MAT_CPL = MAT_CPL;
+	}
+	
+	
+	
+	
+	
+	public MATCHING(String rES_DATE, String rES_TIME, String rES_PLACE) {
+		super();
 		RES_DATE = rES_DATE;
 		RES_TIME = rES_TIME;
 		RES_PLACE = rES_PLACE;
-		ID = iD;
-		UNIT = uNIT;
-		MAT_MEMBER = mAT_MEMBER;
-		STN_TIER = sTN_TIER;
-		STN_MANNER = sTN_MANNER;
-		MAT_CPL = mAT_CPL;
 	}
-	public int getMAT_NO() {
+
+	public BigDecimal getMAT_NO() {
 		return MAT_NO;
 	}
-	public void setMAT_NO(int mAT_NO) {
-		MAT_NO = mAT_NO;
+	public void setMAT_NO(BigDecimal MAT_NO) {
+		this.MAT_NO = MAT_NO;
 	}
-	public Date getRES_DATE() {
+	public String getRES_DATE() {
 		return RES_DATE;
 	}
-	public void setRES_DATE(Date rES_DATE) {
-		RES_DATE = rES_DATE;
+	public void setRES_DATE(String RES_DATE) {
+		this.RES_DATE = RES_DATE;
 	}
-	public Time getRES_TIME() {
+	public String getRES_TIME() {
 		return RES_TIME;
 	}
-	public void setRES_TIME(Time rES_TIME) {
-		RES_TIME = rES_TIME;
+	public void setRES_TIME(String RES_TIME) {
+		this.RES_TIME = RES_TIME;
 	}
 	public String getRES_PLACE() {
 		return RES_PLACE;
 	}
-	public void setRES_PLACE(String rES_PLACE) {
-		RES_PLACE = rES_PLACE;
+	public void setRES_PLACE(String RES_PLACE) {
+		this.RES_PLACE = RES_PLACE;
 	}
-	public String getID() {
-		return ID;
+	public String getUSER_ID() {
+		return USER_ID;
 	}
-	public void setID(String iD) {
-		ID = iD;
+	public void setUSER_ID(String USER_ID) {
+		this.USER_ID = USER_ID;
 	}
-	public int getUNIT() {
+	public String getUNIT() {
 		return UNIT;
 	}
-	public void setUNIT(int uNIT) {
-		UNIT = uNIT;
+	public void setUNIT(String UNIT) {
+		this.UNIT = UNIT;
 	}
-	public int getMAT_MEMBER() {
+	public BigDecimal getMAT_MEMBER() {
 		return MAT_MEMBER;
 	}
-	public void setMAT_MEMBER(int mAT_MEMBER) {
-		MAT_MEMBER = mAT_MEMBER;
+	public void setMAT_MEMBER(BigDecimal MAT_MEMBER) {
+		this.MAT_MEMBER = MAT_MEMBER;
 	}
-	public int getSTN_TIER() {
+	public BigDecimal getSTN_TIER() {
 		return STN_TIER;
 	}
-	public void setSTN_TIER(int sTN_TIER) {
-		STN_TIER = sTN_TIER;
+	public void setSTN_TIER(BigDecimal STN_TIER) {
+		this.STN_TIER = STN_TIER;
 	}
-	public int getSTN_MANNER() {
+	public BigDecimal getSTN_MANNER() {
 		return STN_MANNER;
 	}
-	public void setSTN_MANNER(int sTN_MANNER) {
-		STN_MANNER = sTN_MANNER;
+	public void setSTN_MANNER(BigDecimal STN_MANNER) {
+		this.STN_MANNER = STN_MANNER;
 	}
-	public int getMAT_CPL() {
+	public BigDecimal getMAT_CPL() {
 		return MAT_CPL;
 	}
-	public void setMAT_CPL(int mAT_CPL) {
-		MAT_CPL = mAT_CPL;
+	public void setMAT_CPL(BigDecimal MAT_CPL) {
+		this.MAT_CPL = MAT_CPL;
 	}
 	
-	
+    public String getDateStr() {
+        return new SimpleDateFormat("yyyy-MM-dd").format(this.RES_DATE);
+    }
+    
+    public String getTimeStr() {
+        return new SimpleDateFormat("HH:mm:ss").format(this.RES_TIME);
+    }
 	
 }

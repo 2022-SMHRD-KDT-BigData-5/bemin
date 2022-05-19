@@ -1,6 +1,8 @@
+<%@page import="com.smhrd.domain.MATCHING"%>
 <%@page import="com.smhrd.domain.USER_INFO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,12 +39,37 @@
 
 <body data-spy="scroll" data-target=".navbar-collapse">
 
-<%
-USER_INFO loginMember = (USER_INFO)session.getAttribute("loginMember");
-pageContext.setAttribute("loginMember", loginMember);
+	<%
+	// 경기장 예약 ==> 결제페이지  컨트롤러
+	// 컨트롤러 기능
 
+	// 경기장 예약 페이지에서 날짜,경기장,시간 정보 가져오기(matching 타입 세션)(예약->결제로 가져올 생성자)
+	// user_info에서 로그인한 아이디 캐시정보 가져오기(세션)
+	// 선택한 경기장의 요금 정보 가져와야함
 
-%>
+	// - 예약 페이지에서 날짜,경기장,시간 정보 가져올수 있음
+	// - 결제 페이지에 경기장 정보 보낼 수 있음
+	MATCHING placeInfo = (MATCHING) session.getAttribute("placeInfo");
+	pageContext.setAttribute("placeInfo", placeInfo);
+
+	//USER_INFO에서 로그인한 세션 받아오기(캐시)
+	USER_INFO loginMember = (USER_INFO) session.getAttribute("loginMember");
+	pageContext.setAttribute("loginMember", loginMember);
+
+	//leftCash 잔액 정보 로그인에 업데이트 해야함
+
+	// 결제페이지 ==> 완료 페이지 컨트롤러
+	// 로그인세션 정보로 가져와서 남은 캐시 정보 user_info에 업데이트
+	// 이 페이지에서 matching 테이블에 insert할 데이터들은
+	// 날짜, 경기장, 시간 ==> 세션으로 값 가져오기
+	// 개설자(세션 로그인 아이디), '개인or단체','남or여','티어','매너','인원 2or4' 정보 가져오기
+	// 해당 정보들 insert ()
+
+	//웹 요청사항
+	//예약 내역 밑에 "원하는 매칭 상대" '개인or단체','남or여','티어','매너','인원 2or4'
+	// 티어는 체크박스 형태로 6단계 보여주기가 나을듯? 고민해봐야함
+	// 매너는 'x점 이상' 으로 선택하는데 x점을 select 할지 체크박스 할지 고민해봐야할듯
+	%>
 
 	<form class="fom">
 		<div class="logoName">
@@ -54,11 +81,11 @@ pageContext.setAttribute("loginMember", loginMember);
 					<div class="content-header_title">
 						<h2 style="text-align: center;">예약내역</h2>
 						<br>
-						<h3 style="font-weight: 400;">구장</h3>
+						<h3 style="font-weight: 400;">${placeInfo.place}</h3>
 						<br>
-						<h4 style="font-weight: 400;">요일</h4>
+						<h4 style="font-weight: 400;">${placeInfo.date}</h4>
 						<br>
-						<h4 style="font-weight: 400;">시간</h4>
+						<h4 style="font-weight: 400;">${placeInfo.time}</h4>
 						<br>
 					</div>
 				</div>
@@ -76,17 +103,20 @@ pageContext.setAttribute("loginMember", loginMember);
 									<h4 style="text-align: left">🚩캐시</h4>
 
 									<div class="list-right">
-									<% 
-									//USER_INFO에서 로그인한 세션 받아오기(캐시)
-									%>
-										<input type="text" name="useCash" >
+										<p id="myCash">10000</p>
+										<input type="text" name="useCash" id="inputCash"
+											value="사용할 캐시를 입력하세요" onfocus="this.value=''" />
 										<p>원 사용</p>
-										<input type="image" src="https://plab-football.s3.amazonaws.com/static/img/ic_arrow_right.svg" alt="캐시사용버튼">
+										<button type="button"
+											src="https://plab-football.s3.amazonaws.com/static/img/ic_arrow_right.svg"
+											id="useCash">버튼</button>
 									</div>
 									</p>
 									<div style="text-align: right; padding-bottom: 20px;">
-										<span style="color: rgb(159, 177, 189); font-size: 12px;">잔액
-											<${loginMember.getCASH()}원</span>
+										<span style="color: rgb(159, 177, 189); font-size: 12px;">
+											잔액 </span> <span id="leftCash" name="leftCash"> </span> <span
+											style="color: rgb(159, 177, 189); font-size: 12px;"> 원
+										</span>
 									</div>
 								</div>
 							</div>
@@ -94,28 +124,28 @@ pageContext.setAttribute("loginMember", loginMember);
 					</section>
 
 					<section>
-						<div class="section_title" >
+						<div class="section_title">
 							<h4 style="text-align: left">🚩결제</h4>
 
 							<div class="section_body">
 								<div class="recipt">
 									<ul class="recipt-list" style="text-align: right;">
-										<li class="recipt-list_item"><strong>이용 금액</strong> <strong>0원</strong>
-										</li>
+										<li class="recipt-list_item"><strong>이용 금액</strong> <strong
+											id="usePrice">5000</strong></li>
 										<!---->
 										<!---->
 										<!---->
 									</ul>
 									<div class="recipt-payment" style="text-align: right;">
-										<div class="recipt-list_label">추가 결제 금액</div>
-										<div class="recipt-list_value">0원</div>
+										<div class="recipt-list_label">결제 금액</div>
+										<div id="leftPrice" class="recipt-list_value">5000</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</section>
 
-				
+
 					<section class="pay_c">
 						<div class="section_title_1">
 							<h4 style="text-align: left;">🚩결제 수단</h4>
@@ -180,5 +210,83 @@ pageContext.setAttribute("loginMember", loginMember);
 							</div>
 						</div>
 	</form>
+
+	<!--캐시 입력 사용  -->
+	<script>
+	
+	</script>
+	<script>
+		//버튼
+		let useCash = document.querySelector('#useCash');
+		//입력 캐시
+		let inputCash = document.querySelector('#inputCash');
+		//내 캐시
+		let myCash = document.querySelector('#myCash');
+		//내 캐시 - 입력캐시
+		let leftCash = document.querySelector('#leftCash');
+
+		//요금
+		let usePrice = document.querySelector('#usePrice');
+		//요금 - 입력캐시
+		let leftPrice = document.querySelector('#leftPrice');
+		
+
+		//캐시 계산
+		useCash.addEventListener('click', function() {
+
+			let txt1 = Number(inputCash.value)
+			let txt2 = Number(myCash.innerHTML)
+			let txt3 = Number(usePrice.innerHTML)
+			//내가 가진 캐시보다 많으면 X 경기장 요금보다 캐시입력값이 많으면X
+			if (txt1 <= txt3 & txt1 <= txt2) {
+				leftCash.innerHTML = Number(myCash.innerHTML)
+						- Number(inputCash.value);
+				leftPrice.innerHTML = Number(usePrice.innerHTML)
+						- Number(inputCash.value);
+			} else if (txt1 > txt3) {
+				leftCash.innerHTML = Number(myCash.innerHTML)
+						- Number(usePrice.innerHTML);
+				leftPrice.innerHTML = 0
+			} else if (txt1 > txt2) {
+				alert("캐시 보유 금액이 부족합니다")
+				return false
+			}
+
+		});
+	</script>
+	<script>
+		$("#inputCash").keyup(function() {
+			chk_input_filter("number", $("#inputCash"));
+		});
+
+		function chk_input_filter(type, obj) {
+
+			var str = $(obj).val();
+
+			if (type == 'number') {
+				//숫자만 허용
+				$(obj).val(str.replace(/[^0-9]/gi, ""));
+			}
+		}
+	</script>
+
+
+	<script>
+	// onkeyup="inputNumberFormat(this)"
+	
+	/*  function inputNumberFormat(obj) {
+	     obj.value = comma(uncomma(obj.value));
+	 }
+
+	 function comma(str) {
+	     str = String(str);
+	     return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+	 }
+
+	 function uncomma(str) {
+	     str = String(str);
+	     return str.replace(/[^\d]+/g, '');
+	 } */
+	</script>
 </body>
 </html>
