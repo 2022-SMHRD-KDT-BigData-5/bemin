@@ -24,6 +24,10 @@ public class Join1Con extends HttpServlet {
 		//post방식으로 데이터 전송 시 인코딩
 		request.setCharacterEncoding("utf-8");
 		
+		try {
+			
+
+		
 		String id=request.getParameter("id");
 		String pw=request.getParameter("pw");
 		String name=request.getParameter("name");
@@ -51,7 +55,9 @@ public class Join1Con extends HttpServlet {
 			System.out.println("회원가입 실패");
 			response.sendRedirect("회원가입.jsp");
 		}
-		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	
 	}
 

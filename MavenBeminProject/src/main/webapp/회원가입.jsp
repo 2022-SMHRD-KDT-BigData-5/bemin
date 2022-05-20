@@ -103,7 +103,7 @@
 			<!-- ID -->
 			<div>
 				<h3 class="join_title">
-				<form action="Join1Con" method="post">
+				<form action="Join1Con" method="post" name="frm">
 					<label for="id">아이디</label>
 				</h3>
 				<span class="box int_id"> <input type="text" name="id" id="id"
@@ -349,6 +349,9 @@
 			}
 		})
 	}
+	
+
+	
 	
 			
 	
