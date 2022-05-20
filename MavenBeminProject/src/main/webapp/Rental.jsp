@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="assets/css/메인.css">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/responsive.css" />
-<!-- <link rel="stylesheet" href="assets/css/슬라이드.css" />     -->
+<link rel="stylesheet" href="assets/css/슬라이드.css" />
 <link rel="stylesheet" href="assets/css/rental.css" />
 <!---->
 
@@ -475,63 +475,59 @@
 	<script src="assets/js/placelist.js"></script>
 
 
-	<script>
-		let week = new Array('일', '월', '화', '수', '목', '금', '토');
 
-		let dayList = []
-		let dateList = []
+<script>
+         let week = new Array('일', '월', '화', '수', '목', '금', '토');
 
-		let today = new Date();
-		let Day = today.getDay()
-		let todayLabel = week[Day];
-		dateList.push(today.getDate())
-		dayList.push(todayLabel)
+         let dayList = []
+         let dateList = []
 
-		for (let i = 1; i < 14; i++) {
-			today.setDate(today.getDate() + 1);
-			let Day = today.getDay()
-			let todayLabel = week[Day];
-			dateList.push(today.getDate())
-			dayList.push(todayLabel)
-		}
+         let today = new Date();
+         let Day = today.getDay()
+         let todayLabel = week[Day];
+         dateList.push(today.getDate())
+         dayList.push(todayLabel)
 
-		//1페이지 날짜
-		let dayCon1 = document.querySelector('#dayCon1');
-		let html1 = '';
-		for (let i = 0; i < 7; i++) {
-			html1 += '<button class="pt1"><div class="pt1-text"><div>'
-					+ dateList[i] + '</div>' + dayList[i] + '</div></button>';
-		}
-		dayCon1.innerHTML = html1;
+         for (let i = 1; i < 14; i++) {
+            today.setDate(today.getDate() + 1);
+            let Day = today.getDay()
+            let todayLabel = week[Day];
+            dateList.push(today.getDate())
+            dayList.push(todayLabel)
+         }
 
-		//2페이지 날짜
-		let dayCon2 = document.querySelector('#dayCon2');
-		let html2 = '';
-		for (let i = 7; i < 14; i++) {
-			html2 += '<button class="pt1"><div class="pt1-text"><div>'
-					+ dateList[i] + '</div>' + dayList[i] + '</div></button>';
-		}
+         //1페이지 날짜
+         let dayCon1 = document.querySelector('#dayCon1');
+         let html1 = '';
+         for (let i = 0; i < 7; i++) {
+            html1 += '<button class="pt1"><div class="pt1-text">'+dateList[i]+'</div><div class="pt1-text">'+dayList[i]+'</div></button>';
+         }
+         dayCon1.innerHTML = html1;
 
-		dayCon2.innerHTML = html2;
-		
-		
-		//<button class="pt1"><div class="pt1-text">
-		//<div>날짜</div>
-		//요일</div></button>
-		//Date 값 불러오기
-		let liTags = document.querySelectorAll('#dayCon1 > button');			
-		
-		for (let i = 0; i < liTags.length; i++) {
-			liTags[i].addEventListener('click', function() {
-				
-				$(this).children(.pt1-text>div)
-				//Ajax방식으로 날짜데이터를 서버에		
-				// 전송해서 해당 날짜에 예약한 경기리스트를 요청		
-				//해당 날짜에 예약한 경기목록		
-				$.ajax
-			});
-		}
-	</script>
+         //2페이지 날짜
+         let dayCon2 = document.querySelector('#dayCon2');
+         let html2 = '';
+         for (let i = 7; i < 14; i++) {
+            html2 += '<button class="pt1"><div class="pt1-text">'+dateList[i]+'</div><div class="pt1-text">'+dayList[i]+'</div></button>';
+         }
+
+         dayCon2.innerHTML = html2;
+         
+         
+         
+         //Date 값 불러오기
+       $(document).on('click','.pt1', function(){
+         let date = $(this).children('div:nth-child(1)').text();
+         let day = $(this).children('div:nth-child(2)').text();
+         console.log(date)
+         console.log(day)
+         //Ajax방식으로 날짜데이터를 서버에      
+         // 전송해서 해당 날짜에 예약한 경기리스트를 요청      
+         //해당 날짜에 예약한 경기목록      
+            
+         })
+ 
+      </script>
 
 
 </body>

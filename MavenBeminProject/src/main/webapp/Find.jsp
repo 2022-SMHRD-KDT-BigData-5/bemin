@@ -196,7 +196,7 @@ $('#find-id-btn').click(function(){
 			alert('찾으시는 아이디는 '+data+'입니다.')
 		},
 		error: function(){
-			alert("통신실패")
+			alert("일치하는 정보가 없습니다")
 		}
 	})    
 })
@@ -215,7 +215,7 @@ $('#find-pw-btn').click(function(){
 			alert('찾으시는 비밀번호는 '+data+'입니다.')
 		},
 		error: function(){
-			alert("통신실패")
+			alert("일치하는 정보가 없습니다")
 		}
 	})    
 })
