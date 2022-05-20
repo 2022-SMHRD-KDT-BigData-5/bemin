@@ -1,5 +1,12 @@
+<%@page import="java.io.PrintWriter"%>
+<%@page import="java.math.BigDecimal"%>
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="com.smhrd.domain.PLACE_INFO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.domain.PLACE_INFODAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
@@ -183,32 +190,51 @@
 				<!--match list-->
 				<div id="list" class="list--match-schedule--container">
 					<ul>
-						<li>
-							<div>
-								<p>
-								<h3>광주 배드민턴장</h3>
-								</p>
 
-								<div class="plc-in">
-									<a style="font-size: medium;">구장</a> <a
-										style="font-size: small;">규격</a>
-									<button class="place-info">
-										<a href="#" class="pi-bnt">경기장정보</a>
-									</button>
+						<%
+						//경기장 정보 모두 불러오기
+						// 경기장 시작, 끝나는 시간 이용해서 시간표 작성
+						// 평일인지 주말인지에 따라 시간 다르게
+						PLACE_INFODAO dao = new PLACE_INFODAO();
+						List<PLACE_INFO> PlaceList = dao.PlaceAll();
+						pageContext.setAttribute("PlaceList", PlaceList);
 
+
+
+						%>
+							<li>
+								<div>
+									<p>
+									<h3>광주 배드민턴장</h3>
+									</p>
+
+									<div class="plc-in">
+										<a style="font-size: medium;">구장</a> <a
+											style="font-size: small;">규격</a>
+										<button class="place-info">
+											<a href="#" class="pi-bnt">경기장정보</a>
+										</button>
+
+									</div>
+									<div class="time-mem">
+										<a href="결제.html" class="time1">
+										<%
+										int start = Integer.valueOf(PlaceList.get(0).getWEEK_SRT()).intValue();
+										int end = Integer.valueOf(PlaceList.get(0).getWEEK_END()).intValue();
+										while(true){
+											int two = 2;
+											int start2 = start+2;%>
+											<p class='t1'><%=start%>:00 ~ <%=start2%>:00</p>
+										<%	start +=2;
+											if(start == end){
+												break;
+											}	
+										} %>
+										
+										</a>
+									</div>
 								</div>
-								<div class="time-mem">
-									<a href="결제.html" class="time1">
-										<p class="t1">09:00 ~ 11:00</p>
-										<p class="t1">12:00 ~ 14:00</p>
-										<p class="t1">15:00 ~ 17:00</p>
-										<p class="t1">18:00 ~ 20:00</p>
-										<p class="t1">20:00 ~ 22:00</p>
-										<p id="t2">22:00 ~ 24:00</p>
-									</a>
-								</div>
-							</div>
-						</li>
+							</li>
 
 
 						<li>
@@ -476,7 +502,7 @@
 
 
 
-<script>
+	<script>
          let week = new Array('일', '월', '화', '수', '목', '금', '토');
 
          let dayList = []
@@ -514,19 +540,20 @@
          dayCon2.innerHTML = html2;
          
          
-         
+         let date =''
+         let day = ''
          //Date 값 불러오기
        $(document).on('click','.pt1', function(){
-         let date = $(this).children('div:nth-child(1)').text();
-         let day = $(this).children('div:nth-child(2)').text();
-         console.log(date)
-         console.log(day)
+         date = $(this).children('div:nth-child(1)').text();
+         day = $(this).children('div:nth-child(2)').text();
          //Ajax방식으로 날짜데이터를 서버에      
          // 전송해서 해당 날짜에 예약한 경기리스트를 요청      
          //해당 날짜에 예약한 경기목록      
+            })
             
-         })
- 
+         // matching 정보 다 불러오기
+         
+    
       </script>
 
 

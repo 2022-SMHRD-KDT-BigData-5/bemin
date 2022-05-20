@@ -7,10 +7,10 @@ public class PLACE_INFO {
 	
 	String PLACE_NAME;
 	String PLACE_ADD;
-	BigDecimal WEEK_SRT;
-	BigDecimal WEEK_END;
-	BigDecimal WKND_SRT;
-	BigDecimal WKND_END;
+	String WEEK_SRT;
+	String WEEK_END;
+	String WKND_SRT;
+	String WKND_END;
 	String PLACE_TEL;
 	String PLACE_PRICE;
 	BigDecimal PLACE_LAT;
@@ -21,8 +21,8 @@ public class PLACE_INFO {
 	
 
 	
-	public PLACE_INFO(String pLACE_NAME, String pLACE_ADD, BigDecimal wEEK_SRT, BigDecimal wEEK_END,
-			BigDecimal wKND_SRT, BigDecimal wKND_END, String pLACE_TEL, String pLACE_PRICE, BigDecimal pLACE_LAT,
+	public PLACE_INFO(String pLACE_NAME, String pLACE_ADD, String wEEK_SRT, String wEEK_END,
+			String wKND_SRT, String wKND_END, String pLACE_TEL, String pLACE_PRICE, BigDecimal pLACE_LAT,
 			BigDecimal pLACE_HAR, String oUTDOOR, String sHOWER, String pARKING) {
 		super();
 		PLACE_NAME = pLACE_NAME;
@@ -51,28 +51,28 @@ public class PLACE_INFO {
 	public void setPLACE_ADD(String pLACE_ADD) {
 		PLACE_ADD = pLACE_ADD;
 	}
-	public BigDecimal getWEEK_SRT() {
+	public String getWEEK_SRT() {
 		return WEEK_SRT;
 	}
-	public void setWEEK_SRT(BigDecimal wEEK_SRT) {
+	public void setWEEK_SRT(String wEEK_SRT) {
 		WEEK_SRT = wEEK_SRT;
 	}
-	public BigDecimal getWEEK_END() {
+	public String getWEEK_END() {
 		return WEEK_END;
 	}
-	public void setWEEK_END(BigDecimal wEEK_END) {
+	public void setWEEK_END(String wEEK_END) {
 		WEEK_END = wEEK_END;
 	}
-	public BigDecimal getWKND_SRT() {
+	public String getWKND_SRT() {
 		return WKND_SRT;
 	}
-	public void setWKND_SRT(BigDecimal wKND_SRT) {
+	public void setWKND_SRT(String wKND_SRT) {
 		WKND_SRT = wKND_SRT;
 	}
-	public BigDecimal getWKND_END() {
+	public String getWKND_END() {
 		return WKND_END;
 	}
-	public void setWKND_END(BigDecimal wKND_END) {
+	public void setWKND_END(String wKND_END) {
 		WKND_END = wKND_END;
 	}
 	public String getPLACE_TEL() {
