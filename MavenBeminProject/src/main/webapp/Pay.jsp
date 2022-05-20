@@ -210,7 +210,21 @@
 							</div>
 						</div>
 	</form>
+	    
+	    <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="assets/js/vendor/bootstrap.min.js"></script>
 
+        <script src="assets/js/jquery.magnific-popup.js"></script>
+        <script src="assets/js/jquery.easing.1.3.js"></script>
+        <script src="assets/css/slick/slick.js"></script>
+        <script src="assets/css/slick/slick.min.js"></script>
+        <script src="assets/js/jquery.collapse.js"></script>
+        <script src="assets/js/bootsnav.js"></script>
+
+
+
+        <script src="assets/js/plugins.js"></script>
+        <script src="assets/js/main.js"></script>
 	<!--캐시 입력 사용  -->
 	<script>
 	
@@ -243,11 +257,15 @@
 						- Number(inputCash.value);
 				leftPrice.innerHTML = Number(usePrice.innerHTML)
 						- Number(inputCash.value);
-			} else if (txt1 > txt3) {
+			}
+			
+			
+			if (txt1 > txt3) {
 				leftCash.innerHTML = Number(myCash.innerHTML)
 						- Number(usePrice.innerHTML);
 				leftPrice.innerHTML = 0
-			} else if (txt1 > txt2) {
+			}
+			if (txt1 > txt2) {
 				alert("캐시 보유 금액이 부족합니다")
 				return false
 			}
@@ -255,7 +273,7 @@
 		});
 	</script>
 	<script>
-		$("#inputCash").keyup(function() {
+ 		$("#inputCash").keyup(function() {
 			chk_input_filter("number", $("#inputCash"));
 		});
 
@@ -274,7 +292,7 @@
 	<script>
 	// onkeyup="inputNumberFormat(this)"
 	
-	/*  function inputNumberFormat(obj) {
+	 /* function inputNumberFormat(obj) {
 	     obj.value = comma(uncomma(obj.value));
 	 }
 
@@ -286,7 +304,9 @@
 	 function uncomma(str) {
 	     str = String(str);
 	     return str.replace(/[^\d]+/g, '');
-	 } */
+	 }*/
 	</script>
+	
+
 </body>
 </html>
