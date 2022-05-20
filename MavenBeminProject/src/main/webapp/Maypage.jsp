@@ -125,7 +125,7 @@
             <span class="mypage-form-left-side">
                 <div class="mypage-top-wrap">
                     <p>신청내역</p>
-                    <a href="#">신청내역 더보기</a>
+                    <a href="신청내역.jsp">신청내역 더보기</a>
                 </div>
                 <div class="mypage-input-wrap list">
                     <table class="table table-striped">

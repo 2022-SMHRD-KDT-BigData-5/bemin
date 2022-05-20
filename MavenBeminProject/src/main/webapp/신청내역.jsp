@@ -1,7 +1,9 @@
+<%@page import="com.smhrd.domain.MATCHING_LIST"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.smhrd.domain.matchingDAO"%>
 <%@page import="com.smhrd.domain.MATCHING"%>
+<%@page import="com.smhrd.domain.MATCHING_LIST"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.domain.USER_INFO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -87,8 +89,8 @@
 				<%
 				matchingDAO dao = new matchingDAO();
 				USER_INFO u_vo = (USER_INFO)session.getAttribute("loginMember");
+				MATCHING m_vo = (MATCHING)session.getAttribute("matching");
 				List<MATCHING> matList = dao.selectMatchig(u_vo.getID());
-				List<MATCHING_LIST> matsList = dao.selectMatchigs(u_vo.getID());
 				pageContext.setAttribute("matList", matList);
 				%>
 				<table class="table table-striped">
@@ -100,18 +102,19 @@
 						<th>경기장</th>
 						<th>참여인원</th>
 						<th>예약/참여취소</th>
+						<th>멤버보기</th>
 					</tr>
 					<c:forEach var="mat" items="${matList}" varStatus="status">
-					<c:set var="loginid" value="${loginMember.ID}"/>
 					<c:set var="matid" value="${mat.USER_ID}"/>
-						<tr href="#참여자 목록">
+					<c:set var="logid" value="${loginMember.ID}"/>
+						<a href="#"><tr>
 							<td>${status.count}</td>
 							<td><c:out value="${mat.RES_DATE}" /></td>
 							<td><c:out value="${mat.RES_TIME}" /></td>
 							<td><c:out value="${mat.RES_PLACE}" /></td>
 							<td><c:out value="${mat.MAT_MEMBER}" /></td>
 							<c:choose>
-								<c:when test="${loginid eq matid}">
+								<c:when test="${logid eq matid}">
 									<c:if test="${mat.MAT_CPL eq '1'}">
 										<td>취소불가</td>
 									</c:if>
@@ -128,7 +131,8 @@
 									</c:if>
 								</c:otherwise>
 							</c:choose>
-						</tr>
+							<td><a href="#">멤버보기</a></td>
+						</tr></a>
 					</c:forEach>
 				</table>
 			</c:otherwise>

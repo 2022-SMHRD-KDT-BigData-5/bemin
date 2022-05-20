@@ -14,6 +14,11 @@ public class MATCHING_LIST {
 		this.MANAGER = MANAGER;
 	}
 
+	public MATCHING_LIST(String ID) {
+	super();
+	this.ID = ID;
+	}
+	
 	public int getLIST_NO() {
 		return LIST_NO;
 	}

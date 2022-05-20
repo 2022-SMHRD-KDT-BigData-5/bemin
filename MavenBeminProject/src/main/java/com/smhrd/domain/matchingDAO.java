@@ -12,7 +12,7 @@ public class matchingDAO<BoardReply> {
 	SqlSessionFactory sqlSessionFactory = sqlSessionManager.getSqlSession();
 	SqlSession sqlSession = sqlSessionFactory.openSession();
 
-	// 로그인한 신청자의 매칭 내역보기--------------------------------------------------------
+	// 게시판 매칭 내역보기--------------------------------------------------------
 	public List<MATCHING> selectMatchig(String ID) {
 		List<MATCHING> MatchingList = null;
 		try {
@@ -28,7 +28,7 @@ public class matchingDAO<BoardReply> {
 			sqlSession.close();
 		}
 		return MatchingList;
-	}// 로그인한 신청자의 매칭 내역보기 끝-----------------------------------------------------
+	}// 게시판 매칭 내역보기 끝-----------------------------------------------------
 	
 	// 취소 조건------------------------------------------------------------------------
 	public MATCHING FindMatching(MATCHING m) {
@@ -67,24 +67,6 @@ public class matchingDAO<BoardReply> {
 			sqlSession.close();
 		}
 		return matching;
-	} // 매치들 끝 ----------------------------------------------------
+	} // 매치들 끝 --------------------------------------------------------------------
 	
-	// 로그인한 신청자의 매칭 내역보기--------------------------------------------------------
-	public List<MATCHING_LIST> selectMatchigs(String ID) {
-		List<MATCHING_LIST> MatchingsList = null;
-		try {
-			MatchingsList = sqlSession.selectList("com.smhrd.domain.matchingDAO.selectMatchings", ID);
-			if (MatchingsList != null) {
-				sqlSession.commit();
-			} else {
-				sqlSession.rollback();
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			sqlSession.close();
-		}
-		return MatchingsList;
-	}// 로그인한 신청자의 매칭 내역보기 끝-----------------------------------------------------
-
 }
