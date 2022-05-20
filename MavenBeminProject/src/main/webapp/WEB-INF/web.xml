@@ -34,6 +34,12 @@
 		<description></description>
 		<servlet-class>com.smhrd.controller.IdCheckCon</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>LoginCheckCon</servlet-name>
+		<display-name>LoginCheckCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.LoginCheckCon</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>FindCon</servlet-name>
 		<url-pattern>/FindCon</url-pattern>
@@ -55,6 +61,10 @@
 	<servlet-mapping>
 		<servlet-name>IdCheckCon</servlet-name>
 		<url-pattern>/IdCheckCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginCheckCon</servlet-name>
+		<url-pattern>/LoginCheckCon</url-pattern>
 	</servlet-mapping>
 
 </web-app>

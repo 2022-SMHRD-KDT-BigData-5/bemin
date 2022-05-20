@@ -94,6 +94,31 @@ public class USER_INFO_DAO {
 		}
 	
 
+	public boolean LoginCheck(String id,String pw) {
+			boolean loginbtn=false;
+			
+			try {
+				String id2=sqlSession.selectOne("com.smhrd.domain.USER_INFO_DAO.selectLogin",id);
+				String pw2=sqlSession.selectOne("com.smhrd.domain.USER_INFO_DAO.selectLogin",pw);
+				
+				if(id2!=null&&pw2!=null) {
+					loginbtn=false;
+					sqlSession.commit();
+				}else {
+					loginbtn=true;
+					sqlSession.commit();
+				}
+				
+				}catch(Exception e) {
+					e.printStackTrace();
+				}finally {
+					sqlSession.close();
+				}
+				return loginbtn;
+		
+		
+			}
+
 
 
 }

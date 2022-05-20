@@ -23,5 +23,9 @@
 	<select id="selectId" parameterType="String" resultType="String">
 		select USER_ID from USER_INFO where USER_ID=#{ID}
 	</select>
+	<!-- 로그인 실패메세지 -->
+	<select id="selectLogin" parameterType="String" resultType="String">
+		select * from USER_INFO where USER_ID=#{ID} and USER_PW=#{PW}
+	</select>
 </mapper>
 

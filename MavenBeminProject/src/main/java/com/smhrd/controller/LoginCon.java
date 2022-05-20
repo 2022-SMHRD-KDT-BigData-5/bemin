@@ -23,11 +23,11 @@ public class LoginCon extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		// id, pw 받아오기
-		String ID = request.getParameter("id");
-		String PW = request.getParameter("pw");
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
 
 		// Member객체에 담기
-		USER_INFO m_vo = new USER_INFO(ID, PW);
+		USER_INFO m_vo = new USER_INFO(id, pw);
 
 		USER_INFO_DAO dao = new USER_INFO_DAO();
 		USER_INFO loginMember = dao.selectMember(m_vo);
@@ -40,8 +40,9 @@ public class LoginCon extends HttpServlet {
 			response.sendRedirect("main.jsp");
 		} else {
 			// 로그인 실패
+			
 			System.out.println("로그인 실패");
-			response.sendRedirect("Login.jsp");
+			response.sendRedirect("LoginCheck.html");
 		}
 
 	}
