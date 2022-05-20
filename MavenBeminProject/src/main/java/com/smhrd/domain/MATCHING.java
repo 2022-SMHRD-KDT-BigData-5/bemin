@@ -29,7 +29,6 @@ public class MATCHING {
 	}
 
 
-
 	public MATCHING(BigDecimal MAT_NO, String RES_DATE, String RES_TIME, String RES_PLACE, String USER_ID, String UNIT, BigDecimal MAT_MEMBER,
 			BigDecimal STN_TIER, BigDecimal STN_MANNER, BigDecimal MAT_CPL) {
 		super();

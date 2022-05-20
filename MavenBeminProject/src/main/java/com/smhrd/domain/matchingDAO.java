@@ -35,7 +35,7 @@ public class matchingDAO<BoardReply> {
 
 		MATCHING m_vo = null;
 		try {
-			m_vo = sqlSession.selectOne("com.smhrd.domain.matchingDAO.selectMatchingInfo", m);
+			m_vo = sqlSession.selectOne("com.smhrd.domain.matchingDAO.selectMatchingView", m);
 
 			if (m_vo != null) {
 				sqlSession.commit();
@@ -52,10 +52,10 @@ public class matchingDAO<BoardReply> {
 
 	}// 취소 조건----------------------------------------------------------------------
 	
-	public MATCHING MatchingView(MATCHING match) {
+	public MATCHING MatchingInfo(MATCHING match) {
 		MATCHING matching = null;
 		try {
-			matching = sqlSession.selectOne("com.smhrd.domain.matchingDAO.selectMatchingView", match);
+			matching = sqlSession.selectOne("com.smhrd.domain.matchingDAO.selectMatchingInfo", match);
 			if (matching != null) {
 				sqlSession.commit();
 			} else {

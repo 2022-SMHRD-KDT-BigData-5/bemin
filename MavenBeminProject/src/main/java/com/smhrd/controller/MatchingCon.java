@@ -30,7 +30,7 @@ public class MatchingCon extends HttpServlet {
 				MATCHING m_vo = new MATCHING(USER_ID);
 
 				matchingDAO dao = new matchingDAO();
-				MATCHING matching = dao.FindMatching(m_vo);
+				MATCHING matching = dao.MatchingInfo(m_vo);
 
 				if (matching != null) {
 					// 매칭 성공

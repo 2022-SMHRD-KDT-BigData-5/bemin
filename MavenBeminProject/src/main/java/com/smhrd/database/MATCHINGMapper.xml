@@ -6,24 +6,20 @@
         
 <mapper namespace="com.smhrd.domain.matchingDAO">
 	
-	<!-- 게시판 -->
+	<!-- 내 내역들 -->
 	<select id="selectMatching" resultType="com.smhrd.domain.MATCHING" parameterType="String">
-		select * from MATCHING where MAT_NO = (select MAT_NO from MATCHING_LIST where ID = #{USER_ID})
+		select * from MATCHING where MAT_NO in (select MAT_NO from MATCHING_LIST where ID = #{ID}) order by RES_DATE desc
 	</select>
 	
 	<!-- 매칭취소 조건 -->
 	<select id="selectMatchingInfo" resultType = "com.smhrd.domain.MATCHING" parameterType = "com.smhrd.domain.MATCHING">
-		select * from MATCHING where USER_ID = #{USER_ID}
+		select * MATCHING from USER_ID in (select ID from select * from MATCHING_LIST where ID=#{ID})
 	</select>
 	
-	<!-- 매칭 찾기 -->
+	<!-- 예약취소 조건 -->
 	<select id="selectMatchingView" resultType = "com.smhrd.domain.MATCHING" parameterType = "com.smhrd.domain.MATCHING">
 		select * from MATCHING where USER_ID=#{USER_ID}
 	</select>
 	
-	<!-- 매칭 내역보기 -->
-	<select id="selectMatchings" resultType="com.smhrd.domain.MATCHING" parameterType="String">
-		select * from MATCHING_LIST where MAT_NO = (select MAT_NO from MATCHING_LIST where USER_ID = #{USER_ID})
-	</select>
 	
 </mapper>
