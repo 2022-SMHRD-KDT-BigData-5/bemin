@@ -213,6 +213,7 @@ $('#find-pw-btn').click(function(){
 		method : "POST",
 		success: function(data){
 			alert('찾으시는 비밀번호는 '+data+'입니다.')
+			window.location.href = "Login.jsp";
 		},
 		error: function(){
 			alert("통신실패")
