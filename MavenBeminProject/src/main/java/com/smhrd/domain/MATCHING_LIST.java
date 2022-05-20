@@ -5,38 +5,45 @@ public class MATCHING_LIST {
 	private int MAT_NO;
 	private String ID;
 	private int MANAGER;
-	public MATCHING_LIST(int lIST_NO, int mAT_NO, String iD, int mANAGER) {
+
+	public MATCHING_LIST(int LIST_NO, int MAT_NO, String ID, int MANAGER) {
 		super();
-		LIST_NO = lIST_NO;
-		MAT_NO = mAT_NO;
-		ID = iD;
-		MANAGER = mANAGER;
+		this.LIST_NO = LIST_NO;
+		this.MAT_NO = MAT_NO;
+		this.ID = ID;
+		this.MANAGER = MANAGER;
 	}
+
 	public int getLIST_NO() {
 		return LIST_NO;
 	}
-	public void setLIST_NO(int lIST_NO) {
-		LIST_NO = lIST_NO;
+
+	public void setLIST_NO(int LIST_NO) {
+		this.LIST_NO = LIST_NO;
 	}
+
 	public int getMAT_NO() {
 		return MAT_NO;
 	}
-	public void setMAT_NO(int mAT_NO) {
-		MAT_NO = mAT_NO;
+
+	public void setMAT_NO(int MAT_NO) {
+		this.MAT_NO = MAT_NO;
 	}
+
 	public String getID() {
 		return ID;
 	}
-	public void setID(String iD) {
-		ID = iD;
+
+	public void setID(String ID) {
+		this.ID = ID;
 	}
+
 	public int getMANAGER() {
 		return MANAGER;
 	}
-	public void setMANAGER(int mANAGER) {
-		MANAGER = mANAGER;
+
+	public void setMANAGER(int MANAGER) {
+		this.MANAGER = MANAGER;
 	}
-	
-	
-	
+
 }

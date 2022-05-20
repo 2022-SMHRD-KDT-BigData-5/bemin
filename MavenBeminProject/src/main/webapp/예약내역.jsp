@@ -68,7 +68,8 @@
 				<div class="navigation-container" style="padding: 0px">
 					<div class="navigation-wrapper" style="padding: top 20px;">
 						<div class="navigation-item">
-							<a class="selected" style="margin-left: 0px;">🏃‍♂️소셜 매치</a>
+							<a class="selected" href="신청내역.jsp" style="margin-left: 0px;">🏃‍♂️소셜 매치</a>
+							<a class="selected" href="예약내역.jsp" style="margin-left: 0px;">🏃‍♂️소셜 예약</a>>
 						</div>
 					</div>
 				</div>
@@ -87,8 +88,8 @@
 				<%
 				matchingDAO dao = new matchingDAO();
 				USER_INFO u_vo = (USER_INFO)session.getAttribute("loginMember");
+				MATCHING m_vo = (MATCHING)session.getAttribute("matching");
 				List<MATCHING> matList = dao.selectMatchig(u_vo.getID());
-				List<MATCHING_LIST> matsList = dao.selectMatchigs(u_vo.getID());
 				pageContext.setAttribute("matList", matList);
 				%>
 				<table class="table table-striped">
@@ -101,9 +102,10 @@
 						<th>참여인원</th>
 						<th>예약/참여취소</th>
 					</tr>
-					<c:forEach var="mat" items="${matList}" varStatus="status">
 					<c:set var="loginid" value="${loginMember.ID}"/>
-					<c:set var="matid" value="${mat.USER_ID}"/>
+					<c:set var="matid" value="${match.USER_ID}"/>
+					<c:out value="${matid}"/>
+					<c:forEach var="mat" items="${matList}" varStatus="status">
 						<tr href="#참여자 목록">
 							<td>${status.count}</td>
 							<td><c:out value="${mat.RES_DATE}" /></td>
@@ -112,18 +114,18 @@
 							<td><c:out value="${mat.MAT_MEMBER}" /></td>
 							<c:choose>
 								<c:when test="${loginid eq matid}">
-									<c:if test="${mat.MAT_CPL eq '1'}">
+									<c:if test="${matching.MAT_CPL eq '1'}">
 										<td>취소불가</td>
 									</c:if>
-									<c:if test="${mat.MAT_CPL eq '0'}">
+									<c:if test="${matching.MAT_CPL eq '0'}">
 										<td><a href="#">예약취소</a></td>
 									</c:if>
 								</c:when>
 								<c:otherwise>
-									<c:if test="${mat.MAT_CPL eq '1'}">
+									<c:if test="${matching.MAT_CPL eq '1'}">
 										<td>취소불가</td>
 									</c:if>
-									<c:if test="${mat.MAT_CPL eq '0'}">
+									<c:if test="${matching.MAT_CPL eq '0'}">
 										<td><a href="#">참가취소</a></td>
 									</c:if>
 								</c:otherwise>

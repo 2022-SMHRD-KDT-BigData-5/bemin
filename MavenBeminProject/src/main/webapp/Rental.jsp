@@ -126,11 +126,11 @@
                                 <li class="slideitem">
                                     <button class="pt1"><div class="pt1-text"><div>1</div>월</div></button>
                                     <button class="pt1"><div class="pt1-text"><div>2</div>화</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>3</div>수</div</button>
-                                    <button class="pt1"><div class="pt1-text"><div>4</div>목</div</button>
-                                    <button class="pt1"><div class="pt1-text"><div>5</div>금</div</button>
-                                    <button class="pt1"><div class="pt1-text"><div>6</div>토</div</button>
-                                    <button class="pt1"><div class="pt1-text"><div>7</div>일</div</button>
+                                    <button class="pt1"><div class="pt1-text"><div>3</div>수</div></button>
+                                    <button class="pt1"><div class="pt1-text"><div>4</div>목</div></button>
+                                    <button class="pt1"><div class="pt1-text"><div>5</div>금</div></button>
+                                    <button class="pt1"><div class="pt1-text"><div>6</div>토</div></button>
+                                    <button class="pt1"><div class="pt1-text"><div>7</div>일</div></button>
                                 </li>
                                 <li class="slideitem">
                                     <button class="pt1"><div class="pt1-text"><div>8</div>월</div></button>

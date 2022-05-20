@@ -22,6 +22,13 @@ public class MATCHING {
 		this.RES_PLACE = RES_PLACE;
 		this.MAT_MEMBER = MAT_MEMBER;
 	}
+	
+		public MATCHING(String USER_ID) {
+		super();
+		this.USER_ID = USER_ID;
+	}
+
+
 
 	public MATCHING(BigDecimal MAT_NO, String RES_DATE, String RES_TIME, String RES_PLACE, String USER_ID, String UNIT, BigDecimal MAT_MEMBER,
 			BigDecimal STN_TIER, BigDecimal STN_MANNER, BigDecimal MAT_CPL) {

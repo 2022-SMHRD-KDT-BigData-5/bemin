@@ -7,7 +7,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.smhrd.database.sqlSessionManager;
 
-public class matchingDAO {
+public class matchingDAO<BoardReply> {
 
 	SqlSessionFactory sqlSessionFactory = sqlSessionManager.getSqlSession();
 	SqlSession sqlSession = sqlSessionFactory.openSession();
@@ -30,32 +30,33 @@ public class matchingDAO {
 		return MatchingList;
 	}// 로그인한 신청자의 매칭 내역보기 끝-----------------------------------------------------
 	
-	// 페이징 기능 ----------------------------------------------------------------------
-	public List<MATCHING> selectAllMatching(Paging paging){      
-        int startNum = paging.getStartNum();
-        int endNum = paging.getEndNum(); 
-        List<MATCHING> MatchingList = null;
+	// 취소 조건------------------------------------------------------------------------
+	public MATCHING FindMatching(MATCHING m) {
+
+		MATCHING m_vo = null;
 		try {
-			MatchingList = sqlSession.selectOne("com.smhrd.domain.matchingDAO.selectAllMatching", paging);
-			if (MatchingList != null) {
+			m_vo = sqlSession.selectOne("com.smhrd.domain.matchingDAO.selectMatchingInfo", m);
+
+			if (m_vo != null) {
 				sqlSession.commit();
 			} else {
 				sqlSession.rollback();
 			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			sqlSession.close();
 		}
-		return MatchingList;
-	}// 페이지 기능 끝 -------------------------------------------------------------------
+		return m_vo;
+
+	}// 취소 조건----------------------------------------------------------------------
 	
-	// 테이블의 레코드 갯수 받아오기----------------------------------------------------------
-	public int getAllCount() {
-	    int count = 0;
+	public MATCHING MatchingView(MATCHING match) {
+		MATCHING matching = null;
 		try {
-			count = sqlSession.selectOne("com.smhrd.domain.matchingDAO.selectAllMatchingCount");
-			if (count > 0) {
+			matching = sqlSession.selectOne("com.smhrd.domain.matchingDAO.selectMatchingView", match);
+			if (matching != null) {
 				sqlSession.commit();
 			} else {
 				sqlSession.rollback();
@@ -65,7 +66,25 @@ public class matchingDAO {
 		} finally {
 			sqlSession.close();
 		}
-		return count;
-	 }
+		return matching;
+	} // 매치들 끝 ----------------------------------------------------
+	
+	// 로그인한 신청자의 매칭 내역보기--------------------------------------------------------
+	public List<MATCHING_LIST> selectMatchigs(String ID) {
+		List<MATCHING_LIST> MatchingsList = null;
+		try {
+			MatchingsList = sqlSession.selectList("com.smhrd.domain.matchingDAO.selectMatchings", ID);
+			if (MatchingsList != null) {
+				sqlSession.commit();
+			} else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return MatchingsList;
+	}// 로그인한 신청자의 매칭 내역보기 끝-----------------------------------------------------
 
 }

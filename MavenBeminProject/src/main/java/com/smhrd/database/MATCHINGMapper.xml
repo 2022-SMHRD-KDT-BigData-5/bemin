@@ -6,19 +6,24 @@
         
 <mapper namespace="com.smhrd.domain.matchingDAO">
 	
-	<!-- 내역보기 -->
+	<!-- 게시판 -->
 	<select id="selectMatching" resultType="com.smhrd.domain.MATCHING" parameterType="String">
 		select * from MATCHING where USER_ID=#{USER_ID}
 	</select>
 	
-	<!-- 페이징 -->
-	<select id="selectAllMatching" resultType="com.smhrd.domain.MATCHING">
-
+	<!-- 매칭취소 조건 -->
+	<select id="selectMatchingInfo" resultType = "com.smhrd.domain.MATCHING" parameterType = "com.smhrd.domain.MATCHING">
+		select * from MATCHING where MAT_NO = (select MAT_NO from MATCHING_LIST where USER_ID = #{USER_ID})
 	</select>
 	
-	<!-- 레코드 갯수 -->
-	<select id="MatchingCount" resultType="com.smhrd.domain.MATCHING">
-		select count(user_id) count from (select ROWNUM mat_no from USER_ID=#{USER_ID})
+	<!-- 매칭 찾기 -->
+	<select id="selectMatchingView" resultType = "com.smhrd.domain.MATCHING" parameterType = "com.smhrd.domain.MATCHING">
+		select * from MATCHING where USER_ID=#{USER_ID}
+	</select>
+	
+	<!-- 매칭 내역보기 -->
+	<select id="selectMatchings" resultType="com.smhrd.domain.MATCHING" parameterType="String">
+		select * from MATCHING_LIST where USER_ID=#{USER_ID}
 	</select>
 	
 </mapper>
