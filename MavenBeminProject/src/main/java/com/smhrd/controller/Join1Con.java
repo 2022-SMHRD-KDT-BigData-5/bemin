@@ -55,10 +55,13 @@ public class Join1Con extends HttpServlet {
 			System.out.println("회원가입 실패");
 			response.sendRedirect("회원가입.jsp");
 		}
-		} catch (Exception e) {
+		}
+		 catch (Exception e) {
+			
 			e.printStackTrace();
 		}
 	
 	}
-
 }
+
+
