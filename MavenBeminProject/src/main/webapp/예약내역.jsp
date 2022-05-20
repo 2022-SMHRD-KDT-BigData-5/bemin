@@ -1,9 +1,7 @@
-<%@page import="com.smhrd.domain.MATCHING_LIST"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.smhrd.domain.matchingDAO"%>
 <%@page import="com.smhrd.domain.MATCHING"%>
-<%@page import="com.smhrd.domain.MATCHING_LIST"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.domain.USER_INFO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -70,7 +68,8 @@
 				<div class="navigation-container" style="padding: 0px">
 					<div class="navigation-wrapper" style="padding: top 20px;">
 						<div class="navigation-item">
-							<a class="selected" style="margin-left: 0px;">🏃‍♂️소셜 매치</a>
+							<a class="selected" href="신청내역.jsp" style="margin-left: 0px;">🏃‍♂️소셜 매치</a>
+							<a class="selected" href="예약내역.jsp" style="margin-left: 0px;">🏃‍♂️소셜 예약</a>>
 						</div>
 					</div>
 				</div>
@@ -102,37 +101,36 @@
 						<th>경기장</th>
 						<th>참여인원</th>
 						<th>예약/참여취소</th>
-						<th>멤버보기</th>
 					</tr>
+					<c:set var="loginid" value="${loginMember.ID}"/>
+					<c:set var="matid" value="${match.USER_ID}"/>
+					<c:out value="${matid}"/>
 					<c:forEach var="mat" items="${matList}" varStatus="status">
-					<c:set var="matid" value="${mat.USER_ID}"/>
-					<c:set var="logid" value="${loginMember.ID}"/>
-						<a href="#"><tr>
+						<tr href="#참여자 목록">
 							<td>${status.count}</td>
 							<td><c:out value="${mat.RES_DATE}" /></td>
 							<td><c:out value="${mat.RES_TIME}" /></td>
 							<td><c:out value="${mat.RES_PLACE}" /></td>
 							<td><c:out value="${mat.MAT_MEMBER}" /></td>
 							<c:choose>
-								<c:when test="${logid eq matid}">
-									<c:if test="${mat.MAT_CPL eq '1'}">
+								<c:when test="${loginid eq matid}">
+									<c:if test="${matching.MAT_CPL eq '1'}">
 										<td>취소불가</td>
 									</c:if>
-									<c:if test="${mat.MAT_CPL eq '0'}">
+									<c:if test="${matching.MAT_CPL eq '0'}">
 										<td><a href="#">예약취소</a></td>
 									</c:if>
 								</c:when>
 								<c:otherwise>
-									<c:if test="${mat.MAT_CPL eq '1'}">
+									<c:if test="${matching.MAT_CPL eq '1'}">
 										<td>취소불가</td>
 									</c:if>
-									<c:if test="${mat.MAT_CPL eq '0'}">
+									<c:if test="${matching.MAT_CPL eq '0'}">
 										<td><a href="#">참가취소</a></td>
 									</c:if>
 								</c:otherwise>
 							</c:choose>
-							<td><a href="#">멤버보기</a></td>
-						</tr></a>
+						</tr>
 					</c:forEach>
 				</table>
 			</c:otherwise>
