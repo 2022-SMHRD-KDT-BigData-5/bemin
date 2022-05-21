@@ -121,7 +121,7 @@
 										<td>취소불가</td>
 									</c:if>
 									<c:if test="${mat.MAT_CPL eq '0'}">
-										<td><a href="#">예약취소</a></td>
+										<td><a href="MatchingCon?matNum=${mat.SEQ}">예약취소</a></td>
 									</c:if>
 								</c:when>
 								<c:otherwise>
@@ -191,13 +191,11 @@
 				</button>
 			</div>
 		</div>
-
-	</div>
-	<!-- content-->
+		<!-- content-->
 
 	</div>
 	<!-- wrapper -->
-	<!-- JS includes -->
+
 
 	<script src="assets/js/join1.js"></script>
 	<script src="assets/js/vendor/jquery-1.11.2.min.js"></script>

@@ -21,5 +21,10 @@
 		select * from MATCHING where USER_ID=#{USER_ID}
 	</select>
 	
+	<!-- 매칭게시판에서 내글 삭제 -->
+	<delete id="deleteMatchingIdex" parameterType="int">
+      	 delete from MATCHING where MAT_NO=#{matNum}
+    </delete>
+    
 	
 </mapper>

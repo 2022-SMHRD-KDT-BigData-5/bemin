@@ -69,4 +69,22 @@ public class matchingDAO<BoardReply> {
 		return matching;
 	} // 매치들 끝 --------------------------------------------------------------------
 	
+	//  매칭게시판에서 내글 삭제 ----------------------------------------------
+	public int deleteMatchingIdex(int matNum) {
+		int cnt = 0;
+		try {
+			cnt = sqlSession.delete("com.smhrd.domain..matchingDAO.deleteMatchingIdex", matNum);
+			if(cnt > 0) {
+				sqlSession.commit();
+			} else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return cnt;
+	} //  매칭게시판에서 내글 삭제------------------------------------------
+	
 }

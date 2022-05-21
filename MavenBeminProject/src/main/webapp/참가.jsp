@@ -121,8 +121,8 @@
 						data-target="#navbar-menu">
 						<i class="fa fa-bars"></i>
 					</button>
-					<a class="navbar-brand" href="main.jsp">
-					<img src="assets/images/logo1.png" class="logo" alt=""> <!-- <a>FLIGHT</a> -->
+					<a class="navbar-brand" href="main.jsp"> <img
+						src="assets/images/logo1.png" class="logo" alt=""> <!-- <a>FLIGHT</a> -->
 						<!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
 					</a>
 
@@ -231,6 +231,7 @@
 						</div>
 					</h1>
 				</div>
+				<div id="map" style="width: 100%; height: 350px;"></div>
 				<div class="wtgTool">
 					<p class="txt1">광주광역시 광산구 첨단강변로 76</p>
 					<p id="toggleMap" onclick="showmap()" class="txt1"
@@ -582,6 +583,31 @@
 	<script src="assets/css/slick/slick.min.js"></script>
 	<script src="assets/js/jquery.collapse.js"></script>
 	<script src="assets/js/bootsnav.js"></script>
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b2c6338e234665ca02d6a8917dd7772f"></script>
+	<script>
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		mapOption = {
+			center : new kakao.maps.LatLng(35.164592785799236, 126.79844697736289), // 지도의 중심좌표
+			level : 3
+		// 지도의 확대 레벨
+		};
+
+		// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+		var map = new kakao.maps.Map(mapContainer, mapOption);
+
+		// 마커가 표시될 위치입니다 
+		var markerPosition = new kakao.maps.LatLng(35.164592785799236, 126.79844697736289);
+
+		// 마커를 생성합니다
+		var marker = new kakao.maps.Marker({
+			position : markerPosition
+
+		});
+
+		// 마커가 지도 위에 표시되도록 설정합니다
+		marker.setMap(map);
+	</script>
 
 
 

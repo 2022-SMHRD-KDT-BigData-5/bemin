@@ -23,11 +23,17 @@ public class MATCHING {
 		this.MAT_MEMBER = MAT_MEMBER;
 	}
 	
+	
 		public MATCHING(String USER_ID) {
 		super();
 		this.USER_ID = USER_ID;
 	}
-
+		
+		public MATCHING(BigDecimal MAT_NO) {
+		super();
+		this.MAT_NO = MAT_NO;
+	}
+		
 
 	public MATCHING(BigDecimal MAT_NO, String RES_DATE, String RES_TIME, String RES_PLACE, String USER_ID, String UNIT, BigDecimal MAT_MEMBER,
 			BigDecimal STN_TIER, BigDecimal STN_MANNER, BigDecimal MAT_CPL) {
@@ -43,6 +49,14 @@ public class MATCHING {
 		this.STN_MANNER = STN_MANNER;
 		this.MAT_CPL = MAT_CPL;
 	}
+	public MATCHING(String rES_DATE, String rES_TIME, String rES_PLACE) {
+		super();
+		RES_DATE = rES_DATE;
+		RES_TIME = rES_TIME;
+		RES_PLACE = rES_PLACE;
+	}
+	
+	
 	public BigDecimal getMAT_NO() {
 		return MAT_NO;
 	}
