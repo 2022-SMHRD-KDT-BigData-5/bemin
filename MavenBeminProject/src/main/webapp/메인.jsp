@@ -192,8 +192,8 @@
                     <div id="dateNav" class="sub-header" style="padding-bottom: 10px;">
                         <div class="mat-re">
                             <span id="m1">
-                                <a href="메인.html">매치</a>
-                                <a href="경기장 예약.html" id="m2">구장 예약</a>
+                                <a href="메인.jsp">매치</a>
+                                <a href="Rental.jsp" id="m2">구장 예약</a>
                             </span>
                         </div>
                         <!---->

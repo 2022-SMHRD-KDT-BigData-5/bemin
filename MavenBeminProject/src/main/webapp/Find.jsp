@@ -199,7 +199,9 @@ $('#find-id-btn').click(function(){
 			
 		},
 		error: function(){
-			alert("찾으시는 정보가 없습니다!!")
+
+			alert("일치하는 정보가 없습니다")
+
 		}
 	})    
 })
@@ -219,7 +221,9 @@ $('#find-pw-btn').click(function(){
 			window.location.href = "Login.jsp";
 		},
 		error: function(){
-			alert("찾으시는 정보가 없습니다!!")
+
+			alert("일치하는 정보가 없습니다")
+
 		}
 	})    
 })
