@@ -32,6 +32,18 @@ public class RentalCon extends HttpServlet {
 		
 		
 		
+//		int start = Integer.valueOf(PlaceList.get(0).getWEEK_SRT()).intValue();
+//		int end = Integer.valueOf(PlaceList.get(0).getWEEK_END()).intValue();
+//		while(true){
+//			int two = 2;
+//			int start2 = start+2;
+//			<p class='t1'>=start:00 ~ <start2:00</p>
+//			start +=2;
+//			if(start <= end){
+//				break;
+//			}	
+//		} 
+		
 		
 		
 		
