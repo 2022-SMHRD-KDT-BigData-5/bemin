@@ -121,7 +121,7 @@
 										<td>취소불가</td>
 									</c:if>
 									<c:if test="${mat.MAT_CPL eq '0'}">
-										<td><a href="MatchingCon?matNum=${mat.SEQ}">예약취소</a></td>
+										<td><a href="MatchingCon?matNum=${mat.MAT_NO}">예약취소</a></td>
 									</c:if>
 								</c:when>
 								<c:otherwise>
@@ -160,10 +160,9 @@
 	</div>	
 	</div>
 	
-    <script src="assets/js/script.js"></script>
+    <script src="./script.js"></script>
 	<script type="text/javascript">
-	
-    const options = {
+	const options = {
             tableId:'easy-table',
             currentPage:1,
             perPage:10,
@@ -175,8 +174,7 @@
         }
 
         setTable(data, options);
-    
-	</script>
+    </script>
 	
 	<!-- wrapper -->
 	<div id="wrapper">
@@ -208,10 +206,10 @@
 	<script src="assets/css/slick/slick.min.js"></script>
 	<script src="assets/js/jquery.collapse.js"></script>
 	<script src="assets/js/bootsnav.js"></script>
-
-
-
 	<script src="assets/js/plugins.js"></script>
 	<script src="assets/js/main.js"></script>
+	
+
+	
 </body>
 </html>

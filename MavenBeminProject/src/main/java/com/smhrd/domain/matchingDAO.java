@@ -1,5 +1,6 @@
 package com.smhrd.domain;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -73,7 +74,7 @@ public class matchingDAO<BoardReply> {
 	public int deleteMatchingIdex(int matNum) {
 		int cnt = 0;
 		try {
-			cnt = sqlSession.delete("com.smhrd.domain..matchingDAO.deleteMatchingIdex", matNum);
+			cnt = sqlSession.delete("com.smhrd.domain.matchingDAO.deleteMatchingIdex", matNum);
 			if(cnt > 0) {
 				sqlSession.commit();
 			} else {

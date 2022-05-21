@@ -247,8 +247,10 @@ ul, li {list-style:none;}
     border-radius: 15px;
     padding: 1%;
     color: black;
+}
 
-
+.t3{
+	display: none;
 }
 
 .time1{

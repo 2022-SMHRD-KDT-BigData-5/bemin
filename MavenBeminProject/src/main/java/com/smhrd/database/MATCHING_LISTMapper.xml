@@ -6,7 +6,7 @@
 <mapper namespace="com.smhrd.domain.matchingDAO">
 
 	<!-- 매칭리스트에서 내이름 삭제 -->
-	<delete id="deleteMatching" parameterType="int">
+	<delete id="deleteMatching" parameterType="String">
       	 delete from MATCHING_LIST where ID=#{ID}
     </delete>
 
