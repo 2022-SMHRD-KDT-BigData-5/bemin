@@ -121,7 +121,7 @@
                 <!-- 수정완료 BTN-->
                 <div class="btn_area">
                     <button type="button" id="btnupdate">
-                        <span>수정하기</span>
+                        <span>수정완료</span>
                     </button>
                 </div>
 
