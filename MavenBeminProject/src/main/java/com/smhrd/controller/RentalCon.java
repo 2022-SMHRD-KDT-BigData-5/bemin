@@ -1,6 +1,8 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,34 +24,21 @@ public class RentalCon extends HttpServlet {
 		// 선택한 경기장의 요금 정보 가져와야함
 		request.setCharacterEncoding("utf-8");
 		
-		HttpSession session = request.getSession();
-
+		String year = request.getParameter("year");
+		String month = request.getParameter("month");
 		String date = request.getParameter("date");
+		String place = request.getParameter("place");
 		String time = request.getParameter("time");
-		String place =request.getParameter("place");
 		
-		MATCHING placeInfo = new MATCHING(date, time, place);
+		response.setContentType("text/html; charset=UTF-8");
 		
+		PrintWriter out = response.getWriter();
 		
-		
-//		int start = Integer.valueOf(PlaceList.get(0).getWEEK_SRT()).intValue();
-//		int end = Integer.valueOf(PlaceList.get(0).getWEEK_END()).intValue();
-//		while(true){
-//			int two = 2;
-//			int start2 = start+2;
-//			<p class='t1'>=start:00 ~ <start2:00</p>
-//			start +=2;
-//			if(start <= end){
-//				break;
-//			}	
-//		} 
-		
-		
-		
-		
-		
-		session.setAttribute("placeInfo", placeInfo);
-		
+		out.print(year);
+		out.print(month);
+		out.print(date);
+		out.print(place);
+		out.print(time);
 		
 		
 		
