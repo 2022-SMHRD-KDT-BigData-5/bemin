@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.smhrd.domain.MATCHING;
 import com.smhrd.domain.matchingDAO;
@@ -18,13 +19,12 @@ public class MatchingCon extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-				
+		
 		// Post
-		int matNum = BigDecimal.valueOf(request.getParameter("matNum"));
-		MATCHING m_Num = new MATCHING();
-		request.setAttribute("matNum", matNum);
+		String delmatid = request.getParameter("delmatid");
+		
 		matchingDAO dao = new matchingDAO();
-		int cnt = dao.deleteMatchingIdex(matNum);
+		int cnt = dao.deleteMatchingIdex(delmatid);
 		
 		if(cnt > 0) {
 			System.out.println("예약삭제 성공");

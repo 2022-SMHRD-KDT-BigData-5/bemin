@@ -9,16 +9,16 @@ public class MATCHING {
 	private String RES_PLACE;
 	private String USER_ID;
 	private String UNIT;
-	private BigDecimal MAT_MEMBER;
-	private BigDecimal STN_TIER;
-	private BigDecimal STN_MANNER;
-	private BigDecimal MAT_CPL;
+	private String MAT_MEMBER;
+	private String STN_TIER;
+	private String STN_MANNER;
+	private String MAT_CPL;
 
 	public MATCHING() {
 		
 	}
 
-	public MATCHING(String RES_DATE, String RES_TIME, String RES_PLACE, BigDecimal MAT_MEMBER) {
+	public MATCHING(String RES_DATE, String RES_TIME, String RES_PLACE, String MAT_MEMBER) {
 		super();
 		this.RES_DATE = RES_DATE;
 		this.RES_TIME = RES_TIME;
@@ -26,18 +26,8 @@ public class MATCHING {
 		this.MAT_MEMBER = MAT_MEMBER;
 	}
 
-	public MATCHING(String USER_ID) {
-		super();
-		this.USER_ID = USER_ID;
-	}
-
-	public MATCHING(BigDecimal MAT_NO) {
-		super();
-		this.MAT_NO = MAT_NO;
-	}
-
 	public MATCHING(BigDecimal MAT_NO, String RES_DATE, String RES_TIME, String RES_PLACE, String USER_ID, String UNIT,
-			BigDecimal MAT_MEMBER, BigDecimal STN_TIER, BigDecimal STN_MANNER, BigDecimal MAT_CPL) {
+			String MAT_MEMBER, String STN_TIER, String STN_MANNER, String MAT_CPL) {
 		super();
 		this.MAT_NO = MAT_NO;
 		this.RES_DATE = RES_DATE;
@@ -106,35 +96,35 @@ public class MATCHING {
 		this.UNIT = UNIT;
 	}
 
-	public BigDecimal getMAT_MEMBER() {
+	public String getMAT_MEMBER() {
 		return MAT_MEMBER;
 	}
 
-	public void setMAT_MEMBER(BigDecimal MAT_MEMBER) {
+	public void setMAT_MEMBER(String MAT_MEMBER) {
 		this.MAT_MEMBER = MAT_MEMBER;
 	}
 
-	public BigDecimal getSTN_TIER() {
+	public String getSTN_TIER() {
 		return STN_TIER;
 	}
 
-	public void setSTN_TIER(BigDecimal STN_TIER) {
+	public void setSTN_TIER(String STN_TIER) {
 		this.STN_TIER = STN_TIER;
 	}
 
-	public BigDecimal getSTN_MANNER() {
+	public String getSTN_MANNER() {
 		return STN_MANNER;
 	}
 
-	public void setSTN_MANNER(BigDecimal STN_MANNER) {
+	public void setSTN_MANNER(String STN_MANNER) {
 		this.STN_MANNER = STN_MANNER;
 	}
 
-	public BigDecimal getMAT_CPL() {
+	public String getMAT_CPL() {
 		return MAT_CPL;
 	}
 
-	public void setMAT_CPL(BigDecimal MAT_CPL) {
+	public void setMAT_CPL(String MAT_CPL) {
 		this.MAT_CPL = MAT_CPL;
 	}
 

@@ -121,7 +121,7 @@
 										<td>취소불가</td>
 									</c:if>
 									<c:if test="${mat.MAT_CPL eq '0'}">
-										<td><a href="javascript:DelMat(${mat.MAT_NO});">예약취소</a></td>
+										<td><a href="javascript:DelMat(${mat.USER_ID});">예약취소</a></td>
 									</c:if>
 								</c:when>
 								<c:otherwise>
@@ -210,9 +210,9 @@
 	<script src="assets/js/main.js"></script>
 	
 	<script>
-    // 댓글삭제(AJax 처리)
-    function DelMat(MAT_NO) {
-        var query = {matNum : MAT_NO};
+    // 게시글삭제(AJax 처리)
+    function DelMat(USER_ID) {
+        var query = {delmatid :USER_ID};
         var ans = confirm("예약을 취소하시겠습니까?");
         if(!ans) return false;
         

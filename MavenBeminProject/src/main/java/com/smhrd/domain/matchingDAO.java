@@ -71,10 +71,10 @@ public class matchingDAO<BoardReply> {
 	} // 매치들 끝 --------------------------------------------------------------------
 	
 	//  매칭게시판에서 내글 삭제 ----------------------------------------------
-	public int deleteMatchingIdex(int matNum) {
+	public int deleteMatchingIdex(String delmatid) {
 		int cnt = 0;
 		try {
-			cnt = sqlSession.delete("com.smhrd.domain.matchingDAO.deleteMatchingIdex",matNum);
+			cnt = sqlSession.delete("com.smhrd.domain.matchingDAO.deleteMatchingIdex",delmatid);
 			if(cnt > 0) {
 				sqlSession.commit();
 			} else {
