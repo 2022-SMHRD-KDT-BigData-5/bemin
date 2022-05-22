@@ -51,8 +51,8 @@
 
 	// - 예약 페이지에서 날짜,경기장,시간 정보 가져올수 있음
 	// - 결제 페이지에 경기장 정보 보낼 수 있음
-	MATCHING placeInfo = (MATCHING) session.getAttribute("placeInfo");
-	pageContext.setAttribute("placeInfo", placeInfo);
+	MATCHING rentalDate = (MATCHING) session.getAttribute("rentalDate");
+	pageContext.setAttribute("rentalDate", rentalDate);
 
 	//USER_INFO에서 로그인한 세션 받아오기(캐시)
 	USER_INFO loginMember = (USER_INFO) session.getAttribute("loginMember");
@@ -72,7 +72,7 @@
 	// 티어는 체크박스 형태로 6단계 보여주기가 나을듯? 고민해봐야함
 	// 매너는 'x점 이상' 으로 선택하는데 x점을 select 할지 체크박스 할지 고민해봐야할듯
 	%>
-
+<form action="RentalCon" method="post">
 	<div class="fom">
 		<div class="logoName">
 			<a href="main.jsp"><h1>플라이트</h1></a>
@@ -83,18 +83,19 @@
 					<div class="content-header_title">
 						<h2 style="text-align: center;">예약내역</h2>
 						<br>
-						<h3 style="font-weight: 400;">${placeInfo.place}</h3>
+						<h3 style="font-weight: 400;">${rentalDate.RES_PLACE}</h3>
 						<br>
-						<h4 style="font-weight: 400;">${placeInfo.date}</h4>
+						<h4 style="font-weight: 400;">${rentalDate.RES_DATE}</h4>
 						<br>
-						<h4 style="font-weight: 400;">${placeInfo.time}</h4>
+						<h4 style="font-weight: 400;">${rentalDate.RES_TIME}</h4>
 						<br>
 						<div>
-							<button id="show">예약설정</button>
+							<button id="show" type="button">예약설정</button>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
 
 			<!-- 캐시 -->
 			<div class="content_body" style="padding-bottom: 0px;">
@@ -108,10 +109,11 @@
 									<h4 style="text-align: left">🚩캐시</h4>
 
 									<div class="list-right">
-										<p id="myCash">10000</p>
-										<input type="text" name="useCash" id="inputCash" style="width: 80px;"  value="금액 입력" onfocus="this.value=''" />
-										원
-										<br><button type="button"
+										<p id="myCash">${loginMember.CASH}</p>
+										<input type="text" name="useCash" id="inputCash"
+											style="width: 80px;" value="금액 입력" onfocus="this.value=''" />
+										원 <br>
+										<button type="button"
 											src="https://plab-football.s3.amazonaws.com/static/img/ic_arrow_right.svg"
 											id="useCash" style="margin-top: 10px">적용</button>
 									</div>
@@ -209,108 +211,104 @@
 							<div class="content_footer">
 								<div class="btn-wrap bottom-fixed">
 									<p style="text-decoration: underline">위 내용을 동의하고 결제를 진행합니다.</p>
-									<button id="flex"><a href="PayFin.jsp" style="color: white;">결제하기</a></button>
+									<button id="flex">
+										<a type="submit" style="color: white;">결제하기</a>
+									</button>
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="background">
-					<div class="window">
-						<div class="popup">
+							<div class="window">
+								<div class="popup">
+									
+										<button id="close" data-dismiss="modal">
+											<a href="#" class="close-x">X</a>
+										</button>
 
-							<button id="close">
-								<a href="#" class="close-x">X</a>
-							</button>
+										<div class="modal-in">
+											<br>
+											<div style="margin: 0 auto;">
+												<p class="gen-cl">성별</p>
+												<input id="GENDER" type="radio" name="GENDER" value="남">남
+												<input id="GENDER" type="radio" name="GENDER" value="여">여
+												<input id="GENDER" type="radio" name="GENDER" value="무">무관
+											</div>
 
-							<div class="modal-in">
+											<br>
+											<div>
+												<p class="per-cl">인원</p>
+												<input id="MAT_MEMBER" type="radio" name="MAT_MEMBER"
+													value="2">2인 <input id="MAT_MEMBER" type="radio"
+													name="MAT_MEMBER" value="4">4인
+											</div>
+											<br>
+											<div>
+												<input id="UNIT" type="radio" name="UNIT" value="개인">개인
+												<input id="UNIT" type="radio" name="UNIT" value="단체">단체
+											</div>
+											<br>
+											<div style="color: black;">
+												<p style="margin-left: 26px;">티어</p>
+												<select name="STN_TIER" class="tire-op">
+													<option>티어</option>
+													<option value="100">루키</option>
+													<option value="200">비기너</option>
+													<option value="300">주니어</option>
+													<option value="400">시니어</option>
+													<option value="500">프로</option>
+													<option value="600">플라이트</option>
+												</select>
+											</div>
 
+											<br>
 
-								<br>
+											<div style="color: black;">
+												<p style="margin-left: 10px;">매너온도</p>
+												<select name="STN_MANNER" " class="tire-manner">
+													<option>매너점수</option>
+													<!-- <option>0</option> -->
+													<option value="20">20 이상</option>
+													<option value="40">40 이상</option>
+													<option value="60">60 이상</option>
+													<option value="80">80 이상</option>
+												</select>
+											</div>
+										</div>
 
+										<div class="move-tire"></div>
 
-								<div style="margin: 0 auto;">
-									<p class="gen-cl">성별</p>
-									<input type="radio" name="gender">남 <input type="radio"
-										name="gender">녀 <input type="radio" name="gender">무관
-								</div>
+										<div style="margin: 10px 5px 10px 10px;">
+											<input id="sub_bt" type="button" value="적용">
+										</div>
 
-								<br>
-
-
-								<div>
-									<p class="per-cl">인원</p>
-									<input type="radio" name="per">2인 
-                                    <input type="radio"name="per">4인
-								</div>
-								<br>
-								<div>
-									<input type="radio" name="age">개인 
-                                    <input type="radio"name="age">단체
-								</div>
-								<br>
-								<div style="color: black;">
-									<!-- <p style="margin-left: 26px;">티어</p>	 -->
-									<select class="tire-op">
-										<option>티어</option>
-										<option>루키</option>
-										<option>비기너</option>
-										<option>주니어</option>
-										<option>시니어</option>
-										<option>프로</option>
-										<option>플라이트</option>
-									</select>
-								</div>
-
-
-								<br>
-
-								<div style="color: black;">
-									<!-- <p style="margin-left: 10px;">매너온도</p> -->
-									<select class="tire-manner">
-										<option>매너점수</option>
-										<option>상관없음</option>
-										<!-- <option>0</option> -->
-										<option>20 이상</option>
-										<option>40 이상</option>
-										<option>60 이상</option>
-										<option>80 이상</option>
-										<option>100</option>
-									</select>
 								</div>
 							</div>
-
-							<div class="move-tire"></div>
-
-							<div style="margin: 10px 5px 10px 10px;">
-								<input id="sub_bt" type="submit" value="적용">
-							</div>
-
 						</div>
-					</div>
-                </div>
-            </div>
-        </div>
-	
-	    
-	    <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
-        <script src="assets/js/vendor/bootstrap.min.js"></script>
+				</div>
+			</div>
 
-        <script src="assets/js/jquery.magnific-popup.js"></script>
-        <script src="assets/js/jquery.easing.1.3.js"></script>
-        <script src="assets/css/slick/slick.js"></script>
-        <script src="assets/css/slick/slick.min.js"></script>
-        <script src="assets/js/jquery.collapse.js"></script>
-        <script src="assets/js/bootsnav.js"></script>
+</div>
+</form>
+			<script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
+			<script src="assets/js/vendor/bootstrap.min.js"></script>
 
+			<script src="assets/js/jquery.magnific-popup.js"></script>
+			<script src="assets/js/jquery.easing.1.3.js"></script>
+			<script src="assets/css/slick/slick.js"></script>
+			<script src="assets/css/slick/slick.min.js"></script>
+			<script src="assets/js/jquery.collapse.js"></script>
+			<script src="assets/js/bootsnav.js"></script>
 
 
-        <script src="assets/js/plugins.js"></script>
-        <script src="assets/js/main.js"></script>
-	<!--캐시 입력 사용  -->
-	<script>
+
+			<script src="assets/js/plugins.js"></script>
+			<script src="assets/js/main.js"></script>
+			<!--캐시 입력 사용  -->
+			<script>
 	
 	</script>
-	<script>
+			<script>
 		//버튼
 		let useCash = document.querySelector('#useCash');
 		//입력 캐시
@@ -352,8 +350,7 @@
 			}
 
 		});
-	</script>
-	<script>
+
  		$("#inputCash").keyup(function() {
 			chk_input_filter("number", $("#inputCash"));
 		});
@@ -367,42 +364,79 @@
 				$(obj).val(str.replace(/[^0-9]/gi, ""));
 			}
 		}
+		
+		
+		//결제버튼 입력
+		
+
 	</script>
 
 
-	<script>
-	// onkeyup="inputNumberFormat(this)"
-	
-	 /* function inputNumberFormat(obj) {
-	     obj.value = comma(uncomma(obj.value));
-	 }
 
-	 function comma(str) {
-	     str = String(str);
-	     return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
-	 }
-
-	 function uncomma(str) {
-	     str = String(str);
-	     return str.replace(/[^\d]+/g, '');
-	 }*/
-	</script>
-	
-	<script>
+			<script>
     function show() {
       document.querySelector(".background").className = "background show";
     }
+	
 
     function close() {
-      document.querySelector(".background").className = "background";
+    	document.querySelector(".background").className = "background";
     }
-    
+  
     document.querySelector("#show").addEventListener("click", show);
     document.querySelector("#close").addEventListener("click", close); 
     document.querySelector("#sub_bt").addEventListener("click", close); 
     
-  </script>
-	
 
+
+
+    //$('[type=text], textarea').each(function(){ this.defaultValue = this.value; });
+    //$('[type=checkbox], [type=radio]').each(function(){ this.defaultChecked = this.checked; }); 
+    //$('select option').each(function(){ this.defaultSelected = this.selected; });
+	
+    
+
+
+
+    /* 
+ 	let UNIT = document.querySelector('input[name="UNIT"]:checked')
+ 	let MAT_MEMBER = document.querySelector('input[name="MAT_MEMBER"]:checked')
+ 	let GENDER = document.querySelector('input[name="GENDER"]:checked')
+
+    
+
+	//console.log(UNIT)
+	//console.log(MAT_MEMBER)
+	//console.log(GENDER)
+    
+    //$('#UNIT').on('click', (e) => { console.log(e.target.value); })
+    //$('#MAT_MEMBER').on('click', (e) => { console.log(e.target.value); })
+	$('#STN_TIER').on('click', (e) => { STN_TIER= e.target.value; })
+    $('#STN_MANNER').on('click', (e) => { STN_MANNER = e.target.value; })
+    //$('#GENDER').on('click', (e) => { console.log(e.target.value); })
+
+
+
+
+    
+    $(document).on('click', '#flex', function() {
+		//입력값 컨트롤러에 응답하기
+		
+			var url = 'RentalCon';
+			var obj = {
+					UNIT    : UNIT,
+					MAT_MEMBER : MAT_MEMBER,
+					STN_TIER : STN_TIER,
+					STN_MANNER : STN_MANNER,
+					GENDER : GENDER
+			    	};
+			
+			const queryStr = new URLSearchParams(obj).toString();
+			window.location = url +'?' +queryStr;
+		}) */
+		
+
+    
+  </script>
 </body>
 </html>

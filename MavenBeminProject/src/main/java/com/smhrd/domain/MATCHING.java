@@ -13,8 +13,24 @@ public class MATCHING {
 	private String STN_TIER;
 	private String STN_MANNER;
 	private String MAT_CPL;
+	private String GENDER;
 	
-	
+	//예약정보 모두 담은 생성자
+	public MATCHING(String rES_DATE, String rES_TIME, String rES_PLACE, String uSER_ID, String uNIT, String mAT_MEMBER,
+			String sTN_TIER, String sTN_MANNER, String gENDER) {
+		super();
+		RES_DATE = rES_DATE;
+		RES_TIME = rES_TIME;
+		RES_PLACE = rES_PLACE;
+		USER_ID = uSER_ID;
+		UNIT = uNIT;
+		MAT_MEMBER = mAT_MEMBER;
+		STN_TIER = sTN_TIER;
+		STN_MANNER = sTN_MANNER;
+		GENDER = gENDER;
+	}
+
+
 	public MATCHING(String RES_DATE, String RES_TIME, String RES_PLACE, String MAT_MEMBER) {
 		super();
 		this.RES_DATE = RES_DATE;
@@ -32,7 +48,7 @@ public class MATCHING {
 
 
 	public MATCHING(BigDecimal MAT_NO, String RES_DATE, String RES_TIME, String RES_PLACE, String USER_ID, String UNIT, String MAT_MEMBER,
-			String STN_TIER, String STN_MANNER, String MAT_CPL) {
+			String STN_TIER, String STN_MANNER, String MAT_CPL, String GENDER) {
 		super();
 		this.MAT_NO = MAT_NO;
 		this.RES_DATE = RES_DATE;
@@ -44,6 +60,7 @@ public class MATCHING {
 		this.STN_TIER = STN_TIER;
 		this.STN_MANNER = STN_MANNER;
 		this.MAT_CPL = MAT_CPL;
+		this.GENDER = GENDER;
 	}
 	public MATCHING(String rES_DATE, String rES_TIME, String rES_PLACE) {
 		super();

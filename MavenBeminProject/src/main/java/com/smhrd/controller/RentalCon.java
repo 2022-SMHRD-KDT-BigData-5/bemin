@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import com.smhrd.domain.MATCHING;
 import com.smhrd.domain.USER_INFO;
+import com.smhrd.domain.matchingDAO;
 
 
 public class RentalCon extends HttpServlet {
@@ -28,12 +29,15 @@ public class RentalCon extends HttpServlet {
 		String RES_DATE = rentalDate.getRES_DATE();
 		String RES_TIME = rentalDate.getRES_TIME();
 		String RES_PLACE = rentalDate.getRES_PLACE();
+		//시간
+		String start = (String)session.getAttribute("start");
 		
 		// - pay 페이지에서 예약 정보 가져오기
 		String UNIT = request.getParameter("UNIT");
 		String MAT_MEMBER = request.getParameter("MAT_MEMBER");
 		String STN_TIER = request.getParameter("STN_TIER");
 		String STN_MANNER = request.getParameter("STN_MANNER");
+		String GENDER = request.getParameter("GENDER");
 
 		
 		
@@ -42,7 +46,18 @@ public class RentalCon extends HttpServlet {
 		
 		String USER_ID = loginMember.getID();
 		// 선택한 경기장의 요금 정보 가져와야함
-
+		MATCHING rental = new MATCHING(RES_DATE,RES_TIME,RES_PLACE,USER_ID,UNIT,MAT_MEMBER,STN_TIER,STN_MANNER,GENDER);
+		
+		matchingDAO dao = new matchingDAO();
+		int cnt = dao.insertRental(rental);
+		
+		if (cnt > 0) {
+			System.out.println("예약 성공");
+			response.sendRedirect("RealMain.jsp");
+		} else {
+			System.out.println("예약 실패");
+			response.sendRedirect("Rental.jsp");
+		}
 		
 		
 		

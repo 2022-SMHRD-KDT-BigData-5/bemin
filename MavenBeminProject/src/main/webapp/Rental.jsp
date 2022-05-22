@@ -213,6 +213,7 @@
 								<div>
 									<p>
 									<h3 id="getPName"><%=place_name%></h3>
+									
 									</p>
 
 									<div class="plc-in">
@@ -235,6 +236,7 @@
 												int start2 = start + 2;
 											%>
 											<a type=button id="getTime" class='t1'><%=start%>:00 ~ <%=start2%>:00</a>
+											<span id="getStart" class="t3"><%=start%></span>
 											<%
 											start += 2;
 											if (start >= end) {
@@ -246,6 +248,7 @@
 
 
 										</div>
+									
 									</div>
 								</div>
 							</li>
@@ -568,16 +571,15 @@
 		dayCon2.innerHTML = html2;
 
 		let date = ''
-		let day = ''
 		//Date 값 불러오기
 		window.onload=function(){
 			document.querySelector('.pt1').click();
 		}
+		
 		$(document).on('click', '.pt1', function() {
 			year = $(this).children(':nth-child(1)').text();
 			month = $(this).children(':nth-child(2)').text();
 			date = $(this).children(':nth-child(3)').text();
-			day = $(this).children(':nth-child(4)').text();
 			//Ajax방식으로 날짜데이터를 서버에      
 			// 전송해서 해당 날짜에 예약한 경기리스트를 요청      
 			//해당 날짜에 예약한 경기목록   
@@ -586,43 +588,24 @@
 
 		// 클릭한 시간, 클릭 상위 요소의 경기장이름
 		$(document).on('click', '#getTime', function() {
+			let start = $(this).next().text();
 			let time = $(this).text();
 			let place = $(this).parent().parent().siblings('#getPName').text();
-			console.log(year)
-			console.log(month)
-			console.log(date)
-			console.log(place)
-			console.log(time)
-
-			/* let url = 'testCon?year=' + encodeURI(year) + '&month='
-					+ encodeURI(month) + '&date=' + encodeURI(date)
-					+ '&place=' + encodeURI(place) + '&time='
-					+ encodeURI(time) */
-
-					
+			
+			console.log(start)
+			
 			var url = 'RentalViewCon';
 			var obj = {
 					year    : year,
 					month : month,
 					date : date,
 					place : place,
-					time : time
+					time : time,
+					start : start
 			    	};
 			
 			const queryStr = new URLSearchParams(obj).toString();
 			window.location = url +'?' +queryStr;
-			
-			//window.location = url +'?' + $.param(obj);
-
-			
-			/* 			window.location = 'testCon?' + 
-			            '&year=' + year +
-			            '&month=' + month +
-			            '&date=' + date +
-			            '&place=' + place +
-			            '&time=' + time; */
-			
-
 
 		})
 	</script>

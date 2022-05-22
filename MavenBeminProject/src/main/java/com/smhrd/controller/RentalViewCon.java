@@ -20,7 +20,7 @@ public class RentalViewCon extends HttpServlet {
 
 		
 		request.setCharacterEncoding("utf-8");
-		response.setContentType("text/html; charset=UTF-8");
+		
 		PrintWriter out = response.getWriter();
 		
 		
@@ -29,15 +29,17 @@ public class RentalViewCon extends HttpServlet {
 		String date = request.getParameter("date");
 		String place = request.getParameter("place");
 		String time = request.getParameter("time");
+		String start = request.getParameter("start");
 		
-		String RES_DATE = year+"-"+month+"-"+date+" "+time+":00:00";
+		String RES_DATE = year+"-"+month+"-"+date;
 		
 		MATCHING rentalDate = new MATCHING(RES_DATE, time, place);
+		response.setContentType("text/html; charset=UTF-8");
 		
-		System.out.println(RES_DATE);
 		if(rentalDate != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("rentalDate", rentalDate);
+			session.setAttribute("start", start);
 			response.sendRedirect("Pay.jsp");
 		}else{
 			response.sendRedirect("Rental.jsp");
