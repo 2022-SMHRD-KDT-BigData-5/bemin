@@ -71,10 +71,10 @@ public class matchingDAO<BoardReply> {
 	} // 매치들 끝 --------------------------------------------------------------------
 	
 	//  매칭게시판에서 내글 삭제 ----------------------------------------------
-	public int deleteMatchingIdex(String delmatid) {
+	public int deleteMatchingIdex(int delmatNum) {
 		int cnt = 0;
 		try {
-			cnt = sqlSession.delete("com.smhrd.domain.matchingDAO.deleteMatchingIdex",delmatid);
+			cnt = sqlSession.delete("com.smhrd.domain.matchingDAO.deleteMatchingIdex",delmatNum);
 			if(cnt > 0) {
 				sqlSession.commit();
 			} else {
@@ -88,6 +88,23 @@ public class matchingDAO<BoardReply> {
 		return cnt;
 	} //  매칭게시판에서 내글 삭제------------------------------------------
 
-
+	//  매칭게시판에서 내글 삭제 ----------------------------------------------
+	public int deleteMatchingList(String delmatid) {
+		int cnt = 0;
+		try {
+			cnt = sqlSession.delete("com.smhrd.domain.matchingDAO.deleteMatching",delmatid);
+			if(cnt > 0) {
+				sqlSession.commit();
+			} else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return cnt;
+	} //  매칭게시판에서 내글 삭제------------------------------------------
+	
 	
 }

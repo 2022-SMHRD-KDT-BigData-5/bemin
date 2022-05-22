@@ -121,7 +121,7 @@
 										<td>취소불가</td>
 									</c:if>
 									<c:if test="${mat.MAT_CPL eq '0'}">
-										<td><a href="javascript:DelMat(${mat.USER_ID});">예약취소</a></td>
+										<td><button onclick="javascript:DelMat(${mat.MAT_NO});">예약취소</button></td>
 									</c:if>
 								</c:when>
 								<c:otherwise>
@@ -129,7 +129,7 @@
 										<td>취소불가</td>
 									</c:if>
 									<c:if test="${mat.MAT_CPL eq '0'}">
-										<td><a href="#">참가취소</a></td>
+										<td><button onclick="javascript:DelMatList(${mat.USER_ID});">참가취소</button></td>
 									</c:if>
 								</c:otherwise>
 								</c:choose>
@@ -210,9 +210,9 @@
 	<script src="assets/js/main.js"></script>
 	
 	<script>
-    // 게시글삭제(AJax 처리)
-    function DelMat(USER_ID) {
-        var query = {delmatid :USER_ID};
+    // 게시글 삭제(AJax 처리)
+    function DelMat(MAT_NO) {
+        var query = {delmatNum :MAT_NO};
         var ans = confirm("예약을 취소하시겠습니까?");
         if(!ans) return false;
         
@@ -221,11 +221,36 @@
             type : "get",
             data : query,
             success : function(data) {
+            	console.log(data);
                   alert("예약이 취소 성공");
                   location.reload();
             },
             error : function(data) {
+            	console.log(data);
                 alert("예약이 취소 실패");
+                location.reload();
+            }
+        });
+    }
+    // 신청 취소(AJax 처리)
+    function DelMatList(USER_ID) {
+        var query = {delmatid :USER_ID};
+        var ans = confirm("매칭을 취소하시겠습니까?");
+        if(!ans) return false;
+        
+        $.ajax({
+            url  : "MatchingListCon",
+            type : "get",
+            data : query,
+            success : function(data) {
+            	console.log(data);
+                alert("매칭 취소 성공");
+                location.reload();
+            },
+            error : function(data) {
+            	console.log(data);
+                alert("예약이 취소 실패");
+                location.reload();
             }
         });
     }
