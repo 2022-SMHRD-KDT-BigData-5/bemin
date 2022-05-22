@@ -3,7 +3,6 @@
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.smhrd.domain.matchingDAO"%>
 <%@page import="com.smhrd.domain.MATCHING"%>
-<%@page import="com.smhrd.domain.MATCHING_LIST"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.domain.USER_INFO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -89,11 +88,12 @@
 				<%
 				matchingDAO dao = new matchingDAO();
 				USER_INFO u_vo = (USER_INFO)session.getAttribute("loginMember");
-				MATCHING m_vo = (MATCHING)session.getAttribute("matching");
 				List<MATCHING> matList = dao.selectMatchig(u_vo.getID());
 				pageContext.setAttribute("matList", matList);
 				%>
+				<table id="table" id="easy-table" class="table is-striped is-bordered"">
 				<table class="table table-striped">
+				<thread>
 					<!-- <li><a href="DeleteAllMessageCon" class="button next scrolly">전체삭제하기</a></li> -->
 					<tr>
 						<th>번호</th>
@@ -104,22 +104,24 @@
 						<th>예약/참여취소</th>
 						<th>멤버보기</th>
 					</tr>
+					</thread>
+					<tbody>
 					<c:forEach var="mat" items="${matList}" varStatus="status">
 					<c:set var="matid" value="${mat.USER_ID}"/>
 					<c:set var="logid" value="${loginMember.ID}"/>
-						<a href="#"><tr>
+						<tr>
 							<td>${status.count}</td>
 							<td><c:out value="${mat.RES_DATE}" /></td>
 							<td><c:out value="${mat.RES_TIME}" /></td>
 							<td><c:out value="${mat.RES_PLACE}" /></td>
 							<td><c:out value="${mat.MAT_MEMBER}" /></td>
 							<c:choose>
-								<c:when test="${logid eq matid}">
+								<c:when test="${matid eq logid}">
 									<c:if test="${mat.MAT_CPL eq '1'}">
 										<td>취소불가</td>
 									</c:if>
 									<c:if test="${mat.MAT_CPL eq '0'}">
-										<td><a href="#">예약취소</a></td>
+										<td><button onclick="javascript:DelMat(${mat.MAT_NO});">예약취소</button></td>
 									</c:if>
 								</c:when>
 								<c:otherwise>
@@ -127,44 +129,76 @@
 										<td>취소불가</td>
 									</c:if>
 									<c:if test="${mat.MAT_CPL eq '0'}">
-										<td><a href="#">참가취소</a></td>
+										<td><button onclick="javascript:DelMatList(${mat.USER_ID});">참가취소</button></td>
 									</c:if>
 								</c:otherwise>
-							</c:choose>
-							<td><a href="#">멤버보기</a></td>
-						</tr></a>
+								</c:choose>
+							 	<td><a href="#">멤버보기</a></td>
+							</tr>
+						
 					</c:forEach>
+					</tbody>
+					</table>
 				</table>
 			</c:otherwise>
 		</c:choose>
 	</div>
+	<div id="pager">
+	<div id="paginator">
+	<button onclick="previousPage()" class="paginator-button" disabled>❮</button>
+	<button onclick="showPage(0)" class="paginator-button active-paginator-button">1</button>
+	<button onclick="showPage(1)" class="paginator-button">2</button>
+	<button onclick="showPage(2)" class="paginator-button">3</button>
+	<button onclick="showPage(3)" class="paginator-button">4</button>
+	<button onclick="showPage(4)" class="paginator-button">5</button>
+	<button onclick="showPage(5)" class="paginator-button">6</button>
+	<button onclick="showPage(6)" class="paginator-button">7</button>
+	<button onclick="showPage(7)" class="paginator-button">8</button>
+	<button onclick="showPage(8)" class="paginator-button">9</button>
+	<button onclick="showPage(9)" class="paginator-button">10</button>
+	<button onclick="nextPage()" class="paginator-button">❯</button>
+	</div>	
+	</div>
+	
+    <script src="./script.js"></script>
+	<script type="text/javascript">
+	const options = {
+            tableId:'easy-table',
+            currentPage:1,
+            perPage:10,
+            autoHeaders:true,
+            arrowUp:'⇑',
+            arrowDown:'⇓',
+            previousText:'&#10094',
+            nextText:'&#10095',
+        }
 
-
+        setTable(data, options);
+    </script>
+	
 	<!-- wrapper -->
 	<div id="wrapper">
 
 		<!-- content-->
 		<div id="content">
 
-			<!-- 일정보기 BTN-->
+			<!-- 메인으로 이동 BTN-->
 			<div class="btn_area">
 				<button type="button" id="btnJoin">
-					<a href="main.jsp">일정보기</a>
+					<a href="main.jsp">매칭 게시판으로 이동</a>
 				</button>
 			</div>
 		</div>
-
-	</div>
-	<!-- content-->
+		<!-- content-->
 
 	</div>
 	<!-- wrapper -->
-	<!-- JS includes -->
+
 
 	<script src="assets/js/join1.js"></script>
 	<script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
 	<script src="assets/js/vendor/bootstrap.min.js"></script>
-
+	
 	<script src="assets/js/owl.carousel.min.js"></script>
 	<script src="assets/js/jquery.magnific-popup.js"></script>
 	<script src="assets/js/jquery.easing.1.3.js"></script>
@@ -172,10 +206,56 @@
 	<script src="assets/css/slick/slick.min.js"></script>
 	<script src="assets/js/jquery.collapse.js"></script>
 	<script src="assets/js/bootsnav.js"></script>
-
-
-
 	<script src="assets/js/plugins.js"></script>
 	<script src="assets/js/main.js"></script>
+	
+	<script>
+    // 게시글 삭제(AJax 처리)
+    function DelMat(MAT_NO) {
+        var query = {delmatNum :MAT_NO};
+        var ans = confirm("예약을 취소하시겠습니까?");
+        if(!ans) return false;
+        
+        $.ajax({
+            url  : "MatchingCon",
+            type : "get",
+            data : query,
+            success : function(data) {
+            	console.log(data);
+                  alert("예약이 취소 성공");
+                  location.reload();
+            },
+            error : function(data) {
+            	console.log(data);
+                alert("예약이 취소 실패");
+                location.reload();
+            }
+        });
+    }
+    // 신청 취소(AJax 처리)
+    function DelMatList(USER_ID) {
+        var query = {delmatid :USER_ID};
+        var ans = confirm("매칭을 취소하시겠습니까?");
+        if(!ans) return false;
+        
+        $.ajax({
+            url  : "MatchingListCon",
+            type : "get",
+            data : query,
+            success : function(data) {
+            	console.log(data);
+                alert("매칭 취소 성공");
+                location.reload();
+            },
+            error : function(data) {
+            	console.log(data);
+                alert("예약이 취소 실패");
+                location.reload();
+            }
+        });
+    }
+
+	</script>
+	
 </body>
 </html>

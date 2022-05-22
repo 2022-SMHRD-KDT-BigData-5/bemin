@@ -10,6 +10,7 @@
 <title>Insert title here</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <link rel="icon" type="image/png" href="favicon.ico">
 
 
@@ -28,6 +29,7 @@
 <link rel="stylesheet" href="assets/css/bootsnav.css">
 <link rel="stylesheet" href="assets/css/로그인.css">
 <link rel="stylesheet" href="assets/css/pay.css">
+<link rel="stylesheet" href="assets/css/modal.css">
 
 
 <link rel="stylesheet" href="assets/css/style.css">
@@ -71,7 +73,7 @@
 	// 매너는 'x점 이상' 으로 선택하는데 x점을 select 할지 체크박스 할지 고민해봐야할듯
 	%>
 
-	<form class="fom">
+	<div class="fom">
 		<div class="logoName">
 			<a href="main.jsp"><h1>플라이트</h1></a>
 		</div>
@@ -87,6 +89,9 @@
 						<br>
 						<h4 style="font-weight: 400;">${placeInfo.time}</h4>
 						<br>
+						<div>
+							<button id="show">예약설정</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -104,12 +109,11 @@
 
 									<div class="list-right">
 										<p id="myCash">10000</p>
-										<input type="text" name="useCash" id="inputCash"
-											value="사용할 캐시를 입력하세요" onfocus="this.value=''" />
-										<p>원 사용</p>
-										<button type="button"
+										<input type="text" name="useCash" id="inputCash" style="width: 80px;"  value="금액 입력" onfocus="this.value=''" />
+										원
+										<br><button type="button"
 											src="https://plab-football.s3.amazonaws.com/static/img/ic_arrow_right.svg"
-											id="useCash">버튼</button>
+											id="useCash" style="margin-top: 10px">적용</button>
 									</div>
 									</p>
 									<div style="text-align: right; padding-bottom: 20px;">
@@ -209,7 +213,84 @@
 								</div>
 							</div>
 						</div>
-	</form>
+						
+						<div class="background">
+					<div class="window">
+						<div class="popup">
+
+							<button id="close">
+								<a href="#" class="close-x">X</a>
+							</button>
+
+							<div class="modal-in">
+
+
+								<br>
+
+
+								<div style="margin: 0 auto;">
+									<p class="gen-cl">성별</p>
+									<input type="radio" name="gender">남 <input type="radio"
+										name="gender">녀 <input type="radio" name="gender">무관
+								</div>
+
+								<br>
+
+
+								<div>
+									<p class="per-cl">인원</p>
+									<input type="radio" name="per">2인 
+                                    <input type="radio"name="per">4인
+								</div>
+								<br>
+								<div>
+									<input type="radio" name="age">개인 
+                                    <input type="radio"name="age">단체
+								</div>
+								<br>
+								<div style="color: black;">
+									<!-- <p style="margin-left: 26px;">티어</p>	 -->
+									<select class="tire-op">
+										<option>티어</option>
+										<option>루키</option>
+										<option>비기너</option>
+										<option>주니어</option>
+										<option>시니어</option>
+										<option>프로</option>
+										<option>플라이트</option>
+									</select>
+								</div>
+
+
+								<br>
+
+								<div style="color: black;">
+									<!-- <p style="margin-left: 10px;">매너온도</p> -->
+									<select class="tire-manner">
+										<option>매너점수</option>
+										<option>상관없음</option>
+										<!-- <option>0</option> -->
+										<option>20 이상</option>
+										<option>40 이상</option>
+										<option>60 이상</option>
+										<option>80 이상</option>
+										<option>100</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="move-tire"></div>
+
+							<div style="margin: 10px 5px 10px 10px;">
+								<input id="sub_bt" type="submit" value="적용">
+							</div>
+
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
+	
 	    
 	    <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
         <script src="assets/js/vendor/bootstrap.min.js"></script>
@@ -306,6 +387,21 @@
 	     return str.replace(/[^\d]+/g, '');
 	 }*/
 	</script>
+	
+	<script>
+    function show() {
+      document.querySelector(".background").className = "background show";
+    }
+
+    function close() {
+      document.querySelector(".background").className = "background";
+    }
+    
+    document.querySelector("#show").addEventListener("click", show);
+    document.querySelector("#close").addEventListener("click", close); 
+    document.querySelector("#sub_bt").addEventListener("click", close); 
+    
+  </script>
 	
 
 </body>

@@ -23,21 +23,29 @@ public class LoginCon extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		// id, pw 받아오기
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
+
+		String ID = request.getParameter("id");
+		String PW = request.getParameter("pw");
+
 
 		// Member객체에 담기
-		USER_INFO m_vo = new USER_INFO(id, pw);
+
+		USER_INFO m_vo = new USER_INFO(ID, PW);
+
+		System.out.println(m_vo);
 
 		USER_INFO_DAO dao = new USER_INFO_DAO();
+		System.out.println(dao);
 		USER_INFO loginMember = dao.selectMember(m_vo);
-
+		
+		System.out.println(loginMember);
+		
 		if (loginMember != null) {
 			// 로그인 성공
 			System.out.println("로그인 성공");
 			HttpSession session = request.getSession();
 			session.setAttribute("loginMember", loginMember);
-			response.sendRedirect("메인.jsp");
+			response.sendRedirect("main.jsp");
 		} else {
 			// 로그인 실패
 			

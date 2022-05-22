@@ -121,7 +121,11 @@
 				<h3 class="join_title">
 					<label for="pswd1">비밀번호</label>
 				</h3>
-				<span class="box int_pass"> <input type="text" name="pw" id="pswd1"
+
+				
+
+				<span class="box int_pass"> <input type="password" id="pswd1"
+
 					class="int" maxlength="20"> <span id="alertTxt">사용불가</span>
 					<img src="./assets/images/m_icon_pass.png" id="pswd1_img1"
 					class="pswdImg">
@@ -133,10 +137,12 @@
 				<h3 class="join_title">
 					<label for="pswd2">비밀번호 재확인</label>
 				</h3>
+
 				<span class="box int_pass_check"> <input type="text"
-					id="pswd2" name="pw" class="int" maxlength="20"> <img
-					src="./assets/images/m_icon_check_disable.png" id="pswd2_img1"
-					class="pswdImg">
+					id="pswd2" name="pw" class="int" maxlength="20"> 
+
+
+
 				</span> <span class="error_next_box"></span>
 			</div>
 
@@ -324,6 +330,8 @@
 	<script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 	
 	<script>
+	//아이디 체크!!
+	
 	function idCheck(){
 		let id=$('#id').val();
 		$.ajax({
@@ -350,57 +358,55 @@
 		})
 	}
 	
-	function checkValue(){
-		if(document.frm.id.value.length==0){
-			alert('아이디를 입력해주세요!!!!')
-			frm.id.focus();
-			return false;
-		}
-		if(document.frm.pw.value.length==0){
-			alert('비밀번호를 입력해주세요!!!!')
-			frm.pw.focus();
-			return false;
-		}
-		if(document.frm.name.value.length==0){
-			alert('이름을 입력해주세요!!!!')
-			frm.name.focus();
-			return false;
-		}
-		if(document.frm.pw.value.length==0){
-			alert('비밀번호를 입력해주세요!!!!')
-			frm.pw.focus();
-			return false;
-		}
-		if(document.frm.birth.value.length==0){
-			alert('생년월일을 입력해주세요!!!!')
-			frm.birth.focus();
-			return false;
-		}
-		if(document.frm.gender.value.length==0){
-			alert('성별란 체크해주세요!!!')
-			frm.gender.focus();
-			return false;
-		}
-		if(document.frm.tel.value.length==0){
-			alert('전화번호를 입력해주세요!!!!')
-			frm.tel.focus();
-			return false;
-		}
-		if(document.frm.address.value.length==0){
-			alert('주소를 입력해주세요!!!!')
-			frm.address.focus();
-			return false;
-		}
-		return true;
+	
+   	 
+    	// 유효성, 비번확인
+ 		$(document).on('click','#btnJoin',function(){
+ 			if($('#id').val() == ''){
+ 				alert('아이디를 입력하세요');
+ 				window.location.href = "main.jsp";
+ 				return false;
+ 			}else if($('#pswd1').val() == ''){
+ 				alert('비밀번호를 입력하세요');
+ 				return false;
+ 			}else if($('#pswd2').val() == ''){
+ 				alert('비밀번호 재확인을 입력하세요');
+ 				return false;
+ 			}else if($('#pswd1').val() != $('#pswd2').val()){
+    		alert("비밀번호가 일치하지 않습니다!!!");
+	    	return false;
+ 			}else if($('#name').val() == ''){
+ 				alert('이름을 입력하세요');
+ 				return false;
+ 			}else if($('#gender').val() == ''){
+ 				alert('성별을 입력하세요');
+ 				return false;
+ 			}else if($('#email').val() == ''){
+ 				alert('이메일을 입력하세요');
+ 				return false;
+ 			}
+ 			else if($('#mobile').val() == ''){
+ 				alert('전화번호를 입력하세요');
+ 				return false;
+ 			}
+ 			else if($('#adress').val() == ''){
+ 				alert('주소 입력하세요');
+ 				return false;
+ 			}else {
+    		 window.location.href = "main.jsp";
+    		 return true;
+    	 }
+     
+     
+     
+	})
+	
+	
+	
 		
-	}
 	
 
-	
-	
-			
-	
-	
+
 	</script>
 	
 	
