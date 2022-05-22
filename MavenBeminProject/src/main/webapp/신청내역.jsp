@@ -222,12 +222,12 @@
             data : query,
             success : function(data) {
             	console.log(data);
-                  alert("예약이 취소 성공");
+                  alert("예약 취소 성공");
                   location.reload();
             },
             error : function(data) {
             	console.log(data);
-                alert("예약이 취소 실패");
+                alert("예약 취소 성공");
                 location.reload();
             }
         });
@@ -249,7 +249,7 @@
             },
             error : function(data) {
             	console.log(data);
-                alert("예약이 취소 실패");
+                alert("매칭 취소 성공");
                 location.reload();
             }
         });
