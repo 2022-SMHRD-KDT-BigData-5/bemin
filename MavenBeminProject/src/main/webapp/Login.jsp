@@ -125,7 +125,7 @@
                 <div class="login-top-wrap">
                 <form action ="LoginCon" method="post">
                     <span>회원이아니신가요?</span>
-                    <button class="create-account-btn shadow-light" href="./join.jsp">회원가입</button>
+                    <button class="create-account-btn shadow-light" href="join.jsp">회원가입</button>
                 </div>
                 <div class="login-input-container">
                 

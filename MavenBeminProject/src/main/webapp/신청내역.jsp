@@ -121,7 +121,7 @@
 										<td>취소불가</td>
 									</c:if>
 									<c:if test="${mat.MAT_CPL eq '0'}">
-										<td><a href="MatchingCon?matNum=${mat.MAT_NO}">예약취소</a></td>
+										<td><a href="javascript:DelMat(${mat.MAT_NO});">예약취소</a></td>
 									</c:if>
 								</c:when>
 								<c:otherwise>
@@ -209,7 +209,28 @@
 	<script src="assets/js/plugins.js"></script>
 	<script src="assets/js/main.js"></script>
 	
+	<script>
+    // 댓글삭제(AJax 처리)
+    function DelMat(MAT_NO) {
+        var query = {matNum : MAT_NO};
+        var ans = confirm("예약을 취소하시겠습니까?");
+        if(!ans) return false;
+        
+        $.ajax({
+            url  : "MatchingCon",
+            type : "get",
+            data : query,
+            success : function(data) {
+                  alert("예약이 취소 성공");
+                  location.reload();
+            },
+            error : function(data) {
+                alert("예약이 취소 실패");
+            }
+        });
+    }
 
+	</script>
 	
 </body>
 </html>

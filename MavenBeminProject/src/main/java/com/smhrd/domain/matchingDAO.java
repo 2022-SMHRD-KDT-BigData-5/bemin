@@ -74,7 +74,7 @@ public class matchingDAO<BoardReply> {
 	public int deleteMatchingIdex(int matNum) {
 		int cnt = 0;
 		try {
-			cnt = sqlSession.delete("com.smhrd.domain.matchingDAO.deleteMatchingIdex", matNum);
+			cnt = sqlSession.delete("com.smhrd.domain.matchingDAO.deleteMatchingIdex",matNum);
 			if(cnt > 0) {
 				sqlSession.commit();
 			} else {
@@ -87,5 +87,7 @@ public class matchingDAO<BoardReply> {
 		}
 		return cnt;
 	} //  매칭게시판에서 내글 삭제------------------------------------------
+
+
 	
 }

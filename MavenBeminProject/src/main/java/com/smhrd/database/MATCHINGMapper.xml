@@ -23,7 +23,7 @@
 	
 	<!-- 매칭게시판에서 내글 삭제 -->
 	<delete id="deleteMatchingIdex" parameterType="int">
-      	 delete from MATCHING where MAT_NO=#{matNum}
+      	 delete from MATCHING where MAT_NO=#{MAT_NO}
     </delete>
     
 	
