@@ -134,10 +134,18 @@
 									</c:if>
 								</c:otherwise>
 								</c:choose>
+<<<<<<< HEAD
 							 	<td><a href="JoinMember.jsp">멤버보기</a></td>
 							</tr>	
 						</c:forEach>
 						</tbody>
+=======
+							 	<td><a href="modal.jsp">멤버보기</a></td>
+							</tr>
+						
+					</c:forEach>
+					</tbody>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 					</table>
 				</table>
 			</c:otherwise>

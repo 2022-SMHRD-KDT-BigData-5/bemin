@@ -106,7 +106,7 @@
                 <div class="mypage-form-email">
                     <p>이메일</p>
                     <div class="mypage-form-change">
-                        <a href="#">내정보 수정</a>
+                        <a href="./회원정보수정.jsp">내정보 수정</a>
                     </div>
                 </div>
                 <div class="mypage-form-tier">

@@ -3,6 +3,8 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
+
+
 	<display-name>Archetype Created Web Application</display-name>
 	<servlet>
 		<servlet-name>FindCon</servlet-name>
@@ -17,12 +19,31 @@
 		<servlet-class>com.smhrd.controller.LoginCon</servlet-class>
 	</servlet>
 	<servlet>
+		<servlet-name>Join1Con</servlet-name>
+		<display-name>Join1Con</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.Join1Con</servlet-class>
+	</servlet>
+	<servlet>
 		<servlet-name>LogoutCon</servlet-name>
 		<display-name>LogoutCon</display-name>
 		<description></description>
 		<servlet-class>com.smhrd.controller.LogoutCon</servlet-class>
 	</servlet>
 	<servlet>
+		<servlet-name>IdCheckCon</servlet-name>
+		<display-name>IdCheckCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.IdCheckCon</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LoginCheckCon</servlet-name>
+		<display-name>LoginCheckCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.LoginCheckCon</servlet-class>
+	</servlet>
+	<servlet>
+
 		<servlet-name>MatchingCon</servlet-name>
 		<display-name>MatchingCon</display-name>
 		<description></description>
@@ -34,6 +55,7 @@
 		<description></description>
 		<servlet-class>com.smhrd.controller.MatchingCon</servlet-class>
 	</servlet>
+
 	<servlet>
 		<servlet-name>listController</servlet-name>
 		<display-name>listController</display-name>
@@ -52,31 +74,7 @@
 		<description></description>
 		<servlet-class>com.smhrd.controller.testCon</servlet-class>
 	</servlet>
-	<servlet-mapping>
-		<servlet-name>FindCon</servlet-name>
-		<url-pattern>/FindCon</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>LoginCon</servlet-name>
-		<url-pattern>/LoginCon</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>LogoutCon</servlet-name>
-		<url-pattern>/LogoutCon</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>MatchingCon</servlet-name>
-		<url-pattern>/MatchingCon</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>MatchingCon1</servlet-name>
-		<url-pattern>/MatchingCon1</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>listController</servlet-name>
-		<url-pattern>/listController</url-pattern>
-	</servlet-mapping>
-	<servlet>
+		<servlet>
 		<servlet-name>PayCon</servlet-name>
 		<display-name>PayCon</display-name>
 		<description></description>
@@ -101,11 +99,60 @@
 		<servlet-class>com.smhrd.controller.MachingListCon</servlet-class>
 	</servlet>
 	<servlet>
+<<<<<<< HEAD
 		<servlet-name>JoinMemberCon</servlet-name>
 		<display-name>JoinMemberCon</display-name>
 		<description></description>
 		<servlet-class>com.smhrd.controller.JoinMemberCon</servlet-class>
 	</servlet>
+=======
+		<servlet-name>PwCheckCon</servlet-name>
+		<display-name>PwCheckCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.PwCheckCon</servlet-class>
+	</servlet>
+	
+	
+	
+	<servlet-mapping>
+		<servlet-name>FindCon</servlet-name>
+		<url-pattern>/FindCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginCon</servlet-name>
+		<url-pattern>/LoginCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Join1Con</servlet-name>
+		<url-pattern>/Join1Con</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LogoutCon</servlet-name>
+		<url-pattern>/LogoutCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>IdCheckCon</servlet-name>
+		<url-pattern>/IdCheckCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginCheckCon</servlet-name>
+		<url-pattern>/LoginCheckCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MatchingCon</servlet-name>
+		<url-pattern>/MatchingCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MatchingCon1</servlet-name>
+		<url-pattern>/MatchingCon1</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>listController</servlet-name>
+		<url-pattern>/listController</url-pattern>
+	</servlet-mapping>
+
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 	<servlet-mapping>
 		<servlet-name>PayCon</servlet-name>
 		<url-pattern>/PayCon</url-pattern>
@@ -131,7 +178,15 @@
 		<url-pattern>/MachingListCon</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
+<<<<<<< HEAD
 		<servlet-name>JoinMemberCon</servlet-name>
 		<url-pattern>/JoinMemberCon</url-pattern>
 	</servlet-mapping>
+=======
+		<servlet-name>PwCheckCon</servlet-name>
+		<url-pattern>/PwCheckCon</url-pattern>
+	</servlet-mapping>
+
+	
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 </web-app>

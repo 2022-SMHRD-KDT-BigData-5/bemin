@@ -15,10 +15,24 @@
 	<select id="LoginUSER_INFO" resultType="com.smhrd.domain.USER_INFO" parameterType="com.smhrd.domain.USER_INFO">
 		select * from USER_INFO where USER_ID=#{ID} and USER_PW=#{PW}
 	</select>
+<<<<<<< HEAD
 	
 	<!-- 멤버보기 -->
 	<select id="JoinMember" resultType="com.smhrd.domain.USER_INFO" parameterType="String">
 		select * from USER_INFO where USER_ID in (select USER_ID from MATCHING_LIST where MAT_NO=#{MAT_NO})
+=======
+	<!-- 회원가입 -->
+	<insert id="insertUSER_INFO" parameterType="com.smhrd.domain.USER_INFO">
+		insert into USER_INFO values (#{ID},#{PW},#{NAME},#{EMAIL},#{GENDER},#{TEL},#{ADDRESS},default,default,default, #{USER_TIER},default)
+	</insert>
+	<!-- 아이디 중복체크 -->
+	<select id="selectId" parameterType="String" resultType="String">
+		select USER_ID from USER_INFO where USER_ID=#{ID}
+	</select>
+	<!-- 로그인 실패메세지 -->
+	<select id="selectLogin" parameterType="String" resultType="String">
+		select * from USER_INFO where USER_ID=#{ID} and USER_PW=#{PW}
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 	</select>
 </mapper>
 

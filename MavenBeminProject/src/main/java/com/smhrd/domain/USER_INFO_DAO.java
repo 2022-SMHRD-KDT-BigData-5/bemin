@@ -50,6 +50,7 @@ public class USER_INFO_DAO {
 		}
 		return loginMember;
 	} // 로그인 끝 ----------------------------------------------------
+<<<<<<< HEAD
 	
 	
 	// 참여멤버 보기--------------------------------------------------------
@@ -69,5 +70,80 @@ public class USER_INFO_DAO {
 		}
 		return UserList;
 	}// 참여멤버 보기 끝-----------------------------------------------------
+=======
+
+	
+	//회원가입 ----------------------------------------------------------
+	public int insertUSER_INFO(USER_INFO member) {
+		int cnt=0;
+		try {
+			cnt=sqlSession.insert("com.smhrd.domain.USER_INFO_DAO.insertUSER_INFO",member);
+			if(cnt>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}// 회원가입 끝 --------------------------------------------------------	
+	
+	//아이디 중복체크
+	public boolean idCheck(String id) {
+		boolean result=false;
+		
+		try {
+			String id2=sqlSession.selectOne("com.smhrd.domain.USER_INFO_DAO.selectId",id);
+			
+			if(id2!=null) {
+				result=false;
+				sqlSession.commit();
+			}else {
+				result=true;
+				sqlSession.commit();
+			}
+			
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				sqlSession.close();
+			}
+			return result;
+	
+	
+		}
+	
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
+
+	public boolean LoginCheck(String id,String pw) {
+			boolean loginbtn=false;
+			
+			try {
+				String id2=sqlSession.selectOne("com.smhrd.domain.USER_INFO_DAO.selectLogin",id);
+				String pw2=sqlSession.selectOne("com.smhrd.domain.USER_INFO_DAO.selectLogin",pw);
+				
+				if(id2!=null&&pw2!=null) {
+					loginbtn=false;
+					sqlSession.commit();
+				}else {
+					loginbtn=true;
+					sqlSession.commit();
+				}
+				
+				}catch(Exception e) {
+					e.printStackTrace();
+				}finally {
+					sqlSession.close();
+				}
+				return loginbtn;
+		
+		
+			}
+	
+
+
 
 }

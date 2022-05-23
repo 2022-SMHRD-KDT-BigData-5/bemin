@@ -200,10 +200,15 @@ $('#find-id-btn').click(function(){
 		url : "FindCon",
 		method : "POST",
 		success: function(data){
+			
 			alert('찾으시는 아이디는 '+data+'입니다.')
+			window.location.href = "Login.jsp";
+			
 		},
 		error: function(){
+
 			alert("일치하는 정보가 없습니다")
+
 		}
 	})    
 })
@@ -220,9 +225,12 @@ $('#find-pw-btn').click(function(){
 		method : "POST",
 		success: function(data){
 			alert('찾으시는 비밀번호는 '+data+'입니다.')
+			window.location.href = "Login.jsp";
 		},
 		error: function(){
+
 			alert("일치하는 정보가 없습니다")
+
 		}
 	})    
 })
