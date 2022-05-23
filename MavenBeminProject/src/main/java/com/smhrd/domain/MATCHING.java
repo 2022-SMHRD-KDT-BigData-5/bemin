@@ -31,6 +31,12 @@ public class MATCHING {
 	}
 
 
+
+	public MATCHING() {
+		
+	}
+
+
 	public MATCHING(String RES_DATE, String RES_TIME, String RES_PLACE, String MAT_MEMBER) {
 		super();
 		this.RES_DATE = RES_DATE;
@@ -38,6 +44,7 @@ public class MATCHING {
 		this.RES_PLACE = RES_PLACE;
 		this.MAT_MEMBER = MAT_MEMBER;
 	}
+
 	
 	
 		public MATCHING(String USER_ID) {
@@ -49,6 +56,7 @@ public class MATCHING {
 
 	public MATCHING(BigDecimal MAT_NO, String RES_DATE, String RES_TIME, String RES_PLACE, String USER_ID, String UNIT, String MAT_MEMBER,
 			String STN_TIER, String STN_MANNER, String MAT_CPL, String GENDER) {
+
 		super();
 		this.MAT_NO = MAT_NO;
 		this.RES_DATE = RES_DATE;
@@ -62,75 +70,92 @@ public class MATCHING {
 		this.MAT_CPL = MAT_CPL;
 		this.GENDER = GENDER;
 	}
-	public MATCHING(String rES_DATE, String rES_TIME, String rES_PLACE) {
+
+	public MATCHING(String RES_DATE, String RES_TIME, String RES_PLACE) {
 		super();
-		RES_DATE = rES_DATE;
-		RES_TIME = rES_TIME;
-		RES_PLACE = rES_PLACE;
+		this.RES_DATE = RES_DATE;
+		this.RES_TIME = RES_TIME;
+		this.RES_PLACE = RES_PLACE;
 	}
 
 	public BigDecimal getMAT_NO() {
 		return MAT_NO;
 	}
+
 	public void setMAT_NO(BigDecimal MAT_NO) {
 		this.MAT_NO = MAT_NO;
 	}
+
 	public String getRES_DATE() {
 		return RES_DATE;
 	}
+
 	public void setRES_DATE(String RES_DATE) {
 		this.RES_DATE = RES_DATE;
 	}
+
 	public String getRES_TIME() {
 		return RES_TIME;
 	}
+
 	public void setRES_TIME(String RES_TIME) {
 		this.RES_TIME = RES_TIME;
 	}
+
 	public String getRES_PLACE() {
 		return RES_PLACE;
 	}
+
 	public void setRES_PLACE(String RES_PLACE) {
 		this.RES_PLACE = RES_PLACE;
 	}
+
 	public String getUSER_ID() {
 		return USER_ID;
 	}
+
 	public void setUSER_ID(String USER_ID) {
 		this.USER_ID = USER_ID;
 	}
+
 	public String getUNIT() {
 		return UNIT;
 	}
+
 	public void setUNIT(String UNIT) {
 		this.UNIT = UNIT;
 	}
+
 	public String getMAT_MEMBER() {
 		return MAT_MEMBER;
 	}
+
 	public void setMAT_MEMBER(String MAT_MEMBER) {
 		this.MAT_MEMBER = MAT_MEMBER;
 	}
+
 	public String getSTN_TIER() {
 		return STN_TIER;
 	}
+
 	public void setSTN_TIER(String STN_TIER) {
 		this.STN_TIER = STN_TIER;
 	}
+
 	public String getSTN_MANNER() {
 		return STN_MANNER;
 	}
+
 	public void setSTN_MANNER(String STN_MANNER) {
 		this.STN_MANNER = STN_MANNER;
 	}
+
 	public String getMAT_CPL() {
 		return MAT_CPL;
 	}
+
 	public void setMAT_CPL(String MAT_CPL) {
 		this.MAT_CPL = MAT_CPL;
 	}
-	
 
-
-	
 }

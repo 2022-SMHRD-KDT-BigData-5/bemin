@@ -25,13 +25,18 @@ public class LoginCon extends HttpServlet {
 		// id, pw 받아오기
 		String ID = request.getParameter("id");
 		String PW = request.getParameter("pw");
+		System.out.println(ID);
+		System.out.println(PW);
 
 		// Member객체에 담기
 		USER_INFO m_vo = new USER_INFO(ID, PW);
-
+		System.out.println(m_vo);
 		USER_INFO_DAO dao = new USER_INFO_DAO();
+		System.out.println(dao);
 		USER_INFO loginMember = dao.selectMember(m_vo);
-
+		
+		System.out.println(loginMember);
+		
 		if (loginMember != null) {
 			// 로그인 성공
 			System.out.println("로그인 성공");

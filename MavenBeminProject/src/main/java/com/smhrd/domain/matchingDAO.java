@@ -1,5 +1,6 @@
 package com.smhrd.domain;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -35,7 +36,7 @@ public class matchingDAO<BoardReply> {
 
 		MATCHING m_vo = null;
 		try {
-			m_vo = sqlSession.selectOne("com.smhrd.domain.matchingDAO.selectMatchingInfo", m);
+			m_vo = sqlSession.selectOne("com.smhrd.domain.matchingDAO.selectMatchingView", m);
 
 			if (m_vo != null) {
 				sqlSession.commit();
@@ -52,10 +53,10 @@ public class matchingDAO<BoardReply> {
 
 	}// 취소 조건----------------------------------------------------------------------
 	
-	public MATCHING MatchingView(MATCHING match) {
+	public MATCHING MatchingInfo(MATCHING match) {
 		MATCHING matching = null;
 		try {
-			matching = sqlSession.selectOne("com.smhrd.domain.matchingDAO.selectMatchingView", match);
+			matching = sqlSession.selectOne("com.smhrd.domain.matchingDAO.selectMatchingInfo", match);
 			if (matching != null) {
 				sqlSession.commit();
 			} else {
@@ -69,6 +70,7 @@ public class matchingDAO<BoardReply> {
 		return matching;
 	} // 매치들 끝 --------------------------------------------------------------------
 	
+
 	//예약 하기----------------------------------------------------------------------
 	public int insertRental(MATCHING rental_info) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
@@ -89,4 +91,43 @@ public class matchingDAO<BoardReply> {
 		}
 		return cnt;
 	}//예약하기 끝---------------------------------------------------------------------
+
+	//  매칭게시판에서 내글 삭제 ----------------------------------------------
+	public int deleteMatchingIdex(int delmatNum) {
+		int cnt = 0;
+		try {
+			cnt = sqlSession.delete("com.smhrd.domain.matchingDAO.deleteMatchingIdex",delmatNum);
+			if(cnt > 0) {
+				sqlSession.commit();
+			} else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return cnt;
+	} //  매칭게시판에서 내글 삭제------------------------------------------
+
+	//  매칭게시판에서 내글 삭제 ----------------------------------------------
+	public int deleteMatchingList(String delmatid) {
+		int cnt = 0;
+		try {
+			cnt = sqlSession.delete("com.smhrd.domain.matchingDAO.deleteMatching",delmatid);
+			if(cnt > 0) {
+				sqlSession.commit();
+			} else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return cnt;
+	} //  매칭게시판에서 내글 삭제------------------------------------------
+	
+	
+
 }

@@ -363,3 +363,34 @@ background: linear-gradient(162deg, rgba(105,163,255,1) 0%, rgba(43,125,254,1) 5
 
 }
 
+#paginator {
+	text-align: center;
+    align-items: flex-start;
+}
+
+#paginator .button {
+    appearance: auto;
+    writing-mode: horizontal-tb !important;
+    font-size: 10;
+    font-family: 10;
+    text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+    margin: 10px;
+    padding: 15px 15px;
+    border-width: 15px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+}

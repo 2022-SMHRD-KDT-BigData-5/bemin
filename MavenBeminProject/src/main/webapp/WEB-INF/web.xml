@@ -23,18 +23,6 @@
 		<servlet-class>com.smhrd.controller.LogoutCon</servlet-class>
 	</servlet>
 	<servlet>
-		<servlet-name>PayCon</servlet-name>
-		<display-name>PayCon</display-name>
-		<description></description>
-		<servlet-class>com.smhrd.controller.PayCon</servlet-class>
-	</servlet>
-	<servlet>
-		<servlet-name>RentalCon</servlet-name>
-		<display-name>RentalCon</display-name>
-		<description></description>
-		<servlet-class>com.smhrd.controller.RentalCon</servlet-class>
-	</servlet>
-	<servlet>
 		<servlet-name>MatchingCon</servlet-name>
 		<display-name>MatchingCon</display-name>
 		<description></description>
@@ -47,10 +35,10 @@
 		<servlet-class>com.smhrd.controller.MatchingCon</servlet-class>
 	</servlet>
 	<servlet>
-		<servlet-name>placePrintCon</servlet-name>
-		<display-name>placePrintCon</display-name>
+		<servlet-name>listController</servlet-name>
+		<display-name>listController</display-name>
 		<description></description>
-		<servlet-class>com.smhrd.controller.placePrintCon</servlet-class>
+		<servlet-class>com.smhrd.controller.listController</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>RentalViewCon</servlet-name>
@@ -77,20 +65,48 @@
 		<url-pattern>/LogoutCon</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>PayCon</servlet-name>
-		<url-pattern>/PayCon</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>RentalCon</servlet-name>
-		<url-pattern>/RentalCon</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
 		<servlet-name>MatchingCon</servlet-name>
 		<url-pattern>/MatchingCon</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>MatchingCon1</servlet-name>
 		<url-pattern>/MatchingCon1</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>listController</servlet-name>
+		<url-pattern>/listController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>PayCon</servlet-name>
+		<display-name>PayCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.PayCon</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>RentalCon</servlet-name>
+		<display-name>RentalCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.RentalCon</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>placePrintCon</servlet-name>
+		<display-name>placePrintCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.placePrintCon</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MachingListCon</servlet-name>
+		<display-name>MachingListCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.MachingListCon</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PayCon</servlet-name>
+		<url-pattern>/PayCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RentalCon</servlet-name>
+		<url-pattern>/RentalCon</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>placePrintCon</servlet-name>
@@ -103,5 +119,9 @@
 	<servlet-mapping>
 		<servlet-name>testCon</servlet-name>
 		<url-pattern>/testCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MachingListCon</servlet-name>
+		<url-pattern>/MachingListCon</url-pattern>
 	</servlet-mapping>
 </web-app>

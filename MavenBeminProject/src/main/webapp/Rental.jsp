@@ -244,95 +244,12 @@
 											}
 											}
 											%>
-
-
-
 										</div>
-									
 									</div>
 								</div>
 							</li>
 						</c:forEach>
-
-
-
-						<li>
-							<div>
-								<p>
-								<h3>광주 배드민턴장</h3>
-								</p>
-								<div class="plc-in">
-									<a style="font-size: medium;">구장</a> <a
-										style="font-size: small;">규격</a>
-									<button class="place-info">
-										<a href="#" class="pi-bnt">경기장정보</a>
-									</button>
-
-								</div>
-								<div class="time-mem">
-									<div href="결제.html" class="time1">
-										<a class="t1">09:00 ~ 11:00</a> <a class="t1">12:00 ~
-											14:00</a> <a class="t1">15:00 ~ 17:00</a> <a class="t1">18:00
-											~ 20:00</a> <a class="t1">20:00 ~ 22:00</a> <a id="t2">22:00
-											~ 24:00</a>
-									</div>
-								</div>
-							</div>
-						</li>
-
-
-						<li>
-							<div>
-								<p>
-								<h3>광주 배드민턴장</h3>
-								</p>
-								<div class="plc-in">
-									<a style="font-size: medium;">구장</a> <a
-										style="font-size: small;">규격</a>
-									<button class="place-info">
-										<a href="#" class="pi-bnt">경기장정보</a>
-									</button>
-
-								</div>
-								<div class="time-mem">
-									<div href="결제.html" class="time1">
-										<a class="t1">09:00 ~ 11:00</a> <a class="t1">12:00 ~
-											14:00</a> <a class="t1">15:00 ~ 17:00</a> <a class="t1">18:00
-											~ 20:00</a> <a class="t1">20:00 ~ 22:00</a> <a id="t2">22:00
-											~ 24:00</a>
-									</div>
-								</div>
-							</div>
-						</li>
-
-
-						<li>
-							<div>
-								<p>
-								<h3>광주 배드민턴장</h3>
-								</p>
-								<div class="plc-in">
-									<a style="font-size: medium;">구장</a> <a
-										style="font-size: small;">규격</a>
-									<button class="place-info">
-										<a href="#" class="pi-bnt">경기장정보</a>
-									</button>
-
-								</div>
-								<div class="time-mem">
-									<div href="결제.html" class="time1">
-										<a class="t1">09:00 ~ 11:00</a> <a class="t1">12:00 ~
-											14:00</a> <a class="t1">15:00 ~ 17:00</a> <a class="t1">18:00
-											~ 20:00</a> <a class="t1">20:00 ~ 22:00</a> <a id="t2">22:00
-											~ 24:00</a>
-									</div>
-								</div>
-							</div>
-						</li>
-
-
-
-					</ul>
+				</ul>
 				</div>
 			</div>
 		</section>

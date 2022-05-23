@@ -32,6 +32,27 @@ public class PLACE_INFODAO {
 		return msg_vo;
 	}//모든 경기장 정보 불러오기( 경기장 예약메인페이지) -끝-
 	
+	//특정 경기장 정보 불러오기
+	public PLACE_INFO selectPlace(String place) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		PLACE_INFO msg_vo = null;
+		try {
+			msg_vo = sqlSession.selectOne("com.smhrd.domain.PLACE_INFODAO.selectOne",place);
+
+			if (msg_vo != null) {
+				sqlSession.commit();
+			} else {
+				sqlSession.rollback();
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return msg_vo;
+	}//특정 경기장 정보 불러오기( 경기장 페이페이지) -끝-
+	
 	
 	
 	
