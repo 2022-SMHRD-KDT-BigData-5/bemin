@@ -27,5 +27,9 @@
 	<select id="selectLogin" parameterType="String" resultType="String">
 		select * from USER_INFO where USER_ID=#{ID} and USER_PW=#{PW}
 	</select>
+	<update id="updateCash" parameterType="com.smhrd.domain.USER_INFO">
+		update USER_INFO set CASH=#{CASH} where ID=#{ID}
+	</update>
+
 </mapper>
 

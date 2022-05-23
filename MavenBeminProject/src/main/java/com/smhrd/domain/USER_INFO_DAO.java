@@ -1,5 +1,8 @@
 package com.smhrd.domain;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -93,7 +96,7 @@ public class USER_INFO_DAO {
 	
 		}
 	
-
+	//
 	public boolean LoginCheck(String id,String pw) {
 			boolean loginbtn=false;
 			
@@ -119,6 +122,33 @@ public class USER_INFO_DAO {
 		
 			}
 	
+	//캐시 사용정보 업데이트
+	public int updateCash(String id, String cash) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		
+		int cnt = 0;
+		Map<String, Object> param = new HashMap<>();
+		param.put("CASH", cash);
+        param.put("ID", id);
+		
+        try {
+
+            cnt = sqlSession.update("com.smhrd.domain.USER_INFO_DAO.updateCash",param);
+			
+			if(cnt>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+				System.out.println("여기서 오류");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}//캐시 사용정보 업데이트
 
 
 

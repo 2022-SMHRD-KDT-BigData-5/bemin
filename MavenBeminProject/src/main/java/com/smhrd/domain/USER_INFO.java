@@ -58,6 +58,9 @@ public class USER_INFO {
 		this.ADDRESS=ADDRESS;
 		this.USER_TIER = USER_TIER;		
 	}
+	
+
+
 	public String getID() {
 		return ID;
 	}
