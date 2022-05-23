@@ -10,4 +10,8 @@
 		resultType="com.smhrd.domain.PLACE_INFO">
 		select * from PLACE_INFO
 	</select>
+	<select id="selectOne"
+		resultType="com.smhrd.domain.PLACE_INFO" parameterType="String">
+		select * from PLACE_INFO where PLACE_NAME = #{PLACE_NAME}
+	</select>
 </mapper>

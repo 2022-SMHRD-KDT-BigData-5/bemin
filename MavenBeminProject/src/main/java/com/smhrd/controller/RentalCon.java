@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.smhrd.domain.MATCHING;
+import com.smhrd.domain.USER_INFO;
+import com.smhrd.domain.matchingDAO;
 
 
 public class RentalCon extends HttpServlet {
@@ -17,28 +19,49 @@ public class RentalCon extends HttpServlet {
 
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// - 예약 페이지에서 날짜,경기장,시간 정보 가져올수 있음
-		// - 결제 페이지에 경기장 정보 보낼 수 있음
-		// 경기장 예약 페이지에서 날짜,경기장,시간 정보 가져오기(matching 타입 세션)(예약->결제로 가져올 생성자)
-		// user_info에서 로그인한 아이디 캐시정보 가져오기(세션)
-		// 선택한 경기장의 요금 정보 가져와야함
+		
+		HttpSession session = request.getSession();
 		request.setCharacterEncoding("utf-8");
 		
-		String year = request.getParameter("year");
-		String month = request.getParameter("month");
-		String date = request.getParameter("date");
-		String place = request.getParameter("place");
-		String time = request.getParameter("time");
+		// - rental 페이지에서 설정한 날짜,경기장,시간 정보 가져오기
+		MATCHING rentalDate = (MATCHING)session.getAttribute("rentalDate");
 		
-		response.setContentType("text/html; charset=UTF-8");
+		String RES_DATE = rentalDate.getRES_DATE();
+		String RES_TIME = rentalDate.getRES_TIME();
+		String RES_PLACE = rentalDate.getRES_PLACE();
+		//시간
+		String start = (String)session.getAttribute("start");
 		
-		PrintWriter out = response.getWriter();
+		// - pay 페이지에서 예약 정보 가져오기
+		String UNIT = request.getParameter("UNIT");
+		String MAT_MEMBER = request.getParameter("MAT_MEMBER");
+		String STN_TIER = request.getParameter("STN_TIER");
+		String STN_MANNER = request.getParameter("STN_MANNER");
+		String GENDER = request.getParameter("GENDER");
+		String useCash = request.getParameter("useCash");
 		
-		out.print(year);
-		out.print(month);
-		out.print(date);
-		out.print(place);
-		out.print(time);
+		
+		
+		// user_info에서 로그인한 아이디 캐시정보 가져오기(세션)
+		USER_INFO loginMember = (USER_INFO)session.getAttribute("loginMember");
+		int left = Integer.parseInt(loginMember.getCASH()) - Integer.parseInt(useCash);
+		
+		
+
+		String USER_ID = loginMember.getID();
+		// 선택한 경기장의 요금 정보 가져와야함
+		MATCHING rental = new MATCHING(RES_DATE,RES_TIME,RES_PLACE,USER_ID,UNIT,MAT_MEMBER,STN_TIER,STN_MANNER,GENDER);
+		
+		matchingDAO dao = new matchingDAO();
+		int cnt = dao.insertRental(rental);
+		
+		if (cnt > 0) {
+			System.out.println("예약 성공");
+			response.sendRedirect("RealMain.jsp");
+		} else {
+			System.out.println("예약 실패");
+			response.sendRedirect("Rental.jsp");
+		}
 		
 		
 		
