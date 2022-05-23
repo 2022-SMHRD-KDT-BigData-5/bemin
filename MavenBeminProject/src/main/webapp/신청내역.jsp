@@ -15,6 +15,7 @@
 <head>
 <meta charset="UTF-8">
 <title>신청내역</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="assets/css/join.css">
 <link rel="icon" type="image/png" href="favicon.ico">
 <link
@@ -29,6 +30,7 @@
 <link rel="stylesheet" href="assets/css/magnific-popup.css">
 <link rel="stylesheet" href="assets/css/bootsnav.css">
 <link rel="stylesheet" href="assets/css/신청내역.css">
+<link rel="stylesheet" href="assets/css/modal.css"> 
 
 </head>
 <body>
@@ -102,7 +104,9 @@
 						<th>경기장</th>
 						<th>참여인원</th>
 						<th>예약/참여취소</th>
-						<th>멤버보기</th>
+						<th>평가하기</th>
+						
+						
 					</tr>
 					</thread>
 					<tbody>
@@ -133,7 +137,7 @@
 									</c:if>
 								</c:otherwise>
 								</c:choose>
-							 	<td><a href="#">멤버보기</a></td>
+							 	<td id="show"><a href="#">멤버보기</a></td>
 							</tr>
 						
 					</c:forEach>
@@ -143,6 +147,42 @@
 			</c:otherwise>
 		</c:choose>
 	</div>
+	
+	<div class="background">
+		<div class="window">
+			<div class="popup">
+
+				<button id="close">
+					<a href="#" class="close-x">X</a>
+				</button>
+				<table>
+
+					<!-- 모달 -->
+					<tr class="tier-table">
+						<th>ID</th>
+						<th>이름</th>
+						<th>티어</th>
+						<th><select>
+								<option>평가</option>
+								<option>루키</option>
+								<option>비기너</option>
+								<option>주니어</option>
+								<option>시니어</option>
+								<option>프로</option>
+								<option>플라이트</option>
+						</select></th>
+					</tr>
+				</table>
+				<div class="move-tire">
+					<a href="./티어매너안내.jsp" class="tier-ckeck">📢티어정보 확인하기</a>
+				</div>
+				<div style="margin: 10px 5px 10px 10px;">
+					<input id="sub_bt" type="submit" value="적용">
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	<div id="pager">
 	<div id="paginator">
 	<button onclick="previousPage()" class="paginator-button" disabled>❮</button>
@@ -160,7 +200,11 @@
 	</div>	
 	</div>
 	
-    <script src="./script.js"></script>
+	
+
+	
+
+	<script src="./script.js"></script>
 	<script type="text/javascript">
 	const options = {
             tableId:'easy-table',
@@ -256,6 +300,21 @@
     }
 
 	</script>
+	
+	 <script>
+      function show() {
+        document.querySelector(".background").className = "background show";
+      }
+
+      function close() {
+        document.querySelector(".background").className = "background";
+      }
+      
+      document.querySelector("#show").addEventListener("click", show);
+      document.querySelector("#close").addEventListener("click", close); 
+      document.querySelector("#sub_bt").addEventListener("click", close); 
+      
+    </script>
 	
 </body>
 </html>

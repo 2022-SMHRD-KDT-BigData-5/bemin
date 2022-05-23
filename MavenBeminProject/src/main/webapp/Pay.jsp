@@ -109,9 +109,10 @@
 
 									<div class="list-right">
 										<p id="myCash">10000</p>
-										<input type="text" name="useCash" id="inputCash" style="width: 80px;"  value="금액 입력" onfocus="this.value=''" />
-										원
-										<br><button type="button"
+										<input type="text" name="useCash" id="inputCash"
+											style="width: 80px;" value="금액 입력" onfocus="this.value=''" />
+										원 <br>
+										<button type="button"
 											src="https://plab-football.s3.amazonaws.com/static/img/ic_arrow_right.svg"
 											id="useCash" style="margin-top: 10px">적용</button>
 									</div>
@@ -150,7 +151,7 @@
 					</section>
 
 
-					<section class="pay_c">
+					<section id="pay_c">
 						<div class="section_title_1">
 							<h4 style="text-align: left;">🚩결제 수단</h4>
 						</div>
@@ -163,7 +164,8 @@
 												<p id="payM">계좌이체</p>
 										</span>
 
-									</label></li>
+									</label>
+									</li>
 								</ul>
 							</div>
 						</div>
@@ -209,200 +211,200 @@
 							<div class="content_footer">
 								<div class="btn-wrap bottom-fixed">
 									<p style="text-decoration: underline">위 내용을 동의하고 결제를 진행합니다.</p>
-									<button id="flex"><a href="PayFin.jsp" style="color: white;">결제하기</a></button>
+									<button id="flex">
+										<a href="PayFin.jsp" style="color: white;">결제하기</a>
+									</button>
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="background">
-					<div class="window">
-						<div class="popup">
+							<div class="window">
+								<div class="popup">
 
-							<button id="close">
-								<a href="#" class="close-x">X</a>
-							</button>
+									<button id="close">
+										<a href="#" class="close-x">X</a>
+									</button>
 
-							<div class="modal-in">
-
-
-								<br>
+									<div class="modal-in">
 
 
-								<div style="margin: 0 auto;">
-									<p class="gen-cl">성별</p>
-									<input type="radio" name="gender">남 <input type="radio"
-										name="gender">녀 <input type="radio" name="gender">무관
-								</div>
-
-								<br>
+										<br>
 
 
-								<div>
-									<p class="per-cl">인원</p>
-									<input type="radio" name="per">2인 
-                                    <input type="radio"name="per">4인
-								</div>
-								<br>
-								<div>
-									<input type="radio" name="age">개인 
-                                    <input type="radio"name="age">단체
-								</div>
-								<br>
-								<div style="color: black;">
-									<!-- <p style="margin-left: 26px;">티어</p>	 -->
-									<select class="tire-op">
-										<option>티어</option>
-										<option>루키</option>
-										<option>비기너</option>
-										<option>주니어</option>
-										<option>시니어</option>
-										<option>프로</option>
-										<option>플라이트</option>
-									</select>
-								</div>
+										<div style="margin: 0 auto;">
+											<p class="gen-cl">성별</p>
+											<input type="radio" name="gender">남 <input
+												type="radio" name="gender">녀 <input type="radio"
+												name="gender">무관
+										</div>
+
+										<br>
 
 
-								<br>
+										<div>
+											<p class="per-cl">인원</p>
+											<input type="radio" name="per">2인 <input type="radio"
+												name="per">4인
+										</div>
+										<br>
+										<div>
+											<input type="radio" name="age">개인 <input type="radio"
+												name="age">단체
+										</div>
+										<br>
+										<div style="color: black;">
+											<!-- <p style="margin-left: 26px;">티어</p>	 -->
+											<select class="tire-op">
+												<option>티어</option>
+												<option>루키</option>
+												<option>비기너</option>
+												<option>주니어</option>
+												<option>시니어</option>
+												<option>프로</option>
+												<option>플라이트</option>
+											</select>
+										</div>
 
-								<div style="color: black;">
-									<!-- <p style="margin-left: 10px;">매너온도</p> -->
-									<select class="tire-manner">
-										<option>매너점수</option>
-										<option>상관없음</option>
-										<!-- <option>0</option> -->
-										<option>20 이상</option>
-										<option>40 이상</option>
-										<option>60 이상</option>
-										<option>80 이상</option>
-										<option>100</option>
-									</select>
+
+										<br>
+
+										<div style="color: black;">
+											<!-- <p style="margin-left: 10px;">매너온도</p> -->
+											<select class="tire-manner">
+												<option>매너점수</option>
+												<option>상관없음</option>
+												<!-- <option>0</option> -->
+												<option>20 이상</option>
+												<option>40 이상</option>
+												<option>60 이상</option>
+												<option>80 이상</option>
+												<option>100</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="move-tire"></div>
+
+									<div style="margin: 10px 5px 10px 10px;">
+										<input id="sub_bt" type="submit" value="적용">
+									</div>
+
 								</div>
 							</div>
-
-							<div class="move-tire"></div>
-
-							<div style="margin: 10px 5px 10px 10px;">
-								<input id="sub_bt" type="submit" value="적용">
-							</div>
-
 						</div>
-					</div>
-                </div>
-            </div>
-        </div>
-	
-	    
-	    <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
-        <script src="assets/js/vendor/bootstrap.min.js"></script>
+				</div>
+			</div>
 
-        <script src="assets/js/jquery.magnific-popup.js"></script>
-        <script src="assets/js/jquery.easing.1.3.js"></script>
-        <script src="assets/css/slick/slick.js"></script>
-        <script src="assets/css/slick/slick.min.js"></script>
-        <script src="assets/js/jquery.collapse.js"></script>
-        <script src="assets/js/bootsnav.js"></script>
+
+			<script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
+			<script src="assets/js/vendor/bootstrap.min.js"></script>
+
+			<script src="assets/js/jquery.magnific-popup.js"></script>
+			<script src="assets/js/jquery.easing.1.3.js"></script>
+			<script src="assets/css/slick/slick.js"></script>
+			<script src="assets/css/slick/slick.min.js"></script>
+			<script src="assets/js/jquery.collapse.js"></script>
+			<script src="assets/js/bootsnav.js"></script>
 
 
 
-        <script src="assets/js/plugins.js"></script>
-        <script src="assets/js/main.js"></script>
-	<!--캐시 입력 사용  -->
-	<script>
-	
-	</script>
-	<script>
-		//버튼
-		let useCash = document.querySelector('#useCash');
-		//입력 캐시
-		let inputCash = document.querySelector('#inputCash');
-		//내 캐시
-		let myCash = document.querySelector('#myCash');
-		//내 캐시 - 입력캐시
-		let leftCash = document.querySelector('#leftCash');
+			<script src="assets/js/plugins.js"></script>
+			<script src="assets/js/main.js"></script>
+			<!--캐시 입력 사용  -->
+			<script>
+				
+			</script>
+			<script>
+				//버튼
+				let useCash = document.querySelector('#useCash');
+				//입력 캐시
+				let inputCash = document.querySelector('#inputCash');
+				//내 캐시
+				let myCash = document.querySelector('#myCash');
+				//내 캐시 - 입력캐시
+				let leftCash = document.querySelector('#leftCash');
 
-		//요금
-		let usePrice = document.querySelector('#usePrice');
-		//요금 - 입력캐시
-		let leftPrice = document.querySelector('#leftPrice');
-		
+				//요금
+				let usePrice = document.querySelector('#usePrice');
+				//요금 - 입력캐시
+				let leftPrice = document.querySelector('#leftPrice');
 
-		//캐시 계산
-		useCash.addEventListener('click', function() {
+				//캐시 계산
+				useCash.addEventListener('click', function() {
 
-			let txt1 = Number(inputCash.value)
-			let txt2 = Number(myCash.innerHTML)
-			let txt3 = Number(usePrice.innerHTML)
-			//내가 가진 캐시보다 많으면 X 경기장 요금보다 캐시입력값이 많으면X
-			if (txt1 <= txt3 & txt1 <= txt2) {
-				leftCash.innerHTML = Number(myCash.innerHTML)
-						- Number(inputCash.value);
-				leftPrice.innerHTML = Number(usePrice.innerHTML)
-						- Number(inputCash.value);
-			}
-			
-			
-			if (txt1 > txt3) {
-				leftCash.innerHTML = Number(myCash.innerHTML)
-						- Number(usePrice.innerHTML);
-				leftPrice.innerHTML = 0
-			}
-			if (txt1 > txt2) {
-				alert("캐시 보유 금액이 부족합니다")
-				return false
-			}
+					let txt1 = Number(inputCash.value)
+					let txt2 = Number(myCash.innerHTML)
+					let txt3 = Number(usePrice.innerHTML)
+					//내가 가진 캐시보다 많으면 X 경기장 요금보다 캐시입력값이 많으면X
+					if (txt1 <= txt3 & txt1 <= txt2) {
+						leftCash.innerHTML = Number(myCash.innerHTML)
+								- Number(inputCash.value);
+						leftPrice.innerHTML = Number(usePrice.innerHTML)
+								- Number(inputCash.value);
+					}
 
-		});
-	</script>
-	<script>
- 		$("#inputCash").keyup(function() {
-			chk_input_filter("number", $("#inputCash"));
-		});
+					if (txt1 > txt3) {
+						leftCash.innerHTML = Number(myCash.innerHTML)
+								- Number(usePrice.innerHTML);
+						leftPrice.innerHTML = 0
+					}
+					if (txt1 > txt2) {
+						alert("캐시 보유 금액이 부족합니다")
+						return false
+					}
 
-		function chk_input_filter(type, obj) {
+				});
+			</script>
+			<script>
+				$("#inputCash").keyup(function() {
+					chk_input_filter("number", $("#inputCash"));
+				});
 
-			var str = $(obj).val();
+				function chk_input_filter(type, obj) {
 
-			if (type == 'number') {
-				//숫자만 허용
-				$(obj).val(str.replace(/[^0-9]/gi, ""));
-			}
-		}
-	</script>
+					var str = $(obj).val();
+
+					if (type == 'number') {
+						//숫자만 허용
+						$(obj).val(str.replace(/[^0-9]/gi, ""));
+					}
+				}
+			</script>
 
 
-	<script>
-	// onkeyup="inputNumberFormat(this)"
-	
-	 /* function inputNumberFormat(obj) {
-	     obj.value = comma(uncomma(obj.value));
-	 }
+			<script>
+				// onkeyup="inputNumberFormat(this)"
 
-	 function comma(str) {
-	     str = String(str);
-	     return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
-	 }
+				/* function inputNumberFormat(obj) {
+				    obj.value = comma(uncomma(obj.value));
+				}
 
-	 function uncomma(str) {
-	     str = String(str);
-	     return str.replace(/[^\d]+/g, '');
-	 }*/
-	</script>
-	
-	<script>
-    function show() {
-      document.querySelector(".background").className = "background show";
-    }
+				function comma(str) {
+				    str = String(str);
+				    return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+				}
 
-    function close() {
-      document.querySelector(".background").className = "background";
-    }
-    
-    document.querySelector("#show").addEventListener("click", show);
-    document.querySelector("#close").addEventListener("click", close); 
-    document.querySelector("#sub_bt").addEventListener("click", close); 
-    
-  </script>
-	
+				function uncomma(str) {
+				    str = String(str);
+				    return str.replace(/[^\d]+/g, '');
+				}*/
+			</script>
 
+			<script>
+				function show() {
+					document.querySelector(".background").className = "background show";
+				}
+
+				function close() {
+					document.querySelector(".background").className = "background";
+				}
+
+				document.querySelector("#show").addEventListener("click", show);
+				document.querySelector("#close").addEventListener("click",
+						close);
+				document.querySelector("#sub_bt").addEventListener("click",
+						close);
+			</script>
 </body>
 </html>
