@@ -70,7 +70,7 @@
                 <div>
                     <h3 class="join_title"><label for="pswd1">비밀번호</label></h3>
                     <span class="box int_pass">
-                        <input type="text" id="pswd1" class="int" maxlength="20">
+                        <input type="text" id="pswd1" placeholder="비밀번호 입력" class="int" maxlength="20">
                         <span id="alertTxt">사용불가</span>
                         <img src="m_icon_pass.png" id="pswd1_img1" class="pswdImg">
                     </span>
@@ -91,7 +91,7 @@
                 <div>
                     <h3 class="join_title"><label for="name">이름</label></h3>
                     <span class="box int_name">
-                        <input type="text" id="name" class="int" maxlength="20">
+                        <input type="text" id="name" class="int" placeholder="이름 입력" maxlength="20">
                     </span>
                     <span class="error_next_box"></span>
                 </div>
@@ -102,7 +102,7 @@
                 <div>
                     <h3 class="join_title"><label for="email">본인확인 이메일</label></h3>
                     <span class="box int_email">
-                        <input type="text" id="email" class="int" maxlength="100">
+                        <input type="text" id="email" class="int" placeholder="이메일 입력" maxlength="100">
                     </span>
                     <span class="error_next_box">이메일 주소를 다시 확인해주세요.</span>    
                 </div>
@@ -121,7 +121,7 @@
                 <!-- 수정완료 BTN-->
                 <div class="btn_area">
                     <button type="button" id="btnupdate">
-                        <span>수정완료</span>
+                        <span>수정완료</span></a>
                     </button>
                 </div>
 

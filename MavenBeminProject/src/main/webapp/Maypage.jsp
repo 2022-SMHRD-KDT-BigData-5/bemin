@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@page import="com.smhrd.domain.USER_INFO"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Made One</title>
+        <title>마이페이지</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="favicon.ico">
@@ -101,25 +102,26 @@
         <div class="mypage-container shadow">
             <span class="mypage-form-right-side">
                 <div class="mypage-form-myname">
-                    <h3>이름</h3>
+                    <h3>${loginMember.NAME }님 환영합니다 🙋‍♀️</h3>
                 </div>
                 <div class="mypage-form-email">
-                    <p>이메일</p>
+                    <p>이메일 ${loginMember.EMAIL }</p>
                     <div class="mypage-form-change">
                         <a href="./회원정보수정.jsp">내정보 수정</a>
                     </div>
                 </div>
                 <div class="mypage-form-tier">
-                    <p>티어</p>
-                    <a href="#">티어 알아보기</a>
+                    <p>티어 ${loginMember.USER_TIER }</p>
+                    <div class="mypage-form-manner">
+                    <p>매너 점수 ${loginMember.USER_MANNER }</p>
+                    
+                    <a href="./티어매너안내.jsp">티어 매너점수 알아보기</a>
+                     </div>
                 </div>
-                <div class="mypage-form-manner">
-                    <p>매너 점수</p>
-                    <a href="#">매너 점수 알아보기</a>
-                </div>
+                
                 <div class="mypage-form-cash">
                     <p>캐시</p>
-                    <button class="mypage-btn-wrap shadow"> 충전 </button>
+                    <a href=""><button class="mypage-btn-wrap shadow"> 충전 </button></a>
                 </div>
             </span>
             <span class="mypage-form-left-side">
