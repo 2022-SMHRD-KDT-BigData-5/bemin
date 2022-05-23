@@ -16,12 +16,10 @@
 	<div class="background">
 		<div class="window">
 			<div class="popup">
-
 				<button id="close">
 					<a href="#" class="close-x">X</a>
 				</button>
 				<table>
-
 					<!-- 반복 될 구간 -->
 					<tr class="tier-table">
 						<th>ID</th>
@@ -37,14 +35,7 @@
 								<option>플라이트</option>
 						</select></th>
 					</tr>
-
-
-
-
-
 				</table>
-
-
 
 				<div class="move-tire">
 					<a href="./티어매너안내.jsp" class="tier-ckeck">📢티어정보 확인하기</a>
@@ -53,9 +44,6 @@
 				<div style="margin: 10px 5px 10px 10px;">
 					<input id="sub_bt" type="submit" value="적용">
 				</div>
-
-
-
 			</div>
 		</div>
 	</div>

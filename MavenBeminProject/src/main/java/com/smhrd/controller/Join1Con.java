@@ -36,12 +36,11 @@ public class Join1Con extends HttpServlet {
 		
 		String tel=request.getParameter("tel");
 		String address =request.getParameter("address");
-		String tier =request.getParameter("star");
-		BigDecimal user_tier = new BigDecimal(tier);
+		String user_tier =request.getParameter("star");
 		System.out.println(user_tier);
 		
 		
-		System.out.println(tier);
+		
 		USER_INFO m_vo = new USER_INFO(id,pw,name,email,gender,tel,address,user_tier);
 		
 		
