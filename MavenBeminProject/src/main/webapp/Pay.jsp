@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.domain.PLACE_INFO"%>
 <%@page import="com.smhrd.domain.MATCHING"%>
 <%@page import="com.smhrd.domain.USER_INFO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -51,9 +52,9 @@
 
 	// - 예약 페이지에서 날짜,경기장,시간 정보 가져올수 있음
 	// - 결제 페이지에 경기장 정보 보낼 수 있음
-	MATCHING placeInfo = (MATCHING) session.getAttribute("placeInfo");
-	pageContext.setAttribute("placeInfo", placeInfo);
-
+	MATCHING rentalDate = (MATCHING) session.getAttribute("rentalDate");
+	pageContext.setAttribute("rentalDate", rentalDate);
+	PLACE_INFO placeInfo = (PLACE_INFO) session.getAttribute("placeInfo");
 	//USER_INFO에서 로그인한 세션 받아오기(캐시)
 	USER_INFO loginMember = (USER_INFO) session.getAttribute("loginMember");
 	pageContext.setAttribute("loginMember", loginMember);
@@ -72,25 +73,26 @@
 	// 티어는 체크박스 형태로 6단계 보여주기가 나을듯? 고민해봐야함
 	// 매너는 'x점 이상' 으로 선택하는데 x점을 select 할지 체크박스 할지 고민해봐야할듯
 	%>
-
-	<div class="fom">
-		<div class="logoName">
-			<a href="main.jsp"><h1>플라이트</h1></a>
-		</div>
-		<div class="content_wrap">
-			<div class="content_header">
-				<div class="content-header_base">
-					<div class="content-header_title">
-						<h2 style="text-align: center;">예약내역</h2>
-						<br>
-						<h3 style="font-weight: 400;">${placeInfo.place}</h3>
-						<br>
-						<h4 style="font-weight: 400;">${placeInfo.date}</h4>
-						<br>
-						<h4 style="font-weight: 400;">${placeInfo.time}</h4>
-						<br>
-						<div>
-							<button id="show">예약설정</button>
+	<form action="RentalCon" method="post">
+		<div class="fom">
+			<div class="logoName">
+				<a href="main.jsp"><h1>플라이트</h1></a>
+			</div>
+			<div class="content_wrap">
+				<div class="content_header">
+					<div class="content-header_base">
+						<div class="content-header_title">
+							<h2 style="text-align: center;">예약내역</h2>
+							<br>
+							<h3 style="font-weight: 400;">${rentalDate.RES_PLACE}</h3>
+							<br>
+							<h4 style="font-weight: 400;">${rentalDate.RES_DATE}</h4>
+							<br>
+							<h4 style="font-weight: 400;">${rentalDate.RES_TIME}</h4>
+							<br>
+							<div>
+								<button id="show" type="button">예약설정</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -108,9 +110,15 @@
 									<h4 style="text-align: left">🚩캐시</h4>
 
 									<div class="list-right">
+<<<<<<< HEAD
 										<p id="myCash">10000</p>
 										<input type="text" name="useCash" id="inputCash"
 											style="width: 80px;" value="금액 입력" onfocus="this.value=''" />
+=======
+										<p id="myCash">${loginMember.CASH}</p>
+										<input type="text" name="useCash" id="inputCash"
+											style="width: 80px;" value="0" onfocus="this.value=''" />
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 										원 <br>
 										<button type="button"
 											src="https://plab-football.s3.amazonaws.com/static/img/ic_arrow_right.svg"
@@ -119,7 +127,7 @@
 									</p>
 									<div style="text-align: right; padding-bottom: 20px;">
 										<span style="color: rgb(159, 177, 189); font-size: 12px;">
-											잔액 </span> <span id="leftCash" name="leftCash"> </span> <span
+											잔액 </span> <span id="leftCash" name="leftCash">${loginMember.CASH}</span> <span
 											style="color: rgb(159, 177, 189); font-size: 12px;"> 원
 										</span>
 									</div>
@@ -136,14 +144,17 @@
 								<div class="recipt">
 									<ul class="recipt-list" style="text-align: right;">
 										<li class="recipt-list_item"><strong>이용 금액</strong> <strong
-											id="usePrice">5000</strong></li>
+											id="usePrice"><c:out
+													value="${placeInfo.PLACE_PRICE}" /></strong></li>
 										<!---->
 										<!---->
 										<!---->
 									</ul>
 									<div class="recipt-payment" style="text-align: right;">
 										<div class="recipt-list_label">결제 금액</div>
-										<div id="leftPrice" class="recipt-list_value">5000</div>
+										<div id="leftPrice" class="recipt-list_value">
+											<c:out value="${placeInfo.PLACE_PRICE}" />
+										</div>
 									</div>
 								</div>
 							</div>
@@ -211,8 +222,13 @@
 							<div class="content_footer">
 								<div class="btn-wrap bottom-fixed">
 									<p style="text-decoration: underline">위 내용을 동의하고 결제를 진행합니다.</p>
+<<<<<<< HEAD
 									<button id="flex">
 										<a href="PayFin.jsp" style="color: white;">결제하기</a>
+=======
+									<button id="flex">				
+										<a id="noPay" type="button" style="color: white;">결제하기</a>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 									</button>
 								</div>
 							</div>
@@ -222,25 +238,87 @@
 							<div class="window">
 								<div class="popup">
 
+<<<<<<< HEAD
 									<button id="close">
+=======
+									<button id="close" data-dismiss="modal">
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 										<a href="#" class="close-x">X</a>
 									</button>
 
 									<div class="modal-in">
+<<<<<<< HEAD
+=======
+										<br>
+										<div style="margin: 0 auto;">
+											<p class="gen-cl">성별</p>
+											<input id="GENDER" type="radio" name="GENDER" value="남">남
+											<input id="GENDER" type="radio" name="GENDER" value="여">여
+											<input id="GENDER" type="radio" name="GENDER" value="무">무관
+										</div>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 
+										<br>
+										<div>
+											<p class="per-cl">인원</p>
+											<input id="MAT_MEMBER" type="radio" name="MAT_MEMBER"
+												value="2">2인 <input id="MAT_MEMBER" type="radio"
+												name="MAT_MEMBER" value="4">4인
+										</div>
+										<br>
+										<div>
+											<input id="UNIT" type="radio" name="UNIT" value="개인">개인
+											<input id="UNIT" type="radio" name="UNIT" value="단체">단체
+										</div>
+										<br>
+										<div style="color: black;">
+											<p style="margin-left: 26px;">티어</p>
+											<select name="STN_TIER" class="tire-op">
+												<option>티어</option>
+												<option value="100">루키</option>
+												<option value="200">비기너</option>
+												<option value="300">주니어</option>
+												<option value="400">시니어</option>
+												<option value="500">프로</option>
+												<option value="600">플라이트</option>
+											</select>
+										</div>
 
 										<br>
 
+										<div style="color: black;">
+											<p style="margin-left: 10px;">매너온도</p>
+											<select name="STN_MANNER" " class="tire-manner">
+												<option>매너점수</option>
+												<!-- <option>0</option> -->
+												<option value="20">20 이상</option>
+												<option value="40">40 이상</option>
+												<option value="60">60 이상</option>
+												<option value="80">80 이상</option>
+											</select>
+										</div>
+									</div>
 
+<<<<<<< HEAD
 										<div style="margin: 0 auto;">
 											<p class="gen-cl">성별</p>
 											<input type="radio" name="gender">남 <input
 												type="radio" name="gender">녀 <input type="radio"
 												name="gender">무관
 										</div>
+=======
+									<div class="move-tire"></div>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 
+<<<<<<< HEAD
 										<br>
+=======
+									<div style="margin: 10px 5px 10px 10px;">
+										<input id="sub_bt" type="button" value="적용">
+									</div>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 
+<<<<<<< HEAD
 
 										<div>
 											<p class="per-cl">인원</p>
@@ -290,12 +368,15 @@
 										<input id="sub_bt" type="submit" value="적용">
 									</div>
 
+=======
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 								</div>
 							</div>
 						</div>
 				</div>
 			</div>
 
+<<<<<<< HEAD
 
 			<script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
 			<script src="assets/js/vendor/bootstrap.min.js"></script>
@@ -306,9 +387,23 @@
 			<script src="assets/css/slick/slick.min.js"></script>
 			<script src="assets/js/jquery.collapse.js"></script>
 			<script src="assets/js/bootsnav.js"></script>
+=======
+		</div>
+	</form>
+	<script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
+	<script src="assets/js/vendor/bootstrap.min.js"></script>
+
+	<script src="assets/js/jquery.magnific-popup.js"></script>
+	<script src="assets/js/jquery.easing.1.3.js"></script>
+	<script src="assets/css/slick/slick.js"></script>
+	<script src="assets/css/slick/slick.min.js"></script>
+	<script src="assets/js/jquery.collapse.js"></script>
+	<script src="assets/js/bootsnav.js"></script>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 
 
 
+<<<<<<< HEAD
 			<script src="assets/js/plugins.js"></script>
 			<script src="assets/js/main.js"></script>
 			<!--캐시 입력 사용  -->
@@ -324,15 +419,40 @@
 				let myCash = document.querySelector('#myCash');
 				//내 캐시 - 입력캐시
 				let leftCash = document.querySelector('#leftCash');
+=======
+	<script src="assets/js/plugins.js"></script>
+	<script src="assets/js/main.js"></script>
+	<!--캐시 입력 사용  -->
+	<script>
+		
+	</script>
+	<script>
+		//버튼
+		let useCash = document.querySelector('#useCash');
+		//입력 캐시
+		let inputCash = document.querySelector('#inputCash');
+		//내 캐시
+		let myCash = document.querySelector('#myCash');
+		//내 캐시 - 입력캐시
+		let leftCash = document.querySelector('#leftCash');
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 
+<<<<<<< HEAD
 				//요금
 				let usePrice = document.querySelector('#usePrice');
 				//요금 - 입력캐시
 				let leftPrice = document.querySelector('#leftPrice');
+=======
+		//요금
+		let usePrice = document.querySelector('#usePrice');
+		//요금 - 입력캐시
+		let leftPrice = document.querySelector('#leftPrice');
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 
 				//캐시 계산
 				useCash.addEventListener('click', function() {
 
+<<<<<<< HEAD
 					let txt1 = Number(inputCash.value)
 					let txt2 = Number(myCash.innerHTML)
 					let txt3 = Number(usePrice.innerHTML)
@@ -343,7 +463,36 @@
 						leftPrice.innerHTML = Number(usePrice.innerHTML)
 								- Number(inputCash.value);
 					}
+=======
+			let txt1 = Number(inputCash.value)
+			let txt2 = Number(myCash.innerHTML)
+			let txt3 = Number(usePrice.innerHTML)
+			//내가 가진 캐시보다 많으면 X 경기장 요금보다 캐시입력값이 많으면X
+			if (txt1 <= txt3 & txt1 <= txt2) {
+				leftCash.innerHTML = Number(myCash.innerHTML)
+						- Number(inputCash.value);
+				leftPrice.innerHTML = Number(usePrice.innerHTML)
+						- Number(inputCash.value);
+			}
 
+			if (txt1 > txt3) {
+				leftCash.innerHTML = Number(myCash.innerHTML)
+						- Number(usePrice.innerHTML);
+				leftPrice.innerHTML = 0
+			}
+			if (txt1 > txt2) {
+				alert("캐시 보유 금액이 부족합니다")
+				return false
+			}
+ 			if(Number(leftPrice.innerHTML) > 0){
+				document.querySelector("#flex").innerHTML ='<a id="noPay" type="button" style="color: white;">결제하기</a>'
+			}else{
+				document.querySelector("#flex").innerHTML ='<a type="submit" style="color: white;">결제하기</a>'
+			}
+			
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
+
+<<<<<<< HEAD
 					if (txt1 > txt3) {
 						leftCash.innerHTML = Number(myCash.innerHTML)
 								- Number(usePrice.innerHTML);
@@ -353,6 +502,19 @@
 						alert("캐시 보유 금액이 부족합니다")
 						return false
 					}
+=======
+		});
+		$(document).on('click', '#noPay', function() {
+			alert('결제 금액을 확인하세요')
+			return false
+		});
+
+		
+
+		$("#inputCash").keyup(function() {
+			chk_input_filter("number", $("#inputCash"));
+		});
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 
 				});
 			</script>
@@ -363,6 +525,7 @@
 
 				function chk_input_filter(type, obj) {
 
+<<<<<<< HEAD
 					var str = $(obj).val();
 
 					if (type == 'number') {
@@ -371,15 +534,40 @@
 					}
 				}
 			</script>
+=======
+			if (type == 'number') {
+				//숫자만 허용
+				$(obj).val(str.replace(/[^0-9]/gi, ""));
+			}
+		}
+
+		//결제버튼 입력
+	</script>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 
 
+<<<<<<< HEAD
 			<script>
 				// onkeyup="inputNumberFormat(this)"
+=======
 
+	<script>
+		function show() {
+			document.querySelector(".background").className = "background show";
+		}
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
+
+<<<<<<< HEAD
 				/* function inputNumberFormat(obj) {
 				    obj.value = comma(uncomma(obj.value));
 				}
+=======
+		function close() {
+			document.querySelector(".background").className = "background";
+		}
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 
+<<<<<<< HEAD
 				function comma(str) {
 				    str = String(str);
 				    return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
@@ -406,5 +594,14 @@
 				document.querySelector("#sub_bt").addEventListener("click",
 						close);
 			</script>
+=======
+		document.querySelector("#show").addEventListener("click", show);
+		document.querySelector("#close").addEventListener("click", close);
+		document.querySelector("#sub_bt").addEventListener("click", close);
+
+		
+		
+	</script>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 </body>
 </html>
