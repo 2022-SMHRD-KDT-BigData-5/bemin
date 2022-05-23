@@ -103,7 +103,7 @@
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="./회원가입.html">회원가입</a></li>
-						<li><a href="./로그인.html">로그인</a></li>
+						<li><a href="./login.jsp">로그인</a></li>
 						<li><a href="./마이페이지.html">마이페이지</a></li>
 						<li><a href="./메인.html">로그아웃</a></li>
 						<!-- <li><a href="#test">Blog</a></li> -->

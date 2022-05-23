@@ -38,12 +38,16 @@ public class RentalCon extends HttpServlet {
 		String STN_TIER = request.getParameter("STN_TIER");
 		String STN_MANNER = request.getParameter("STN_MANNER");
 		String GENDER = request.getParameter("GENDER");
-
+		String useCash = request.getParameter("useCash");
+		
 		
 		
 		// user_info에서 로그인한 아이디 캐시정보 가져오기(세션)
 		USER_INFO loginMember = (USER_INFO)session.getAttribute("loginMember");
+		int left = Integer.parseInt(loginMember.getCASH()) - Integer.parseInt(useCash);
 		
+		
+
 		String USER_ID = loginMember.getID();
 		// 선택한 경기장의 요금 정보 가져와야함
 		MATCHING rental = new MATCHING(RES_DATE,RES_TIME,RES_PLACE,USER_ID,UNIT,MAT_MEMBER,STN_TIER,STN_MANNER,GENDER);

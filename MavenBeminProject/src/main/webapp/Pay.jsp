@@ -112,7 +112,7 @@
 									<div class="list-right">
 										<p id="myCash">${loginMember.CASH}</p>
 										<input type="text" name="useCash" id="inputCash"
-											style="width: 80px;" value="금액 입력" onfocus="this.value=''" />
+											style="width: 80px;" value="0" onfocus="this.value=''" />
 										원 <br>
 										<button type="button"
 											src="https://plab-football.s3.amazonaws.com/static/img/ic_arrow_right.svg"
@@ -121,7 +121,7 @@
 									</p>
 									<div style="text-align: right; padding-bottom: 20px;">
 										<span style="color: rgb(159, 177, 189); font-size: 12px;">
-											잔액 </span> <span id="leftCash" name="leftCash"> </span> <span
+											잔액 </span> <span id="leftCash" name="leftCash">${loginMember.CASH}</span> <span
 											style="color: rgb(159, 177, 189); font-size: 12px;"> 원
 										</span>
 									</div>
@@ -216,7 +216,7 @@
 								<div class="btn-wrap bottom-fixed">
 									<p style="text-decoration: underline">위 내용을 동의하고 결제를 진행합니다.</p>
 									<button id="flex">				
-										<a type="submit" style="color: white;">결제하기</a>
+										<a id="noPay" type="button" style="color: white;">결제하기</a>
 									</button>
 								</div>
 							</div>
@@ -360,8 +360,7 @@
 		});
 		$(document).on('click', '#noPay', function() {
 			alert('결제 금액을 확인하세요')
-			
-			
+			return false
 		});
 
 		

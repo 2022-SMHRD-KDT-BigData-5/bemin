@@ -7,12 +7,12 @@
 <title>Insert title here</title>
 <head>
 <meta charset="UTF-8">
-<title>회원가입</title>
+<title>로그인실패</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" href="favicon.ico">
 
-<link rel="stylesheet" href="assets/css/회원가입.css">
+
 <link rel="icon" type="image/png" href="favicon.ico">
 <link
 	href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
@@ -26,8 +26,8 @@
 <link rel="stylesheet" href="assets/css/bootstrap.css">
 <link rel="stylesheet" href="assets/css/magnific-popup.css">
 <link rel="stylesheet" href="assets/css/bootsnav.css">
-<link rel="stylesheet" href="assets/css/회원가입.css">
-<link rel="stylesheet" href="assets/css/회원가입레벨.css">
+
+
 
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/responsive.css" />
@@ -103,7 +103,7 @@
 			<!-- ID -->
 			<div>
 				<h3 class="join_title">
-				<form action="Join1Con" method="post" name="frm">
+				<form action="Join1Con" method="post">
 					<label for="id">아이디</label>
 				</h3>
 				<span class="box int_id"> <input type="text" name="id" id="id"
@@ -121,11 +121,7 @@
 				<h3 class="join_title">
 					<label for="pswd1">비밀번호</label>
 				</h3>
-
-				
-
-				<span class="box int_pass"> <input type="password" id="pswd1"
-
+				<span class="box int_pass"> <input type="text" name="pw" id="pswd1"
 					class="int" maxlength="20"> <span id="alertTxt">사용불가</span>
 					<img src="./assets/images/m_icon_pass.png" id="pswd1_img1"
 					class="pswdImg">
@@ -137,12 +133,10 @@
 				<h3 class="join_title">
 					<label for="pswd2">비밀번호 재확인</label>
 				</h3>
-
 				<span class="box int_pass_check"> <input type="text"
-					id="pswd2" name="pw" class="int" maxlength="20"> 
-
-
-
+					id="pswd2" name="pw" class="int" maxlength="20"> <img
+					src="./assets/images/m_icon_check_disable.png" id="pswd2_img1"
+					class="pswdImg">
 				</span> <span class="error_next_box"></span>
 			</div>
 
@@ -328,89 +322,6 @@
 	<script src="assets/js/plugins.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-	
-	<script>
-	//아이디 체크!!
-	
-	function idCheck(){
-		let id=$('#id').val();
-		$.ajax({
-			//요청 방식(get/post)
-			method:'get',
-			//요청 경로(url매핑값)
-			url:'IdCheckCon',
-			//전송데이터(json)
-			data : {'id':id},
-			//전송데이터 정보(형식/인코딩방식)
-			contentType : 'application/json; charset=utf-8',
-			//응답데이터 형식지정
-			dataType : 'text',
-			success : function(data){
-				if(data=='true'){
-					alert('사용할 수 있는 아이디입니다!')
-				}else{
-					alert('중복된 아이디입니다!')
-				}
-			},
-			error : function(){
-				alert("통신실패!!")
-			}
-		})
-	}
-	
-	
-   	 
-    	// 유효성, 비번확인
- 		$(document).on('click','#btnJoin',function(){
- 			if($('#id').val() == ''){
- 				alert('아이디를 입력하세요');
- 				window.location.href = "main.jsp";
- 				return false;
- 			}else if($('#pswd1').val() == ''){
- 				alert('비밀번호를 입력하세요');
- 				return false;
- 			}else if($('#pswd2').val() == ''){
- 				alert('비밀번호 재확인을 입력하세요');
- 				return false;
- 			}else if($('#pswd1').val() != $('#pswd2').val()){
-    		alert("비밀번호가 일치하지 않습니다!!!");
-	    	return false;
- 			}else if($('#name').val() == ''){
- 				alert('이름을 입력하세요');
- 				return false;
- 			}else if($('#gender').val() == ''){
- 				alert('성별을 입력하세요');
- 				return false;
- 			}else if($('#email').val() == ''){
- 				alert('이메일을 입력하세요');
- 				return false;
- 			}
- 			else if($('#mobile').val() == ''){
- 				alert('전화번호를 입력하세요');
- 				return false;
- 			}
- 			else if($('#adress').val() == ''){
- 				alert('주소 입력하세요');
- 				return false;
- 			}else {
-    		 window.location.href = "main.jsp";
-    		 return true;
-    	 }
-     
-     
-     
-	})
-	
-	
-	
-		
-	
-
-
-	</script>
-	
-	
-	
 	
 	
 	
