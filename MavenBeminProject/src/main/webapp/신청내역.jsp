@@ -133,7 +133,7 @@
 									</c:if>
 								</c:otherwise>
 								</c:choose>
-							 	<td><a href="#">멤버보기</a></td>
+							 	<td><a href="modal.jsp">멤버보기</a></td>
 							</tr>
 						
 					</c:forEach>
