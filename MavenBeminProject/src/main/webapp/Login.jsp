@@ -100,7 +100,6 @@
 				<!-- navbar menu -->
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
-<<<<<<< HEAD
 						<c:choose>
 								<c:when test="${empty loginMember}">
                             		<li><a href="./index.html">Home</a></li>                    
@@ -114,13 +113,6 @@
 									<li><a href="./LogoutCon">로그아웃</a></li>									
 							</c:otherwise>				
 						</c:choose>
-=======
-						<li><a href="./index.html">Home</a></li>
-						<li><a href="./회원가입.jsp">회원가입</a></li>
-						<li><a href="./Login.jsp">로그인</a></li>
-						<li><a href="./마이페이지.html">마이페이지</a></li>
-
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
@@ -139,14 +131,13 @@
                 <p>플라이트</p>
             </div>
             <div class="login-form-left-side">
-                <div class="login-top-wrap">
                 <form action ="LoginCon" method="post">
+                <div class="login-top-wrap">
                     <span>회원이아니신가요?</span>
                     <button class="create-account-btn shadow-light" href="join.jsp">회원가입</button>
                 </div>
                 <div class="login-input-container">
-                
-                    <div class="login-input-wrap input-id">
+					<div class="login-input-wrap input-id">
                         <i class="far fa-envelope"></i>
                         <input placeholder="ID" name="id" type="text">
                     </div>
@@ -154,16 +145,13 @@
                         <i class="fas fa-key"></i>
                         <input placeholder="Password" name="pw"  type="password">
                     </div>
-                </div>
-                
- 		
-            	
+                </div>       	
                 <div class="login-btn-wrap">
                     <input class="login-btn" id="loginbtn" type="submit" value="로그인" >
                     
                     <a href="Find.jsp" >아이디/비밀번호를 잊으셨나요?</a>
-                </form>
                 </div>
+                </form>
             </div>
         </div>
     </div>

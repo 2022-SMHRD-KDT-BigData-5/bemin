@@ -1,6 +1,5 @@
 package com.smhrd.domain;
 
-import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 public class USER_INFO {
@@ -12,13 +11,13 @@ public class USER_INFO {
 	private String TEL;
 	private String ADDRESS;
 	private Timestamp JOIN_DATE;
-	private BigDecimal CASH;
-	private BigDecimal MANAGER;
-	private BigDecimal USER_TIER;
-	private BigDecimal USER_MANNER;
+	private String CASH;
+	private String MANAGER;
+	private String USER_TIER;
+	private String USER_MANNER;
 
 	public USER_INFO(String ID, String PW, String NAME, String EMAIL, String GENDER, String TEL, String ADDRESS,
-			Timestamp JOIN_DATE, BigDecimal CASH, BigDecimal MANAGER, BigDecimal USER_TIER, BigDecimal USER_MANNER) {
+			Timestamp JOIN_DATE, String CASH, String MANAGER, String USER_TIER, String USER_MANNER) {
 		super();
 		this.ID = ID;
 		this.PW = PW;
@@ -47,7 +46,7 @@ public class USER_INFO {
 		this.PW = PW;
 	}
 
-	public USER_INFO(String ID, String PW,String NAME, String EMAIL, String GENDER, String TEL,String ADDRESS,BigDecimal USER_TIER) {
+	public USER_INFO(String ID, String PW,String NAME, String EMAIL, String GENDER, String TEL,String ADDRESS,String USER_TIER) {
 		super();
 		this.ID = ID;
 		this.PW = PW;
@@ -122,35 +121,35 @@ public class USER_INFO {
 		this.JOIN_DATE = JOIN_DATE;
 	}
 
-	public BigDecimal getCASH() {
+	public String getCASH() {
 		return CASH;
 	}
 
-	public void setCASH(BigDecimal CASH) {
+	public void setCASH(String CASH) {
 		this.CASH = CASH;
 	}
 
-	public BigDecimal getMANAGER() {
+	public String getMANAGER() {
 		return MANAGER;
 	}
 
-	public void setMANAGER(BigDecimal MANAGER) {
+	public void setMANAGER(String MANAGER) {
 		this.MANAGER = MANAGER;
 	}
 
-	public BigDecimal getUSER_TIER() {
+	public String getUSER_TIER() {
 		return USER_TIER;
 	}
 
-	public void setUSER_TIER(BigDecimal USER_TIER) {
+	public void setUSER_TIER(String USER_TIER) {
 		this.USER_TIER = USER_TIER;
 	}
 
-	public BigDecimal getUSER_MANNER() {
+	public String getUSER_MANNER() {
 		return USER_MANNER;
 	}
 
-	public void setUSER_MANNER(BigDecimal USER_MANNER) {
+	public void setUSER_MANNER(String USER_MANNER) {
 		this.USER_MANNER = USER_MANNER;
 	}
 

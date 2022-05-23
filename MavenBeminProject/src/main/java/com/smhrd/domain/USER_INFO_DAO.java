@@ -50,9 +50,7 @@ public class USER_INFO_DAO {
 		}
 		return loginMember;
 	} // 로그인 끝 ----------------------------------------------------
-<<<<<<< HEAD
-	
-	
+		
 	// 참여멤버 보기--------------------------------------------------------
 	public List<USER_INFO> joinUserView(String ID) {
 		List<USER_INFO> UserList = null;
@@ -70,7 +68,6 @@ public class USER_INFO_DAO {
 		}
 		return UserList;
 	}// 참여멤버 보기 끝-----------------------------------------------------
-=======
 
 	
 	//회원가입 ----------------------------------------------------------
@@ -116,7 +113,6 @@ public class USER_INFO_DAO {
 	
 		}
 	
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 
 	public boolean LoginCheck(String id,String pw) {
 			boolean loginbtn=false;

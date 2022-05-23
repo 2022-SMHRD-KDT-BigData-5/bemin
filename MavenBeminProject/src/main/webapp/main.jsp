@@ -109,34 +109,16 @@
                         <ul class="nav navbar-nav navbar-right">
                          <c:choose>
                            <c:when test="${empty loginMember}">
-<<<<<<< HEAD
                             	<li><a href="./Login.jsp">로그인</a></li>
                             	<li><a href="./회원가입.html">회원가입</a></li>
                     
-=======
-                            <li><a href="./Login.jsp">로그인</a></li>
-                            <li><a href="./회원가입.jsp">회원가입</a></li>
-                            
-                            <li><a href="./Maypage">마이페이지</a></li>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
                            </c:when>
                            <c:otherwise>
-<<<<<<< HEAD
-                            <li><a href="LogoutCon">로그아웃</a></li>                                               
-=======
-                           	
-                            <li><a href="LogoutCon">로그아웃</a></li>                       
-                            <li><a href="./회원가입.jsp">회원가입</a></li>
-                           
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
-                           	<li><a href="./회원정보수정.jsp">회원정보수정</a></li>
-                            <li><a href="./Maypage.jsp">마이페이지</a></li>
-                            
-                            <!-- <li><a href="#test">Blog</a></li> -->
-                            <!-- <li><a href="#contact">Contact</a></li> -->
-                          </c:otherwise>
-                          </c:choose> 
-                            
+                            	<li><a href="LogoutCon">로그아웃</a></li>                       
+                           		<li><a href="./회원정보수정.jsp">회원정보수정</a></li>
+                            	<li><a href="./Maypage.jsp">마이페이지</a></li>
+                         	</c:otherwise>
+                          	</c:choose> 
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div> 

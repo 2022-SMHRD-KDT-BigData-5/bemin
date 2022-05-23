@@ -99,21 +99,17 @@
 		<servlet-class>com.smhrd.controller.MachingListCon</servlet-class>
 	</servlet>
 	<servlet>
-<<<<<<< HEAD
 		<servlet-name>JoinMemberCon</servlet-name>
 		<display-name>JoinMemberCon</display-name>
 		<description></description>
 		<servlet-class>com.smhrd.controller.JoinMemberCon</servlet-class>
 	</servlet>
-=======
+	<servlet>
 		<servlet-name>PwCheckCon</servlet-name>
 		<display-name>PwCheckCon</display-name>
 		<description></description>
 		<servlet-class>com.smhrd.controller.PwCheckCon</servlet-class>
-	</servlet>
-	
-	
-	
+	</servlet>	
 	<servlet-mapping>
 		<servlet-name>FindCon</servlet-name>
 		<url-pattern>/FindCon</url-pattern>
@@ -151,8 +147,6 @@
 		<servlet-name>listController</servlet-name>
 		<url-pattern>/listController</url-pattern>
 	</servlet-mapping>
-
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 	<servlet-mapping>
 		<servlet-name>PayCon</servlet-name>
 		<url-pattern>/PayCon</url-pattern>
@@ -178,15 +172,12 @@
 		<url-pattern>/MachingListCon</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-<<<<<<< HEAD
 		<servlet-name>JoinMemberCon</servlet-name>
 		<url-pattern>/JoinMemberCon</url-pattern>
 	</servlet-mapping>
-=======
+	<servlet-mapping>
 		<servlet-name>PwCheckCon</servlet-name>
 		<url-pattern>/PwCheckCon</url-pattern>
 	</servlet-mapping>
 
-	
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 </web-app>
