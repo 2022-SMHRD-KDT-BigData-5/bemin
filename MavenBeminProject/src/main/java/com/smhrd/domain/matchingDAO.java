@@ -70,6 +70,28 @@ public class matchingDAO<BoardReply> {
 		return matching;
 	} // 매치들 끝 --------------------------------------------------------------------
 	
+
+	//예약 하기----------------------------------------------------------------------
+	public int insertRental(MATCHING rental_info) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		int cnt = 0;
+		try {
+			cnt = sqlSession.insert("com.smhrd.domain.matchingDAO.insertRental", rental_info);
+
+			if (cnt > 0) {
+				sqlSession.commit();
+			} else {
+				sqlSession.rollback();
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}//예약하기 끝---------------------------------------------------------------------
+
 	//  매칭게시판에서 내글 삭제 ----------------------------------------------
 	public int deleteMatchingIdex(int delmatNum) {
 		int cnt = 0;
@@ -107,4 +129,5 @@ public class matchingDAO<BoardReply> {
 	} //  매칭게시판에서 내글 삭제------------------------------------------
 	
 	
+
 }
