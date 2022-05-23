@@ -27,4 +27,9 @@
     </delete>
     
 	
+	<!-- 예약하기 -->
+	<insert id="insertRental" parameterType="com.smhrd.domain.MATCHING">
+		insert into MATCHING values(matching_mat_no.nextval,#{RES_DATE},#{RES_TIME},#{RES_PLACE},#{USER_ID},#{UNIT},#{MAT_MEMBER},#{STN_TIER},#{STN_MANNER},'0',#{GENDER})		
+	</insert>
+	
 </mapper>

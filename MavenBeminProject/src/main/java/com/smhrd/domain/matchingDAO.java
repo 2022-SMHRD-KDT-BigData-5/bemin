@@ -70,7 +70,33 @@ public class matchingDAO {
 		return matching;
 	} // 매치들 끝 --------------------------------------------------------------------
 	
+<<<<<<< HEAD
 	//  매칭게시판에서 내글 삭제 ----------------------------------------------------------
+=======
+
+	//예약 하기----------------------------------------------------------------------
+	public int insertRental(MATCHING rental_info) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		int cnt = 0;
+		try {
+			cnt = sqlSession.insert("com.smhrd.domain.matchingDAO.insertRental", rental_info);
+
+			if (cnt > 0) {
+				sqlSession.commit();
+			} else {
+				sqlSession.rollback();
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}//예약하기 끝---------------------------------------------------------------------
+
+	//  매칭게시판에서 내글 삭제 ----------------------------------------------
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 	public int deleteMatchingIdex(int delmatNum) {
 		int cnt = 0;
 		try {
@@ -107,4 +133,5 @@ public class matchingDAO {
 	} // 매칭리스트에서 본인 삭제---------------------------------------------------------
 	
 	
+
 }
