@@ -32,8 +32,7 @@ public class MachingListCon extends HttpServlet {
 			System.out.println("매칭삭제 실패");
 		}
 		
-		response.sendRedirect("신청내역.jsp");
 	}
 		
-	}
+}
 

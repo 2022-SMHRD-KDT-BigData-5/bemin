@@ -8,12 +8,12 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.smhrd.database.sqlSessionManager;
 
-public class matchingDAO<BoardReply> {
+public class matchingDAO {
 
 	SqlSessionFactory sqlSessionFactory = sqlSessionManager.getSqlSession();
 	SqlSession sqlSession = sqlSessionFactory.openSession();
 
-	// 게시판 매칭 내역보기--------------------------------------------------------
+	// 게시판 매칭 내역보기--------------------------------------------------------------
 	public List<MATCHING> selectMatchig(String ID) {
 		List<MATCHING> MatchingList = null;
 		try {
@@ -29,7 +29,7 @@ public class matchingDAO<BoardReply> {
 			sqlSession.close();
 		}
 		return MatchingList;
-	}// 게시판 매칭 내역보기 끝-----------------------------------------------------
+	}// 게시판 매칭 내역보기 끝------------------------------------------------------------
 	
 	// 취소 조건------------------------------------------------------------------------
 	public MATCHING FindMatching(MATCHING m) {
@@ -70,7 +70,7 @@ public class matchingDAO<BoardReply> {
 		return matching;
 	} // 매치들 끝 --------------------------------------------------------------------
 	
-	//  매칭게시판에서 내글 삭제 ----------------------------------------------
+	//  매칭게시판에서 내글 삭제 ----------------------------------------------------------
 	public int deleteMatchingIdex(int delmatNum) {
 		int cnt = 0;
 		try {
@@ -86,9 +86,9 @@ public class matchingDAO<BoardReply> {
 			sqlSession.close();
 		}
 		return cnt;
-	} //  매칭게시판에서 내글 삭제------------------------------------------
+	} // 매칭게시판에서 내글 삭제---------------------------------------------------------
 
-	//  매칭게시판에서 내글 삭제 ----------------------------------------------
+	// 매칭리스트에서 본인 삭제 ----------------------------------------------------------
 	public int deleteMatchingList(String delmatid) {
 		int cnt = 0;
 		try {
@@ -104,7 +104,7 @@ public class matchingDAO<BoardReply> {
 			sqlSession.close();
 		}
 		return cnt;
-	} //  매칭게시판에서 내글 삭제------------------------------------------
+	} // 매칭리스트에서 본인 삭제---------------------------------------------------------
 	
 	
 }

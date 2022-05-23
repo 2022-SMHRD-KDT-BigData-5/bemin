@@ -109,16 +109,12 @@
                         <ul class="nav navbar-nav navbar-right">
                          <c:choose>
                            <c:when test="${empty loginMember}">
-                            <li><a href="./Login.jsp">로그인</a></li>
-                            <li><a href="./회원가입.html">회원가입</a></li>
-                            
-                            <li><a href="./Maypage">마이페이지</a></li>
+                            	<li><a href="./Login.jsp">로그인</a></li>
+                            	<li><a href="./회원가입.html">회원가입</a></li>
+                    
                            </c:when>
                            <c:otherwise>
-                           	
-                            <li><a href="LogoutCon">로그아웃</a></li>                       
-                            <li><a href="./회원가입.html">회원가입</a></li>
-                           
+                            <li><a href="LogoutCon">로그아웃</a></li>                                               
                            	<li><a href="./회원정보수정.jsp">회원정보수정</a></li>
                             <li><a href="./Maypage.jsp">마이페이지</a></li>
                             

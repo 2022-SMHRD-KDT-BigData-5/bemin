@@ -100,6 +100,12 @@
 		<description></description>
 		<servlet-class>com.smhrd.controller.MachingListCon</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>JoinMemberCon</servlet-name>
+		<display-name>JoinMemberCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.JoinMemberCon</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>PayCon</servlet-name>
 		<url-pattern>/PayCon</url-pattern>
@@ -123,5 +129,9 @@
 	<servlet-mapping>
 		<servlet-name>MachingListCon</servlet-name>
 		<url-pattern>/MachingListCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JoinMemberCon</servlet-name>
+		<url-pattern>/JoinMemberCon</url-pattern>
 	</servlet-mapping>
 </web-app>

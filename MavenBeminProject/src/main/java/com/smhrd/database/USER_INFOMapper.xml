@@ -15,5 +15,11 @@
 	<select id="LoginUSER_INFO" resultType="com.smhrd.domain.USER_INFO" parameterType="com.smhrd.domain.USER_INFO">
 		select * from USER_INFO where USER_ID=#{ID} and USER_PW=#{PW}
 	</select>
+	
+	<!-- 멤버보기 -->
+	<select id="JoinMember" resultType="com.smhrd.domain.USER_INFO" parameterType="String">
+		select * from USER_INFO where USER_ID in (select USER_ID from MATCHING_LIST where MAT_NO=#{MAT_NO})
+	</select>
 </mapper>
+
 
