@@ -294,9 +294,11 @@
                                         <p>18:00</p>
                                     </div>
                                     <div class="list--match-schedule__status">
+                                    <a href="./참가.jsp">
                                         <div class="match-status__join">
                                             <p>참가하기</p>
                                         </div>
+                                        </a>
                                     </div>
                                     <div class="list--match-schedule__info">
                                         <div class="match-list__title">

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <!--<![endif]-->
@@ -100,8 +101,8 @@
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="./index.html">Home</a></li>
-						<li><a href="./join.jsp">회원가입</a></li>
-						<li><a href="./로그인.html">로그인</a></li>
+						<li><a href="./회원가입.jsp">회원가입</a></li>
+						<li><a href="./Login.jsp">로그인</a></li>
 						<li><a href="./마이페이지.html">마이페이지</a></li>
 
 					</ul>
@@ -138,8 +139,12 @@
                         <input placeholder="Password" name="pw"  type="password">
                     </div>
                 </div>
+                
+ 		
+            	
                 <div class="login-btn-wrap">
-                    <input class="login-btn" type="submit" value="로그인" >
+                    <input class="login-btn" id="loginbtn" type="submit" value="로그인" >
+                    
                     <a href="Find.jsp" >아이디/비밀번호를 잊으셨나요?</a>
                 </form>
                 </div>
@@ -153,18 +158,41 @@
 	<script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
 	<script src="assets/js/vendor/bootstrap.min.js"></script>
 
-	<script src="assets/js/owl.carousel.min.js"></script>
+
 	<script src="assets/js/jquery.magnific-popup.js"></script>
 	<script src="assets/js/jquery.easing.1.3.js"></script>
 	<script src="assets/css/slick/slick.js"></script>
 	<script src="assets/css/slick/slick.min.js"></script>
 	<script src="assets/js/jquery.collapse.js"></script>
 	<script src="assets/js/bootsnav.js"></script>
-
-
-
 	<script src="assets/js/plugins.js"></script>
 	<script src="assets/js/main.js"></script>
-
+	<script>
+	
+	$('#loginbtn').click(function LoginCheck(){
+	
+		let id=$('#id').val();
+		let pw=$('#pw').val();
+	$.ajax({
+		method:'post',
+		url:'LoginCheckCon',
+		data:{'id':id,'pw':pw},
+		contentType : 'application/json; charset=utf-8',
+		dataType : 'text',
+		success: function(data){
+			if(data=='false'){
+				alert('아이디 또는 비밀번호가 일치하지 않습니다!!!!!')
+				window.location.href = "LoginCheck.html";
+			}else{
+				window.location.href = "main.jsp";
+			}
+		}
+		
+		})
+	
+	}
+	
+	</script>
+	
 </body>
 </html>
