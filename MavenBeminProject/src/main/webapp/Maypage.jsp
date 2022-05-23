@@ -89,8 +89,8 @@
                 <!-- navbar menu -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="./index.html">Home</a></li>                    
-                        <li><a href="./index.html">로그아웃</a></li>
+                        <li><a href="./RealMain.jsp">Home</a></li>                    
+                        <li><a href="LogoutCon">로그아웃</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div> 

@@ -129,7 +129,7 @@
 					style="background-color: transparent;">
 					<section class="section--wide">
 						<div class="magazine-article__cover">
-							<img src="./assets/images/티어안내.png">
+							<img src="./assets/images/티어수정이.png">
 						</div>
 						<div class="magazine-article__title">
 							<h1>내 플라이트 등급은?</h1>

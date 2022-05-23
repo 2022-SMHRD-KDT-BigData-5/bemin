@@ -63,7 +63,7 @@
 					data-target="#navbar-menu">
 					<i class="fa fa-bars"></i>
 				</button>
-				<a class="navbar-brand" href="index.html"> <img
+				<a class="navbar-brand" href="메인.jsp"> <img
 					src="assets/images/logo1.png" class="logo" alt=""> <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
 				</a>
 
@@ -73,10 +73,10 @@
 			<!-- navbar menu -->
 			<div class="collapse navbar-collapse" id="navbar-menu">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="./index.html">Home</a></li>
+					<li><a href="./메인.jsp">Home</a></li>
 					<li><a href="./회원가입.jsp">회원가입</a></li>
 					<li><a href="./Login.jsp">로그인</a></li>
-					<li><a href="./마이페이지.html">마이페이지</a></li>
+					<li><a href="./Maypage">마이페이지</a></li>
 					<!-- <li><a href="#test">Blog</a></li> -->
 					<!-- <li><a href="#contact">Contact</a></li> -->
 				</ul>

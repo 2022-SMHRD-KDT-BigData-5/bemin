@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
 <html lnag="ko">
     <head>
@@ -40,10 +40,10 @@
                 <!-- navbar menu -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="./index.html">Home</a></li>                    
+                        <li><a href="./RealMain.jsp">Home</a></li>                    
                         <li><a href="./회원가입.html">회원가입</a></li>
-                        <li><a href="./로그인.html">로그인</a></li>
-                        <li><a href="./마이페이지.html">마이페이지</a></li>
+                        <li><a href="./Login.jsp">로그인</a></li>
+                        <li><a href="./Maypage.jsp">마이페이지</a></li>
                         <!-- <li><a href="#test">Blog</a></li> -->
                         <!-- <li><a href="#contact">Contact</a></li> -->
                     </ul>
@@ -67,10 +67,13 @@
 
                
                 <!-- PW1 -->
+                <form action="UpdateCon" method="post">
                 <div>
+                
+                <h3>${loginMember.ID }님 환영합니다 🙋‍♀️</h3>
                     <h3 class="join_title"><label for="pswd1">비밀번호</label></h3>
                     <span class="box int_pass">
-                        <input type="text" id="pswd1" placeholder="비밀번호 입력" class="int" maxlength="20">
+                        <input type="text" id="pswd1" value="${loginMember.PW }" placeholder="비밀번호 입력" class="int" maxlength="20">
                         <span id="alertTxt">사용불가</span>
                         <img src="m_icon_pass.png" id="pswd1_img1" class="pswdImg">
                     </span>
@@ -121,13 +124,13 @@
                 <!-- 수정완료 BTN-->
                 <div class="btn_area">
                     <button type="button" id="btnupdate">
-                        <span>수정완료</span></a>
+                        <input type="submit" value="수정완료" style="color: white;">
                     </button>
                 </div>
 
 
                
-
+</form>
 
                 </div>
 
@@ -136,7 +139,7 @@
             </div> 
             <!-- content-->
 
-        </div> 
+        
         <!-- wrapper -->
         <!-- JS includes -->
         
@@ -157,4 +160,24 @@
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
     </body>
+    
+    
+    <script>
+    
+    $(document).on('click','#btnupdate',function(){
+    if($('#pswd2').val() == ''){
+			alert('비밀번호 재확인을 입력하세요');
+			return false;
+		}else if($('#pswd1').val() != $('#pswd2').val()){
+			alert("비밀번호가 일치하지 않습니다!!!");
+			return false;
+		}else {
+   		 window.location.href = "Maypage.jsp";
+		 return true;
+	 }
+		})
+    
+    
+    
+    </script>
 </html>

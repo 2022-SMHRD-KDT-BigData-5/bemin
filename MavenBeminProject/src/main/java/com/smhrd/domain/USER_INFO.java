@@ -46,7 +46,15 @@ public class USER_INFO {
 		this.ID = ID;
 		this.PW = PW;
 	}
-
+	public USER_INFO(String ID, String PW,String NAME,String EMAIL,String TEL) {
+		super();
+		this.ID = ID;
+		this.PW = PW;
+		this.NAME = NAME;
+		this.EMAIL = EMAIL;
+		this.TEL = TEL;
+	}
+	
 	public USER_INFO(String ID, String PW,String NAME, String EMAIL, String GENDER, String TEL,String ADDRESS,String USER_TIER) {
 		super();
 		this.ID = ID;
