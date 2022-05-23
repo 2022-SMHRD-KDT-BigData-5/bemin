@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.domain.MATCHING"%>
 <%@page import="com.smhrd.domain.USER_INFO_DAO"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
@@ -64,7 +65,7 @@
 		<div id="mymatch" class="page-container">
 			<div class="page-header">
 				<div class="page-title">
-					<h1 name="id">${loginMember.ID}님의 신청 내역</h1>
+					<h1 name="id">${loginMember.ID}님의 신청 내역의 멤버</h1>
 				</div>
 				<div class="navigation-container" style="padding: 0px">
 					<div class="navigation-wrapper" style="padding: top 20px;">
@@ -87,8 +88,8 @@
 			<c:otherwise>
 				<%
 				USER_INFO_DAO dao = new USER_INFO_DAO();
-				USER_INFO u_vo = (USER_INFO)session.getAttribute("loginMember");
-				List<USER_INFO> userList = dao.joinUserView(u_vo.getID());
+				MATCHING m_vo = (MATCHING)session.getAttribute("matching");
+				List<USER_INFO> userList = dao.joinUserView(m_vo.getUSER_ID());
 				pageContext.setAttribute("userList", userList);
 				%>
 				<table id="table_box_bootstrap" class="overview-table-cases custom">

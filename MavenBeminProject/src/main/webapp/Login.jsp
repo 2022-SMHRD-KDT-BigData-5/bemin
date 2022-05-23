@@ -109,7 +109,7 @@
 									<% System.out.println("로그인했음!"); %>
 									<li><a href="./index.html">Home</a></li>
                             		<li><a href="./마이페이지.html">마이페이지</a></li>
-									<li><a href="./LogoutCon.html">로그아웃</a></li>									
+									<li><a href="./LogoutCon">로그아웃</a></li>									
 							</c:otherwise>				
 						</c:choose>
 					</ul>
