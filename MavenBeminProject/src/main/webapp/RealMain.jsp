@@ -524,8 +524,6 @@
 		})
 
 		$(document).on('click', '.pt1', function() {
-
-			$('#list').children('ul').remove();
 			year = $(this).children(':nth-child(1)').text();
 			month = $(this).children(':nth-child(2)').text();
 			date = $(this).children(':nth-child(3)').text();
@@ -564,6 +562,7 @@
 					}
 					console.log(data)
 					$('#list').children('ul').append(table);
+					table=''
 				},
 				error : function() {
 					console.log('응답 실패')

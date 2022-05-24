@@ -84,7 +84,7 @@
 	<div class="container">
 		<c:choose>
 			<c:when test="${empty loginMember}">
-				<li>로그인을 하세요.</li>
+				<a href="./Login.jsp">로그인</a>을 하세요
 			</c:when>
 			<c:otherwise>
 				<%

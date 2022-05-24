@@ -42,10 +42,12 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="./RealMain.jsp">Home</a></li>                    
                         <li><a href="./회원가입.jsp">회원가입</a></li>
-                        
+                        <li><a href="./Login.jsp">로그인</a></li>
                         <li><a href="./Maypage.jsp">마이페이지</a></li>
                         <!-- <li><a href="#test">Blog</a></li> -->
                         <!-- <li><a href="#contact">Contact</a></li> -->
+
+                        <li><a href="./Maypge.jsp">마이페이지</a></li>
                         <li><a href="LogoutCon">로그아웃</a></li>
 
                     </ul>
@@ -75,7 +77,7 @@
                 <h3>${loginMember.ID }님 환영합니다 🙋‍♀️</h3>
                     <h3 class="join_title"><label for="pswd1">비밀번호</label></h3>
                     <span class="box int_pass">
-                        <input type="text" id="pswd1" name="pw" value="${loginMember.PW }" placeholder="비밀번호 입력" class="int" maxlength="20">
+                        <input type="text" id="pswd1" value="${loginMember.PW }" placeholder="비밀번호 입력" class="int" maxlength="20">
                         <span id="alertTxt">사용불가</span>
                         <img src="m_icon_pass.png" id="pswd1_img1" class="pswdImg">
                     </span>
@@ -96,7 +98,7 @@
                 <div>
                     <h3 class="join_title"><label for="name">이름</label></h3>
                     <span class="box int_name">
-                        <input type="text" id="name" name="name" class="int" placeholder="이름 입력" maxlength="20">
+                        <input type="text" id="name" class="int" placeholder="이름 입력" maxlength="20">
                     </span>
                     <span class="error_next_box"></span>
                 </div>
@@ -107,7 +109,7 @@
                 <div>
                     <h3 class="join_title"><label for="email">본인확인 이메일</label></h3>
                     <span class="box int_email">
-                        <input type="text" id="email" name="email" class="int" placeholder="이메일 입력" maxlength="100">
+                        <input type="text" id="email" class="int" placeholder="이메일 입력" maxlength="100">
                     </span>
                     <span class="error_next_box">이메일 주소를 다시 확인해주세요.</span>    
                 </div>
@@ -116,7 +118,7 @@
                 <div>
                     <h3 class="join_title"><label for="phoneNo">휴대전화</label></h3>
                     <span class="box int_mobile">
-                        <input type="tel" id="mobile" name="tel" class="int" maxlength="16" placeholder="전화번호 입력">
+                        <input type="tel" id="mobile" class="int" maxlength="16" placeholder="전화번호 입력">
                     </span>
                     <span class="error_next_box"></span>    
                 </div>
@@ -167,25 +169,15 @@
     <script>
     
     $(document).on('click','#btnupdate',function(){
-    	if($('#pswd1').val() == ''){
-			alert('비밀번호를 입력하세요');
-			return false;
-    	}else if($('#pswd2').val() == ''){
+    if($('#pswd2').val() == ''){
 			alert('비밀번호 재확인을 입력하세요');
 			return false;
 		}else if($('#pswd1').val() != $('#pswd2').val()){
 			alert("비밀번호가 일치하지 않습니다!!!");
 			return false;
-		}else if($('#name').val() == ''){
- 			alert('이름을 입력하세요');
- 			return false;
- 			
- 		}else if($('#email').val() == ''){
- 				alert('이메일을 입력하세요');
- 				return false;
- 		}else {
-   		 		window.location.href = "Maypage.jsp";
-		 		return true;
+		}else {
+   		 window.location.href = "Maypage.jsp";
+		 return true;
 	 }
 		})
     

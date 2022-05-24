@@ -140,6 +140,7 @@ public class USER_INFO_DAO {
 		
 			}
 	
+
 	//캐시 사용정보 업데이트
 	public int updateCash(USER_INFO USER) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
@@ -165,5 +166,26 @@ public class USER_INFO_DAO {
 	}//캐시 사용정보 업데이트
 
 
+	//회원정보수정
+	public int update(USER_INFO m_vo) {
+		SqlSession sqlSession=sqlSessionFactory.openSession();
+		int cnt=0;
+		try {
+			cnt=sqlSession.update("com.smhrd.domain.USER_INFO_DAO.update",m_vo);
+			
+			if(cnt>0) {
+				sqlSession.commit();
+				
+			}else {
+				sqlSession.rollback();
+				
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+			return cnt;
+	}
 
 }
