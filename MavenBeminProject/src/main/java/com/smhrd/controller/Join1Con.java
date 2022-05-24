@@ -34,17 +34,32 @@ public class Join1Con extends HttpServlet {
 		String email=request.getParameter("email");
 		String gender=request.getParameter("gender");
 		String tel=request.getParameter("tel");
+<<<<<<< HEAD
 		String address =request.getParameter("address");
 
 		String user_tier =request.getParameter("star");
+=======
+
+		String address =request.getParameter("address");
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 
 
+<<<<<<< HEAD
+=======
+		String tier =request.getParameter("star");
+		String user_tier = new String(tier);
+
+		System.out.println(user_tier);
+	
+		System.out.println(tier);
+
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 		USER_INFO m_vo = new USER_INFO(id,pw,name,email,gender,tel,address,user_tier);
-		
 		
 		System.out.println("controller m_vo : "+ m_vo.toString());
 		USER_INFO_DAO dao = new USER_INFO_DAO();
 		int cnt=dao.insertUSER_INFO(m_vo);	
+		
 		if(cnt>0) {
 			System.out.println("회원가입 성공");		
 			response.sendRedirect("main.jsp");

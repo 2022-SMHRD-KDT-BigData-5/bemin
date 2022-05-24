@@ -103,7 +103,7 @@
                            <c:otherwise>	
                             	<li><a href="LogoutCon">로그아웃</a></li>                       
                            		<li><a href="joinUpdate.jsp">회원정보수정</a></li>
-                            	<li><a href="Mypage.jsp">마이페이지</a></li>
+                            	<li><a href="Maypage.jsp">마이페이지</a></li>
                           </c:otherwise>
                           </c:choose>
                         </ul>
