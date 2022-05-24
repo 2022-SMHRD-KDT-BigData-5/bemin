@@ -77,7 +77,7 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="#brand">
+                    <a class="navbar-brand" href="./RealMain.jsp">
                         <img src="assets/images/bluelogo.png" class="logo" alt="">
                         <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
                     </a>
@@ -88,8 +88,8 @@
                 <!-- navbar menu -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="./index.html">Home</a></li>                    
-                        <li><a href="./index.html">로그아웃</a></li>
+                        <li><a href="./RealMain.jsp">Home</a></li>                    
+                        <li><a href="./LogoutCon">로그아웃</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div> 
