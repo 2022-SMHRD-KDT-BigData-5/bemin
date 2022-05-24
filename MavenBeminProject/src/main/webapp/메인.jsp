@@ -119,6 +119,7 @@
                     <!-- navbar menu -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav navbar-right">                   
+<<<<<<< HEAD
                             <c:choose>
 								<c:when test="${empty loginMember}">
                             		<li><a href="./index.html">Home</a></li>                    
@@ -132,6 +133,14 @@
 									<li><a href="./LogoutCon.html">로그아웃</a></li>									
 								</c:otherwise>				
 							</c:choose>
+=======
+                            <li><a href="./회원가입.jsp">회원가입</a></li>
+                            <li><a href="./Login.jsp">로그인</a></li>
+                            <li><a href="./Maypage">마이페이지</a></li>
+                            <li><a href="./메인.jsp">로그아웃</a></li>
+                            <!-- <li><a href="#test">Blog</a></li> -->
+                            <!-- <li><a href="#contact">Contact</a></li> -->
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div> 
@@ -296,7 +305,7 @@
                     <div id="list" class="list--match-schedule--container">
                         <ul>
                             <li class="list--match-schedule--item">
-                                <a href="참가.html">
+                                <a href="참가.jsp">
                                     <div class="list--match-schedule__time">
                                         <p>18:00</p>
                                     </div>

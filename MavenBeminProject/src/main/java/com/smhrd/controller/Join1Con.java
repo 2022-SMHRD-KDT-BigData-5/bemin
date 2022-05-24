@@ -36,11 +36,21 @@ public class Join1Con extends HttpServlet {
 		
 		String tel=request.getParameter("tel");
 		String address =request.getParameter("address");
+<<<<<<< HEAD
 		String tier =request.getParameter("star");
 		String user_tier = request.getParameter("tier");
+=======
+		String user_tier =request.getParameter("star");
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 		System.out.println(user_tier);
+<<<<<<< HEAD
 				
 		System.out.println(tier);
+=======
+		
+		
+		
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 		USER_INFO m_vo = new USER_INFO(id,pw,name,email,gender,tel,address,user_tier);
 		
 		
