@@ -13,7 +13,13 @@ public class MATCHING_LIST {
 		this.ID = ID;
 		this.MANAGER = MANAGER;
 	}
-
+	
+	public MATCHING_LIST(String ID, int MAT_NO) {
+		super();
+		this.ID = ID;
+		this.MAT_NO = MAT_NO;
+		}
+	
 	public MATCHING_LIST(String ID) {
 	super();
 	this.ID = ID;

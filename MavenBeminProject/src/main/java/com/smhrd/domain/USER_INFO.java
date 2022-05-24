@@ -1,6 +1,5 @@
 package com.smhrd.domain;
 
-import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 public class USER_INFO {

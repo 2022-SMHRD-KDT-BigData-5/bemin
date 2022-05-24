@@ -8,12 +8,12 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.smhrd.database.sqlSessionManager;
 
-public class matchingDAO<BoardReply> {
+public class matchingDAO {
 
 	SqlSessionFactory sqlSessionFactory = sqlSessionManager.getSqlSession();
 	SqlSession sqlSession = sqlSessionFactory.openSession();
 
-	// 게시판 매칭 내역보기--------------------------------------------------------
+	// 게시판 매칭 내역보기--------------------------------------------------------------
 	public List<MATCHING> selectMatchig(String ID) {
 		List<MATCHING> MatchingList = null;
 		try {
@@ -29,7 +29,7 @@ public class matchingDAO<BoardReply> {
 			sqlSession.close();
 		}
 		return MatchingList;
-	}// 게시판 매칭 내역보기 끝-----------------------------------------------------
+	}// 게시판 매칭 내역보기 끝------------------------------------------------------------
 	
 	// 취소 조건------------------------------------------------------------------------
 	public MATCHING FindMatching(MATCHING m) {
@@ -53,11 +53,12 @@ public class matchingDAO<BoardReply> {
 
 	}// 취소 조건----------------------------------------------------------------------
 	
+	// 매칭테이블 리스트로 불러오기 ---------------------------------------------------------
 	public MATCHING MatchingInfo(MATCHING match) {
-		MATCHING matching = null;
+		MATCHING matchingid = null;
 		try {
-			matching = sqlSession.selectOne("com.smhrd.domain.matchingDAO.selectMatchingInfo", match);
-			if (matching != null) {
+			matchingid = sqlSession.selectOne("com.smhrd.domain.matchingDAO.selectMatchingView", match);
+			if (matchingid != null) {
 				sqlSession.commit();
 			} else {
 				sqlSession.rollback();
@@ -67,7 +68,7 @@ public class matchingDAO<BoardReply> {
 		} finally {
 			sqlSession.close();
 		}
-		return matching;
+		return matchingid;
 	} // 매치들 끝 --------------------------------------------------------------------
 	
 
@@ -92,7 +93,7 @@ public class matchingDAO<BoardReply> {
 		return cnt;
 	}//예약하기 끝---------------------------------------------------------------------
 
-	//  매칭게시판에서 내글 삭제 ----------------------------------------------
+	//  매칭게시판에서 내글 삭제 ---------------------------------------------------------
 	public int deleteMatchingIdex(int delmatNum) {
 		int cnt = 0;
 		try {
@@ -108,6 +109,7 @@ public class matchingDAO<BoardReply> {
 			sqlSession.close();
 		}
 		return cnt;
+<<<<<<< HEAD
 	} //  매칭게시판에서 내글 삭제------------------------------------------
 
 
@@ -115,9 +117,22 @@ public class matchingDAO<BoardReply> {
 	//  매칭날짜별 찾기 ----------------------------------------------
 	public List<MATCHING> MatchingDay(String day) {
 		List<MATCHING> matching = null;
+=======
+	} // 매칭게시판에서 내글 삭제---------------------------------------------------------
+	
+	
+	//  매칭게시판에서 내글 삭제 ---------------------------------------------------------
+	public int selectMatNum(BigDecimal matNum) {
+		int cnt = 0;
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 		try {
+<<<<<<< HEAD
 			matching = sqlSession.selectList("com.smhrd.domain.matchingDAO.selectRentalView", day);
 			if (matching != null) {
+=======
+			cnt = sqlSession.delete("com.smhrd.domain.matchingDAO.selectMatNum",matNum);
+			if(cnt > 0) {
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 				sqlSession.commit();
 			} else {
 				sqlSession.rollback();
@@ -127,8 +142,14 @@ public class matchingDAO<BoardReply> {
 		} finally {
 			sqlSession.close();
 		}
+<<<<<<< HEAD
 		return matching;
 	} //  매칭날짜별 찾기------------------------------------------
 	
 
+=======
+		return cnt;
+	} // 매칭게시판에서 내글 삭제---------------------------------------------------------
+	
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 }

@@ -25,14 +25,26 @@
 	<delete id="deleteMatchingIdex" parameterType="int">
       	 delete from MATCHING where MAT_NO=#{MAT_NO}
     </delete>
+<<<<<<< HEAD
 <!-- 예약하기 -->
+=======
+    	
+	<!-- 예약하기 -->
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 	<insert id="insertRental" parameterType="com.smhrd.domain.MATCHING">
 		insert into MATCHING values(matching_mat_no.nextval,#{RES_DATE},#{RES_TIME},#{RES_PLACE},#{USER_ID},#{UNIT},#{MAT_MEMBER},#{STN_TIER},#{STN_MANNER},'0',#{GENDER})		
 	</insert>
 	
+<<<<<<< HEAD
 	<!-- 예약완료 여부 확인 -->
 	<select id="selectRentalView" resultType = "com.smhrd.domain.MATCHING" parameterType = "String">
 		select * from MATCHING where RES_DATE=#{RES_DATE}
 	</select>
 	
+=======
+	<!-- 매칭게시판에서 MAT_NO선택 -->
+	<select id="selectMatNum" resultType = "com.smhrd.domain.MATCHING" parameterType = "com.smhrd.domain.MATCHING">
+		select * from MATCHING where MAT_NO=#{MAT_NO}
+	</select>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 </mapper>

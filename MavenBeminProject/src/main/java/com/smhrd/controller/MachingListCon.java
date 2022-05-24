@@ -1,39 +1,38 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.smhrd.domain.matchingDAO;
-
+import com.smhrd.domain.MATCHING_LIST;
+import com.smhrd.domain.MatchingListDAO;
 
 public class MachingListCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		
 		// Post
-		String delmatid = request.getParameter("delmatid");
+		String dellistid = request.getParameter("dellistid");
+		int dellistno = Integer.parseInt(request.getParameter("dellistno"));
+				
+		// MATCHING_LIST dellist = new MATCHING_LIST(dellistid, dellistno);
 		
-		System.out.println(request.getParameter("delmatid"));
-		System.out.println(delmatid + "널 값인지 확인");
-		
-		matchingDAO dao = new matchingDAO();
-		System.out.println(dao);
-		int cnt = dao.deleteMatchingList(delmatid);
-		System.out.println(cnt);
-		
+		MatchingListDAO listdao = new MatchingListDAO();
+		int cnt = listdao.deleteMatchingList(dellistid, dellistno);
+		System.out.println(cnt + " cnt값");
 		if(cnt > 0) {
 			System.out.println("매칭삭제 성공");
 		} else {
 			System.out.println("매칭삭제 실패");
 		}
 		
-		response.sendRedirect("신청내역.jsp");
 	}
 		
-	}
+}
 

@@ -56,32 +56,7 @@
 
 
             <nav class="navbar navbar-default bootsnav navbar-fixed">
-                <!-- <div class="navbar-top bg-grey fix">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="navbar-callus text-left sm-text-center">
-                                    <ul class="list-inline">
-                                        <li><a href=""><i class="fa fa-phone"></i> Call us: 1234 5678 90</a></li>
-                                        <li><a href=""><i class="fa fa-envelope-o"></i> Contact us: your@email.com</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="navbar-socail text-right sm-text-center">
-                                    <ul class="list-inline">
-                                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                        <li><a href=""><i class="fa fa-behance"></i></a></li>
-                                        <li><a href=""><i class="fa fa-dribbble"></i></a></li>vbar--default
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+
 
                 <!-- Start Top Search -->
                 <div class="top-search">
@@ -108,7 +83,7 @@
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                             <i class="fa fa-bars"></i>
                         </button>
-                        <a class="navbar-brand" href="메인.jsp">
+                        <a class="navbar-brand" href="./RealMain.jsp">
                             <img src="assets/images/logo1.png" class="logo" alt="">
                             <!-- <a>FLIGHT</a> -->
                             <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
@@ -122,21 +97,13 @@
                         <ul class="nav navbar-nav navbar-right">                   
                             <c:choose>
                            <c:when test="${empty loginMember}">
-                            <li><a href="./Login.jsp">로그인</a></li>
-                            <li><a href="./회원가입.html">회원가입</a></li>
-                            
-                            <li><a href="./Maypage">마이페이지</a></li>
+                            	<li><a href="./Login.jsp">로그인</a></li>
+                            	<li><a href="./join.jsp">회원가입</a></li>                            
                            </c:when>
-                           <c:otherwise>
-                           	
-                            <li><a href="LogoutCon">로그아웃</a></li>                       
-                            <li><a href="./회원가입.html">회원가입</a></li>
-                           
-                           	<li><a href="./회원정보수정.jsp">회원정보수정</a></li>
-                            <li><a href="./Maypage.jsp">마이페이지</a></li>
-                            
-                            <!-- <li><a href="#test">Blog</a></li> -->
-                            <!-- <li><a href="#contact">Contact</a></li> -->
+                           <c:otherwise>	
+                            	<li><a href="LogoutCon">로그아웃</a></li>                       
+                           		<li><a href="./회원정보수정.jsp">회원정보수정</a></li>
+                            	<li><a href="./Maypage.jsp">마이페이지</a></li>
                           </c:otherwise>
                           </c:choose>
                         </ul>

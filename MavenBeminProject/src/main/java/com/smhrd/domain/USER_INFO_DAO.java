@@ -1,7 +1,12 @@
 package com.smhrd.domain;
 
+<<<<<<< HEAD
 import java.util.HashMap;
 import java.util.Map;
+=======
+import java.math.BigDecimal;
+import java.util.List;
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -51,6 +56,24 @@ public class USER_INFO_DAO {
 		}
 		return loginMember;
 	} // 로그인 끝 ----------------------------------------------------
+		
+	// 참여멤버 보기--------------------------------------------------------
+	public List<USER_INFO> joinUserView(BigDecimal userNum) {
+		List<USER_INFO> UserList = null;
+		try {
+			UserList = sqlSession.selectList("com.smhrd.domain.USER_INFO.JoinMember", userNum);
+			if (UserList != null) {
+				sqlSession.commit();
+			} else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return UserList;
+	}// 참여멤버 보기 끝-----------------------------------------------------
 
 	
 	//회원가입 ----------------------------------------------------------
@@ -95,8 +118,13 @@ public class USER_INFO_DAO {
 	
 	
 		}
+<<<<<<< HEAD
 	
 	//
+=======
+	
+
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 	public boolean LoginCheck(String id,String pw) {
 			boolean loginbtn=false;
 			

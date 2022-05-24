@@ -40,12 +40,9 @@
                 <!-- navbar menu -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="./index.html">Home</a></li>                    
-                        <li><a href="./회원가입.html">회원가입</a></li>
-                        <li><a href="./로그인.html">로그인</a></li>
-                        <li><a href="./마이페이지.html">마이페이지</a></li>
-                        <!-- <li><a href="#test">Blog</a></li> -->
-                        <!-- <li><a href="#contact">Contact</a></li> -->
+                        <li><a href="./RealMain.jsp">Home</a></li>                    
+                        <li><a href="./Maypge.jsp">마이페이지</a></li>
+                        <li><a href="LogoutCon">로그아웃</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div> 
