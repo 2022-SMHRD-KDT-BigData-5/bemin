@@ -33,6 +33,7 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/responsive.css" />
 <link rel="stylesheet" href="assets/css/슬라이드.css" />
+<link rel="stylesheet" href="assets/css/메인배너.css" />
 <!---->
 
 
@@ -121,76 +122,36 @@
 
 		<!--Home Sections-->
 
-		<section id="home" class="home bg-black fix">
-			<div class="overlay"></div>
-			<div class="container">
-				<div class="row">
-					<div class="main_home text-center">
-						<div class="col-md-12">
-							<div class="hello_slid">
-								<div class="slid_item">
-									<div class="home_text ">
-										<h2 class="text-white">
-											Welcome to <strong>Made</strong>
-										</h2>
-										<h1 class="text-white">We Do Business All Of Time</h1>
-										<h3 class="text-white">
-											- We Create a <strong>Concept</strong> into The Market -
-										</h3>
-									</div>
-
-									<div class="home_btns m-top-40">
-										<a href="" class="btn btn-primary m-top-20">Buy Now</a> <a
-											href="" class="btn btn-default m-top-20">Take a Tour</a>
-									</div>
-								</div>
-								<!-- End off slid item -->
-								<div class="slid_item">
-									<div class="home_text ">
-										<h2 class="text-white">
-											Welcome to <strong>Made</strong>
-										</h2>
-										<h1 class="text-white">We Do Business All Of Time</h1>
-										<h3 class="text-white">
-											- We Create a <strong>Concept</strong> into The Market -
-										</h3>
-									</div>
-
-									<div class="home_btns m-top-40">
-										<a href="" class="btn btn-primary m-top-20">Buy Now</a> <a
-											href="" class="btn btn-default m-top-20">Take a Tour</a>
-									</div>
-								</div>
-								<!-- End off slid item -->
-								<div class="slid_item">
-									<div class="home_text ">
-										<h2 class="text-white">
-											Welcome to <strong>Made</strong>
-										</h2>
-										<h1 class="text-white">We Do Business All Of Time</h1>
-										<h3 class="text-white">
-											- We Create a <strong>Concept</strong> into The Market -
-										</h3>
-									</div>
-
-									<div class="home_btns m-top-40">
-										<a href="" class="btn btn-primary m-top-20">Buy Now</a> <a
-											href="" class="btn btn-default m-top-20">Take a Tour</a>
-									</div>
-								</div>
-								<!-- End off slid item -->
-							</div>
-						</div>
-
-					</div>
-
-
-				</div>
-				<!--End off row-->
-			</div>
-			<!--End off container -->
-		</section>
-		<!--End off Home Sections-->
+            <section id="home" class="home bg-black fix">
+                <div class="slideboxb">
+                    <input type="radio" name="slideb" id="slide05" checked>
+                    <input type="radio" name="slideb" id="slide06">
+                    <input type="radio" name="slideb" id="slide07">
+                    <ul class="slidelistb">
+                        <li class="slideitemb">
+                            <a>
+                                <label for="slide05" class="prevb"></label>
+                                <img src="./assets/images/메인배너2.png">
+                                <label for="slide06" class="nextb"></label>
+                            </a>
+                        </li>
+                        <li class="slideitemb">
+                            <a>
+                                <label for="slide06" class="prevb"></label>
+                                <img src="./assets/images/메인배너1.png">
+                                <label for="slide07" class="nextb"></label>
+                            </a>
+                        </li>
+                        <li class="slideitemb">
+                            <a>
+                                <label for="slide07" class="prevb"></label>
+                                <img src="./assets/images/메인배너3.png">
+                                <label for="slide05" class="nextb"></label>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section> <!--End off Home Sections-->
 
 
 		<section class="match_container">
@@ -561,8 +522,7 @@
 						table += '<span> 티어 점수'+data[i].STN_TIER+'이상 </span><span id="Wang">'+data[i].MAT_NO+'</span></div></div></a></li>';
 					}
 					console.log(data)
-					$('#list').children('ul').append(table);
-					table=''
+					document.querySelector('#list>ul').innerHTML=table;
 				},
 				error : function() {
 					console.log('응답 실패')

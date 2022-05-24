@@ -239,6 +239,9 @@ ul, li {list-style:none;}
     padding: 1%;
     color: black;
 }
+.t1:hover{
+	cursor: pointer;
+}
 
 #t2{
     margin-left: 15px;
@@ -252,18 +255,11 @@ ul, li {list-style:none;}
 .t3{
 	display: none;
 }
-.today{
-	display: none;
-}
-
-.place{
-	display: none;
-}
-
 
 .time1{
     text-decoration-line: none;
     display: flex;
+    
 }
 
 .time-mem{

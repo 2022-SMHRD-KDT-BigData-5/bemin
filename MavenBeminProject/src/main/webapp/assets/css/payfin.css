@@ -8,7 +8,19 @@
     background-color: rgb(231, 231, 231);
     border-radius: 5px;
     border-radius: 10px;
-
+	padding: 10px 10px 10px 10px;
+}
+.accordion_items{
+	background-color: rgb(231, 231, 231);
+	padding: 10px 10px 10px 10px;
+	margin-top: 15px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.accordion_item_flight{
+	padding: 10px 10px 10px 10px;
 }
 
 .confim-fi{
@@ -18,26 +30,27 @@
 #confim-main {
     font-size: 30px;
     text-align: left;
-    background-color: rgb(43, 43, 223);
+    background-color: #2178ff;
     border-radius: 1px;
     border-radius: 10px;
     font-weight: bolder;
     color: aliceblue;
-    margin-left: 26%;
-    
+    margin-left: 24%;
+    padding: 10px 10px 10px 10px;
 }
 
 #confim-check{
     font-size: 30px;
     text-align: right;
     margin-left: 150px;
-    background-color: rgb(43, 43, 223);
+    background-color: #2178ff;
     border-radius: 5px;
     border-radius: 10px;
     font-weight: bolder;
     color: aliceblue;
+    padding: 10px 10px 10px 10px;
 }
 
 .confim-mov{
-    margin-bottom: 20%;
+    margin-bottom: 10%;
 }

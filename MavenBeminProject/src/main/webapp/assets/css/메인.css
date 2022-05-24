@@ -2,7 +2,8 @@
     background-color: #eff0f2;
     width: 100%;
     height: 100%;
-    padding: 5% 20% 5% 20%;
+    /*  */
+    padding: 0% 20% 5% 20%;
 }
 .sub-header{
     background-color: white;
@@ -95,6 +96,202 @@
 #m2{
     margin-left: 20px;
 }
-#Wang{
-	display: none;
+
+.main--match--container{
+    background-color: #eff0f2;
+    width: 100%;
+    height: 100%;
+    /*  */
+    padding: 0% 20% 5% 20%;
 }
+.sub-header{
+    background-color: white;
+    padding: 3% 5% 3% 5%;
+    text-align: center;
+}
+.list--match-schedule--container{
+    background-color: white;
+    padding: 3% 5% 3% 5%;
+}
+.list--match-schedule__time{
+    background-color: white;
+    margin-right: 20px;
+    float: left;
+    width: 90px;
+    height: 57px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 10px;
+    padding-top: 17px;
+    color: black;
+}
+.list--match-schedule__status{
+    position: absolute;
+    background-color: #2178ff;
+    width: 90px;
+    height: 57px;
+    margin-left: 48%;
+    font-size: 17px;
+    padding-top: 18px;
+    color: white;
+    border-radius: 30px;
+}
+/* 참가, 마감 */
+.list--match-schedule__status_b{
+    position: absolute;
+    background-color: #cbced4;
+    width: 90px;
+    height: 57px;
+    margin-left: 48%;
+    font-size: 17px;
+    padding-top: 18px;
+    color: white;
+    border-radius: 30px;
+}
+.label--match-option{
+    position: relative;
+    margin-left: 55px;
+    margin-bottom: 30px;
+}
+.match-status__join{
+    text-align: center;
+
+}
+.match-status__deadline{
+    text-align: center;
+}
+.match-list__title{
+    width: 100%;
+    height: 100%;
+}
+.list--match-schedule--item{
+    border-top: 2px solid #eff0f2;
+    padding-top: 30px;
+}
+/* .placelist{
+    width: 80px;
+    height: 50px;
+    position: relative;
+    padding-top: 13px;
+    margin-top: 50px;
+    font-size: 17px;
+    color: white;
+    background-color: #3282fa;
+    border-radius: 30px;
+} */
+.select-c{
+    /* margin-left: 40px; */
+    padding: 8px;
+    border-radius: 15px;
+    size: 200px;
+    float: left;
+    margin-right: 20px;
+}
+.mat-re{
+    font-size: 25px;
+    border-bottom: 2px solid #eff0f2;
+    text-align: left;
+}
+#m2{
+    margin-left: 20px;
+}
+
+.main--match--container{
+    background-color: #eff0f2;
+    width: 100%;
+    height: 100%;
+    /*  */
+    padding: 0% 20% 5% 20%;
+}
+.sub-header{
+    background-color: white;
+    padding: 3% 5% 3% 5%;
+    text-align: center;
+}
+.list--match-schedule--container{
+    background-color: white;
+    padding: 3% 5% 3% 5%;
+}
+.list--match-schedule__time{
+    background-color: white;
+    margin-right: 20px;
+    float: left;
+    width: 90px;
+    height: 57px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 10px;
+    padding-top: 17px;
+    color: black;
+}
+.list--match-schedule__status{
+    position: absolute;
+    background-color: #2178ff;
+    width: 90px;
+    height: 57px;
+    margin-left: 48%;
+    font-size: 17px;
+    padding-top: 18px;
+    color: white;
+    border-radius: 30px;
+}
+/* 참가, 마감 */
+.list--match-schedule__status_b{
+    position: absolute;
+    background-color: #cbced4;
+    width: 90px;
+    height: 57px;
+    margin-left: 48%;
+    font-size: 17px;
+    padding-top: 18px;
+    color: white;
+    border-radius: 30px;
+}
+.label--match-option{
+    position: relative;
+    margin-left: 55px;
+    margin-bottom: 30px;
+}
+.match-status__join{
+    text-align: center;
+
+}
+.match-status__deadline{
+    text-align: center;
+}
+.match-list__title{
+    width: 100%;
+    height: 100%;
+}
+.list--match-schedule--item{
+    border-top: 2px solid #eff0f2;
+    padding-top: 30px;
+}
+/* .placelist{
+    width: 80px;
+    height: 50px;
+    position: relative;
+    padding-top: 13px;
+    margin-top: 50px;
+    font-size: 17px;
+    color: white;
+    background-color: #3282fa;
+    border-radius: 30px;
+} */
+.select-c{
+    /* margin-left: 40px; */
+    padding: 8px;
+    border-radius: 15px;
+    size: 200px;
+    float: left;
+    margin-right: 20px;
+}
+.mat-re{
+    font-size: 25px;
+    border-bottom: 2px solid #eff0f2;
+    text-align: left;
+}
+#m2{
+    margin-left: 20px;
+}
+

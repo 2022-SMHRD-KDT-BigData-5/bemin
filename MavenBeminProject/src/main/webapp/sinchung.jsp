@@ -117,7 +117,7 @@
 							<td><c:out value="${mat.RES_PLACE}" /></td>
 							<td><c:out value="${mat.MAT_MEMBER}" /></td>
 							<c:choose>
-								<c:when test="${matid eq logid}">
+								<c:when test="${matid eq loginMember.ID}">
 									<c:if test="${mat.MAT_CPL eq '1'}">
 										<td>취소불가</td>
 									</c:if>

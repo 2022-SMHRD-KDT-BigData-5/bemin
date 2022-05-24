@@ -1,10 +1,12 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Alata', sans-serif;
+@font-face {
+    font-family: 'CookieRun-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
-
+html,body{
+	font-family: 'CookieRun-Regular';
+}
 .page-container{
     width: 100vw;
     height: 100vh;
@@ -52,8 +54,7 @@
     justify-content: center;
     align-items: center;
     color: white;
-    background-image: 
-  radial-gradient(ellipse farthest-corner at 0 140%, #5d9dff 0%, #2178ff 70%, #3585ff 70%);
+    background-color: #287cff;
 }
 .login-form-right-side h1{
     color: white;

@@ -26,6 +26,12 @@ Author URI: http://bootstrapthemes.co
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+   @font-face {
+    font-family: 'CookieRun-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 html,
 body {
     font-size: 14px;
@@ -36,7 +42,8 @@ body {
     margin-right: 0;
     font-weight: 400;
     width:100%;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'CookieRun-Regular';
+    transform: skew(-0.1deg);
 }
 
 /*------------------------------------------------------------------*/
@@ -49,6 +56,17 @@ body {
 @-o-viewport { width: device-width; }
 @viewport { width: device-width; }
 
+#join{
+    margin: 500px;
+    padding-top: 50px;
+    
+    
+}
+
+#logo{
+    margin: -12px;
+    margin-top: 100px;
+}
 /*
     Page Content
 ------------------------------------------*/
@@ -218,7 +236,7 @@ h4,
 h5,
 h6 {
     margin: 0;
-    font-family: 'Raleway', sans-serif;
+    
     color:#1a1a1a;
     margin-bottom: 10px;
 }
@@ -318,7 +336,7 @@ ul{
 .overlay {
     /* background-color: rgba(41, 39, 34, 0.50); */
     width: 100%;
-    height:100%;
+    height: 100%;
     position: absolute;
     left:0;
     top: 0;
@@ -870,14 +888,15 @@ Home Section style
 ==================*/
 
 .home{
-    /* background: url(../images/home-bg.jpg) no-repeat scroll  center center; */
+    background-color: #eff0f2;
     background-size: cover;
     position: relative;
-    padding-top: 150px;
-    padding-bottom: 100px;
-    width:100%;
+    padding-top: 80px;
+    /* padding-bottom: 100px; */
+    width: 100%;
+    height: 100%;
 }
-.main_home .home_text h2{
+/* .main_home .home_text h2{
     font-size:36px;
     font-weight: 400;
 }
@@ -888,7 +907,11 @@ Home Section style
 .main_home .home_text h3{
     font-size:24px;
     font-weight: 400;
-}
+} */
+/* .main_home .home_text{
+    width: auto;
+    height: auto;
+} */
 .main_home .slick-dots li button::before {
     font-family: slick;
     font-size: 8px;
@@ -1307,7 +1330,7 @@ work Section style
     display: block;
 }
 .widget_newsletter .form-control{
-    width:80%;
+    width: 80%;
     height: 40px;
     background-color: #1a1a1a;
     border-color:#333333;
@@ -1345,4 +1368,19 @@ work Section style
 
 #test{
     background-color: #fff;
+}
+#mainbanner{
+    position: relative;
+    
+}
+/* footer 변경사항 */
+.footercontainer {
+	position: relative;
+	margin-right: 333px;
+}
+
+.col-md-3fix {
+	position: absolute;
+	margin-left: 1300px;
+	width: 200px;
 }
