@@ -234,9 +234,9 @@
                               <br>
                               <div style="margin: 0 auto;">
                                  <p class="gen-cl">성별</p>
-                                 <input id="GENDER" type="radio" name="GENDER" value="남">남
-                                 <input id="GENDER" type="radio" name="GENDER" value="여">여
-                                 <input id="GENDER" type="radio" name="GENDER" value="무">무관
+                                 <input id="GENDER" type="radio" name="GENDER" value="남성">남
+                                 <input id="GENDER" type="radio" name="GENDER" value="여성">여
+                                 <input id="GENDER" type="radio" name="GENDER" value="남녀모두">무관
                               </div>
 
                               <br>
@@ -248,8 +248,8 @@
                               </div>
                               <br>
                               <div>
-                                 <input id="UNIT" type="radio" name="UNIT" value="개인">개인
-                                 <input id="UNIT" type="radio" name="UNIT" value="단체">단체
+                                 <input id="UNIT" type="radio" name="UNIT" value="단식">단식
+                                 <input id="UNIT" type="radio" name="UNIT" value="복식">복식
                               </div>
                               <br>
                               <div style="color: black;">

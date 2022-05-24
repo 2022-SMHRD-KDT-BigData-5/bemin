@@ -35,11 +35,20 @@
 	<select id="selectRentalView" resultType = "com.smhrd.domain.MATCHING" parameterType = "String">
 		select * from MATCHING where RES_DATE=#{RES_DATE}
 	</select>
-	
-
 	<!-- 매칭게시판에서 MAT_NO선택 -->
 	<select id="selectMatNum" resultType = "com.smhrd.domain.MATCHING" parameterType = "com.smhrd.domain.MATCHING">
 		select * from MATCHING where MAT_NO=#{MAT_NO}
 	</select>
+	
+	<!-- 메인페이지 날짜별 게시글 출력 -->
+	<select id="selectDayMat" resultType = "com.smhrd.domain.MATCHING" parameterType = "String">
+		select * from MATCHING where RES_DATE=#{RES_DATE} order by RES_TIME
+	</select>
+	
+	<!-- 예약하자마자 시퀸스 번호 확인 -->
+	<select id="selectSeqNo" resultType = "BigDecimal">
+		select LAST_NUMBER from user_sequences WHERE SEQUENCE_NAME = UPPER('MATCHING_MAT_NO')
+	</select>
+
 
 </mapper>

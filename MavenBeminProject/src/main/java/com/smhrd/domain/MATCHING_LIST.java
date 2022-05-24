@@ -19,6 +19,9 @@ public class MATCHING_LIST {
 		this.ID = ID;
 		this.MAT_NO = MAT_NO;
 		}
+	public MATCHING_LIST() {
+
+	}
 	
 	public MATCHING_LIST(String ID) {
 	super();

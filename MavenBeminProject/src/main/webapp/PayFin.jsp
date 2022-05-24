@@ -1,5 +1,6 @@
+<%@page import="com.smhrd.domain.MATCHING"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +33,7 @@
 
 <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 <body>
-	<form class="fom">
+<form class="fom">
 		<div class="logoName">
 			<a href="메인.html"><h1>플라이트</h1></a>
 		</div>
@@ -44,11 +45,11 @@
 						<h1 style="text-align: center;">예약확인</h1>
 						<h3 id="con-info">예약내용</h3>
 						<br>
-						<h4 style="font-weight: 400;">예약 요일</h4>
+						<h4 style="font-weight: 400;">예약 날짜 : ${rental.RES_DATE}</h4>
 						<br>
-						<h4 style="font-weight: 400;">예약 시간</h4>
+						<h4 style="font-weight: 400;">예약 시간 : ${rental.RES_TIME}</h4>
 						<br>
-						<h4 style="font-weight: 400;">예약 장소</h4>
+						<h4 style="font-weight: 400;">예약 장소 : ${rental.RES_PLACE}</h4>
 						<br> <br>
 					</div>
 				</div>
@@ -71,8 +72,8 @@
 				</p>
 			</div>
 			<div class="confim-mov">
-				<br> <br> <a href="main.html" id="confim-main">메인페이지</a> 
-				<a href="예약내용확인.html" id="confim-check">예약내용확인</a>
+				<br> <br> <a href="RealMain.jsp" id="confim-main">메인페이지</a> 
+				<a href="sinchung.jsp" id="confim-check">예약내용확인</a>
 			</div>
 	</form>
 </body>

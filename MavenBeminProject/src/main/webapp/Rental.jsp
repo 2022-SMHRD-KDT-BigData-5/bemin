@@ -528,9 +528,7 @@
 			rentalTime = $(this).text();
 			rentalDate = $(this).next().next().text();
 			rentalPlace = $(this).next().next().next().text();
-			console.log(rentalTime)
-			console.log(rentalDate)
-			console.log(rentalPlace)
+
 
 			var url = 'RentalViewCon';
 			var obj = {

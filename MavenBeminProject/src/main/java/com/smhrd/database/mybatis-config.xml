@@ -19,7 +19,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  		<mapper resource="com/smhrd/database/MATCHINGMapper.xml"/>
  		<mapper resource="com/smhrd/database/MATCHING_LISTMapper.xml"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
  		<!-- <mapper resource="com/smhrd/database/TIERMapper.xml"/> -->
+=======
+ 		<!--<mapper resource="com/smhrd/database/TIERMapper.xml"/> -->
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 =======
  		<!--<mapper resource="com/smhrd/database/TIERMapper.xml"/> -->
 >>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
