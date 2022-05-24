@@ -89,8 +89,8 @@
 						data-target="#navbar-menu">
 						<i class="fa fa-bars"></i>
 					</button>
-					<a class="navbar-brand" href="index.html"> <img
-						src="assets/images/logo1.png" class="logo" alt=""> <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
+					<a class="navbar-brand" href="./RealMain.jsp"> 
+						<img src="assets/images/logo1.png" class="logo" alt=""> 
 					</a>
 
 				</div>
@@ -102,14 +102,13 @@
 					<ul class="nav navbar-nav navbar-right">
 						<c:choose>
 								<c:when test="${empty loginMember}">
-                            		<li><a href="./index.html">Home</a></li>                    
-									<li><a href="./로그인.html">로그인</a></li>
-                            		<li><a href="./회원가입.html">회원가입</a></li>
+                            		<li><a href="./RealMain.jsp">Home</a></li>                    
+                            		<li><a href="./join.jsp">회원가입</a></li>
 								</c:when>
 								<c:otherwise>
 									<% System.out.println("로그인했음!"); %>
-									<li><a href="./index.html">Home</a></li>
-                            		<li><a href="./마이페이지.html">마이페이지</a></li>
+									<li><a href="./RealMain.jsp">Home</a></li>
+                            		<li><a href="./Maypage.jsp">마이페이지</a></li>
 									<li><a href="./LogoutCon">로그아웃</a></li>									
 							</c:otherwise>				
 						</c:choose>
@@ -188,7 +187,7 @@
 				alert('아이디 또는 비밀번호가 일치하지 않습니다!!!!!')
 				window.location.href = "LoginCheck.html";
 			}else{
-				window.location.href = "main.jsp";
+				window.location.href = "./RealMain.jsp";
 			}
 		}
 		

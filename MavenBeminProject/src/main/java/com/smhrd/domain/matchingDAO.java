@@ -53,11 +53,12 @@ public class matchingDAO {
 
 	}// 취소 조건----------------------------------------------------------------------
 	
+	// 매칭테이블 리스트로 불러오기 ---------------------------------------------------------
 	public MATCHING MatchingInfo(MATCHING match) {
-		MATCHING matching = null;
+		MATCHING matchingid = null;
 		try {
-			matching = sqlSession.selectOne("com.smhrd.domain.matchingDAO.selectMatchingInfo", match);
-			if (matching != null) {
+			matchingid = sqlSession.selectOne("com.smhrd.domain.matchingDAO.selectMatchingView", match);
+			if (matchingid != null) {
 				sqlSession.commit();
 			} else {
 				sqlSession.rollback();
@@ -67,12 +68,9 @@ public class matchingDAO {
 		} finally {
 			sqlSession.close();
 		}
-		return matching;
+		return matchingid;
 	} // 매치들 끝 --------------------------------------------------------------------
 	
-<<<<<<< HEAD
-	//  매칭게시판에서 내글 삭제 ----------------------------------------------------------
-=======
 
 	//예약 하기----------------------------------------------------------------------
 	public int insertRental(MATCHING rental_info) {
@@ -95,8 +93,7 @@ public class matchingDAO {
 		return cnt;
 	}//예약하기 끝---------------------------------------------------------------------
 
-	//  매칭게시판에서 내글 삭제 ----------------------------------------------
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
+	//  매칭게시판에서 내글 삭제 ---------------------------------------------------------
 	public int deleteMatchingIdex(int delmatNum) {
 		int cnt = 0;
 		try {
@@ -113,12 +110,13 @@ public class matchingDAO {
 		}
 		return cnt;
 	} // 매칭게시판에서 내글 삭제---------------------------------------------------------
-
-	// 매칭리스트에서 본인 삭제 ----------------------------------------------------------
-	public int deleteMatchingList(String delmatid) {
+	
+	
+	//  매칭게시판에서 내글 삭제 ---------------------------------------------------------
+	public int selectMatNum(BigDecimal matNum) {
 		int cnt = 0;
 		try {
-			cnt = sqlSession.delete("com.smhrd.domain.matchingDAO.deleteMatching",delmatid);
+			cnt = sqlSession.delete("com.smhrd.domain.matchingDAO.selectMatNum",matNum);
 			if(cnt > 0) {
 				sqlSession.commit();
 			} else {
@@ -130,8 +128,6 @@ public class matchingDAO {
 			sqlSession.close();
 		}
 		return cnt;
-	} // 매칭리스트에서 본인 삭제---------------------------------------------------------
+	} // 매칭게시판에서 내글 삭제---------------------------------------------------------
 	
-	
-
 }

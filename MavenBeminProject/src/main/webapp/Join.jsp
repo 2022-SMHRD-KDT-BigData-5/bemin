@@ -50,7 +50,6 @@
                     </button>
                     <a class="navbar-brand" href="index.html">
                         <img src="assets/images/logo1.png" class="logo" alt="">
-                        <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
                     </a>
 
                 </div>

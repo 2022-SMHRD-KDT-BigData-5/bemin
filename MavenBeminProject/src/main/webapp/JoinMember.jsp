@@ -1,3 +1,6 @@
+<%@page import="com.smhrd.domain.matchingDAO"%>
+<%@page import="com.smhrd.domain.MatchingListDAO"%>
+<%@page import="com.smhrd.domain.MATCHING_LIST"%>
 <%@page import="com.smhrd.domain.MATCHING"%>
 <%@page import="com.smhrd.domain.USER_INFO_DAO"%>
 <%@page import="java.text.SimpleDateFormat"%>
@@ -41,7 +44,7 @@
 				data-target="#navbar-menu">
 				<i class="fa fa-bars"></i>
 			</button>
-			<a class="navbar-brand" href="#brand"> 
+			<a class="navbar-brand" href="./RealMain.jsp"> 
 				<img src="assets/images/logo1.png" class="logo" alt=""> 
 				<!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
 			</a>ㅣ
@@ -51,9 +54,9 @@
 		<!-- navbar menu -->
 		<div class="collapse navbar-collapse" id="navbar-menu">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="./index.html">Home</a></li>
+				<li><a href="./RealMain.jsp">Home</a></li>
 				<li><a href="./LogoutCon">로그아웃</a></li>
-				<li><a href="./마이페이지.html">마이페이지</a></li>
+				<li><a href="./Maypage.jsp">마이페이지</a></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->
@@ -65,7 +68,7 @@
 		<div id="mymatch" class="page-container">
 			<div class="page-header">
 				<div class="page-title">
-					<h1 name="id">${loginMember.ID}님의 신청 내역의 멤버</h1>
+					<h1 name="joinid">${matching.USER_ID}이 개설한 매칭의 참가 멤버</h1>
 				</div>
 				<div class="navigation-container" style="padding: 0px">
 					<div class="navigation-wrapper" style="padding: top 20px;">
@@ -77,22 +80,20 @@
 			</div>
 		</div>
 	</div>
-	<!-- <div class="empty-state">
-            <img src="https://plab-football.s3.amazonaws.com/static/img/img_empty_social.jpg">
-        </div> -->
-	<div class="container">
+	<!--<div class="container">
 		<c:choose>
 			<c:when test="${empty loginMember}">
 				<li>로그인을 하세요.</li>
 			</c:when>
-			<c:otherwise>
+			<c:otherwise>-->
 				<%
-				USER_INFO_DAO dao = new USER_INFO_DAO();
-				MATCHING m_vo = (MATCHING)session.getAttribute("matching");
-				List<USER_INFO> userList = dao.joinUserView(m_vo.getUSER_ID());
-				pageContext.setAttribute("userList", userList);
+				matchingDAO dao = new matchingDAO();
+				USER_INFO u_vo = (USER_INFO)session.getAttribute("loginMember");
+				List<MATCHING> matList = dao.selectMatchig(u_vo.getID());
+				pageContext.setAttribute("matList", matList);
+				MATCHING m_vo = (MATCHING)session.getAttribute("matching");				
 				%>
-				<table id="table_box_bootstrap" class="overview-table-cases custom">
+				<!--<table id="table_box_bootstrap" class="overview-table-cases custom">
 				<table class="table table-striped">
 				<thread>
 					<tr class="overview-table-headers">
@@ -104,6 +105,8 @@
 					</thread>
 					<tbody>
 					<c:forEach var="user" items="${userList}" varStatus="status">
+						<c:set var="mat" value="${matList}" />
+						<c:set var="matid" value="${mat.USER_ID}"/>
 						<tr>
 							<td>${status.count}</td>
 							<td><c:out value="${user.ID}" /></td>
@@ -116,7 +119,7 @@
 				</table>
 			</c:otherwise>
 		</c:choose>
-	</div>
+	</div>-->
 	<!-- wrapper -->
 	<div id="wrapper">
 
@@ -128,8 +131,10 @@
 				<button type="button" id="btnIndex">
 					<a href="신청내역.jsp">신청내역으로 이동</a>
 				</button>
+				<br>
+				<br>
 				<button type="button" id="btnJoin">
-					<a href="main.jsp">매칭 게시판으로 이동</a>
+					<a href="RealMain.jsp">매칭 게시판으로 이동</a>
 				</button>
 			</div>
 		</div>

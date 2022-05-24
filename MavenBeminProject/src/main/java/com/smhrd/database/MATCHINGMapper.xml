@@ -25,11 +25,14 @@
 	<delete id="deleteMatchingIdex" parameterType="int">
       	 delete from MATCHING where MAT_NO=#{MAT_NO}
     </delete>
-    
-	
+    	
 	<!-- 예약하기 -->
 	<insert id="insertRental" parameterType="com.smhrd.domain.MATCHING">
 		insert into MATCHING values(matching_mat_no.nextval,#{RES_DATE},#{RES_TIME},#{RES_PLACE},#{USER_ID},#{UNIT},#{MAT_MEMBER},#{STN_TIER},#{STN_MANNER},'0',#{GENDER})		
 	</insert>
 	
+	<!-- 매칭게시판에서 MAT_NO선택 -->
+	<select id="selectMatNum" resultType = "com.smhrd.domain.MATCHING" parameterType = "com.smhrd.domain.MATCHING">
+		select * from MATCHING where MAT_NO=#{MAT_NO}
+	</select>
 </mapper>

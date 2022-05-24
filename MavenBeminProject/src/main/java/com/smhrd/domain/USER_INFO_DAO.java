@@ -1,5 +1,6 @@
 package com.smhrd.domain;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -52,10 +53,10 @@ public class USER_INFO_DAO {
 	} // 로그인 끝 ----------------------------------------------------
 		
 	// 참여멤버 보기--------------------------------------------------------
-	public List<USER_INFO> joinUserView(String ID) {
+	public List<USER_INFO> joinUserView(BigDecimal userNum) {
 		List<USER_INFO> UserList = null;
 		try {
-			UserList = sqlSession.selectList("com.smhrd.domain.USER_INFO.JoinMember", ID);
+			UserList = sqlSession.selectList("com.smhrd.domain.USER_INFO.JoinMember", userNum);
 			if (UserList != null) {
 				sqlSession.commit();
 			} else {
