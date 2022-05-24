@@ -17,14 +17,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </environments>
  	<mappers>
  		<mapper resource="com/smhrd/database/MATCHINGMapper.xml"/>
-<<<<<<< HEAD
- 		<!-- <mapper resource="com/smhrd/database/MATCHING_LISTMapper.xml"/>
-=======
- 		<mapper resource="com/smhrd/database/MATCHING_LISTMapper.xml"/>
- 		<!-- <mapper resource="com/smhrd/database/RESERVATIONMapper.xml"/>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
+ 		<!--<mapper resource="com/smhrd/database/MATCHING_LISTMapper.xml"/>
  		<mapper resource="com/smhrd/database/TIERMapper.xml"/> -->
- 		<mapper resource="com/smhrd/database/RESERVATIONMapper.xml"/>
  		<mapper resource="com/smhrd/database/USER_INFOMapper.xml"/>
  		<mapper resource="com/smhrd/database/PLACE_INFOMapper.xml"/>
  	</mappers>	

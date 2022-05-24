@@ -41,7 +41,7 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="./RealMain.jsp">Home</a></li>                    
-                        <li><a href="./Maypge.jsp">마이페이지</a></li>
+                        <li><a href="./Mypge.jsp">마이페이지</a></li>
                         <li><a href="LogoutCon">로그아웃</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->

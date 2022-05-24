@@ -1,12 +1,8 @@
 package com.smhrd.domain;
 
-<<<<<<< HEAD
-import java.util.HashMap;
-import java.util.Map;
-=======
+
 import java.math.BigDecimal;
 import java.util.List;
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -118,13 +114,7 @@ public class USER_INFO_DAO {
 	
 	
 		}
-<<<<<<< HEAD
-	
-	//
-=======
-	
 
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 	public boolean LoginCheck(String id,String pw) {
 			boolean loginbtn=false;
 			

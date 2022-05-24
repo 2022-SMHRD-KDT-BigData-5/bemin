@@ -14,14 +14,13 @@
 	<!-- 로그인 -->
 	<select id="LoginUSER_INFO" resultType="com.smhrd.domain.USER_INFO" parameterType="com.smhrd.domain.USER_INFO">
 		select * from USER_INFO where ID=#{ID} and PW=#{PW}
-<<<<<<< HEAD
-=======
+
+
 	</select>
 	
 	<!-- 멤버보기 리스트로 -->
 	<select id="JoinMember" resultType="com.smhrd.domain.USER_INFO" parameterType="BigDecimal">
 		select * from USER_INFO where ID in (select ID from MATCHING_LIST where MAT_NO=#{MAT_NO})
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 	</select>
 
 	<!-- 회원가입 -->
@@ -31,20 +30,12 @@
 	
 	<!-- 아이디 중복체크 -->
 	<select id="selectId" parameterType="String" resultType="String">
-<<<<<<< HEAD
 		select ID from USER_INFO where ID=#{ID}
-=======
-		select USER_ID from USER_INFO where ID=#{ID}
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 	</select>
 	
 	<!-- 로그인 실패메세지 -->
 	<select id="selectLogin" parameterType="String" resultType="String">
-<<<<<<< HEAD
 		select * from USER_INFO where ID=#{ID} and PW=#{PW}
-=======
-		select * from USER_INFO where USER_ID=#{ID} and USER_PW=#{PW}
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 	</select>
 	<update id="updateCash" parameterType="com.smhrd.domain.USER_INFO">
 		update USER_INFO set CASH=#{CASH} where ID=#{ID}

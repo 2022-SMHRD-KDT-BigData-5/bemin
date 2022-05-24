@@ -14,9 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.smhrd.domain.RESERVATION;
-import com.smhrd.domain.RESERVATIONDAO;
-
 
 
 public class rentalDayCon extends HttpServlet {
@@ -33,15 +30,8 @@ public class rentalDayCon extends HttpServlet {
 		String day = request.getParameter("day");
 
 		System.out.println(rentalDay);
-		System.out.println(day);
-		
-		RESERVATIONDAO dao = new RESERVATIONDAO();
-		List<RESERVATION> MATList = dao.resPossible(rentalDay);
-		
-		System.out.println(MATList);
-		String json = gson.toJson(MATList);
-		
-		System.out.println(json);
+		System.out.println(day);		
+
 		
 		//PLACE_INFODAO dao = new PLACE_INFODAO();
 		//List<PLACE_INFO> PlaceList = dao.PlaceAll();
@@ -49,7 +39,7 @@ public class rentalDayCon extends HttpServlet {
 
 		response.setCharacterEncoding("UTF-8");		
 		response.setContentType("text/html; charset=UTF-8");
-		out.print(json);
+
 
 		//경기장 정보 모두 불러오기
 		// 경기장 시작, 끝나는 시간 이용해서 시간표 작성  ---끝---

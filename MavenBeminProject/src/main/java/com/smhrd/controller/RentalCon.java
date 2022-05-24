@@ -70,7 +70,7 @@ public class RentalCon extends HttpServlet {
 		
 		if (cashCnt > 0 && rentalCnt>0) {
 			System.out.println("예약 성공");
-			response.sendRedirect("RealMain.jsp");
+			response.sendRedirect("PayFin.jsp");
 		} else {
 			System.out.println("예약 실패");
 			response.sendRedirect("RentalFail.html");
