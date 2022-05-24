@@ -109,10 +109,10 @@
 				<!-- navbar menu -->
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="main.jsp">Home</a></li>
-						<li><a href="Join.jsp">회원가입</a></li>
+						<li><a href="RealMain.jsp">Home</a></li>
+						<li><a href="join.jsp">회원가입</a></li>
 						<li><a href="Login.jsp">로그인</a></li>
-						<li><a href="MyPage.jsp">마이페이지</a></li>
+						<li><a href="Mypage.jsp">마이페이지</a></li>
 						<!-- <li><a href="#test">Blog</a></li> -->
 						<!-- <li><a href="#contact">Contact</a></li> -->
 					</ul>

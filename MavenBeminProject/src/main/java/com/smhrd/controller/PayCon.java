@@ -18,26 +18,26 @@ public class PayCon extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setCharacterEncoding("utf-8");
-		
-		String id = request.getParameter("id");
-		String name = request.getParameter("name");
-		String tel = request.getParameter("tel");
-		
-		USER_INFO user_vo = new USER_INFO(id, name, tel);
-		
-		USER_INFO_DAO dao = new USER_INFO_DAO();
-		
-		USER_INFO Find = dao.FindID(user_vo);
-		
-		PrintWriter out = response.getWriter();
-		
-		if(id != null) {
-			out.print(Find.getPW());			
-		}else {
-			out.print(Find.getID());			
-		}
-		
+//		request.setCharacterEncoding("utf-8");
+//		
+//		String id = request.getParameter("id");
+//		String name = request.getParameter("name");
+//		String tel = request.getParameter("tel");
+//		
+//		USER_INFO user_vo = new USER_INFO(id, name, tel);
+//		
+//		USER_INFO_DAO dao = new USER_INFO_DAO();
+//		
+//		USER_INFO Find = dao.FindID(user_vo);
+//		
+//		PrintWriter out = response.getWriter();
+//		
+//		if(id != null) {
+//			out.print(Find.getPW());			
+//		}else {
+//			out.print(Find.getID());			
+//		}
+//		
 	}
 
 }

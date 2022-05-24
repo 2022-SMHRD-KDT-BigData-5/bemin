@@ -47,8 +47,10 @@ public class MatchingListDAO {
 		try {
 			cnt = sqlSession.delete("com.smhrd.domain.MatchingListDAO.deleteMatchingList",map);
 			if(cnt > 0) {
+				System.out.println("커밋");
 				sqlSession.commit();
 			} else {
+				System.out.println("롤백");
 				sqlSession.rollback();
 			}
 		} catch (Exception e) {
@@ -95,5 +97,28 @@ public class MatchingListDAO {
 		return Matching_List;
 	}// 매칭리스트 내역보기 끝------------------------------------------------------------
 
-
+	// 매칭리스트에서 본인 삭제 ----------------------------------------------------------
+	public int nameMatchingList(String delmatid, int delnum) {
+		int cnt = 0;
+		
+		Map map = new HashMap();
+		map.put("ID", delmatid);
+		map.put("MAT_NO", delnum);
+	
+		try {
+			cnt = sqlSession.selectOne("com.smhrd.domain.MatchingListDAO.nameMatchingList", map);
+			if(cnt > 0) {
+				System.out.println("커밋");
+				sqlSession.commit();
+			} else {
+				System.out.println("롤백");
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return cnt;
+	} // 매칭리스트에서 본인 삭제---------------------------------------------------------
 }

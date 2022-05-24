@@ -15,25 +15,10 @@ public class testCon extends HttpServlet {
 
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		request.setCharacterEncoding("utf-8");
-		
-		String year = request.getParameter("year");
-		String month = request.getParameter("month");
-		String date = request.getParameter("date");
-		String place = request.getParameter("place");
-		String time = request.getParameter("time");
-		
-		response.setContentType("text/html; charset=UTF-8");
-		
-		PrintWriter out = response.getWriter();
-		
-		out.print(year);
-		out.print(month);
-		out.print(date);
-		out.print(place);
-		out.print(time);
-		
+		int start = 20;
+		int start2 = start+2;
+				
+System.out.println(start+":00 ~ "+start2+":00");
 		
 	}
 

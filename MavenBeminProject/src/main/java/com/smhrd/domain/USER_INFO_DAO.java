@@ -1,5 +1,6 @@
 package com.smhrd.domain;
 
+
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -53,7 +54,7 @@ public class USER_INFO_DAO {
 	} // 로그인 끝 ----------------------------------------------------
 		
 	// 참여멤버 보기--------------------------------------------------------
-	public List<USER_INFO> joinUserView(BigDecimal userNum) {
+	public List<USER_INFO> joinUserView(int userNum) {
 		List<USER_INFO> UserList = null;
 		try {
 			UserList = sqlSession.selectList("com.smhrd.domain.USER_INFO.JoinMember", userNum);
@@ -113,7 +114,6 @@ public class USER_INFO_DAO {
 	
 	
 		}
-	
 
 	public boolean LoginCheck(String id,String pw) {
 			boolean loginbtn=false;
@@ -140,6 +140,29 @@ public class USER_INFO_DAO {
 		
 			}
 	
+	//캐시 사용정보 업데이트
+	public int updateCash(USER_INFO USER) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		
+		int cnt = 0;
+
+        try {
+            cnt = sqlSession.update("com.smhrd.domain.USER_INFO_DAO.updateCash",USER);
+			
+			if(cnt>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+				System.out.println("여기서 오류");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}//캐시 사용정보 업데이트
 
 
 

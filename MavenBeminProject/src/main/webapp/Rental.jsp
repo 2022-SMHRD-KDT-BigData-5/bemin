@@ -1,3 +1,11 @@
+<%@page import="com.smhrd.domain.USER_INFO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.time.DayOfWeek"%>
+<%@page import="java.text.DateFormat"%>
+<%@page import="java.util.Date"%>
+<%@page import="java.util.Calendar"%>
+<%@page import="com.smhrd.domain.MATCHING"%>
+<%@page import="com.smhrd.domain.matchingDAO"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="java.math.BigDecimal"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
@@ -97,6 +105,7 @@
 				<!-- navbar menu -->
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
+
 						<c:choose>
 								<c:when test="${empty loginMember}">
                             		<li><a href="./RealMain.jsp">Home</a></li>                    
@@ -131,12 +140,17 @@
 					<!---->
 					<div class="slidebox">
 						<input type="radio" name="slide" id="slide01" checked> <input
-							type="radio" name="slide" id="slide02"> <input
-							type="radio" name="slide" id="slide03"> <input
-							type="radio" name="slide" id="slide04">
+							type="radio" name="slide" id="slide02">
+
+
 						<ul class="slidelist">
-							<li class="slideitem" id="dayCon1"></li>
-							<li class="slideitem" id="dayCon2"></li>
+
+							<li class="slideitem" id="dayCon1">
+
+							</li>
+							<li class="slideitem" id="dayCon2">
+
+							</li>
 						</ul>
 						<div class="slide-control">
 							<div class="control01">
@@ -191,30 +205,23 @@
 				<!--match list-->
 				<div id="list" class="list--match-schedule--container">
 					<ul>
-
 						<%
-						//경기장 정보 모두 불러오기
-						// 경기장 시작, 끝나는 시간 이용해서 시간표 작성  ---끝---
-						// 경기장과 시간정보 불러온게 [0] ==> 전부다 for문 ---끝---
-						// 년,월,일,경기장,시간 정보 보내기 ---끝---
-						// matching 완료 여부 확인하고 일치하는 시간 회색
-						// 평일인지 주말인지에 따라 다른 컬럼 가져오기
 						PLACE_INFODAO dao = new PLACE_INFODAO();
 						List<PLACE_INFO> PlaceList = dao.PlaceAll();
 						pageContext.setAttribute("PlaceList", PlaceList);
-						%>
 
-						<c:forEach var="plt" items="${PlaceList}" varStatus="status">
-						<%
-						PLACE_INFO place = (PLACE_INFO) pageContext.getAttribute("plt");
-						String place_name = place.getPLACE_NAME();
-						
+
 						%>
+						<c:forEach var="plt" items="${PlaceList}" varStatus="status">
+							<%
+							PLACE_INFO place = (PLACE_INFO) pageContext.getAttribute("plt");
+							String place_name = place.getPLACE_NAME();
+							%>
 							<li>
 								<div>
 									<p>
-									<h3 id="getPName"><%=place_name%></h3>
-									
+									<h3 class="getPName"><%=place_name%></h3>
+
 									</p>
 
 									<div class="plc-in">
@@ -228,21 +235,21 @@
 									<div class="time-mem">
 										<div href="결제.html" class="time1">
 											<%
-											
 											int start = Integer.valueOf(place.getWEEK_SRT()).intValue();
 											int end = Integer.valueOf(place.getWEEK_END()).intValue();
-											
-											
+
 											while (true) {
+
 												int start2 = start + 2;
 											%>
 											<a type=button id="getTime" class='t1'><%=start%>:00 ~ <%=start2%>:00</a>
-											<span id="getStart" class="t3"><%=start%></span>
+											<span id="getStart" class="t3"><%=start%></span> <span
+												class="today"></span> <span class="place"><%=place_name%></span>
 											<%
 											start += 2;
 											if (start >= end) {
 												break;
-											}
+												}
 											}
 											%>
 										</div>
@@ -250,7 +257,8 @@
 								</div>
 							</li>
 						</c:forEach>
-				</ul>
+					</ul>
+					
 				</div>
 			</div>
 		</section>
@@ -436,94 +444,106 @@
 	<script>
 		let week = new Array('일', '월', '화', '수', '목', '금', '토');
 
-		let dayList = []
-		let dateList = []
-		let monthList = []
-		let yearList = []
+		 let dayList = []
+		 let dateList = []
+		 let monthList = []
+		 let yearList = []
 
-		let today = new Date();
-		let year = today.getFullYear()
-		let month = today.getMonth() + 1
-		let Day = today.getDay()
-		let todayLabel = week[Day];
-		yearList.push(year)
-		monthList.push(month)
-		dateList.push(today.getDate())
-		dayList.push(todayLabel)
+		 let today = new Date();
+		 let year = today.getFullYear()
+		 let month = today.getMonth() + 1
+		 let Day = today.getDay()
+		 let todayLabel = week[Day];
+		 yearList.push(year)
+		 monthList.push(month)
+		 dateList.push(today.getDate())
+		 dayList.push(todayLabel)
 
-		for (let i = 1; i < 14; i++) {
-			today.setDate(today.getDate() + 1);
-			year = today.getFullYear()
-			month = today.getMonth() + 1
-			let Day = today.getDay()
-			let todayLabel = week[Day];
-			yearList.push(year)
-			monthList.push(month)
-			dateList.push(today.getDate())
-			dayList.push(todayLabel)
-		}
+		 for (let i = 1; i < 14; i++) {
+		 today.setDate(today.getDate() + 1);
+		 year = today.getFullYear()
+		 month = today.getMonth() + 1
+		 let Day = today.getDay()
+		 let todayLabel = week[Day];
+		 yearList.push(year)
+		 monthList.push(month)
+		 dateList.push(today.getDate())
+		 dayList.push(todayLabel)
+		 }
 
-		//1페이지 날짜
-		let dayCon1 = document.querySelector('#dayCon1');
-		let html1 = '';
-		for (let i = 0; i < 7; i++) {
-			html1 += '<button class="pt1"><span class="t3">' + yearList[i]
-					+ '</span><span class="t3">' + monthList[i]
-					+ '</span><div class="pt1-text">' + dateList[i]
-					+ '</div><div class="pt1-text">' + dayList[i]
-					+ '</div></button>';
-		}
-		dayCon1.innerHTML = html1;
+		 //1페이지 날짜
+		 let dayCon1 = document.querySelector('#dayCon1');
+		 let html1 = '';
+		 for (let i = 0; i < 7; i++) {
+		 html1 += '<button class="pt1"><span class="t3">' + yearList[i]
+		 + '</span><span class="t3">' + monthList[i]
+		 + '</span><div class="pt1-text">' + dateList[i]
+		 + '</div><div class="pt1-text">' + dayList[i]
+		 + '</div></button>';
+		
+		
+		 }
+		 dayCon1.innerHTML = html1;
 
-		//2페이지 날짜
-		let dayCon2 = document.querySelector('#dayCon2');
-		let html2 = '';
-		for (let i = 7; i < 14; i++) {
-			html2 += '<button class="pt1"><span class="t3">' + yearList[i]
-					+ '</span><span class="t3">' + monthList[i]
-					+ '</span><div class="pt1-text">' + dateList[i]
-					+ '</div><div class="pt1-text">' + dayList[i]
-					+ '</div></button>';
-		}
+		 //2페이지 날짜
+		 let dayCon2 = document.querySelector('#dayCon2');
+		 let html2 = '';
+		 for (let i = 7; i < 14; i++) {
+		 html2 += '<button class="pt1"><span class="t3">' + yearList[i]
+		 + '</span><span class="t3">' + monthList[i]
+		 + '</span><div class="pt1-text">' + dateList[i]
+		 + '</div><div class="pt1-text">' + dayList[i]
+		 + '</div></button>';
+		
+		
+		 }
 
-		dayCon2.innerHTML = html2;
+		 dayCon2.innerHTML = html2;
 
 		let date = ''
 		//Date 값 불러오기
-		window.onload=function(){
+
+		$(document).ready(function() {
 			document.querySelector('.pt1').click();
-		}
-		
+		})
+
 		$(document).on('click', '.pt1', function() {
 			year = $(this).children(':nth-child(1)').text();
 			month = $(this).children(':nth-child(2)').text();
 			date = $(this).children(':nth-child(3)').text();
+			day = $(this).children(':nth-child(4)').text();
 			//Ajax방식으로 날짜데이터를 서버에      
 			// 전송해서 해당 날짜에 예약한 경기리스트를 요청      
 			//해당 날짜에 예약한 경기목록   
-
+			rentalDay = year + '-' + month + '-' + date
+			$('.today').text(rentalDay)
 		})
 
 		// 클릭한 시간, 클릭 상위 요소의 경기장이름
 		$(document).on('click', '#getTime', function() {
 			let start = $(this).next().text();
 			let time = $(this).text();
-			let place = $(this).parent().parent().siblings('#getPName').text();
-			
-			console.log(start)
-			
+			let place = $(this).parent().parent().siblings('.getPName').text();
+
+			rentalTime = $(this).text();
+			rentalDate = $(this).next().next().text();
+			rentalPlace = $(this).next().next().next().text();
+			console.log(rentalTime)
+			console.log(rentalDate)
+			console.log(rentalPlace)
+
 			var url = 'RentalViewCon';
 			var obj = {
-					year    : year,
-					month : month,
-					date : date,
-					place : place,
-					time : time,
-					start : start
-			    	};
-			
+				year : year,
+				month : month,
+				date : date,
+				place : place,
+				time : time,
+				start : start
+			};
+
 			const queryStr = new URLSearchParams(obj).toString();
-			window.location = url +'?' +queryStr;
+			window.location = url + '?' + queryStr;
 
 		})
 	</script>

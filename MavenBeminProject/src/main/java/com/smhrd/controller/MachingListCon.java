@@ -19,13 +19,11 @@ public class MachingListCon extends HttpServlet {
 		
 		// Post
 		String dellistid = request.getParameter("dellistid");
-		int dellistno = Integer.parseInt(request.getParameter("dellistno"));
-				
-		// MATCHING_LIST dellist = new MATCHING_LIST(dellistid, dellistno);
-		
+		int dellistno = Integer.parseInt(request.getParameter("dellistno"));		
 		MatchingListDAO listdao = new MatchingListDAO();
+		
 		int cnt = listdao.deleteMatchingList(dellistid, dellistno);
-		System.out.println(cnt + " cnt값");
+
 		if(cnt > 0) {
 			System.out.println("매칭삭제 성공");
 		} else {
