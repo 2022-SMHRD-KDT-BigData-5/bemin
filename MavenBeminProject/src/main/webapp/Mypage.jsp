@@ -112,7 +112,7 @@
                 <div class="mypage-form-email">
                     <p>이메일 <br>${loginMember.EMAIL }</p>
                     <div class="mypage-form-change">
-                        <a href="./회원정보수정.jsp">내정보 수정</a>
+                        <a href="joinUpdate.jsp">내정보 수정</a>
                     </div>
                 </div>
                 <div class="mypage-form-tier">
@@ -170,7 +170,7 @@
                     <div class="mypage-form-manner">
                     <p>매너 점수 ${loginMember.USER_MANNER }</p>
                     
-                    <a href="./티어매너안내.jsp">티어 매너점수 알아보기</a>
+                    <a href="info.jsp">티어 매너점수 알아보기</a>
                      </div>
                 </div>
                 

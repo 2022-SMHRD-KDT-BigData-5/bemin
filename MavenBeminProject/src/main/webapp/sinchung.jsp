@@ -56,7 +56,7 @@
 		<div class="collapse navbar-collapse" id="navbar-menu">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="./RealMain.jsp">Home</a></li>
-				<li><a href="./Maypage.jsp">마이페이지</a></li>
+				<li><a href="./Mypage.jsp">마이페이지</a></li>
 				<li><a href="LogoutCon">로그아웃</a></li>
 			</ul>
 		</div>
@@ -183,7 +183,7 @@
          <!-- 메인으로 이동 BTN-->
          <div class="btn_area">
             <button type="button" id="btnJoin">
-               <a href="main.jsp">매칭 게시판으로 이동</a>
+               <a href="RealMain.jsp">매칭 게시판으로 이동</a>
             </button>
          </div>
       </div>
@@ -217,7 +217,7 @@
 				</table>
 
 				<div class="move-tire">
-					<a href="./티어매너안내.jsp" class="tier-ckeck">📢티어정보 확인하기</a>
+					<a href="info.jsp" class="tier-ckeck">📢티어정보 확인하기</a>
 				</div>
 
 				<div style="margin: 10px 5px 10px 10px;">

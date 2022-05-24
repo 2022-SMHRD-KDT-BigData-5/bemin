@@ -76,7 +76,7 @@
    <form action="RentalCon" method="post">
       <div class="fom">
          <div class="logoName">
-            <a href="main.jsp"><h1>플라이트</h1></a>
+            <a href="RealMain.jsp"><h1>플라이트</h1></a>
          </div>
          <div class="content_wrap">
             <div class="content_header">

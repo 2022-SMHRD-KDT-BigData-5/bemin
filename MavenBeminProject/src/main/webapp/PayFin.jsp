@@ -35,7 +35,7 @@
 <body>
 <form class="fom">
 		<div class="logoName">
-			<a href="메인.html"><h1>플라이트</h1></a>
+			<a href="RealMain.jsp"><h1>플라이트</h1></a>
 		</div>
 
 		<div class="confim">

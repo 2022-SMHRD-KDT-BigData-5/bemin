@@ -252,6 +252,13 @@ ul, li {list-style:none;}
     color: black;
 }
 
+.today{
+   display: none;
+}
+
+.place{
+   display: none;
+}
 .t3{
 	display: none;
 }

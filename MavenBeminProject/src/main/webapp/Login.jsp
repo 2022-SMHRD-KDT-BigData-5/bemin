@@ -108,7 +108,7 @@
 								<c:otherwise>
 									<% System.out.println("로그인했음!"); %>
 									<li><a href="./RealMain.jsp">Home</a></li>
-                            		<li><a href="./Maypage.jsp">마이페이지</a></li>
+                            		<li><a href="./Mypage.jsp">마이페이지</a></li>
 									<li><a href="./LogoutCon">로그아웃</a></li>									
 							</c:otherwise>				
 						</c:choose>
