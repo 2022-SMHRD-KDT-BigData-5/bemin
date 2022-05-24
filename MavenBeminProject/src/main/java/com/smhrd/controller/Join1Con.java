@@ -37,8 +37,6 @@ public class Join1Con extends HttpServlet {
 		String tel=request.getParameter("tel");
 		String address =request.getParameter("address");
 		String user_tier =request.getParameter("star");
-		
-		
 
 		USER_INFO m_vo = new USER_INFO(id,pw,name,email,gender,tel,address,user_tier);
 		

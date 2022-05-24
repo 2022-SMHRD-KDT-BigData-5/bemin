@@ -50,10 +50,14 @@ public class RentalCon extends HttpServlet {
 		
 		int left = Integer.parseInt(loginMember.getCASH()) - Integer.parseInt(useCash);
 		String to = Integer.toString(left);
-
+		
+		USER_INFO USER = new USER_INFO();
+		
+		USER.setCASH(to);
+		USER.setID(USER_ID);
 
 		USER_INFO_DAO cashDao = new USER_INFO_DAO();
-		int cashCnt = cashDao.updateCash(USER_ID,to);
+		int cashCnt = cashDao.updateCash(USER);
 		
 		
 

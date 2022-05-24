@@ -24,13 +24,13 @@ public class LoginCon extends HttpServlet {
 
 		// id, pw 받아오기
 
-		String ID = request.getParameter("id");
-		String PW = request.getParameter("pw");
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
 
 
 		// Member객체에 담기
 
-		USER_INFO m_vo = new USER_INFO(ID, PW);
+		USER_INFO m_vo = new USER_INFO(id, pw);
 
 		System.out.println(m_vo);
 

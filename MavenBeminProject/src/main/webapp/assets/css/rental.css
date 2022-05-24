@@ -252,6 +252,14 @@ ul, li {list-style:none;}
 .t3{
 	display: none;
 }
+.today{
+	display: none;
+}
+
+.place{
+	display: none;
+}
+
 
 .time1{
     text-decoration-line: none;

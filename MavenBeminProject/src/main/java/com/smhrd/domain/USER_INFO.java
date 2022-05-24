@@ -59,7 +59,9 @@ public class USER_INFO {
 		this.USER_TIER = USER_TIER;		
 	}
 	
-
+	public USER_INFO() {
+		
+	}
 
 	public String getID() {
 		return ID;

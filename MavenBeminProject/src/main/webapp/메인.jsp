@@ -119,10 +119,10 @@
                     <!-- navbar menu -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav navbar-right">                   
-                            <li><a href="./회원가입.html">회원가입</a></li>
-                            <li><a href="./로그인.html">로그인</a></li>
-                            <li><a href="./마이페이지.html">마이페이지</a></li>
-                            <li><a href="./메인.html">로그아웃</a></li>
+                            <li><a href="./회원가입.jsp">회원가입</a></li>
+                            <li><a href="./Login.jsp">로그인</a></li>
+                            <li><a href="./Maypage">마이페이지</a></li>
+                            <li><a href="./메인.jsp">로그아웃</a></li>
                             <!-- <li><a href="#test">Blog</a></li> -->
                             <!-- <li><a href="#contact">Contact</a></li> -->
                         </ul>
@@ -289,7 +289,7 @@
                     <div id="list" class="list--match-schedule--container">
                         <ul>
                             <li class="list--match-schedule--item">
-                                <a href="참가.html">
+                                <a href="참가.jsp">
                                     <div class="list--match-schedule__time">
                                         <p>18:00</p>
                                     </div>

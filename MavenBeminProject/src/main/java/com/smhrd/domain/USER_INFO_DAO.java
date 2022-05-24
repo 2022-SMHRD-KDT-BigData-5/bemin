@@ -123,17 +123,13 @@ public class USER_INFO_DAO {
 			}
 	
 	//캐시 사용정보 업데이트
-	public int updateCash(String id, String cash) {
+	public int updateCash(USER_INFO USER) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		
 		int cnt = 0;
-		Map<String, Object> param = new HashMap<>();
-		param.put("CASH", cash);
-        param.put("ID", id);
-		
-        try {
 
-            cnt = sqlSession.update("com.smhrd.domain.USER_INFO_DAO.updateCash",param);
+        try {
+            cnt = sqlSession.update("com.smhrd.domain.USER_INFO_DAO.updateCash",USER);
 			
 			if(cnt>0) {
 				sqlSession.commit();

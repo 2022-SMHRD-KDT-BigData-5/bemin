@@ -110,12 +110,14 @@ public class matchingDAO<BoardReply> {
 		return cnt;
 	} //  매칭게시판에서 내글 삭제------------------------------------------
 
-	//  매칭게시판에서 내글 삭제 ----------------------------------------------
-	public int deleteMatchingList(String delmatid) {
-		int cnt = 0;
+
+	
+	//  매칭날짜별 찾기 ----------------------------------------------
+	public List<MATCHING> MatchingDay(String day) {
+		List<MATCHING> matching = null;
 		try {
-			cnt = sqlSession.delete("com.smhrd.domain.matchingDAO.deleteMatching",delmatid);
-			if(cnt > 0) {
+			matching = sqlSession.selectList("com.smhrd.domain.matchingDAO.selectRentalView", day);
+			if (matching != null) {
 				sqlSession.commit();
 			} else {
 				sqlSession.rollback();
@@ -125,9 +127,8 @@ public class matchingDAO<BoardReply> {
 		} finally {
 			sqlSession.close();
 		}
-		return cnt;
-	} //  매칭게시판에서 내글 삭제------------------------------------------
-	
+		return matching;
+	} //  매칭날짜별 찾기------------------------------------------
 	
 
 }
