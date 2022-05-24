@@ -41,7 +41,7 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="./RealMain.jsp">Home</a></li>                    
-                        <li><a href="./회원가입.html">회원가입</a></li>
+                        <li><a href="./회원가입.jsp">회원가입</a></li>
                         <li><a href="./Login.jsp">로그인</a></li>
                         <li><a href="./Maypage.jsp">마이페이지</a></li>
                         <!-- <li><a href="#test">Blog</a></li> -->

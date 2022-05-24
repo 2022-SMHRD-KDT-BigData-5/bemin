@@ -1,15 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
 <html lnag="ko">
-<head>
- <meta charset="UTF-8">
-        <title>회원가입</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/png" href="favicon.ico">
-
-        <link rel="stylesheet" href="assets/css/회원가입.css">
+    <head>
+        <meta charset="UTF-8">
+        <title>회원정보수정</title>
+        <link rel="stylesheet" href="assets/css/join.css">
         <link rel="icon" type="image/png" href="favicon.ico">
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
@@ -21,26 +17,11 @@
         <link rel="stylesheet" href="assets/css/bootstrap.css">
         <link rel="stylesheet" href="assets/css/magnific-popup.css">
         <link rel="stylesheet" href="assets/css/bootsnav.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/responsive.css" />
-</head>
-<body data-spy="scroll" data-target=".navbar-collapse">
-
-
-        <!-- Preloader -->
-        <div id="loading">
-            <div id="loading-center">
-                <div id="loading-center-absolute">
-                    <div class="object" id="object_one"></div>
-                    <div class="object" id="object_two"></div>
-                    <div class="object" id="object_three"></div>
-                    <div class="object" id="object_four"></div>
-                </div>
-            </div>
-        </div><!--End off Preloader -->
-
+        <link rel="stylesheet" href="assets/css/회원정보수정.css">
+        
+    </head>
+    <body>
         <!-- 상단바 -->
-    <div class="culmn">
         <nav class="navbar navbar-default bootsnav navbar-fixed">
 
                 <!-- Start Header Navigation -->
@@ -48,8 +29,9 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="#brand">
                         <img src="assets/images/logo1.png" class="logo" alt="">
+                        <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
                     </a>
 
                 </div>
@@ -58,15 +40,24 @@
                 <!-- navbar menu -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="./index.html">Home</a></li>                    
-                        <li><a href="./로그인.html">로그인</a></li>
+                        <li><a href="./RealMain.jsp">Home</a></li>                    
+                        <li><a href="./회원가입.jsp">회원가입</a></li>
+                        
+                        <li><a href="./Maypage.jsp">마이페이지</a></li>
+                        <!-- <li><a href="#test">Blog</a></li> -->
+                        <!-- <li><a href="#contact">Contact</a></li> -->
+                        <li><a href="LogoutCon">로그아웃</a></li>
+
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div> 
         </nav>
+
+
+
         <!-- header -->
-        <div id="header">
-            <img src="./assets/images/logo1.png" id="logo">
+        <div class="headMessage">
+            <h2>회원정보 수정</h2>
         </div>
 
 
@@ -76,25 +67,17 @@
             <!-- content-->
             <div id="content">
 
-                <!-- ID -->
-                <div>
-                    <h3 class="join_title">
-                        <label for="id">아이디</label>
-                    </h3>
-                    <span class="box int_id">
-                        <input type="text" id="id" class="int" maxlength="20">
-                        <span class="step_url"></span>
-                    </span>
-                    <span class="error_next_box"></span>
-                </div>
-
+               
                 <!-- PW1 -->
+                <form action="UpdateCon" method="post">
                 <div>
+                
+                <h3>${loginMember.ID }님 환영합니다 🙋‍♀️</h3>
                     <h3 class="join_title"><label for="pswd1">비밀번호</label></h3>
                     <span class="box int_pass">
-                        <input type="text" id="pswd1" class="int" maxlength="20">
+                        <input type="text" id="pswd1" name="pw" value="${loginMember.PW }" placeholder="비밀번호 입력" class="int" maxlength="20">
                         <span id="alertTxt">사용불가</span>
-                        <img src="./assets/images/m_icon_pass.png" id="pswd1_img1" class="pswdImg">
+                        <img src="m_icon_pass.png" id="pswd1_img1" class="pswdImg">
                     </span>
                     <span class="error_next_box"></span>
                 </div>
@@ -106,55 +89,25 @@
                         <input type="text" id="pswd2" class="int" maxlength="20">
                         <img src="./assets/images/m_icon_check_disable.png" id="pswd2_img1" class="pswdImg">
                     </span>
-                    <span class="error_next_box"></span>
+                    <span class="error_next_box">필수 정보입니다.</span>
                 </div>
 
                 <!-- NAME -->
                 <div>
                     <h3 class="join_title"><label for="name">이름</label></h3>
                     <span class="box int_name">
-                        <input type="text" id="name" class="int" maxlength="20">
+                        <input type="text" id="name" name="name" class="int" placeholder="이름 입력" maxlength="20">
                     </span>
                     <span class="error_next_box"></span>
                 </div>
 
-                <!-- BIRTH -->
-                <div>
-                    <h3 class="join_title"><label for="yy">생년월일</label></h3>
-
-                    <div id="bir_wrap">
-                        <!-- BIRTH_YY -->
-                        <div id="bir_yy">
-                            <span class="box">
-                                <input type="text" id="yy" class="int" maxlength="4" placeholder="년(4자)">
-                            </span>
-                        </div>
-
-                        <!-- BIRTH_MM -->
-                        <div id="bir_mm">
-                            <span class="box">
-                                <input type="date" id="birth">
-                            </span>
-                        </div>
-
-                <!-- GENDER -->
-                <div>
-                    <h3 class="join_title"><label for="gender">성별</label></h3>
-                    <span class="box gender_code">
-                        <select id="gender" class="sel">
-                            <option>성별</option>
-                            <option value="M">남자</option>
-                            <option value="F">여자</option>
-                        </select>                            
-                    </span>
-                    <span class="error_next_box">필수 정보입니다.</span>
-                </div>
+                
 
                 <!-- EMAIL -->
                 <div>
-                    <h3 class="join_title"><label for="email">본인확인 이메일<span class="optional">(선택)</span></label></h3>
+                    <h3 class="join_title"><label for="email">본인확인 이메일</label></h3>
                     <span class="box int_email">
-                        <input type="text" id="email" class="int" maxlength="100" placeholder="선택입력">
+                        <input type="text" id="email" name="email" class="int" placeholder="이메일 입력" maxlength="100">
                     </span>
                     <span class="error_next_box">이메일 주소를 다시 확인해주세요.</span>    
                 </div>
@@ -163,17 +116,24 @@
                 <div>
                     <h3 class="join_title"><label for="phoneNo">휴대전화</label></h3>
                     <span class="box int_mobile">
-                        <input type="tel" id="mobile" class="int" maxlength="16" placeholder="전화번호 입력">
+                        <input type="tel" id="mobile" name="tel" class="int" maxlength="16" placeholder="전화번호 입력">
                     </span>
                     <span class="error_next_box"></span>    
                 </div>
 
 
-                <!-- JOIN BTN-->
+
+                <!-- 수정완료 BTN-->
                 <div class="btn_area">
-                    <button type="button" id="btnJoin" href="#">
-                        <span>가입하기</span>
+                    <button type="button" id="btnupdate">
+                        <input type="submit" value="수정완료" style="color: white;">
                     </button>
+                </div>
+
+
+               
+</form>
+
                 </div>
 
                 
@@ -181,11 +141,11 @@
             </div> 
             <!-- content-->
 
-    </div> 
+        
         <!-- wrapper -->
         <!-- JS includes -->
         
-    <script src="assets/js/회원가입.js"></script>
+    <script src="assets/js/회원정보수정.js"></script>
     <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
     <script src="assets/js/vendor/bootstrap.min.js"></script>
 
@@ -201,8 +161,35 @@
 
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-
-
-</body>
+    </body>
+    
+    
+    <script>
+    
+    $(document).on('click','#btnupdate',function(){
+    	if($('#pswd1').val() == ''){
+			alert('비밀번호를 입력하세요');
+			return false;
+    	}else if($('#pswd2').val() == ''){
+			alert('비밀번호 재확인을 입력하세요');
+			return false;
+		}else if($('#pswd1').val() != $('#pswd2').val()){
+			alert("비밀번호가 일치하지 않습니다!!!");
+			return false;
+		}else if($('#name').val() == ''){
+ 			alert('이름을 입력하세요');
+ 			return false;
+ 			
+ 		}else if($('#email').val() == ''){
+ 				alert('이메일을 입력하세요');
+ 				return false;
+ 		}else {
+   		 		window.location.href = "Maypage.jsp";
+		 		return true;
+	 }
+		})
+    
+    
+    
+    </script>
 </html>

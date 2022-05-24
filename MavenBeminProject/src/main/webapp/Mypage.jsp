@@ -1,16 +1,10 @@
-<%@page import="com.smhrd.domain.MATCHING"%>
-<%@page import="java.util.List"%>
-<%@page import="com.smhrd.domain.matchingDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" isELIgnored="false"%>
-<%@page import="com.smhrd.domain.USER_INFO"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>마이페이지</title>
+        <title>Made One</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="favicon.ico">
@@ -94,8 +88,8 @@
                 <!-- navbar menu -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="./RealMain.jsp">Home</a></li>                    
-                        <li><a href="LogoutCon">로그아웃</a></li>
+                        <li><a href="./index.html">Home</a></li>                    
+                        <li><a href="./index.html">로그아웃</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div> 
@@ -107,90 +101,32 @@
         <div class="mypage-container shadow">
             <span class="mypage-form-right-side">
                 <div class="mypage-form-myname">
-                    <h3>${loginMember.NAME }님 환영합니다 🙋‍♀️</h3>
+                    <h3>이름</h3>
                 </div>
                 <div class="mypage-form-email">
-                    <p>이메일 <br>${loginMember.EMAIL }</p>
+                    <p>이메일</p>
                     <div class="mypage-form-change">
                         <a href="./회원정보수정.jsp">내정보 수정</a>
                     </div>
                 </div>
                 <div class="mypage-form-tier">
-                    <!-- <p>티어 ${loginMember.USER_TIER }</p> -->
-                    
-                <c:choose>    
-                    <c:when test="${loginMember.USER_TIER <=100}">
-                    <p>티어 ${loginMember.USER_TIER } 루키</p>
-                    <img src="assets/images/루키.png" style=width:150px; height:150px; >
-                    </c:when>
-                    <c:when test="${loginMember.USER_TIER >100 and loginMember.USER_TIER <=150}">
-                    <p>티어 ${loginMember.USER_TIER } 비기너1</p>
-                    <img src="assets/images/비기너1.png" style=width:150px; height:150px; >
-                    </c:when>
-                    <c:when test="${loginMember.USER_TIER >150 and loginMember.USER_TIER <=200}">
-                    <p>티어 ${loginMember.USER_TIER } 비기너2</p>
-                    <img src="assets/images/비기너2.png" style=width:150px; height:150px; >
-                    </c:when>
-                    <c:when test="${loginMember.USER_TIER >200 and loginMember.USER_TIER <=250}">
-                    <p>티어 ${loginMember.USER_TIER } 주니어1</p>
-                    <img src="assets/images/주니어1.png" style=width:150px; height:150px; >
-                    </c:when>
-                    <c:when test="${loginMember.USER_TIER >250 and loginMember.USER_TIER <=300}">
-                    <p>티어 ${loginMember.USER_TIER } 주니어2</p>
-                    <img src="assets/images/주니어2.png" style=width:150px; height:150px; >
-                    </c:when>
-                    <c:when test="${loginMember.USER_TIER >300 and loginMember.USER_TIER <=330}">
-                    <p>티어 ${loginMember.USER_TIER } 시니어1</p>
-                    <img src="assets/images/시니어1.png" style=width:150px; height:150px; >
-                    </c:when>
-                    <c:when test="${loginMember.USER_TIER >330 and loginMember.USER_TIER <=360}">
-                    <p>티어 ${loginMember.USER_TIER } 시니어2</p>
-                    <img src="assets/images/시니어2.png" style=width:150px; height:150px; >
-                    </c:when>
-                    <c:when test="${loginMember.USER_TIER >360 and loginMember.USER_TIER <=400}">
-                    <p>티어 ${loginMember.USER_TIER } 시니어3</p>
-                    <img src="assets/images/시니어3.png" style=width:150px; height:150px; >
-                    </c:when>
-                    <c:when test="${loginMember.USER_TIER >400 and loginMember.USER_TIER <=430}">
-                    <p>티어 ${loginMember.USER_TIER } 프로1</p>
-                    <img src="assets/images/프로1.png" style=width:150px; height:150px; >
-                    </c:when>
-                    <c:when test="${loginMember.USER_TIER >430 and loginMember.USER_TIER <=460}">
-                    <p>티어 ${loginMember.USER_TIER } 프로2</p>
-                    <img src="assets/images/프로2.png" style=width:150px; height:150px; >
-                    </c:when>
-                    <c:when test="${loginMember.USER_TIER >460 and loginMember.USER_TIER <=500}">
-                    <p>티어 ${loginMember.USER_TIER } 프로3</p>
-                    <img src="assets/images/프로3.png" style=width:150px; height:150px; >
-                    </c:when><c:when test="${loginMember.USER_TIER >500 and loginMember.USER_TIER <=600}">
-                    <p>티어 ${loginMember.USER_TIER } 플라이트</p>
-                    <img src="assets/images/플라이트.png" style=width:150px; height:150px; >
-                    </c:when>
-                  </c:choose>
-                    <div class="mypage-form-manner">
-                    <p>매너 점수 ${loginMember.USER_MANNER }</p>
-                    
-                    <a href="./티어매너안내.jsp">티어 매너점수 알아보기</a>
-                     </div>
+                    <p>티어</p>
+                    <a href="#">티어 알아보기</a>
                 </div>
-                
+                <div class="mypage-form-manner">
+                    <p>매너 점수</p>
+                    <a href="#">매너 점수 알아보기</a>
+                </div>
                 <div class="mypage-form-cash">
                     <p>캐시</p>
-                    <a href=""><button class="mypage-btn-wrap shadow"> 충전 </button></a>
+                    <button class="mypage-btn-wrap shadow"> 충전 </button>
                 </div>
             </span>
             <span class="mypage-form-left-side">
                 <div class="mypage-top-wrap">
                     <p>신청내역</p>
-                    <a href="sinchung.jsp">신청내역 더보기</a>
+                    <a href="신청내역.jsp">신청내역 더보기</a>
                 </div>
-                
-				<%
-				matchingDAO dao = new matchingDAO();
-				USER_INFO u_vo = (USER_INFO)session.getAttribute("loginMember");
-				List<MATCHING> matList = dao.selectMatchig(u_vo.getID());
-				pageContext.setAttribute("matList", matList);
-				%>
                 <div class="mypage-input-wrap list">
                     <table class="table table-striped">
                             <tr>
@@ -198,24 +134,16 @@
                             <th>시간</th>
                             <th>경기장</th>
                         </tr>
-                    <c:forEach var="mat" items="${matList}" varStatus="status">
-					<c:set var="matid" value="${mat.USER_ID}"/>
-					<c:set var="matnum" value="${mat.MAT_NO}"/>
                         <tr>
-                            <td><c:out value="${mat.RES_DATE}" /></td>
-                            <td><c:out value="${mat.RES_TIME}" /></td>
-                            <td><c:out value="${mat.RES_PLACE}" /></td>
-                        </tr>
-                    </c:forEach>
+                            <td>5/17</td>
+                            <td>3:00</td>
+                               <td>광주</td>
+                            </tr>
                     </table>
                 </div>
-              
-                
             </span>
-            
         </div>
     </div>    
-
     <!-- JS includes -->
 
     <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>

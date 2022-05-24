@@ -172,7 +172,7 @@
 	<script src="assets/js/main.js"></script>
 	<script>
 	
-	$('#loginbtn').click(function LoginCheck(){
+/* 	$('#loginbtn').click(function LoginCheck(){
 	
 		let id=$('#id').val();
 		let pw=$('#pw').val();
@@ -193,7 +193,7 @@
 		
 		})
 	
-	}
+	} */
 	
 	</script>
 	

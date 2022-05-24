@@ -13,13 +13,13 @@
 	
 	<!-- 로그인 -->
 	<select id="LoginUSER_INFO" resultType="com.smhrd.domain.USER_INFO" parameterType="com.smhrd.domain.USER_INFO">
-		select * from USER_INFO where ID=#{ID} and PW=#{PW}
-
+	select * from USER_INFO where ID=#{ID} and PW=#{PW}
 	</select>
 	
 	<!-- 멤버보기 리스트로 -->
 	<select id="JoinMember" resultType="com.smhrd.domain.USER_INFO" parameterType="BigDecimal">
-		select * from USER_INFO where ID in (select ID from MATCHING_LIST where MAT_NO=#{MAT_NO})
+	select * from USER_INFO where ID in (select ID from MATCHING_LIST where MAT_NO=#{MAT_NO})
+
 
 	</select>
 
@@ -30,22 +30,26 @@
 	
 	<!-- 아이디 중복체크 -->
 	<select id="selectId" parameterType="String" resultType="String">
-
 		select ID from USER_INFO where ID=#{ID}
 
 	</select>
 	
 	<!-- 로그인 실패메세지 -->
+
 	<select id="selectLogin" parameterType="String" resultType="String">
-
 		select * from USER_INFO where ID=#{ID} and PW=#{PW}
-
-
 	</select>
+
 	<!-- 회원정보수정 -->
 	<update id="update" parameterType="com.smhrd.domain.USER_INFO">
 		update USER_INFO set PW=#{PW},NAME=#{NAME},EMAIL=#{EMAIL},TEL=#{TEL} where ID=#{ID}
 	</update>
+
+	<update id="updateCash" parameterType="com.smhrd.domain.USER_INFO">
+		update USER_INFO set CASH=#{CASH} where ID=#{ID}
+	</update>
+
+
 </mapper>
 
 

@@ -1,6 +1,6 @@
 <%@page import="com.smhrd.domain.USER_INFO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" isELIgnored="false"%>
+   pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -111,19 +111,19 @@
                     <!-- navbar menu -->
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav navbar-right">
-                        	<c:choose>
-								<c:when test="${empty loginMember}">
-                            		<li><a href="./index.html">Home</a></li>                    
-									<li><a href="./로그인.html">로그인</a></li>
-                            		<li><a href="./회원가입.html">회원가입</a></li>
-								</c:when>
-								<c:otherwise>
-									<% System.out.println("로그인했음!"); %>
-									<li><a href="./index.html">Home</a></li>
-                            		<li><a href="./마이페이지.html">마이페이지</a></li>
-									<li><a href="./마이페이지.html">로그아웃</a></li>									
-							</c:otherwise>				
-						</c:choose>                           
+                           <c:choose>
+                        <c:when test="${empty loginMember}">
+                                  <li><a href="RealMain.jsp">Home</a></li>                    
+                           <li><a href="Login.jsp">로그인</a></li>
+                                  <li><a href="join.jsp">회원가입</a></li>
+                        </c:when>
+                        <c:otherwise>
+                           <% System.out.println("로그인했음!"); %>
+                           <li><a href="./index.html">Home</a></li>
+                                  <li><a href="./마이페이지.html">마이페이지</a></li>
+                           <li><a href="./마이페이지.html">로그아웃</a></li>                           
+                     </c:otherwise>            
+                  </c:choose>                           
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div> 
@@ -192,47 +192,47 @@
         <script src="assets/js/bootsnav.js"></script>
 <script>
 $('#find-id-btn').click(function(){
-	let name = $('#FindIdName').val()
+   let name = $('#FindIdName').val()
     let tel = $('#FindIdTel').val()
-	
+   
     $.ajax({
-		data : {'name' : name, 'tel' : tel},
-		url : "FindCon",
-		method : "POST",
-		success: function(data){
-			
-			alert('찾으시는 아이디는 '+data+'입니다.')
-			window.location.href = "Login.jsp";
-			
-		},
-		error: function(){
+      data : {'name' : name, 'tel' : tel},
+      url : "FindCon",
+      method : "POST",
+      success: function(data){
+         
+         alert('찾으시는 아이디는 '+data+'입니다.')
+         window.location.href = "Login.jsp";
+         
+      },
+      error: function(){
 
-			alert("일치하는 정보가 없습니다")
+         alert("일치하는 정보가 없습니다")
 
-		}
-	})    
+      }
+   })    
 })
 
 $('#find-pw-btn').click(function(){
-	let id = $('#FindPwId').val()
+   let id = $('#FindPwId').val()
     let name = $('#FindPwName').val()
     let tel = $('#FindPwTel').val()
-	
+   
     
     $.ajax({
-		data : {'id':id, 'name' : name, 'tel' : tel},
-		url : "FindCon",
-		method : "POST",
-		success: function(data){
-			alert('찾으시는 비밀번호는 '+data+'입니다.')
-			window.location.href = "Login.jsp";
-		},
-		error: function(){
+      data : {'id':id, 'name' : name, 'tel' : tel},
+      url : "FindCon",
+      method : "POST",
+      success: function(data){
+         alert('찾으시는 비밀번호는 '+data+'입니다.')
+         window.location.href = "Login.jsp";
+      },
+      error: function(){
 
-			alert("일치하는 정보가 없습니다")
+         alert("일치하는 정보가 없습니다")
 
-		}
-	})    
+      }
+   })    
 })
 </script>
 

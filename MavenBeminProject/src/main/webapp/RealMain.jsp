@@ -102,8 +102,8 @@
                            </c:when>
                            <c:otherwise>	
                             	<li><a href="LogoutCon">로그아웃</a></li>                       
-                           		<li><a href="./회원정보수정.jsp">회원정보수정</a></li>
-                            	<li><a href="./Maypage.jsp">마이페이지</a></li>
+                           		<li><a href="joinUpdate.jsp">회원정보수정</a></li>
+                            	<li><a href="Maypage.jsp">마이페이지</a></li>
                           </c:otherwise>
                           </c:choose>
                         </ul>
@@ -181,45 +181,14 @@
                         <div class="slidebox">
                             <input type="radio" name="slide" id="slide01" checked>
                             <input type="radio" name="slide" id="slide02">
-                            <input type="radio" name="slide" id="slide03">
-                            <input type="radio" name="slide" id="slide04">
                             <ul class="slidelist">
-                                <li class="slideitem">
-                                    <button class="pt1"><div class="pt1-text"><div>1</div>월</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>2</div>화</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>3</div>수</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>4</div>목</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>5</div>금</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>6</div>토</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>7</div>일</div></button>
+                                <li class="slideitem" id="dayCon1">
+
                                 </li>
-                                <li class="slideitem">
-                                    <button class="pt1"><div class="pt1-text"><div>8</div>월</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>9</div>화</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>10</div>수</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>11</div>목</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>12</div>금</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>13</div>토</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>14</div>일</div></button>
+                                <li class="slideitem" id="dayCon2">
+
                                 </li>
-                                <li class="slideitem">
-                                    <button class="pt1"><div class="pt1-text"><div>15</div>월</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>16</div>화</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>17</div>수</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>18</div>목</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>19</div>금</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>20</div>토</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>21</div>일</div></button>
-                                </li>
-                                <li class="slideitem">
-                                    <button class="pt1"><div class="pt1-text"><div>22</div>월</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>23</div>화</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>24</div>수</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>25</div>목</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>26</div>금</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>27</div>토</div></button>
-                                    <button class="pt1"><div class="pt1-text"><div>28</div>일</div></button>
-                                </li>
+                               
                             </ul>
                             <div class="slide-control">
                                 <div class="control01">

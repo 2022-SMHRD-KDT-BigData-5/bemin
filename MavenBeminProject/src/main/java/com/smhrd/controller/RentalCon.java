@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import com.smhrd.domain.MATCHING;
 import com.smhrd.domain.USER_INFO;
+import com.smhrd.domain.USER_INFO_DAO;
 import com.smhrd.domain.matchingDAO;
 
 
@@ -40,27 +41,39 @@ public class RentalCon extends HttpServlet {
 		String GENDER = request.getParameter("GENDER");
 		String useCash = request.getParameter("useCash");
 		
-		
-		
-		// user_info에서 로그인한 아이디 캐시정보 가져오기(세션)
+		//로그인 정보
 		USER_INFO loginMember = (USER_INFO)session.getAttribute("loginMember");
+		String USER_ID = loginMember.getID();
+		System.out.println(USER_ID);
+		
+		//캐시 업데이트
+		
 		int left = Integer.parseInt(loginMember.getCASH()) - Integer.parseInt(useCash);
+		String to = Integer.toString(left);
+		
+		USER_INFO USER = new USER_INFO();
+		
+		USER.setCASH(to);
+		USER.setID(USER_ID);
+
+		USER_INFO_DAO cashDao = new USER_INFO_DAO();
+		int cashCnt = cashDao.updateCash(USER);
 		
 		
 
-		String USER_ID = loginMember.getID();
+		
 		// 선택한 경기장의 요금 정보 가져와야함
 		MATCHING rental = new MATCHING(RES_DATE,RES_TIME,RES_PLACE,USER_ID,UNIT,MAT_MEMBER,STN_TIER,STN_MANNER,GENDER);
 		
-		matchingDAO dao = new matchingDAO();
-		int cnt = dao.insertRental(rental);
+		matchingDAO rentalDao = new matchingDAO();
+		int rentalCnt = rentalDao.insertRental(rental);
 		
-		if (cnt > 0) {
+		if (cashCnt > 0 && rentalCnt>0) {
 			System.out.println("예약 성공");
-			response.sendRedirect("RealMain.jsp");
+			response.sendRedirect("PayFin.jsp");
 		} else {
 			System.out.println("예약 실패");
-			response.sendRedirect("Rental.jsp");
+			response.sendRedirect("RentalFail.html");
 		}
 		
 		

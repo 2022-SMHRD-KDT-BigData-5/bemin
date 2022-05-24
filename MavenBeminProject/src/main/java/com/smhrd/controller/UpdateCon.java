@@ -46,7 +46,7 @@ public class UpdateCon extends HttpServlet {
 			response.sendRedirect("RealMain.jsp");
 		}else {
 			System.out.println("회원정보수정 실패");
-			response.sendRedirect("회원정보수정.jsp");
+			response.sendRedirect("joinUpdate.jsp");
 		}
 	}
 

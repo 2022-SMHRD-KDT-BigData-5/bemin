@@ -3,7 +3,6 @@
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.domain.USER_INFO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-<<<<<<< HEAD
 	pageEncoding="UTF-8" isELIgnored="false"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -17,20 +16,18 @@
 >>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 <!DOCTYPE html>
 <head>
-<<<<<<< HEAD
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Modal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" /> 
    
-=======
+
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title>Modal</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 
-<<<<<<< HEAD
+
   </head>
   <body>
     <button id="show">멤버보기</button>
@@ -73,14 +70,18 @@
 				</c:forEach>
 			</tbody>
             </tr>
-=======
+
 <link rel="stylesheet" href="assets/css/modal.css">
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 
 
 </head>
 <body>
 	<button id="show">멤버보기</button>
+	<button id="show">멤버보기</button>
+	<button id="show">멤버보기</button>
+	<button id="show">멤버보기</button>
+	<button id="show">멤버보기</button>
+	
 	<div class="background">
 		<div class="window">
 			<div class="popup">
