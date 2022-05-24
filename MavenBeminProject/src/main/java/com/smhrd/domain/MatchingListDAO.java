@@ -95,5 +95,21 @@ public class MatchingListDAO {
 		return Matching_List;
 	}// 매칭리스트 내역보기 끝------------------------------------------------------------
 
-
+	// 예약 ----------------------------------------------------------
+		public int insertrental(MATCHING_LIST m) {
+			int cnt=0;
+			try {
+				cnt=sqlSession.insert("com.smhrd.domain.MatchingListDAO.insertrental",m);
+				if(cnt>0) {
+					sqlSession.commit();
+				}else {
+					sqlSession.rollback();
+				}
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				sqlSession.close();
+			}
+			return cnt;
+		}// 예약 끝 --------------------------------------------------------	
 }

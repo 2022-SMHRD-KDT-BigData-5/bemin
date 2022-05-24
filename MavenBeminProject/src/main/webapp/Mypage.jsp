@@ -106,7 +106,7 @@
                 <div class="mypage-form-email">
                     <p>이메일</p>
                     <div class="mypage-form-change">
-                        <a href="./회원정보수정.jsp">내정보 수정</a>
+                        <a href="joinUpdate.jsp">내정보 수정</a>
                     </div>
                 </div>
                 <div class="mypage-form-tier">
@@ -125,7 +125,7 @@
             <span class="mypage-form-left-side">
                 <div class="mypage-top-wrap">
                     <p>신청내역</p>
-                    <a href="신청내역.jsp">신청내역 더보기</a>
+                    <a href="sinchung.jsp">신청내역 더보기</a>
                 </div>
                 <div class="mypage-input-wrap list">
                     <table class="table table-striped">

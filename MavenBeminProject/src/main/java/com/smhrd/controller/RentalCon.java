@@ -2,6 +2,7 @@ package com.smhrd.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.smhrd.domain.MATCHING;
+import com.smhrd.domain.MATCHING_LIST;
+import com.smhrd.domain.MatchingListDAO;
 import com.smhrd.domain.USER_INFO;
 import com.smhrd.domain.USER_INFO_DAO;
 import com.smhrd.domain.matchingDAO;
@@ -64,13 +67,27 @@ public class RentalCon extends HttpServlet {
 		
 		// 선택한 경기장의 요금 정보 가져와야함
 		MATCHING rental = new MATCHING(RES_DATE,RES_TIME,RES_PLACE,USER_ID,UNIT,MAT_MEMBER,STN_TIER,STN_MANNER,GENDER);
-		
 		matchingDAO rentalDao = new matchingDAO();
+
+		
+		//matching_list insert하기
+		BigDecimal seq = rentalDao.renSeqNo();
+		int seqnum = seq.intValue();
+		MATCHING_LIST list = new MATCHING_LIST();
+		list.setMAT_NO(seqnum);
+		list.setID(USER_ID);
+
+		
+		MatchingListDAO listDao = new MatchingListDAO();
+		int cnt = listDao.insertrental(list);
+		
+
 		int rentalCnt = rentalDao.insertRental(rental);
 		
-		if (cashCnt > 0 && rentalCnt>0) {
+		if (cashCnt > 0 && rentalCnt>0 && cnt>0) {
 			System.out.println("예약 성공");
 			response.sendRedirect("PayFin.jsp");
+			session.setAttribute("rental", rental);
 		} else {
 			System.out.println("예약 실패");
 			response.sendRedirect("RentalFail.html");

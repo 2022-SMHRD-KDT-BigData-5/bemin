@@ -129,5 +129,50 @@ public class matchingDAO {
       }
       return cnt;
    } // 매칭게시판에서 내글 삭제---------------------------------------------------------
+	
    
+   // 메인 날짜별 메칭정보 출력---------------------------------------------------------
+	public List<MATCHING> selectDayMat(String RES_DATE) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		List<MATCHING> msg_vo = null;
+		try {
+			msg_vo = sqlSession.selectList("com.smhrd.domain.matchingDAO.selectDayMat", RES_DATE);
+
+			if (msg_vo != null) {
+				sqlSession.commit();
+			} else {
+				sqlSession.rollback();
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return msg_vo;
+	}   // 메인 날짜별 메칭정보 출력 ---------------------------------------------------------
+	
+	//예약한 마지막 시퀀스 번호 조회---------------------------------------------------------
+	public BigDecimal renSeqNo() {
+
+		BigDecimal num = null;
+	      try {
+	    	  num = sqlSession.selectOne("com.smhrd.domain.matchingDAO.selectSeqNo");
+
+	         if (num != null) {
+	            sqlSession.commit();
+	         } else {
+	            sqlSession.rollback();
+	         }
+
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         sqlSession.close();
+	      }
+	      return num;
+
+	   }//예약한 마지막 시퀀스 번호 조회   끝---------------------------------------------------------
+
+	
 }

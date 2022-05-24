@@ -26,5 +26,10 @@
 	<delete id="deleteMatchingList" parameterType="com.smhrd.domain.MATCHING_LIST">
       	 delete from MATCHING_LIST where ID=#{ID} and MAT_NO = #{MAT_NO}
     </delete>
+    
+    <!-- 예약 -->
+    <insert id="insertrental" parameterType="com.smhrd.domain.MATCHING_LIST">
+		insert into MATCHING_LIST values(matching_list_list_no.nextval,#{MAT_NO},#{ID},'0')
+	</insert>
 	
 </mapper>
