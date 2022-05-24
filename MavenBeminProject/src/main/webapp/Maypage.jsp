@@ -1,7 +1,11 @@
+<%@page import="com.smhrd.domain.MATCHING"%>
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.domain.matchingDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
 <%@page import="com.smhrd.domain.USER_INFO"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -106,61 +110,61 @@
                     <h3>${loginMember.NAME }님 환영합니다 🙋‍♀️</h3>
                 </div>
                 <div class="mypage-form-email">
-                    <p>이메일 ${loginMember.EMAIL }</p>
+                    <p>이메일 <br>${loginMember.EMAIL }</p>
                     <div class="mypage-form-change">
                         <a href="./회원정보수정.jsp">내정보 수정</a>
                     </div>
                 </div>
                 <div class="mypage-form-tier">
                     <!-- <p>티어 ${loginMember.USER_TIER }</p> -->
-                    <c:choose>
                     
+                <c:choose>    
                     <c:when test="${loginMember.USER_TIER <=100}">
                     <p>티어 ${loginMember.USER_TIER } 루키</p>
-                    <img src="assets/images/루키.png" width="20" height="20" >
+                    <img src="assets/images/루키.png" style=width:150px; height:150px; >
                     </c:when>
                     <c:when test="${loginMember.USER_TIER >100 and loginMember.USER_TIER <=150}">
                     <p>티어 ${loginMember.USER_TIER } 비기너1</p>
-                    <img src="assets/images/비기너1.png" width="20" height="20" >
+                    <img src="assets/images/비기너1.png" style=width:150px; height:150px; >
                     </c:when>
                     <c:when test="${loginMember.USER_TIER >150 and loginMember.USER_TIER <=200}">
                     <p>티어 ${loginMember.USER_TIER } 비기너2</p>
-                    <img src="assets/images/비기너2.png" width="20" height="20" >
+                    <img src="assets/images/비기너2.png" style=width:150px; height:150px; >
                     </c:when>
                     <c:when test="${loginMember.USER_TIER >200 and loginMember.USER_TIER <=250}">
                     <p>티어 ${loginMember.USER_TIER } 주니어1</p>
-                    <img src="assets/images/주니어1.png" width="20" height="20" >
+                    <img src="assets/images/주니어1.png" style=width:150px; height:150px; >
                     </c:when>
                     <c:when test="${loginMember.USER_TIER >250 and loginMember.USER_TIER <=300}">
                     <p>티어 ${loginMember.USER_TIER } 주니어2</p>
-                    <img src="assets/images/주니어2.png" width="20" height="20" >
+                    <img src="assets/images/주니어2.png" style=width:150px; height:150px; >
                     </c:when>
                     <c:when test="${loginMember.USER_TIER >300 and loginMember.USER_TIER <=330}">
                     <p>티어 ${loginMember.USER_TIER } 시니어1</p>
-                    <img src="assets/images/시니어1.png" width="20" height="20" >
+                    <img src="assets/images/시니어1.png" style=width:150px; height:150px; >
                     </c:when>
                     <c:when test="${loginMember.USER_TIER >330 and loginMember.USER_TIER <=360}">
                     <p>티어 ${loginMember.USER_TIER } 시니어2</p>
-                    <img src="assets/images/시니어2.png" width="20" height="20" >
+                    <img src="assets/images/시니어2.png" style=width:150px; height:150px; >
                     </c:when>
                     <c:when test="${loginMember.USER_TIER >360 and loginMember.USER_TIER <=400}">
                     <p>티어 ${loginMember.USER_TIER } 시니어3</p>
-                    <img src="assets/images/시니어3.png" width="20" height="20" >
+                    <img src="assets/images/시니어3.png" style=width:150px; height:150px; >
                     </c:when>
                     <c:when test="${loginMember.USER_TIER >400 and loginMember.USER_TIER <=430}">
                     <p>티어 ${loginMember.USER_TIER } 프로1</p>
-                    <img src="assets/images/프로1.png" width="20" height="20" >
+                    <img src="assets/images/프로1.png" style=width:150px; height:150px; >
                     </c:when>
                     <c:when test="${loginMember.USER_TIER >430 and loginMember.USER_TIER <=460}">
                     <p>티어 ${loginMember.USER_TIER } 프로2</p>
-                    <img src="assets/images/프로2.png" width="20" height="20" >
+                    <img src="assets/images/프로2.png" style=width:150px; height:150px; >
                     </c:when>
                     <c:when test="${loginMember.USER_TIER >460 and loginMember.USER_TIER <=500}">
                     <p>티어 ${loginMember.USER_TIER } 프로3</p>
-                    <img src="assets/images/프로3.png" width="20" height="20" >
+                    <img src="assets/images/프로3.png" style=width:150px; height:150px; >
                     </c:when><c:when test="${loginMember.USER_TIER >500 and loginMember.USER_TIER <=600}">
                     <p>티어 ${loginMember.USER_TIER } 플라이트</p>
-                    <img src="assets/images/플라이트.png" width="20" height="20" >
+                    <img src="assets/images/플라이트.png" style=width:150px; height:150px; >
                     </c:when>
                   </c:choose>
                     <div class="mypage-form-manner">
@@ -180,6 +184,13 @@
                     <p>신청내역</p>
                     <a href="신청내역.jsp">신청내역 더보기</a>
                 </div>
+                
+				<%
+				matchingDAO dao = new matchingDAO();
+				USER_INFO u_vo = (USER_INFO)session.getAttribute("loginMember");
+				List<MATCHING> matList = dao.selectMatchig(u_vo.getID());
+				pageContext.setAttribute("matList", matList);
+				%>
                 <div class="mypage-input-wrap list">
                     <table class="table table-striped">
                             <tr>
@@ -187,16 +198,24 @@
                             <th>시간</th>
                             <th>경기장</th>
                         </tr>
+                    <c:forEach var="mat" items="${matList}" varStatus="status">
+					<c:set var="matid" value="${mat.USER_ID}"/>
+					<c:set var="matnum" value="${mat.MAT_NO}"/>
                         <tr>
-                            <td>5/17</td>
-                            <td>3:00</td>
-                               <td>광주</td>
-                            </tr>
+                            <td><c:out value="${mat.RES_DATE}" /></td>
+                            <td><c:out value="${mat.RES_TIME}" /></td>
+                            <td><c:out value="${mat.RES_PLACE}" /></td>
+                        </tr>
+                    </c:forEach>
                     </table>
                 </div>
+              
+                
             </span>
+            
         </div>
     </div>    
+
     <!-- JS includes -->
 
     <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>

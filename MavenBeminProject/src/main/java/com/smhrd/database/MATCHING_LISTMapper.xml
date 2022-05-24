@@ -3,11 +3,28 @@
 		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.smhrd.domain.matchingDAO">
+<mapper namespace="com.smhrd.domain.MatchingListDAO">
 
+	<!-- 매칭리스트 내이름 찾기 -->
+	<select id="selectListID" resultType = "com.smhrd.domain.MATCHING_LIST" parameterType = "com.smhrd.domain.MATCHING_LIST">
+		select * from MATCHING_LIST where ID=#{ID}
+	</select>
+	
+	<!-- 매칭리스트 불러오기 -->
+	<!-- 내 내역들 -->
+	<select id="selectMatchingList" resultType="com.smhrd.domain.MATCHING_LIST" parameterType="String">
+		select * from MATCHING_LIST where ID=#{listId}
+	</select>
+	
+	<!-- 매칭리스트 불러오기 -->
+	<!-- 내 내역들 -->
+	<select id="ViewMatchingList" resultType="com.smhrd.domain.MATCHING_LIST" parameterType="BigDecimal">
+		select * from MATCHING_LIST where MAT_NO=#{MAT_NO}
+	</select>
+	
 	<!-- 매칭리스트에서 내이름 삭제 -->
-	<delete id="deleteMatching" parameterType="String">
-      	 delete from MATCHING_LIST where ID=#{ID}
+	<delete id="deleteMatchingList" parameterType="com.smhrd.domain.MATCHING_LIST">
+      	 delete from MATCHING_LIST where ID=#{ID} and MAT_NO = #{MAT_NO}
     </delete>
-
+	
 </mapper>

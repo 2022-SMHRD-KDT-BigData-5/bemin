@@ -46,6 +46,10 @@
                         <li><a href="./Maypage.jsp">마이페이지</a></li>
                         <!-- <li><a href="#test">Blog</a></li> -->
                         <!-- <li><a href="#contact">Contact</a></li> -->
+
+                        <li><a href="./Maypge.jsp">마이페이지</a></li>
+                        <li><a href="LogoutCon">로그아웃</a></li>
+
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div> 
@@ -143,7 +147,7 @@
         <!-- wrapper -->
         <!-- JS includes -->
         
-    <script src="assets/js/join1.js"></script>
+    <script src="assets/js/회원정보수정.js"></script>
     <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
     <script src="assets/js/vendor/bootstrap.min.js"></script>
 

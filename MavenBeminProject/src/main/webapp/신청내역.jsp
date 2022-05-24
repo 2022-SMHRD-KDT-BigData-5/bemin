@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.domain.MatchingListDAO"%>
 <%@page import="com.smhrd.domain.MATCHING_LIST"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
@@ -28,6 +29,7 @@
 <link rel="stylesheet" href="assets/css/iconfont.css">
 <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 <link rel="stylesheet" href="assets/css/bootstrap.css">
+<link rel="stylesheet" href="assets/css/pagingbootstrap.css">
 <link rel="stylesheet" href="assets/css/magnific-popup.css">
 <link rel="stylesheet" href="assets/css/bootsnav.css">
 <link rel="stylesheet" href="assets/css/신청내역.css">
@@ -38,115 +40,109 @@
    <!-- 상단바 -->
    <nav class="navbar navbar-default bootsnav navbar-fixed">
 
-      <!-- Start Header Navigation -->
-      <div class="navbar-header">
-         <button type="button" class="navbar-toggle" data-toggle="collapse"
-            data-target="#navbar-menu">
-            <i class="fa fa-bars"></i>
-         </button>
-         <a class="navbar-brand" href="#brand"> <img
-            src="assets/images/logo1.png" class="logo" alt=""> <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
-         </a>ㅣ
+		<!-- Start Header Navigation -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#navbar-menu">
+				<i class="fa fa-bars"></i>
+			</button>
+			<a class="navbar-brand" href="./RealMain.jsp"> <img
+				src="assets/images/logo1.png" class="logo" alt=""> <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
+			</a>
 
       </div>
       <!-- End Header Navigation -->
+		<!-- navbar menu -->
+		<div class="collapse navbar-collapse" id="navbar-menu">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="./RealMain.jsp">Home</a></li>
+				<li><a href="./Maypage.jsp">마이페이지</a></li>
+				<li><a href="LogoutCon">로그아웃</a></li>
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+		</div>
+	</nav>
 
-      <!-- navbar menu -->
-      <div class="collapse navbar-collapse" id="navbar-menu">
-         <ul class="nav navbar-nav navbar-right">
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./마이페이지.html">마이페이지</a></li>
-         </ul>
-      </div>
-      <!-- /.navbar-collapse -->
-      </div>
-   </nav>
-
-   <!--header-->
-   <div class="container">
-      <div id="mymatch" class="page-container">
-         <div class="page-header">
-            <div class="page-title">
-               <h1 name="id">${loginMember.ID}님의 신청 내역</h1>
-            </div>
-            <div class="navigation-container" style="padding: 0px">
-               <div class="navigation-wrapper" style="padding: top 20px;">
-                  <div class="navigation-item">
-                     <a class="selected" style="margin-left: 0px;">🏃 ♂️소셜 매치</a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   <!-- <div class="empty-state">
-            <img src="https://plab-football.s3.amazonaws.com/static/img/img_empty_social.jpg">
-        </div> -->
-   <div class="container">
-      <c:choose>
-         <c:when test="${empty loginMember}">
-            <li>로그인을 하세요.</li>
-         </c:when>
-         <c:otherwise>
-            <%
-            matchingDAO dao = new matchingDAO();
-            USER_INFO u_vo = (USER_INFO)session.getAttribute("loginMember");
-            List<MATCHING> matList = dao.selectMatchig(u_vo.getID());
-            pageContext.setAttribute("matList", matList);
-            %>
-            <table id="table" id="easy-table" class="table is-striped is-bordered"">
-            <table class="table table-striped">
-            <thread>
-               <!-- <li><a href="DeleteAllMessageCon" class="button next scrolly">전체삭제하기</a></li> -->
-               <tr>
-                  <th>번호</th>
-                  <th>날짜</th>
-                  <th>시간</th>
-                  <th>경기장</th>
-                  <th>참여인원</th>
-                  <th>예약/참여취소</th>
-                  <th>평가하기</th>
-               </tr>
-               </thread>
-               <tbody>
-               <c:forEach var="mat" items="${matList}" varStatus="status">
-               <c:set var="matid" value="${mat.USER_ID}"/>
-               <c:set var="logid" value="${loginMember.ID}"/>
-                  <tr>
-                     <td>${status.count}</td>
-                     <td><c:out value="${mat.RES_DATE}" /></td>
-                     <td><c:out value="${mat.RES_TIME}" /></td>
-                     <td><c:out value="${mat.RES_PLACE}" /></td>
-                     <td><c:out value="${mat.MAT_MEMBER}" /></td>
-                     <c:choose>
-                        <c:when test="${matid eq logid}">
-                           <c:if test="${mat.MAT_CPL eq '1'}">
-                              <td>취소불가</td>
-                           </c:if>
-                           <c:if test="${mat.MAT_CPL eq '0'}">
-                              <td><button onclick="javascript:DelMat(${mat.MAT_NO});">예약취소</button></td>
-                           </c:if>
-                        </c:when>
-                        <c:otherwise>
-                           <c:if test="${mat.MAT_CPL eq '1'}">
-                              <td>취소불가</td>
-                           </c:if>
-                           <c:if test="${mat.MAT_CPL eq '0'}">
-                              <td><button onclick="javascript:DelMatList(${mat.USER_ID});">참가취소</button></td>
-                           </c:if>
-                        </c:otherwise>
-                        </c:choose>
-                         <td id="show"><a href="#">멤버보기</a></td>
-                         
-                     </tr>
-                  
-               </c:forEach>
-               </tbody>
-               </table>
-            </table>
-         </c:otherwise>
-      </c:choose>
-   </div>
+	<!--header-->
+	<div class="container">
+		<div id="mymatch" class="page-container">
+			<div class="page-header">
+				<div class="page-title">
+					<h1 name="id">${loginMember.ID}님의 신청 내역</h1>
+				</div>
+				<div class="navigation-container" style="padding: 0px">
+					<div class="navigation-wrapper" style="padding: top 20px;">
+						<div class="navigation-item">
+							<a class="selected" style="margin-left: 0px;">🏃‍♂️소셜 매치</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<c:choose>
+			<c:when test="${empty loginMember}">
+				<li>로그인을 하세요.</li>
+			</c:when>
+			<c:otherwise>
+				<%
+				matchingDAO dao = new matchingDAO();
+				USER_INFO u_vo = (USER_INFO)session.getAttribute("loginMember");
+				List<MATCHING> matList = dao.selectMatchig(u_vo.getID());
+				pageContext.setAttribute("matList", matList);
+				%>
+				<table id="table_box_bootstrap" class="overview-table-cases custom">
+				<table class="table table-striped">
+				<thread>
+					<tr class="overview-table-headers">
+						<th>번호</th>
+						<th>날짜</th>
+						<th>시간</th>
+						<th>경기장</th>
+						<th>참여인원</th>
+						<th>예약/참가취소</th>
+						<th>멤버보기</th>
+					</tr>
+					</thread>
+					<tbody>
+					<c:forEach var="mat" items="${matList}" varStatus="status">
+					<c:set var="matid" value="${mat.USER_ID}"/>
+					<c:set var="matnum" value="${mat.MAT_NO}"/>
+						<tr>
+							<td>${status.count}</td>
+							<td><c:out value="${mat.RES_DATE}" /></td>
+							<td><c:out value="${mat.RES_TIME}" /></td>
+							<td><c:out value="${mat.RES_PLACE}" /></td>
+							<td><c:out value="${mat.MAT_MEMBER}" /></td>
+							<c:choose>
+								<c:when test="${matid eq logid}">
+									<c:if test="${mat.MAT_CPL eq '1'}">
+										<td>취소불가</td>
+									</c:if>
+									<c:if test="${mat.MAT_CPL eq '0'}">
+										<td><button onclick="DelMat(${mat.MAT_NO});">예약취소</button></td>
+									</c:if>
+								</c:when>
+								<c:otherwise>
+									<c:if test="${mat.MAT_CPL eq '1'}">
+										<td>취소불가</td>
+									</c:if>
+									<c:if test="${mat.MAT_CPL eq '0'}">
+										<td><button onclick="DelMatList('${loginMember.ID}', ${mat.MAT_NO});">참가취소</button></td>
+									</c:if>
+								</c:otherwise>
+								</c:choose>
+							 	<td><button onclick="showMemList('${mat.USER_ID}');">멤버보기</button></td>
+							</tr>	
+						</c:forEach>
+						</tbody>
+					</table>
+				</table>
+			</c:otherwise>
+		</c:choose>
+	</div>
    <div id="pager">
    <div id="paginator">
    <button onclick="previousPage()" class="paginator-button" disabled>❮</button>
@@ -177,15 +173,13 @@
             nextText:'&#10095',
         }
 
-        setTable(data, options);
-    </script>
-   
-   <!-- wrapper -->
-   <div id="wrapper">
-
       <!-- content-->
       <div id="content">
 
+			<!-- 메인으로 이동 BTN-->
+			<div class="btn_area">
+				<button type="button" id="btnJoin">
+					<a href="./RealMain.jsp">매칭 게시판으로 이동</a>
          <!-- 메인으로 이동 BTN-->
          <div class="btn_area">
             <button type="button" id="btnJoin">
@@ -234,6 +228,7 @@
 	</div>
 
 
+
    <script src="assets/js/join1.js"></script>
    <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
    <script src="assets/js/vendor/bootstrap.min.js"></script>
@@ -249,6 +244,7 @@
    <script src="assets/js/main.js"></script>
    
    <script>
+
     // 게시글 삭제(AJax 처리)
     function DelMat(MAT_NO) {
         var query = {delmatNum :MAT_NO};
@@ -260,39 +256,40 @@
             type : "get",
             data : query,
             success : function(data) {
-               console.log(data);
-                  alert("예약이 취소 성공");
-                  location.reload();
-            },
+            	console.log(data);
+                alert("예약 취소 성공");
+				location.reload();
+           		},
             error : function(data) {
-               console.log(data);
-                alert("예약이 취소 실패");
+				console.log(data);
+                alert("예약 취소 실패");
                 location.reload();
             }
         });
     }
     // 신청 취소(AJax 처리)
-    function DelMatList(USER_ID) {
-        var query = {delmatid :USER_ID};
-        var ans = confirm("매칭을 취소하시겠습니까?");
+    function DelMatList(id, no) {
+        var query = {dellistid : id, dellistno : no};
+        var ans = confirm("신청을 취소하시겠습니까?");
+        console.log(id, no)
         if(!ans) return false;
         
         $.ajax({
-            url  : "MatchingListCon",
+            url  : "MachingListCon",
             type : "get",
             data : query,
             success : function(data) {
-               console.log(data);
-                alert("매칭 취소 성공");
+            	console.log(data);
+                alert("신청 취소 성공");
                 location.reload();
             },
-            error : function(data) {
-               console.log(data);
-                alert("예약이 취소 실패");
+            error : function(data) {	
+            	console.log(data);
+                alert("신청 취소 실패");
                 location.reload();
             }
         });
-    }
+    }    
 
    </script>
    

@@ -15,24 +15,19 @@ public class MatchingCon extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// Post
-		int delmatNum = Integer.valueOf(request.getParameter("delmatNum"));
-		
-		System.out.println(request.getParameter("delmatNum"));
-		System.out.println(delmatNum + "널 값인지 확인");
-		
+		int delmatNum = Integer.parseInt(request.getParameter("delmatNum"));
+				
 		matchingDAO dao = new matchingDAO();
-		System.out.println(dao);
-		int cnt = dao.deleteMatchingIdex(delmatNum);
-		System.out.println(cnt);
 		
+		int cnt = dao.deleteMatchingIdex(delmatNum);
+			
 		if(cnt > 0) {
 			System.out.println("예약삭제 성공");
 		} else {
 			System.out.println("예약삭제 실패");
 		}
 		
-	
-		response.sendRedirect("신청내역.jsp");
+
 	}
 
 	
