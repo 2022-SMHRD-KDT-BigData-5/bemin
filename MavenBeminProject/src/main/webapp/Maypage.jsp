@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
 <%@page import="com.smhrd.domain.USER_INFO"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -111,7 +112,57 @@
                     </div>
                 </div>
                 <div class="mypage-form-tier">
-                    <p>티어 ${loginMember.USER_TIER }</p>
+                    <!-- <p>티어 ${loginMember.USER_TIER }</p> -->
+                    <c:choose>
+                    
+                    <c:when test="${loginMember.USER_TIER <=100}">
+                    <p>티어 ${loginMember.USER_TIER } 루키</p>
+                    <img src="assets/images/루키.png" width="20" height="20" >
+                    </c:when>
+                    <c:when test="${loginMember.USER_TIER >100 and loginMember.USER_TIER <=150}">
+                    <p>티어 ${loginMember.USER_TIER } 비기너1</p>
+                    <img src="assets/images/비기너1.png" width="20" height="20" >
+                    </c:when>
+                    <c:when test="${loginMember.USER_TIER >150 and loginMember.USER_TIER <=200}">
+                    <p>티어 ${loginMember.USER_TIER } 비기너2</p>
+                    <img src="assets/images/비기너2.png" width="20" height="20" >
+                    </c:when>
+                    <c:when test="${loginMember.USER_TIER >200 and loginMember.USER_TIER <=250}">
+                    <p>티어 ${loginMember.USER_TIER } 주니어1</p>
+                    <img src="assets/images/주니어1.png" width="20" height="20" >
+                    </c:when>
+                    <c:when test="${loginMember.USER_TIER >250 and loginMember.USER_TIER <=300}">
+                    <p>티어 ${loginMember.USER_TIER } 주니어2</p>
+                    <img src="assets/images/주니어2.png" width="20" height="20" >
+                    </c:when>
+                    <c:when test="${loginMember.USER_TIER >300 and loginMember.USER_TIER <=330}">
+                    <p>티어 ${loginMember.USER_TIER } 시니어1</p>
+                    <img src="assets/images/시니어1.png" width="20" height="20" >
+                    </c:when>
+                    <c:when test="${loginMember.USER_TIER >330 and loginMember.USER_TIER <=360}">
+                    <p>티어 ${loginMember.USER_TIER } 시니어2</p>
+                    <img src="assets/images/시니어2.png" width="20" height="20" >
+                    </c:when>
+                    <c:when test="${loginMember.USER_TIER >360 and loginMember.USER_TIER <=400}">
+                    <p>티어 ${loginMember.USER_TIER } 시니어3</p>
+                    <img src="assets/images/시니어3.png" width="20" height="20" >
+                    </c:when>
+                    <c:when test="${loginMember.USER_TIER >400 and loginMember.USER_TIER <=430}">
+                    <p>티어 ${loginMember.USER_TIER } 프로1</p>
+                    <img src="assets/images/프로1.png" width="20" height="20" >
+                    </c:when>
+                    <c:when test="${loginMember.USER_TIER >430 and loginMember.USER_TIER <=460}">
+                    <p>티어 ${loginMember.USER_TIER } 프로2</p>
+                    <img src="assets/images/프로2.png" width="20" height="20" >
+                    </c:when>
+                    <c:when test="${loginMember.USER_TIER >460 and loginMember.USER_TIER <=500}">
+                    <p>티어 ${loginMember.USER_TIER } 프로3</p>
+                    <img src="assets/images/프로3.png" width="20" height="20" >
+                    </c:when><c:when test="${loginMember.USER_TIER >500 and loginMember.USER_TIER <=600}">
+                    <p>티어 ${loginMember.USER_TIER } 플라이트</p>
+                    <img src="assets/images/플라이트.png" width="20" height="20" >
+                    </c:when>
+                  </c:choose>
                     <div class="mypage-form-manner">
                     <p>매너 점수 ${loginMember.USER_MANNER }</p>
                     
