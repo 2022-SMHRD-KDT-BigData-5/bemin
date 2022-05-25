@@ -163,7 +163,7 @@
 					<label for="pswd2">비밀번호 재확인</label>
 				</h3>
 
-				<span class="box int_pass_check"> <input type="text"
+				<span class="box int_pass_check"> <input type="password"
 					id="pswd2" name="pw" class="int" maxlength="20"> 
 
 

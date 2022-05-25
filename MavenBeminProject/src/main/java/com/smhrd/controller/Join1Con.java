@@ -53,10 +53,10 @@ public class Join1Con extends HttpServlet {
 		
 		if(cnt>0) {
 			System.out.println("회원가입 성공");		
-			response.sendRedirect("main.jsp");
+			response.sendRedirect("RealMain.jsp");
 		}else {
 			System.out.println("회원가입 실패");
-			response.sendRedirect("회원가입.jsp");
+			response.sendRedirect("join.jsp");
 		}
 		}
 		 catch (Exception e) {

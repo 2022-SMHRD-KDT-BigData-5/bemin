@@ -119,6 +119,24 @@
 		<display-name>rentalDayCon</display-name>
 		<description></description>
 		<servlet-class>com.smhrd.controller.rentalDayCon</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MatchingPageCon</servlet-name>
+		<display-name>MatchingPageCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.MatchingPageCon</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MatMemCekCon</servlet-name>
+		<display-name>MatMemCekCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.MatMemCekCon</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MatchSuccessCon</servlet-name>
+		<display-name>MatchSuccessCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.MatchSuccessCon</servlet-class>
 	</servlet>	
 
 	<servlet-mapping>
@@ -197,6 +215,18 @@
 	<servlet-mapping>
 		<servlet-name>rentalDayCon</servlet-name>
 		<url-pattern>/rentalDayCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MatchingPageCon</servlet-name>
+		<url-pattern>/MatchingPageCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MatMemCekCon</servlet-name>
+		<url-pattern>/MatMemCekCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MatchSuccessCon</servlet-name>
+		<url-pattern>/MatchSuccessCon</url-pattern>
 	</servlet-mapping>
 
 </web-app>

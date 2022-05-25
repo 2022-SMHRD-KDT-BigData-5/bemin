@@ -182,5 +182,26 @@ public class matchingDAO {
 
 	   }//예약한 마지막 시퀀스 번호 조회   끝---------------------------------------------------------
 
+	 //매칭번호리스트 보기-----------------------------------------------------------
+    public MATCHING matnoMatching(BigDecimal mn) {
+       SqlSession sqlSession = sqlSessionFactory.openSession();
+       MATCHING Matching_no = null;
+       try {
+          Matching_no = sqlSession.selectOne("com.smhrd.domain.matchingDAO.matnoMatching", mn);
+          if (Matching_no != null) {
+             sqlSession.commit();
+             System.out.println("커밋");
+          } else {
+             sqlSession.rollback();
+             System.out.println("롤");
+          }
+       } catch (Exception e) {
+          e.printStackTrace();
+       } finally {
+          sqlSession.close();
+       }
+       return Matching_no;
+    }//매칭번호리스트 보기 끝-----------------------------------------------------------   
+
 	
 }

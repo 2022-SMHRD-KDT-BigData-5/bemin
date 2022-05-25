@@ -27,7 +27,7 @@ public class MATCHING {
 		this.MAT_MEMBER = MAT_MEMBER;
 		this.STN_TIER = STN_TIER;
 		this.STN_MANNER = STN_MANNER;
-		this.GENDER = GENDER;
+		this.setGENDER(GENDER);
 	}
 
 	public MATCHING(String RES_DATE, String RES_TIME, String RES_PLACE, String MAT_MEMBER) {
@@ -57,7 +57,7 @@ public class MATCHING {
 		this.STN_TIER = STN_TIER;
 		this.STN_MANNER = STN_MANNER;
 		this.MAT_CPL = MAT_CPL;
-		this.GENDER = GENDER;
+		this.setGENDER(GENDER);
 	}
 
 	public MATCHING(String RES_DATE, String RES_TIME, String RES_PLACE) {
@@ -145,6 +145,14 @@ public class MATCHING {
 
 	public void setMAT_CPL(String MAT_CPL) {
 		this.MAT_CPL = MAT_CPL;
+	}
+
+	public String getGENDER() {
+		return GENDER;
+	}
+
+	public void setGENDER(String gENDER) {
+		GENDER = gENDER;
 	}
 
 }

@@ -130,11 +130,11 @@
                 <p>플라이트</p>
             </div>
             <div class="login-form-left-side">
-                <form action ="LoginCon" method="post">
                 <div class="login-top-wrap">
                     <span>회원이아니신가요?</span>
-                    <button class="create-account-btn shadow-light" href="join.jsp">회원가입</button>
+                    <button id="joincon" class="create-account-btn shadow-light" >회원가입</button>
                 </div>
+                <form action ="LoginCon" method="post">
                 <div class="login-input-container">
 					<div class="login-input-wrap input-id">
                         <i class="far fa-envelope"></i>
@@ -171,6 +171,11 @@
 	<script src="assets/js/plugins.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script>
+	
+	
+	$(document).on('click','#joincon', function(){
+		window.location.href = "join.jsp";
+	})
 	
 /* 	$('#loginbtn').click(function LoginCheck(){
 	

@@ -177,7 +177,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="main__filter">
+					<!-- <div class="main__filter">
 						<div class="main--match--filter">
 							<div class="filter--wrapper">
 								<div class="placelist">
@@ -206,7 +206,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 				<!--match list-->
 				<div id="list" class="list--match-schedule--container">

@@ -108,9 +108,10 @@
 								<li><a href="./join.jsp">회원가입</a></li>
 							</c:when>
 							<c:otherwise>
-								<li><a href="LogoutCon">로그아웃</a></li>
+								<li><a href="#">${loginMember.ID}님 환영합니다</a></li>
 								<li><a href="joinUpdate.jsp">회원정보수정</a></li>
 								<li><a href="Mypage.jsp">마이페이지</a></li>
+								<li><a href="LogoutCon">로그아웃</a></li>
 							</c:otherwise>
 						</c:choose>
 					</ul>
@@ -492,118 +493,181 @@
 		$(document).ready(function() {
 			document.querySelector('.pt1').click();
 		})
+		
 
-		$(document).on('click', '.pt1', function() {
-			year = $(this).children(':nth-child(1)').text();
-			month = $(this).children(':nth-child(2)').text();
-			date = $(this).children(':nth-child(3)').text();
-			day = $(this).children(':nth-child(4)').text();
-			//Ajax방식으로 날짜데이터를 서버에      
-			// 전송해서 해당 날짜에 예약한 경기리스트를 요청      
-			//해당 날짜에 예약한 경기목록   
-			rentalDay = year + '-' + month + '-' + date
-			local=''
-			$('#selectValue').change(function(e){
-				let local = $(this).val();
-				$.ajax({
-					method : 'get',
-					url : 'rentalDayCon',
-					data : {
-						'rentalDay' : rentalDay,
-						'local':local
-					},
-					dataType : 'json',
-					success : function(data) {
-						let table='';
-						for(let i=0;i<data.length;i++){
-							
-							table += '<li class="list--match-schedule--item">';
-							table += '<a href="#" class="mat">';
-							table += '<div class="list--match-schedule__time">';
-							table += '<p>'+data[i].RES_TIME+'</p></div>';
-							table += '<div class="list--match-schedule__status">';
-							table += '<div class="match-status__join">';
-							table += '<p>참가하기</p></div></div>';
-							table += '<div class="list--match-schedule__info">';
-							table += '<div class="match-list__title">';
-							table += '<h3>'+data[i].RES_PLACE+'</h3></div>';
-							table += '<div class="label--match-option">';
-							table += '<span class="match--option isMix">'+data[i].GENDER+' |</span>';
-							table += '<span> '+data[i].UNIT+' |</span><span> '+data[i].MAT_MEMBER+'인 |</span><span> 매너 점수 '+data[i].STN_MANNER+'이상 |</span>';
-							table += '<span> 티어 점수'+data[i].STN_TIER+'이상 </span><span id="Wang">'+data[i].MAT_NO+'</span></div></div></a></li>';
+		
+
+		$(document)
+				.on(
+						'click',
+						'.pt1',
+						function() {
+							year = $(this).children(':nth-child(1)').text();
+							month = $(this).children(':nth-child(2)').text();
+							date = $(this).children(':nth-child(3)').text();
+							day = $(this).children(':nth-child(4)').text();
+							//Ajax방식으로 날짜데이터를 서버에      
+							// 전송해서 해당 날짜에 예약한 경기리스트를 요청      
+							//해당 날짜에 예약한 경기목록   
+							rentalDay = year + '-' + month + '-' + date
+							local = ''
+							$('#selectValue')
+									.change(
+											function(e) {
+												let local = $(this).val();
+												$
+														.ajax({
+															method : 'get',
+															url : 'rentalDayCon',
+															data : {
+																'rentalDay' : rentalDay,
+																'local' : local
+															},
+															dataType : 'json',
+															success : function(data) {
+																let table = '';
+																for (let i = 0; i < data.length; i++) {
+
+																	table += '<li class="list--match-schedule--item">';
+																	table += '<a href="#" class="mat">';
+																	table += '<div class="list--match-schedule__time">';
+																	table += '<p>'
+																			+ data[i].RES_TIME
+																			+ '</p></div>';
+																	table += '<div class="list--match-schedule__status">';
+																	table += '<div class="match-status__join">';
+																	table += '<p>참가하기</p></div></div>';
+																	table += '<div class="list--match-schedule__info">';
+																	table += '<div class="match-list__title">';
+																	table += '<h3>'
+																			+ data[i].RES_PLACE
+																			+ '</h3></div>';
+																	table += '<div class="label--match-option">';
+																	table += '<span class="match--option isMix">'
+																			+ data[i].GENDER
+																			+ ' |</span>';
+																	table += '<span> '
+																			+ data[i].UNIT
+																			+ ' |</span><span> '
+																			+ data[i].MAT_MEMBER
+																			+ '인 |</span><span> 매너 점수 '
+																			+ data[i].STN_MANNER
+																			+ '이상 |</span>';
+																	table += '<span> 티어 점수'
+																			+ data[i].STN_TIER
+																			+ '이상 </span><span id="Wang">'
+																			+ data[i].MAT_NO
+																			+ '</span></div></div></a></li>';
+																}
+																console
+																		.log(data)
+																document
+																		.querySelector('#list>ul').innerHTML = table;
+															},
+															error : function() {
+																console
+																		.log('응답 실패')
+															}
+														})
+											})
+
+							$
+									.ajax({
+										method : 'get',
+										url : 'rentalDayCon',
+										data : {
+											'rentalDay' : rentalDay,
+											'local' : local
+										},
+										dataType : 'json',
+										success : function(data) {
+											let table = '';
+											for (let i = 0; i < data.length; i++) {
+
+												table += '<li class="list--match-schedule--item">';
+												table += '<a href="#" class="mat">';
+												table += '<div class="list--match-schedule__time">';
+												table += '<p>'
+														+ data[i].RES_TIME
+														+ '</p></div>';
+												table += '<div class="list--match-schedule__status">';
+												table += '<div class="match-status__join">';
+												table += '<p>참가하기</p></div></div>';
+												table += '<div class="list--match-schedule__info">';
+												table += '<div class="match-list__title">';
+												table += '<h3>'
+														+ data[i].RES_PLACE
+														+ '</h3></div>';
+												table += '<div class="label--match-option">';
+												table += '<span class="match--option isMix">'
+														+ data[i].GENDER
+														+ ' |</span>';
+												table += '<span> '
+														+ data[i].UNIT
+														+ ' |</span><span> '
+														+ data[i].MAT_MEMBER
+														+ '인 |</span><span> 매너 점수 '
+														+ data[i].STN_MANNER
+														+ '이상 |</span>';
+												table += '<span> 티어 점수 '
+														+ data[i].STN_TIER
+														+ '이상 </span><span id="Wang">'
+														+ data[i].MAT_NO
+														+ '</span></div></div></a></li>';
+											}
+											console.log(data)
+											document.querySelector('#list>ul').innerHTML = table;
+										},
+										error : function() {
+											console.log('응답 실패')
+										}
+									})
+
+						})
+		$(document).on(
+				'click',
+				'.mat',
+				function() {
+
+					<c:choose>
+					<c:when test="${empty loginMember}">
+					alert("로그인 후 이용하세요")
+					window.location = 'Login.jsp'
+					</c:when>
+					<c:otherwise>
+
+					let matno = $(this).children(':nth-child(3)').children(
+							':nth-child(2)').children('#Wang').text();
+					
+					$.ajax({
+		 				method : 'get',
+						url : 'MatMemCekCon',
+						data : {'matno' : matno},
+						contentType : 'application/json; charset=utf-8',
+						dataType : 'text',
+						success : function(data){
+							if(data==0){
+								alert("참여 인원이 가득 찼습니다")
+							}else{
+								var url = 'MatchingPageCon';
+								var obj = {
+									matno : matno
+								};
+
+								const queryStr = new URLSearchParams(obj).toString();
+								window.location = url + '?' + queryStr;
+								
+							}
+						},
+						error : function(){
+							alert('응답 실패')
 						}
-						console.log(data)
-						document.querySelector('#list>ul').innerHTML=table;
-					},
-					error : function() {
-						console.log('응답 실패')
-					}
+					})
+
+					</c:otherwise>
+					</c:choose>
+
 				})
-			})
-			
-
-			$.ajax({
-				method : 'get',
-				url : 'rentalDayCon',
-				data : {
-					'rentalDay' : rentalDay,
-					'local':local
-				},
-				dataType : 'json',
-				success : function(data) {
-					let table='';
-					for(let i=0;i<data.length;i++){
-						
-						table += '<li class="list--match-schedule--item">';
-						table += '<a href="#" class="mat">';
-						table += '<div class="list--match-schedule__time">';
-						table += '<p>'+data[i].RES_TIME+'</p></div>';
-						table += '<div class="list--match-schedule__status">';
-						table += '<div class="match-status__join">';
-						table += '<p>참가하기</p></div></div>';
-						table += '<div class="list--match-schedule__info">';
-						table += '<div class="match-list__title">';
-						table += '<h3>'+data[i].RES_PLACE+'</h3></div>';
-						table += '<div class="label--match-option">';
-						table += '<span class="match--option isMix">'+data[i].GENDER+' |</span>';
-						table += '<span> '+data[i].UNIT+' |</span><span> '+data[i].MAT_MEMBER+'인 |</span><span> 매너 점수 '+data[i].STN_MANNER+'이상 |</span>';
-						table += '<span> 티어 점수 '+data[i].STN_TIER+'이상 </span><span id="Wang">'+data[i].MAT_NO+'</span></div></div></a></li>';
-					}
-					console.log(data)
-					document.querySelector('#list>ul').innerHTML=table;
-				},
-				error : function() {
-					console.log('응답 실패')
-				}
-			})
-			
-
-		})
-		$(document).on('click', '.mat', function() {
-			
-			<c:choose>
-			<c:when test="${empty loginMember}">
-			alert("로그인 후 이용하세요")
-			window.location = 'Login.jsp'
-			</c:when>
-
-			<c:otherwise>
-			
-			let matno = $(this).children(':nth-child(3)').children(':nth-child(2)').children('#Wang').text();
-			
-			var url = 'MatchingPageCon';
-			var obj = {
-					matno : matno
-			};
-		
-		
-			const queryStr = new URLSearchParams(obj).toString();
-			window.location = url + '?' + queryStr;
-			</c:otherwise>
-			</c:choose>
-		
-		})
-		
 	</script>
 
 </body>
