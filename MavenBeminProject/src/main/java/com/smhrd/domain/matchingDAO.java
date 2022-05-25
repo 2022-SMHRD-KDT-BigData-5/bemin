@@ -1,7 +1,9 @@
 package com.smhrd.domain;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -132,11 +134,17 @@ public class matchingDAO {
 	
    
    // 메인 날짜별 메칭정보 출력---------------------------------------------------------
-	public List<MATCHING> selectDayMat(String RES_DATE) {
+	public List<MATCHING> selectDayMat(String RES_DATE, String LOCAL) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
+		
+	      Map map = new HashMap();
+	      map.put("RES_DATE", RES_DATE);
+	      map.put("LOCAL", LOCAL);
+		
+		
 		List<MATCHING> msg_vo = null;
 		try {
-			msg_vo = sqlSession.selectList("com.smhrd.domain.matchingDAO.selectDayMat", RES_DATE);
+			msg_vo = sqlSession.selectList("com.smhrd.domain.matchingDAO.selectDayMat", map);
 
 			if (msg_vo != null) {
 				sqlSession.commit();

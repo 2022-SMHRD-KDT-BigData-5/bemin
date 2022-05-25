@@ -124,7 +124,7 @@
 						data-target="#navbar-menu">
 						<i class="fa fa-bars"></i>
 					</button>
-					<a class="navbar-brand" href="main.jsp"> <img
+					<a class="navbar-brand" href="RealMain.jsp"> <img
 						src="assets/images/logo1.png" class="logo" alt=""> <!-- <a>FLIGHT</a> -->
 						<!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
 					</a>
@@ -135,8 +135,8 @@
 				<!-- navbar menu -->
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="main.jsp">Home</a></li>
-						<li><a href="회원가입.jsp">회원가입</a></li>
+						<li><a href="RealMain.jsp">Home</a></li>
+						<li><a href="join.jsp">회원가입</a></li>
 						<li><a href="Login.jsp">로그인</a></li>
 						<li><a href="MyPage.jsp">마이페이지</a></li>
 						<!-- <li><a href="#test">Blog</a></li> -->
@@ -210,7 +210,7 @@
 					</div>
 					<div class="joinD">
 						<div>
-							<a href="Pay.jsp" style="color: white">참가하기</a>
+							<a href="#" style="color: white">참가하기</a>
 						</div>
 					</div>
 				</div>
@@ -418,7 +418,7 @@
                                             <div class="item_icon"><img src="assets/images/ltst-img-1.jpg" alt="" /></div>
                                             <div class="widget_latst_item_text">
                                                 <p>웹페이지 제작</p>
-                                                <a href="">김건우</a>
+                                                <a ="">김건우</a>
                                             </div>
                                         </div>
                                         <div class="widget_latst_item m-top-30">
