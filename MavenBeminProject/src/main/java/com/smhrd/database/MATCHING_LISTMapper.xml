@@ -18,8 +18,8 @@
 	
 	<!-- 매칭리스트 불러오기 -->
 	<!-- 내 내역들 -->
-	<select id="ViewMatchingList" resultType="com.smhrd.domain.MATCHING_LIST" parameterType="BigDecimal">
-		select * from MATCHING_LIST where MAT_NO=#{MAT_NO}
+	<select id="ViewMatchingList" resultType="String" parameterType="BigDecimal">
+		select ID from MATCHING_LIST where MAT_NO=#{MAT_NO}
 	</select>
 	
 	<!-- 매칭리스트에서 내이름 삭제 -->

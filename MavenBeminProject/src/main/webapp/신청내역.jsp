@@ -63,8 +63,7 @@
 	</nav>
 
 	<!--header-->
-	<div class="container">
-	
+	<div class="container">	
 		<div id="mymatch" class="page-container">
 			<div class="page-header">
 				<div class="page-title">
@@ -93,9 +92,7 @@
 				List<MATCHING> matList = dao.selectMatchig(u_vo.getID());
 				pageContext.setAttribute("matList", matList);
 				%>
-				<table id="table_box_bootstrap" class="overview-table-cases custom">
 				<table class="table table-striped">
-				<thread>
 					<tr class="overview-table-headers">
 						<th>번호</th>
 						<th>날짜</th>
@@ -105,12 +102,10 @@
 						<th>예약/참가취소</th>
 						<th>멤버보기</th>
 					</tr>
-					</thread>
-					<tbody>
 					<c:forEach var="mat" items="${matList}" varStatus="status">
 					<c:set var="matid" value="${mat.USER_ID}"/>
 					<c:set var="matnum" value="${mat.MAT_NO}"/>
-						<tr>
+						<tr>						
 							<td>${status.count}</td>
 							<td><c:out value="${mat.RES_DATE}" /></td>
 							<td><c:out value="${mat.RES_TIME}" /></td>
@@ -134,14 +129,16 @@
 									</c:if>
 								</c:otherwise>
 								</c:choose>
-							 	<td><button onclick="search('${mat.USER_ID}',${mat.MAT_NO})">멤버보기</button></td>
-							</tr>	
-						</c:forEach>
-						</tbody>
-					</table>
-				</table>
-			</c:otherwise>
-		</c:choose>
+							 		<td>
+										<input type="hidden" name="user_id" value="${mat.USER_ID}">
+										<input type="hidden" name="mat_no" value="${mat.MAT_NO}">
+										<button type="submit" onclick="location.href='modal.jsp'">멤버보기</button>
+									</td>							
+								</tr>	
+							</c:forEach>
+						</table>				
+				</c:otherwise>
+			</c:choose>
 		</form>
 	</div>
 
@@ -162,6 +159,8 @@
 		<!-- content-->
 
 	</div>
+	
+	
 	<!-- wrapper -->
 
 
@@ -224,31 +223,7 @@
             }
         });
     }
-    
-  
-    function search(user_id,mat_num) {
-        var query = {user_id : user_id, mat_num : mat_num};
-        console.log(user_id, mat_num)
-        $.ajax({
-            url  : "JoinMemberCon",
-            type : "get",
-            data : query,
-            success : function(data) {
-            	console.log(data);
-                alert("멤버보기 성공");
-                console.log(user_id)
-                location.href = "modal.jsp"
-            },
-            error : function(data) {
-            	console.log(data);
-                alert("멤버보기 실패");
-                location.reload();
-            }
-        });
-    }
-  
-    
-
+    	
 	</script>
 	
 </body>

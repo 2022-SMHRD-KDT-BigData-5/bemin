@@ -42,6 +42,11 @@ public class MATCHING {
 		super();
 		this.USER_ID = USER_ID;
 	}
+	
+	public MATCHING(BigDecimal MAT_NO) {
+		super();
+		this.MAT_NO = MAT_NO;
+	}
 
 	public MATCHING(BigDecimal MAT_NO, String RES_DATE, String RES_TIME, String RES_PLACE, String USER_ID, String UNIT,
 			String MAT_MEMBER, String STN_TIER, String STN_MANNER, String MAT_CPL, String GENDER) {
@@ -146,5 +151,14 @@ public class MATCHING {
 	public void setMAT_CPL(String MAT_CPL) {
 		this.MAT_CPL = MAT_CPL;
 	}
+	
+	public MATCHING() {
+		
+	}
 
+
+
+
+	
+	
 }

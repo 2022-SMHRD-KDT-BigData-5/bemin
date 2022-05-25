@@ -35,8 +35,8 @@
 	<select id="selectRentalView" resultType = "com.smhrd.domain.MATCHING" parameterType = "String">
 		select * from MATCHING where RES_DATE=#{RES_DATE}
 	</select>
-	<!-- 매칭게시판에서 MAT_NO선택 -->
-	<select id="selectMatNum" resultType = "com.smhrd.domain.MATCHING" parameterType = "com.smhrd.domain.MATCHING">
+	<!-- 매칭게시판에서 MAT_NO 보기선택 -->
+	<select id="selectMatno" resultType = "com.smhrd.domain.MATCHING" parameterType = "BigDecimal">
 		select * from MATCHING where MAT_NO=#{MAT_NO}
 	</select>
 	

@@ -130,8 +130,7 @@ public class matchingDAO {
       return cnt;
    } // 매칭게시판에서 내글 삭제---------------------------------------------------------
 	
-   
-<<<<<<< HEAD
+
    // 매칭테이블 리스트로 불러오기 ---------------------------------------------------------
    public MATCHING Matchingid(String match) {
       MATCHING matchingid = null;
@@ -150,7 +149,7 @@ public class matchingDAO {
       return matchingid;
    } // 매치들 끝 --------------------------------------------------------------------
    
-=======
+
    // 메인 날짜별 메칭정보 출력---------------------------------------------------------
 	public List<MATCHING> selectDayMat(String RES_DATE) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
@@ -193,7 +192,26 @@ public class matchingDAO {
 	      return num;
 
 	   }//예약한 마지막 시퀀스 번호 조회   끝---------------------------------------------------------
-
 	
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
+	   // 매칭테이블 리스트로 불러오기 ---------------------------------------------------------
+	   public MATCHING selectMatno(MATCHING mat_vo) {
+	      MATCHING matchingno = null;
+	      try {
+	    	  matchingno = sqlSession.selectOne("com.smhrd.domain.matchingDAO.selectMatno", mat_vo);
+	         if (matchingno != null) {
+	            sqlSession.commit();
+	         } else {
+	            sqlSession.rollback();
+	         }
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         sqlSession.close();
+	      }
+	      return matchingno;
+	   } // 매치들 끝 --------------------------------------------------------------------
+
+	   
+
+	   
 }

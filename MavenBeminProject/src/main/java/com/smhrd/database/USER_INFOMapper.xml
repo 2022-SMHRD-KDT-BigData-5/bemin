@@ -17,15 +17,8 @@
 	</select>
 	
 	<!-- 멤버보기 리스트로 -->
-<<<<<<< HEAD
-	<select id="JoinMember" resultType="com.smhrd.domain.USER_INFO" parameterType="int">
-		select * from USER_INFO where ID in (select ID from MATCHING_LIST where MAT_NO=#{MAT_NO})
-=======
-	<select id="JoinMember" resultType="com.smhrd.domain.USER_INFO" parameterType="BigDecimal">
-	select * from USER_INFO where ID in (select ID from MATCHING_LIST where MAT_NO=#{MAT_NO})
-
-
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
+	<select id="JoinMember" resultType="com.smhrd.domain.USER_INFO" parameterType="String">
+		select * from USER_INFO where ID=#{ID}
 	</select>
 
 	<!-- 회원가입 -->
@@ -52,6 +45,11 @@
 
 	<update id="updateCash" parameterType="com.smhrd.domain.USER_INFO">
 		update USER_INFO set CASH=#{CASH} where ID=#{ID}
+	</update>
+
+	<!-- 유저티어 업데이트 -->
+	<update id="userTierUpdate" parameterType="com.smhrd.domain.USER_INFO">
+		update user_info set USER_TIER = (select avg(APP_TIER) from tier group by APPED_ID) where id = #{APP_ID}
 	</update>
 
 

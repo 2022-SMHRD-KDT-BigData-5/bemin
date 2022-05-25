@@ -28,9 +28,6 @@ public class MATCHING_LIST {
 	this.ID = ID;
 	}
 	
-	public MATCHING_LIST() {
-
-		}
 	
 	public int getLIST_NO() {
 		return LIST_NO;

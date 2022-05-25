@@ -80,8 +80,8 @@ public class MatchingListDAO {
 	}// 매칭리스트 내역보기 끝------------------------------------------------------------
 	
 	// 매칭리스트 내역보기--------------------------------------------------------------
-	public List<MATCHING_LIST> ViewMatching(BigDecimal matlistnum) {
-		List<MATCHING_LIST> Matching_List = null;
+	public List<String> ViewMatching(BigDecimal matlistnum) {
+		List<String> Matching_List = null;
 		try {
 			Matching_List = sqlSession.selectList("com.smhrd.domain.MatchingListDAO.ViewMatchingList", matlistnum);
 			if (Matching_List != null) {
@@ -97,7 +97,6 @@ public class MatchingListDAO {
 		return Matching_List;
 	}// 매칭리스트 내역보기 끝------------------------------------------------------------
 
-<<<<<<< HEAD
 	// 매칭리스트에서 본인 삭제 ----------------------------------------------------------
 	public int nameMatchingList(String delmatid, int delnum) {
 		int cnt = 0;
@@ -122,7 +121,7 @@ public class MatchingListDAO {
 		}
 		return cnt;
 	} // 매칭리스트에서 본인 삭제---------------------------------------------------------
-=======
+
 	// 예약 ----------------------------------------------------------
 		public int insertrental(MATCHING_LIST m) {
 			int cnt=0;
@@ -140,5 +139,5 @@ public class MatchingListDAO {
 			}
 			return cnt;
 		}// 예약 끝 --------------------------------------------------------	
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
+
 }

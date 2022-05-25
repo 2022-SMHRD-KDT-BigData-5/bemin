@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
 		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+<mapper namespace ="com.smhrd.domain.tierDAO">
+
+	<!-- 티어 점수 넣기 -->
+	<insert id="tierInsert" parameterType="com.smhrd.domain.TIER">
+		insert into tier values (TIER_tier_app_no.nextval, APP_TIER=#{APP_TIER}, APP_ID=#{APP_ID}, APPED_ID=#{APPED_ID})
+	</insert>
+
+</mapper>

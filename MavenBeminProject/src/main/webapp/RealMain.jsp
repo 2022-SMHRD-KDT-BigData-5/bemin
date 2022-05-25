@@ -240,7 +240,8 @@
 										<option>남구</option>
 										<option>동구</option>
 										<option>광산구</option>
-									</select> <select name="select" class="select-c">
+									</select> 
+									<select name="select" class="select-c">
 										<option>레벨</option>
 										<option>루키</option>
 										<option>비기너</option>
@@ -543,6 +544,8 @@
 				dataType : 'json',
 				success : function(data) {
 					let table='';
+					
+					
 					for(let i=0;i<data.length;i++){
 						
 						table += '<li class="list--match-schedule--item">';

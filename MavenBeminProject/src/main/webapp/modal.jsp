@@ -18,40 +18,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Modal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" /> 
-   
-
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<title>Modal</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-
+    <link rel="stylesheet" href="assets/css/modal.css">
   </head>
   <body>
-    <button id="show">멤버보기</button>
     <div class="background">
       <div class="window">
         <div class="popup">
-          <button id="close"><a href="./신청내역.jsp" class="close-x" >X</a></button>
-          <div class="page-title">
-					<h1>${listdao.}님의 게임 참가 멤버</h1>
-				</div>
-          <table>    
+         	<button id="close"><a href="./신청내역.jsp" class="close-x" >X</a></button>
+         	<div class="page-title">
+            <%
+            	MATCHING m_vo = (MATCHING)session.getAttribute("matchingid");
+             	MatchingListDAO matdao = new MatchingListDAO();
+				List<MATCHING_LIST> UserList = matdao.selectMatching(m_vo.getUSER_ID());
+				pageContext.setAttribute("UserList", UserList);
+             %>
+			<h1>${matchingid.USER_ID}님의 게임 참가 멤버</h1>
+			</div>
+          	<table>    
             <!-- 반복 될 구간 -->
              <tr class="tier-table">
              	<th>번호</th>
                 <th>ID</th>
-                <th>티어</th>
                 <th>평가하기</th>
-             <tr>
+             </tr>
              <tbody>
-				<c:forEach var="user" items="${userList}" varStatus="status">
-				<c:set var="mat" value="${matList}" />
-				<c:set var="matid" value="${mat.USER_ID}"/>
+				<c:forEach var="user" items="${UserList}" varStatus="status">
 					<tr>
 						<td>${status.count}</td>
 						<td><c:out value="${user.ID}" /></td>
-						<td><c:out value="${user.USER_TIER}" /></td>
                 		<td>
                 			<select id="tierapp">
                    			 	<option>루키</option>
@@ -65,16 +59,13 @@
 					</tr>	
 				</c:forEach>
 			</tbody>
-            </tr>
-
-<link rel="stylesheet" href="assets/css/modal.css">
-
-
-</head>
-<body>
+			<button onclick="DelMatList('${loginMember.ID}', ${mat.MAT_NO});">확인</button>
+			</table>
 		</div>
 	</div>
-
+</div>
+			
+ 
 	<script>
 	
 	function abc(){  
@@ -84,17 +75,10 @@
 		window.close();}
 
 
-		function show() {
-			document.querySelector(".background").className = "background show";
-		}
-
 		function close() {
 			document.querySelector(".background").className = "background";
 		}
-		
-		
-		
-		document.querySelector("#show").addEventListener("click", show);
+
 		document.querySelector("#close").addEventListener("click", close);
 		document.querySelector("#sub_bt").addEventListener("click", close);
 	</script>

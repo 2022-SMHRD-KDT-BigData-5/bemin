@@ -1,7 +1,6 @@
 package com.smhrd.domain;
 
-
-import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -54,10 +53,10 @@ public class USER_INFO_DAO {
 	} // 로그인 끝 ----------------------------------------------------
 		
 	// 참여멤버 보기--------------------------------------------------------
-	public List<USER_INFO> joinUserView(int userNum) {
+	public List<USER_INFO> joinUserView(String userid) {
 		List<USER_INFO> UserList = null;
 		try {
-			UserList = sqlSession.selectList("com.smhrd.domain.USER_INFO.JoinMember", userNum);
+			UserList = sqlSession.selectList("com.smhrd.domain.USER_INFO.JoinMember", userid);
 			if (UserList != null) {
 				sqlSession.commit();
 			} else {
@@ -188,4 +187,30 @@ public class USER_INFO_DAO {
 			return cnt;
 	}
 
+	//신청 내역 경기 맴머 보기
+	public ArrayList<USER_INFO> selectMatMember(List<String> list) {
+		SqlSession sqlSession=sqlSessionFactory.openSession();
+		USER_INFO u_vo = null;
+		ArrayList<USER_INFO> arr = new ArrayList<USER_INFO>();
+		try {
+			for(int i = 0; i< list.size(); i++) {
+				u_vo = sqlSession.selectOne("com.smhrd.domain.USER_INFO_DAO.JoinMember", list.get(i));
+				arr.add(i,u_vo);
+			}
+			
+
+			if (u_vo != null) {
+				sqlSession.commit();
+			} else {
+				sqlSession.rollback();
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			 sqlSession.close(); 
+		}
+		return arr;
+
+	}// 신청 내역 경기 맴머 보기 끝
 }

@@ -81,6 +81,7 @@
 			</div>
 		</div>
 	</div>
+	<form action="JoinMemberCon" method="post">
 	<div class="container">
 		<c:choose>
 			<c:when test="${empty loginMember}">
@@ -134,8 +135,12 @@
 									</c:if>
 								</c:otherwise>
 								</c:choose>
-							 	<td><button onclick="showMemList('${mat.USER_ID}');">멤버보기</button></td>
-							</tr>	
+							 		<td>
+										<input type="hidden" name="user_id" value="${mat.USER_ID}">
+										<input type="hidden" name="mat_no" value="${mat.MAT_NO}">
+										<button id="show" type="button" value="${mat.USER_ID}">멤버보기</button>
+									</td>
+								</tr>	
 						</c:forEach>
 						</tbody>
 					</table>
@@ -143,6 +148,7 @@
 			</c:otherwise>
 		</c:choose>
 	</div>
+	</form>
    <div id="pager">
    <div id="paginator">
    <button onclick="previousPage()" class="paginator-button" disabled>❮</button>
@@ -172,7 +178,7 @@
             previousText:'&#10094',
             nextText:'&#10095',
         }
-
+   </script>
       <!-- content-->
       <div id="content">
 
@@ -180,53 +186,44 @@
 			<div class="btn_area">
 				<button type="button" id="btnJoin">
 					<a href="./RealMain.jsp">매칭 게시판으로 이동</a>
-         <!-- 메인으로 이동 BTN-->
-         <div class="btn_area">
-            <button type="button" id="btnJoin">
-               <a href="main.jsp">매칭 게시판으로 이동</a>
-            </button>
-         </div>
-      </div>
+				</button>	
+			</div>
+      	</div>
       <!-- content-->
-
-   </div>
-   <!-- wrapper -->
-   
-   <div class="background">
+<div class="background">
 		<div class="window">
 			<div class="popup">
 				<button id="close">
 					<a href="#" class="close-x">X</a>
-				</button>
+				</button>				
 				<table class="modal-table">
 					<!-- 반복 될 구간 -->
 					<tr class="tier-table">
+						<th>번호</th>
 						<th>ID</th>
 						<th>이름</th>
 						<th>티어</th>
-						<th><select>
-								<option>평가</option>
-								<option>루키</option>
-								<option>비기너</option>
-								<option>주니어</option>
-								<option>시니어</option>
-								<option>프로</option>
-								<option>플라이트</option>
-						</select></th>
-					</tr>
+						<th>평가하기</th>
+					</tr>	
+				<tbody id="showmember">
+					
+					
+				</tbody>
 				</table>
-
 				<div class="move-tire">
-					<a href="./티어매너안내.jsp" class="tier-ckeck">📢티어정보 확인하기</a>
+					<a href="info.jsp" class="tier-ckeck">📢티어정보 확인하기</a>
 				</div>
 
 				<div style="margin: 10px 5px 10px 10px;">
-					<input id="sub_bt" type="submit" value="적용">
+					<input id="sub_bt" type="button" value="닫기">
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --> 
 
+   <!-- wrapper -->
+   
+  
 
 
    <script src="assets/js/join1.js"></script>
@@ -293,6 +290,65 @@
 
    </script>
    
+   
+   <script>
+   $(document).on('click', '#show', function(){
+	  	let matNO = $(this).prev().val();
+		let loginID = $('h1[name=id]').text();
+		
+		console.log(matNO)
+		console.log(loginID)
+		
+	  $.ajax({
+          url  : "JoinMemberCon",
+          method  : "get",
+          data : {
+        	  matNO : matNO
+        	  },
+          dataType : 'json',
+          success : function(data) {
+        	  
+        	  
+        	 let table='';
+        		
+        	 
+        	 for(let i=0;i<data.length;i++){
+        		//table += '<form action="tierUpdateCon" method="get">'
+        		table += '<tr>';
+        		table += '<td>'+ (i+1)+'</td>';
+        		table += '<td id="apped_id">'+data[i].ID+'</td>';
+      			table += '<td>'+data[i].NAME+'</td>';
+      			table += '<td>'+data[i].USER_TIER+'</td>';
+				if(data[i].NAME ==loginID){
+					table += '<td>본인 평가 불가</td>'
+				}else{
+				table += '<td>';
+				table += '<select id="tier_app" name="pyoung">';
+				table += '<option value="50">루키</option>';
+				table += '<option value="150">비기너</option>';
+				table += '<option value="250">주니어</option>';
+				table += '<option value="350">시니어</option>';
+				table += '<option value="450">프로</option>';
+				table += '<option value="550">플라이트</option>';
+				table += '</select>';
+				table += '</td><td><input type="submit" value="평가"></td></tr>;
+				//table += '</form>'
+				}
+        	 }	
+			console.log(data)
+        	document.querySelector('#showmember').innerHTML = table;
+
+          },
+          error : function(data) {	
+
+          }
+      });	  
+	  
+   })
+   
+   
+   </script>
+   
    	<script>
 		function show() {
 			document.querySelector(".background").className = "background show";
@@ -305,6 +361,29 @@
 		document.querySelector("#show").addEventListener("click", show);
 		document.querySelector("#close").addEventListener("click", close);
 		document.querySelector("#sub_bt").addEventListener("click", close);
+		
+		$(document).on('click', '#sub_bt', function(){
+			let apped_id = $('td[id=apped_id]').text();
+			let tier_app = $('selet[id=tier_app]').text();
+			let app_id = $('h1[name=id]').text();
+			
+			$.ajax({
+					url : "tierUpdateCon",
+				  	method  : "post",
+				   	data : {tier_app : tier_app, 
+				   			apped_id : apped_id, 
+				   			app_id : app_id
+				   			},
+				    dataType : 'data',
+				    
+				    success : function(data) {
+				    	console.log(data)
+				   },error : function(data) {	
+
+				   }
+				})
+			})
+		
 	</script>
    
 </body>
