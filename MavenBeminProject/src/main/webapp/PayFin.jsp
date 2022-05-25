@@ -55,7 +55,7 @@
 				</div>
 			</div>
 
-			<div class="accordion_item">
+			<div class="accordion_items">
 				<div class="accordion-item_title">
 					<h3 style="text-align: center;">
 						⭐플라이트는 바른 생활체육 문화를 지양합니다.⭐ 

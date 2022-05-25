@@ -194,3 +194,10 @@ body{
 	height: 100px;
 	margin-bottom: 50px;
 }
+/* 수정 */
+#section_body2{
+	text-align: center;
+	background-color: rgb(231, 231, 231);
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}

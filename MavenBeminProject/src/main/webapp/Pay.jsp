@@ -160,7 +160,7 @@
                   <div class="section_title_1">
                      <h4 style="text-align: left;">🚩결제 수단</h4>
                   </div>
-                  <div class="section_body">
+                  <div id="section_body2">
                      <div class="list">
                         <ul>
                            <li class="list_radio"><input type="radio" id="HjPay"
