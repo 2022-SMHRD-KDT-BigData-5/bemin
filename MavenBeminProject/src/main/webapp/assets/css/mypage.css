@@ -160,5 +160,17 @@ html{
     border-radius: 4px;
     background: rgb(105,163,255);
     background: linear-gradient(162deg, rgba(105,163,255,1) 0%, rgba(43,125,254,1) 50%, rgba(43,125,254,1) 100%);
+}
+/*수정*/
+.mypage-form-email{
+	text-align: center;
+}
 
+.mypage-form-myname>h3{
+	color: #2178ff;
+    width: 100%;
+    text-align: center;
+    opacity: 0.9;
+    font-size: 30px;
+    font-weight: bold;
 }

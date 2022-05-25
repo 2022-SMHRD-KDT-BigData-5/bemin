@@ -98,7 +98,8 @@
             <div class="collapse navbar-collapse" id="navbar-menu">
                <ul class="nav navbar-nav navbar-right">
                   <li><a href="회원가입.jsp">회원가입</a></li>
-                  <li><a href="Login.jsp">로그인</a></li>
+                  <li><a href="Mypage.jsp">마이페이지</a></li>
+                  <li><a href="LogoutCon">로그아웃</a></li>
 
                </ul>
             </div>

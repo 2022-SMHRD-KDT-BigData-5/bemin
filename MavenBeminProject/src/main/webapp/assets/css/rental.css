@@ -318,3 +318,13 @@ ul, li {list-style:none;}
 
     margin-bottom: 15px;
 }
+.t3{
+   display: none;
+}
+.today{
+   display: none;
+}
+
+.place{
+   display: none;
+}

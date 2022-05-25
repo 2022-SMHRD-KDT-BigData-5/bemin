@@ -129,7 +129,7 @@
                     <input type="radio" name="slideb" id="slide07">
                     <ul class="slidelistb">
                         <li class="slideitemb">
-                            <a>
+                            <a href="info.jsp">
                                 <label for="slide05" class="prevb"></label>
                                 <img src="./assets/images/메인배너2.png">
                                 <label for="slide06" class="nextb"></label>
@@ -269,22 +269,22 @@
                                         <div class="widget_latst_item m-top-30">
                                             <div class="item_icon"><img src="assets/images/ltst-img-1.jpg" alt="" /></div>
                                             <div class="widget_latst_item_text">
-                                                <p>웹페이지 제작</p>
-                                                <a href="">김건우</a>
+                                                <p>프로젝트 총괄, DB 데이터 관리, 웹 프로그래밍</p>
+                                                <a href="">정구영</a>
                                             </div>
                                         </div>
                                         <div class="widget_latst_item m-top-30">
                                             <div class="item_icon"><img src="assets/images/ltst-img-2.jpg" alt="" /></div>
                                             <div class="widget_latst_item_text">
-                                                <p>프로젝트 역할</p>
-                                                <a href="">이름</a>
+                                                <p>데이터 수집, DB 환경 구축, DB 환경 연결</p>
+                                                <a href="">이현영</a>
                                             </div>
                                         </div>
                                         <div class="widget_latst_item m-top-30">
                                             <div class="item_icon"><img src="assets/images/ltst-img-3.jpg" alt="" /></div>
                                             <div class="widget_latst_item_text">
-                                                <p>프로젝트 역할</p>
-                                                <a href="">이름</a>
+                                                <p>웹 페이지 제작, 웹 프로그래밍</p>
+                                                <a href="">김승현</a>
                                             </div>
                                         </div>
                                     </div><!-- End off widget item -->
@@ -294,25 +294,25 @@
                                 <div class="col-md-3">
                                     <div class="widget_item widget_latest sm-m-top-50">
                                         <h5 class="text-white"><br></h5>
-                                        <div class="widget_latst_item m-top-30">
+                                        <div class="widget_latst_item m-top-30" id="widget_item_1">
                                             <div class="item_icon"><img src="assets/images/ltst-img-1.jpg" alt="" /></div>
                                             <div class="widget_latst_item_text">
-                                                <p>프로젝트 역할</p>
-                                                <a href="">이름</a>
+                                                <p>웹 페이지 제작, 웹 퍼블리싱</p>
+                                                <a href="">김대현</a>
                                             </div>
                                         </div>
-                                        <div class="widget_latst_item m-top-30">
+                                        <div class="widget_latst_item m-top-30" id="widget_item_2">
                                             <div class="item_icon"><img src="assets/images/ltst-img-2.jpg" alt="" /></div>
                                             <div class="widget_latst_item_text">
-                                                <p>프로젝트 역할</p>
-                                                <a href="">이름</a>
+                                                <p>웹 총괄, 웹 페이지 개발</p>
+                                                <a href="">김건우</a>
                                             </div>
                                         </div>
-                                        <div class="widget_latst_item m-top-30">
+                                        <div class="widget_latst_item m-top-30" id="widget_item_3">
                                             <div class="item_icon"><img src="assets/images/ltst-img-3.jpg" alt="" /></div>
                                             <div class="widget_latst_item_text">
-                                                <p>프로젝트 역할</p>
-                                                <a href="">이름</a>
+                                                <p>웹 페이지 제작, 웹 프로그래밍</p>
+                                                <a href="">주나현</a>
                                             </div>
                                         </div>
                                     </div><!-- End off widget item -->
@@ -323,12 +323,12 @@
                                     <div class="widget_item widget_service sm-m-top-50">
                                         <h5 class="text-white">Shortcut</h5>
                                         <ul class="m-top-20">
-                                            <li class="m-top-20"><a href="메인.jsp"><i class="fa fa-angle-right"></i> 매치</a></li>
+                                            <li class="m-top-20"><a href="RealMain.jsp"><i class="fa fa-angle-right"></i> 매치</a></li>
                                             <li class="m-top-20"><a href="Rental.jsp"><i class="fa fa-angle-right"></i> 구장 예약</a></li>
-                                            <li class="m-top-20"><a href="Maypage.jsp"><i class="fa fa-angle-right"></i> 마이페이지</a></li>
-                                            <li class="m-top-20"><a href="회원가입.jsp"><i class="fa fa-angle-right"></i> 회원가입</a></li>
+                                            <li class="m-top-20"><a href="Mypage.jsp"><i class="fa fa-angle-right"></i> 마이페이지</a></li>
+                                            <li class="m-top-20"><a href="join.jsp"><i class="fa fa-angle-right"></i> 회원가입</a></li>
                                             <li class="m-top-20"><a href="Login.jsp"><i class="fa fa-angle-right"></i> 로그인</a></li>
-                                            <li class="m-top-20"><a href="티어매너안내.jsp"><i class="fa fa-angle-right"></i> 티어, 매너 안내</a></li>
+                                            <li class="m-top-20"><a href="info.jsp"><i class="fa fa-angle-right"></i> 티어, 매너 안내</a></li>
                                         </ul>
                                     </div><!-- End off widget item -->
                                 </div><!-- End off col-md-3 -->
@@ -344,7 +344,7 @@
 
                                         </form>
                                         <div class="widget_brand m-top-40">
-                                            <a href="" class="text-uppercase"><img src="assets/images/logo1.png" class="logo" alt=""></a>
+                                            <a href="RealMain.jsp" class="text-uppercase"><img src="assets/images/logo1.png" class="logo" alt=""></a>
                                             <p>배드민턴치고 싶을 땐 플라이트</p>
                                         </div>
                                         <ul class="list-inline m-top-20">

@@ -1378,9 +1378,15 @@ work Section style
 	position: relative;
 	margin-right: 333px;
 }
-
 .col-md-3fix {
 	position: absolute;
 	margin-left: 1300px;
 	width: 200px;
+}
+/* 수정 */
+#widget_item_1{
+	margin-bottom: 50px;
+}
+#widget_item_2{
+	margin-bottom: 50px;
 }

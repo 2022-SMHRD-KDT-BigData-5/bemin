@@ -36,33 +36,54 @@
 <link rel="stylesheet" href="assets/css/modal.css">
 
 </head>
-<body>
-   <!-- 상단바 -->
-   <nav class="navbar navbar-default bootsnav navbar-fixed">
+<body data-spy="scroll" data-target=".navbar-collapse">
 
-		<!-- Start Header Navigation -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target="#navbar-menu">
-				<i class="fa fa-bars"></i>
-			</button>
-			<a class="navbar-brand" href="./RealMain.jsp"> <img
-				src="assets/images/logo1.png" class="logo" alt=""> <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
-			</a>
 
-      </div>
-      <!-- End Header Navigation -->
-		<!-- navbar menu -->
-		<div class="collapse navbar-collapse" id="navbar-menu">
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="./RealMain.jsp">Home</a></li>
-				<li><a href="./Mypage.jsp">마이페이지</a></li>
-				<li><a href="LogoutCon">로그아웃</a></li>
-			</ul>
-		</div>
-		<!-- /.navbar-collapse -->
-		</div>
-	</nav>
+    <!-- Preloader -->
+    <div id="loading">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="object" id="object_one"></div>
+                <div class="object" id="object_two"></div>
+                <div class="object" id="object_three"></div>
+                <div class="object" id="object_four"></div>
+            </div>
+        </div>
+    </div><!--End off Preloader -->
+
+
+    <div class="culmn">
+        <!--Home page style-->
+
+
+        <nav class="navbar navbar-default bootsnav navbar-fixed">
+           
+            <div class="container"> 
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="RealMain.jsp">
+                        <img src="assets/images/bluelogo.png" class="logo" alt="">
+                        <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
+                    </a>
+
+                </div>
+                <!-- End Header Navigation -->
+                
+                <!-- navbar menu -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="RealMain.jsp">Home</a></li>                    
+                        <li><a href="LogoutCon">로그아웃</a></li>
+                        <li><a href="Mypage.jsp">마이페이지</a></li>
+                        <li><a href="joinUpdate.jsp">회원정보수정</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div> 
+        </nav>
+    </div>
 
 	<!--header-->
 	<div class="container">

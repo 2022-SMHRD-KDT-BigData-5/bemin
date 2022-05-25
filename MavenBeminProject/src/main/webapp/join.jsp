@@ -243,10 +243,10 @@
 			<!-- EMAIL -->
 			<div>
 				<h3 class="join_title">
-					<label for="email">본인확인 이메일<span class="optional">(선택)</span></label>
+					<label for="email">본인확인 이메일<span class="optional"></span></label>
 				</h3>
 				<span class="box int_email"> <input type="text" name="email" id="email"
-					class="int" maxlength="100" placeholder="선택입력">
+					class="int" maxlength="100" placeholder="이메일 입력">
 				</span> <span class="error_next_box">이메일 주소를 다시 확인해주세요.</span>
 			</div>
 
@@ -325,7 +325,7 @@
 			<!-- JOIN BTN-->
 			<div class="btn_area">
                     <button type="button" id="btnJoin">
-                        <input type="submit" value="가입하기" style="color: white;">
+                        <input id="joinsubmit" type="submit" value="가입하기" style="color: white;">
                     </button>
             </div>
 			
