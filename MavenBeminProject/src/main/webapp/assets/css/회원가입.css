@@ -1,13 +1,21 @@
 /* 레이아웃 틀 */
+@font-face {
+    font-family: 'CookieRun-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+html,body{
+    font-family: 'CookieRun-Regular';
+    transform: skew(0.1deg);
+}
 body {
     margin: 0;
     height: 100%;
     background: #f5f6f7;
-    font-family: Dotum,'돋움',Helvetica,sans-serif;
-    
+  
 }
 #logo {
-    margin-top: 100px;
     width: 240px;
     height: 44px;
     cursor: pointer;
@@ -63,12 +71,9 @@ h3 {
     font-size: 15px;
 }
 
-input {
-    font-family: Dotum,'돋움',Helvetica,sans-serif;    
-}
 
 .box.int_id {
-    padding-right: 110px;
+    padding-right: 10px;
 }
 
 .box.int_pass {
@@ -136,11 +141,9 @@ select {
     text-align: start;
     border: none;
     cursor: default;
-    font-family: Dotum,'돋움',Helvetica,sans-serif;
 }
 
 /* 에러메세지 */
-
 .error_next_box {
     margin-top: 9px;
     font-size: 12px;
@@ -172,13 +175,23 @@ select {
     background-color: #2178ff;
     font-size: 20px;
     font-weight: 400;
-    font-family: Dotum,'돋움',Helvetica,sans-serif;
+}
+#joinsubmit{
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 1;
+    cursor: pointer;
+    font-size: 20px;
+	font-weight: bold;
+    border-style: solid;
+    border-width: 0px;
+    background-color: #2178ff;
 }
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Alata', sans-serif;
+
 }
 
 .page-container{
@@ -320,5 +333,10 @@ background: linear-gradient(162deg, rgba(105,163,255,1) 0%, rgba(43,125,254,1) 5
     font-size: 11px;
     color: gray;
 
+}
+#check_id_box{
+    position: relative;
+    margin-top: -27px;
+    float: right;
 }
 

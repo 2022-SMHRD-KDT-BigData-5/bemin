@@ -42,13 +42,17 @@
 	
 	<!-- 메인페이지 날짜별 게시글 출력 -->
 	<select id="selectDayMat" resultType = "com.smhrd.domain.MATCHING" parameterType = "String">
-		select * from MATCHING where RES_DATE=#{RES_DATE} order by RES_TIME
+		select * from MATCHING where RES_DATE=#{RES_DATE} and RES_PLACE in (select PLACE_name from place_info where PLACE_ADD like'%'||#{LOCAL}||'%') order by RES_TIME
 	</select>
 	
 	<!-- 예약하자마자 시퀸스 번호 확인 -->
 	<select id="selectSeqNo" resultType = "BigDecimal">
 		select LAST_NUMBER from user_sequences WHERE SEQUENCE_NAME = UPPER('MATCHING_MAT_NO')
 	</select>
+	   <!-- 매칭번호 불러오기 -->
+   <select id="matnoMatching" resultType="com.smhrd.domain.MATCHING" parameterType="BigDecimal">
+      select * from MATCHING where MAT_NO=#{MAT_NO}
+   </select>
 
 
 </mapper>

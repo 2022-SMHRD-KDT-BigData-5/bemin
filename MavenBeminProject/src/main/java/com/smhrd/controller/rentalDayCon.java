@@ -28,10 +28,11 @@ public class rentalDayCon extends HttpServlet {
 		Gson gson = new Gson();
 		
 		String rentalDay = request.getParameter("rentalDay");
+		String local = request.getParameter("local");
 		
 		
 		matchingDAO dao = new matchingDAO();
-		List<MATCHING> list = dao.selectDayMat(rentalDay);
+		List<MATCHING> list = dao.selectDayMat(rentalDay,local);
 		
 
 		//System.out.println(list);
@@ -45,12 +46,6 @@ public class rentalDayCon extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.print(json);
 
-		//경기장 정보 모두 불러오기
-		// 경기장 시작, 끝나는 시간 이용해서 시간표 작성  ---끝---
-		// 경기장과 시간정보 불러온게 [0] ==> 전부다 for문 ---끝---
-		// 년,월,일,경기장,시간 정보 보내기 ---끝---
-		// matching 확인하고 일치하는 시간 회색
-		// 평일인지 주말인지에 따라 다른 컬럼 가져오기
 
 
 

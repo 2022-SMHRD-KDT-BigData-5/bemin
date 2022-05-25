@@ -27,7 +27,7 @@ public class MATCHING {
 		this.MAT_MEMBER = MAT_MEMBER;
 		this.STN_TIER = STN_TIER;
 		this.STN_MANNER = STN_MANNER;
-		this.GENDER = GENDER;
+		this.setGENDER(GENDER);
 	}
 
 	public MATCHING(String RES_DATE, String RES_TIME, String RES_PLACE, String MAT_MEMBER) {
@@ -62,7 +62,7 @@ public class MATCHING {
 		this.STN_TIER = STN_TIER;
 		this.STN_MANNER = STN_MANNER;
 		this.MAT_CPL = MAT_CPL;
-		this.GENDER = GENDER;
+		this.setGENDER(GENDER);
 	}
 
 	public MATCHING(String RES_DATE, String RES_TIME, String RES_PLACE) {
@@ -156,9 +156,20 @@ public class MATCHING {
 		
 	}
 
+<<<<<<< HEAD
 
 
 
 	
 	
+=======
+	public String getGENDER() {
+		return GENDER;
+	}
+
+	public void setGENDER(String gENDER) {
+		GENDER = gENDER;
+	}
+
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 }

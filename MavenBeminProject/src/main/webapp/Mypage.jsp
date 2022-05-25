@@ -72,18 +72,14 @@
         <nav class="navbar navbar-default bootsnav navbar-fixed">
            
             <div class="container"> 
-                <div class="attr-nav">
-                    <ul>
-                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                    </ul>
-                </div>
+                
 
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="#brand">
+                    <a class="navbar-brand" href="RealMain.jsp">
                         <img src="assets/images/bluelogo.png" class="logo" alt="">
                         <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
                     </a>
@@ -96,6 +92,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="./RealMain.jsp">Home</a></li>                    
                         <li><a href="LogoutCon">로그아웃</a></li>
+                        <li><a href="Mypage.jsp">마이페이지</a></li>
+                        <li><a href="joinUpdate.jsp">회원정보수정</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div> 
@@ -112,7 +110,7 @@
                 <div class="mypage-form-email">
                     <p>이메일 <br>${loginMember.EMAIL }</p>
                     <div class="mypage-form-change">
-                        <a href="./회원정보수정.jsp">내정보 수정</a>
+                        <a href="joinUpdate.jsp">내정보 수정</a>
                     </div>
                 </div>
                 <div class="mypage-form-tier">
@@ -170,7 +168,7 @@
                     <div class="mypage-form-manner">
                     <p>매너 점수 ${loginMember.USER_MANNER }</p>
                     
-                    <a href="./티어매너안내.jsp">티어 매너점수 알아보기</a>
+                    <a href="info.jsp">티어 매너점수 알아보기</a>
                      </div>
                 </div>
                 

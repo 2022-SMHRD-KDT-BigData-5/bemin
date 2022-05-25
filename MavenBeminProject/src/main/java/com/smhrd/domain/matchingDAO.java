@@ -1,7 +1,9 @@
 package com.smhrd.domain;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -151,11 +153,17 @@ public class matchingDAO {
    
 
    // 메인 날짜별 메칭정보 출력---------------------------------------------------------
-	public List<MATCHING> selectDayMat(String RES_DATE) {
+	public List<MATCHING> selectDayMat(String RES_DATE, String LOCAL) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
+		
+	      Map map = new HashMap();
+	      map.put("RES_DATE", RES_DATE);
+	      map.put("LOCAL", LOCAL);
+		
+		
 		List<MATCHING> msg_vo = null;
 		try {
-			msg_vo = sqlSession.selectList("com.smhrd.domain.matchingDAO.selectDayMat", RES_DATE);
+			msg_vo = sqlSession.selectList("com.smhrd.domain.matchingDAO.selectDayMat", map);
 
 			if (msg_vo != null) {
 				sqlSession.commit();
@@ -192,6 +200,31 @@ public class matchingDAO {
 	      return num;
 
 	   }//예약한 마지막 시퀀스 번호 조회   끝---------------------------------------------------------
+<<<<<<< HEAD
+=======
+
+	 //매칭번호리스트 보기-----------------------------------------------------------
+    public MATCHING matnoMatching(BigDecimal mn) {
+       SqlSession sqlSession = sqlSessionFactory.openSession();
+       MATCHING Matching_no = null;
+       try {
+          Matching_no = sqlSession.selectOne("com.smhrd.domain.matchingDAO.matnoMatching", mn);
+          if (Matching_no != null) {
+             sqlSession.commit();
+             System.out.println("커밋");
+          } else {
+             sqlSession.rollback();
+             System.out.println("롤");
+          }
+       } catch (Exception e) {
+          e.printStackTrace();
+       } finally {
+          sqlSession.close();
+       }
+       return Matching_no;
+    }//매칭번호리스트 보기 끝-----------------------------------------------------------   
+
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 	
 	   // 매칭테이블 리스트로 불러오기 ---------------------------------------------------------
 	   public MATCHING selectMatno(MATCHING mat_vo) {

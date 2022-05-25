@@ -94,7 +94,11 @@
 						data-target="#navbar-menu">
 						<i class="fa fa-bars"></i>
 					</button>
+<<<<<<< HEAD
 					<a class="navbar-brand" href="./RealMain.jsp"> <img
+=======
+					<a class="navbar-brand" href="RealMain.jsp"> <img
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 						src="assets/images/bluelogo.png" class="logo" alt=""> <!-- <a>FLIGHT</a> -->
 						<!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
 					</a>
@@ -103,10 +107,17 @@
 				<!-- End Header Navigation -->
 
 				<!-- navbar menu -->
+<<<<<<< HEAD
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
 
+=======
+				<div class="collapse navbar-collapse" id="navbar-menu">
+					<ul class="nav navbar-nav navbar-right">
+
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 						<c:choose>
+<<<<<<< HEAD
 								<c:when test="${empty loginMember}">
                             		<li><a href="./RealMain.jsp">Home</a></li>                    
 									<li><a href="./Login.jsp">로그인</a></li>
@@ -119,6 +130,24 @@
 									<li><a href="./LogoutCon">로그아웃</a></li>									
 							</c:otherwise>				
 						</c:choose>
+=======
+							<c:when test="${empty loginMember}">
+								<li><a href="RealMain.jsp">Home</a></li>
+								<li><a href="Login.jsp">로그인</a></li>
+								<li><a href="join.jsp">회원가입</a></li>
+							</c:when>
+							<c:otherwise>
+								<%
+								System.out.println("로그인했음!");
+								%>
+								<li><a href="RealMain.jsp">Home</a></li>
+								<li><a href="Mypage.jsp">마이페이지</a></li>
+								<li><a href="LogoutCon">로그아웃</a></li>
+							</c:otherwise>
+						</c:choose>
+						<!-- <li><a href="#test">Blog</a></li> -->
+						<!-- <li><a href="#contact">Contact</a></li> -->
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
@@ -134,7 +163,12 @@
 			<div class="main--match--container">
 				<div id="dateNav" class="sub-header" style="padding-bottom: 10px;">
 					<div class="mat-re">
+<<<<<<< HEAD
 						<span id="m1"> <a href="./RealMain.jsp">매치</a> <a href="Rental.jsp" id="m2">구장 예약</a>
+=======
+						<span id="m1"> <a href="RealMain.jsp">매치</a> <a
+							href="Rental.jsp" id="m2">구장 예약</a>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 						</span>
 					</div>
 					<!---->
@@ -145,12 +179,8 @@
 
 						<ul class="slidelist">
 
-							<li class="slideitem" id="dayCon1">
-
-							</li>
-							<li class="slideitem" id="dayCon2">
-
-							</li>
+							<li class="slideitem" id="dayCon1"></li>
+							<li class="slideitem" id="dayCon2"></li>
 						</ul>
 						<div class="slide-control">
 							<div class="control01">
@@ -171,7 +201,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="main__filter">
+					<!-- <div class="main__filter">
 						<div class="main--match--filter">
 							<div class="filter--wrapper">
 								<div class="placelist">
@@ -200,7 +230,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 				<!--match list-->
 				<div id="list" class="list--match-schedule--container">
@@ -209,8 +239,6 @@
 						PLACE_INFODAO dao = new PLACE_INFODAO();
 						List<PLACE_INFO> PlaceList = dao.PlaceAll();
 						pageContext.setAttribute("PlaceList", PlaceList);
-
-
 						%>
 						<c:forEach var="plt" items="${PlaceList}" varStatus="status">
 							<%
@@ -224,14 +252,7 @@
 
 									</p>
 
-									<div class="plc-in">
-										<a style="font-size: medium;">구장</a> <a
-											style="font-size: small;">규격</a>
-										<button class="place-info">
-											<a href="#" class="pi-bnt">경기장정보</a>
-										</button>
 
-									</div>
 									<div class="time-mem">
 										<div href="결제.html" class="time1">
 											<%
@@ -258,7 +279,7 @@
 							</li>
 						</c:forEach>
 					</ul>
-					
+
 				</div>
 			</div>
 		</section>
@@ -267,139 +288,174 @@
 
 		<footer id="contact" class="footer action-lage bg-black p-top-80">
 			<!--<div class="action-lage"></div>-->
-			<div class="container">
-				<div class="row">
-					<div class="widget_area">
-						<div class="col-md-3">
-							<div class="widget_item widget_about">
-								<h5 class="text-white">About Us</h5>
-								<p class="m-top-20">Lorem ipsum dolor sit amet consec tetur
-									adipiscing elit nulla aliquet pretium nisi in cursus maecenas
-									nec eleifen.</p>
-								<div class="widget_ab_item m-top-30">
-									<div class="item_icon">
-										<i class="fa fa-location-arrow"></i>
+			<div class="footercontainer">
+				<div class="container">
+					<div class="row">
+						<div class="widget_area">
+							<div class="col-md-3">
+								<div class="widget_item widget_about">
+									<h5 class="text-white">About Us</h5>
+									<p class="m-top-20"></p>
+									<div class="widget_ab_item m-top-30">
+										<div class="item_icon">
+											<i class="fa fa-location-arrow"></i>
+										</div>
+										<div class="widget_ab_item_text">
+											<h6 class="text-white">Location</h6>
+											<p>광주 동구 예술길 31-15 4층</p>
+										</div>
 									</div>
-									<div class="widget_ab_item_text">
-										<h6 class="text-white">Location</h6>
-										<p>123 suscipit ipsum nam auctor mauris dui, ac
-											sollicitudin mauris, Bandung</p>
+									<div class="widget_ab_item m-top-30">
+										<div class="item_icon">
+											<i class="fa fa-phone"></i>
+										</div>
+										<div class="widget_ab_item_text">
+											<h6 class="text-white">Phone :</h6>
+											<p>+1 2345 6789</p>
+										</div>
+									</div>
+									<div class="widget_ab_item m-top-30">
+										<div class="item_icon">
+											<i class="fa fa-envelope-o"></i>
+										</div>
+										<div class="widget_ab_item_text">
+											<h6 class="text-white">Email Address :</h6>
+											<p>FLIGHT@flight.com</p>
+										</div>
 									</div>
 								</div>
-								<div class="widget_ab_item m-top-30">
-									<div class="item_icon">
-										<i class="fa fa-phone"></i>
-									</div>
-									<div class="widget_ab_item_text">
-										<h6 class="text-white">Phone :</h6>
-										<p>+1 2345 6789</p>
-									</div>
-								</div>
-								<div class="widget_ab_item m-top-30">
-									<div class="item_icon">
-										<i class="fa fa-envelope-o"></i>
-									</div>
-									<div class="widget_ab_item_text">
-										<h6 class="text-white">Email Address :</h6>
-										<p>youremail@mail.com</p>
-									</div>
-								</div>
+								<!-- End off widget item -->
 							</div>
-							<!-- End off widget item -->
-						</div>
-						<!-- End off col-md-3 -->
+							<!-- End off col-md-3 -->
 
-						<div class="col-md-3">
-							<div class="widget_item widget_latest sm-m-top-50">
-								<h5 class="text-white">Latest News</h5>
-								<div class="widget_latst_item m-top-30">
-									<div class="item_icon">
-										<img src="assets/images/ltst-img-1.jpg" alt="" />
+							<div class="col-md-3">
+								<div class="widget_item widget_latest sm-m-top-50">
+									<h5 class="text-white">Developer</h5>
+									<div class="widget_latst_item m-top-30">
+										<div class="item_icon">
+											<img src="assets/images/ltst-img-1.jpg" alt="" />
+										</div>
+										<div class="widget_latst_item_text">
+											<p>웹페이지 제작</p>
+											<a href="">김건우</a>
+										</div>
 									</div>
-									<div class="widget_latst_item_text">
-										<p>Lorem ipsum dolor sit amet, consectetur</p>
-										<a href="">21<sup>th</sup> July 2016
-										</a>
+									<div class="widget_latst_item m-top-30">
+										<div class="item_icon">
+											<img src="assets/images/ltst-img-2.jpg" alt="" />
+										</div>
+										<div class="widget_latst_item_text">
+											<p>프로젝트 역할</p>
+											<a href="">이름</a>
+										</div>
 									</div>
-								</div>
-								<div class="widget_latst_item m-top-30">
-									<div class="item_icon">
-										<img src="assets/images/ltst-img-2.jpg" alt="" />
-									</div>
-									<div class="widget_latst_item_text">
-										<p>Lorem ipsum dolor sit amet, consectetur</p>
-										<a href="">21<sup>th</sup> July 2016
-										</a>
-									</div>
-								</div>
-								<div class="widget_latst_item m-top-30">
-									<div class="item_icon">
-										<img src="assets/images/ltst-img-3.jpg" alt="" />
-									</div>
-									<div class="widget_latst_item_text">
-										<p>Lorem ipsum dolor sit amet, consectetur</p>
-										<a href="">21<sup>th</sup> July 2016
-										</a>
+									<div class="widget_latst_item m-top-30">
+										<div class="item_icon">
+											<img src="assets/images/ltst-img-3.jpg" alt="" />
+										</div>
+										<div class="widget_latst_item_text">
+											<p>프로젝트 역할</p>
+											<a href="">이름</a>
+										</div>
 									</div>
 								</div>
+								<!-- End off widget item -->
 							</div>
-							<!-- End off widget item -->
-						</div>
-						<!-- End off col-md-3 -->
+							<!-- End off col-md-3 -->
 
-						<div class="col-md-3">
-							<div class="widget_item widget_service sm-m-top-50">
-								<h5 class="text-white">Latest News</h5>
-								<ul class="m-top-20">
-									<li class="m-top-20"><a href=""><i
-											class="fa fa-angle-right"></i> Web Design</a></li>
-									<li class="m-top-20"><a href=""><i
-											class="fa fa-angle-right"></i> User Interface Design</a></li>
-									<li class="m-top-20"><a href=""><i
-											class="fa fa-angle-right"></i> E- Commerce</a></li>
-									<li class="m-top-20"><a href=""><i
-											class="fa fa-angle-right"></i> Web Hosting</a></li>
-									<li class="m-top-20"><a href=""><i
-											class="fa fa-angle-right"></i> Themes</a></li>
-									<li class="m-top-20"><a href=""><i
-											class="fa fa-angle-right"></i> Support Forums</a></li>
-								</ul>
-							</div>
-							<!-- End off widget item -->
-						</div>
-						<!-- End off col-md-3 -->
-
-						<div class="col-md-3">
-							<div class="widget_item widget_newsletter sm-m-top-50">
-								<h5 class="text-white">Newsletter</h5>
-								<form class="form-inline m-top-30">
-									<div class="form-group">
-										<input type="email" class="form-control"
-											placeholder="Enter you Email">
-										<button type="submit" class="btn text-center">
-											<i class="fa fa-arrow-right"></i>
-										</button>
+							<!--개발자 추가-->
+							<div class="col-md-3">
+								<div class="widget_item widget_latest sm-m-top-50">
+									<h5 class="text-white">
+										<br>
+									</h5>
+									<div class="widget_latst_item m-top-30">
+										<div class="item_icon">
+											<img src="assets/images/ltst-img-1.jpg" alt="" />
+										</div>
+										<div class="widget_latst_item_text">
+											<p>프로젝트 역할</p>
+											<a href="">이름</a>
+										</div>
 									</div>
-
-								</form>
-								<div class="widget_brand m-top-40">
-									<a href="" class="text-uppercase">Your Logo</a>
-									<p>Lorem ipsum dolor sit amet consec tetur adipiscing elit
-										nulla aliquet pretium nisi in</p>
+									<div class="widget_latst_item m-top-30">
+										<div class="item_icon">
+											<img src="assets/images/ltst-img-2.jpg" alt="" />
+										</div>
+										<div class="widget_latst_item_text">
+											<p>프로젝트 역할</p>
+											<a href="">이름</a>
+										</div>
+									</div>
+									<div class="widget_latst_item m-top-30">
+										<div class="item_icon">
+											<img src="assets/images/ltst-img-3.jpg" alt="" />
+										</div>
+										<div class="widget_latst_item_text">
+											<p>프로젝트 역할</p>
+											<a href="">이름</a>
+										</div>
+									</div>
 								</div>
-								<ul class="list-inline m-top-20">
-									<li>- <a href=""><i class="fa fa-facebook"></i></a></li>
-									<li><a href=""><i class="fa fa-twitter"></i></a></li>
-									<li><a href=""><i class="fa fa-linkedin"></i></a></li>
-									<li><a href=""><i class="fa fa-google-plus"></i></a></li>
-									<li><a href=""><i class="fa fa-behance"></i></a></li>
-									<li><a href=""><i class="fa fa-dribbble"></i></a> -</li>
-								</ul>
-
+								<!-- End off widget item -->
 							</div>
-							<!-- End off widget item -->
+							<!-- End off col-md-3 -->
+
+
+							<div class="col-md-3">
+								<div class="widget_item widget_service sm-m-top-50">
+									<h5 class="text-white">Shortcut</h5>
+									<ul class="m-top-20">
+										<li class="m-top-20"><a href="메인.jsp"><i
+												class="fa fa-angle-right"></i> 매치</a></li>
+										<li class="m-top-20"><a href="Rental.jsp"><i
+												class="fa fa-angle-right"></i> 구장 예약</a></li>
+										<li class="m-top-20"><a href="Maypage.jsp"><i
+												class="fa fa-angle-right"></i> 마이페이지</a></li>
+										<li class="m-top-20"><a href="회원가입.jsp"><i
+												class="fa fa-angle-right"></i> 회원가입</a></li>
+										<li class="m-top-20"><a href="Login.jsp"><i
+												class="fa fa-angle-right"></i> 로그인</a></li>
+										<li class="m-top-20"><a href="티어매너안내.jsp"><i
+												class="fa fa-angle-right"></i> 티어, 매너 안내</a></li>
+									</ul>
+								</div>
+								<!-- End off widget item -->
+							</div>
+							<!-- End off col-md-3 -->
+
+							<div class="col-md-3fix">
+								<div class="widget_item widget_newsletter sm-m-top-50">
+									<h5 class="text-white">Newsletter</h5>
+									<form class="form-inline m-top-30">
+										<div class="form-group">
+											<input type="email" class="form-control"
+												placeholder="Enter you Email">
+											<button type="submit" class="btn text-center">
+												<i class="fa fa-arrow-right"></i>
+											</button>
+										</div>
+
+									</form>
+									<div class="widget_brand m-top-40">
+										<a href="" class="text-uppercase"><img
+											src="assets/images/logo1.png" class="logo" alt=""></a>
+										<p>배드민턴치고 싶을 땐 플라이트</p>
+									</div>
+									<ul class="list-inline m-top-20">
+										<li>- <a href=""><i class="fa fa-facebook"></i></a></li>
+										<li><a href=""><i class="fa fa-twitter"></i></a></li>
+										<li><a href=""><i class="fa fa-linkedin"></i></a></li>
+										<li><a href=""><i class="fa fa-google-plus"></i></a></li>
+										<li><a href=""><i class="fa fa-behance"></i></a></li>
+										<li><a href=""><i class="fa fa-dribbble"></i></a> -</li>
+									</ul>
+
+								</div>
+								<!-- End off widget item -->
+							</div>
+							<!-- End off col-md-3 -->
 						</div>
-						<!-- End off col-md-3 -->
 					</div>
 				</div>
 			</div>
@@ -444,61 +500,59 @@
 	<script>
 		let week = new Array('일', '월', '화', '수', '목', '금', '토');
 
-		 let dayList = []
-		 let dateList = []
-		 let monthList = []
-		 let yearList = []
+		let dayList = []
+		let dateList = []
+		let monthList = []
+		let yearList = []
 
-		 let today = new Date();
-		 let year = today.getFullYear()
-		 let month = today.getMonth() + 1
-		 let Day = today.getDay()
-		 let todayLabel = week[Day];
-		 yearList.push(year)
-		 monthList.push(month)
-		 dateList.push(today.getDate())
-		 dayList.push(todayLabel)
+		let today = new Date();
+		let year = today.getFullYear()
+		let month = today.getMonth() + 1
+		let Day = today.getDay()
+		let todayLabel = week[Day];
+		yearList.push(year)
+		monthList.push(month)
+		dateList.push(today.getDate())
+		dayList.push(todayLabel)
 
-		 for (let i = 1; i < 14; i++) {
-		 today.setDate(today.getDate() + 1);
-		 year = today.getFullYear()
-		 month = today.getMonth() + 1
-		 let Day = today.getDay()
-		 let todayLabel = week[Day];
-		 yearList.push(year)
-		 monthList.push(month)
-		 dateList.push(today.getDate())
-		 dayList.push(todayLabel)
-		 }
+		for (let i = 1; i < 14; i++) {
+			today.setDate(today.getDate() + 1);
+			year = today.getFullYear()
+			month = today.getMonth() + 1
+			let Day = today.getDay()
+			let todayLabel = week[Day];
+			yearList.push(year)
+			monthList.push(month)
+			dateList.push(today.getDate())
+			dayList.push(todayLabel)
+		}
 
-		 //1페이지 날짜
-		 let dayCon1 = document.querySelector('#dayCon1');
-		 let html1 = '';
-		 for (let i = 0; i < 7; i++) {
-		 html1 += '<button class="pt1"><span class="t3">' + yearList[i]
-		 + '</span><span class="t3">' + monthList[i]
-		 + '</span><div class="pt1-text">' + dateList[i]
-		 + '</div><div class="pt1-text">' + dayList[i]
-		 + '</div></button>';
-		
-		
-		 }
-		 dayCon1.innerHTML = html1;
+		//1페이지 날짜
+		let dayCon1 = document.querySelector('#dayCon1');
+		let html1 = '';
+		for (let i = 0; i < 7; i++) {
+			html1 += '<button class="pt1"><span class="t3">' + yearList[i]
+					+ '</span><span class="t3">' + monthList[i]
+					+ '</span><div class="pt1-text">' + dateList[i]
+					+ '</div><div class="pt1-text">' + dayList[i]
+					+ '</div></button>';
 
-		 //2페이지 날짜
-		 let dayCon2 = document.querySelector('#dayCon2');
-		 let html2 = '';
-		 for (let i = 7; i < 14; i++) {
-		 html2 += '<button class="pt1"><span class="t3">' + yearList[i]
-		 + '</span><span class="t3">' + monthList[i]
-		 + '</span><div class="pt1-text">' + dateList[i]
-		 + '</div><div class="pt1-text">' + dayList[i]
-		 + '</div></button>';
-		
-		
-		 }
+		}
+		dayCon1.innerHTML = html1;
 
-		 dayCon2.innerHTML = html2;
+		//2페이지 날짜
+		let dayCon2 = document.querySelector('#dayCon2');
+		let html2 = '';
+		for (let i = 7; i < 14; i++) {
+			html2 += '<button class="pt1"><span class="t3">' + yearList[i]
+					+ '</span><span class="t3">' + monthList[i]
+					+ '</span><div class="pt1-text">' + dateList[i]
+					+ '</div><div class="pt1-text">' + dayList[i]
+					+ '</div></button>';
+
+		}
+
+		dayCon2.innerHTML = html2;
 
 		let date = ''
 		//Date 값 불러오기
@@ -529,7 +583,12 @@
 			rentalDate = $(this).next().next().text();
 			rentalPlace = $(this).next().next().next().text();
 
-
+			<c:choose>
+			<c:when test="${empty loginMember}">
+			alert("로그인 후 이용하세요")
+			window.location = 'Login.jsp'
+			</c:when>
+			<c:otherwise>
 			var url = 'RentalViewCon';
 			var obj = {
 				year : year,
@@ -542,6 +601,8 @@
 
 			const queryStr = new URLSearchParams(obj).toString();
 			window.location = url + '?' + queryStr;
+			</c:otherwise>
+			</c:choose>
 
 		})
 	</script>

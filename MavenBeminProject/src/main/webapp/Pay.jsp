@@ -76,7 +76,7 @@
    <form action="RentalCon" method="post">
       <div class="fom">
          <div class="logoName">
-            <a href="main.jsp"><h1>플라이트</h1></a>
+            <a href="RealMain.jsp"><h1>플라이트</h1></a>
          </div>
          <div class="content_wrap">
             <div class="content_header">
@@ -160,7 +160,7 @@
                   <div class="section_title_1">
                      <h4 style="text-align: left;">🚩결제 수단</h4>
                   </div>
-                  <div class="section_body">
+                  <div id="section_body2">
                      <div class="list">
                         <ul>
                            <li class="list_radio"><input type="radio" id="HjPay"

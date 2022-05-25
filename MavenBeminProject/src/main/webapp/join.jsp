@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,49 +52,74 @@
 	</div>
 	<!--End off Preloader -->
 
-	<!-- 상단바 -->
-	<div class="culmn">
-		<nav class="navbar navbar-default bootsnav navbar-fixed">
-
-			<!-- Start Header Navigation -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#navbar-menu">
-					<i class="fa fa-bars"></i>
-				</button>
-				<a class="navbar-brand" href="메인.jsp"> <img
-					src="assets/images/logo1.png" class="logo" alt=""> <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
-				</a>
-
-			</div>
-			<!-- End Header Navigation -->
-
-			<!-- navbar menu -->
-			<div class="collapse navbar-collapse" id="navbar-menu">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="./메인.jsp">Home</a></li>
-					<li><a href="./회원가입.jsp">회원가입</a></li>
-					<li><a href="./Login.jsp">로그인</a></li>
-					<li><a href="./Maypage">마이페이지</a></li>
-					<!-- <li><a href="#test">Blog</a></li> -->
-					<!-- <li><a href="#contact">Contact</a></li> -->
-				</ul>
-			</div>
-			<!-- /.navbar-collapse -->
-	</div>
-	</nav>
+   <!-- 상단바 -->
+   <div class="culmn">
+      <!--Home page style-->
 
 
+      <nav class="navbar navbar-default bootsnav navbar-fixed">
+
+
+         <!-- Start Top Search -->
+         <div class="top-search">
+            <div class="container">
+               <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                  <input type="text" class="form-control" placeholder="Search">
+                  <span class="input-group-addon close-search"><i
+                     class="fa fa-times"></i></span>
+               </div>
+            </div>
+         </div>
+         <!-- End Top Search -->
+
+
+         <div class="container">
+            <!-- <div class="attr-nav">
+                        <ul>
+                            <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                        </ul>
+                    </div> -->
+
+            <!-- Start Header Navigation -->
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse"
+                  data-target="#navbar-menu">
+                  <i class="fa fa-bars"></i>
+               </button>
+               <a class="navbar-brand" href="RealMain.jsp"> <img
+                  src="assets/images/logo1.png" class="logo" alt=""> <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
+               </a>
+
+            </div>
+            <!-- End Header Navigation -->
+
+
+            <!-- navbar menu -->
+            <div class="collapse navbar-collapse" id="navbar-menu">
+               <ul class="nav navbar-nav navbar-right">
+                  <li><a href="join.jsp">회원가입</a></li>
+                  <li><a href="Login.jsp">로그인</a></li>
+
+               </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+         </div>
+      </nav>
+
+   </div>
 
 
 
-	<!-- header -->
-	<div id="header">
-		<img src="./assets/images/logo1.png" id="logo">
-	</div>
 
 
-	<!-- wrapper -->
+   <!-- header -->
+   <div id="header">
+      <img src="./assets/images/logo1.png" id="logo">
+   </div>
+
+
+   <!-- wrapper -->
 	<div id="wrapper">
 
 		<!-- content-->
@@ -139,7 +163,7 @@
 					<label for="pswd2">비밀번호 재확인</label>
 				</h3>
 
-				<span class="box int_pass_check"> <input type="text"
+				<span class="box int_pass_check"> <input type="password"
 					id="pswd2" name="pw" class="int" maxlength="20"> 
 
 
@@ -219,10 +243,10 @@
 			<!-- EMAIL -->
 			<div>
 				<h3 class="join_title">
-					<label for="email">본인확인 이메일<span class="optional">(선택)</span></label>
+					<label for="email">본인확인 이메일<span class="optional"></span></label>
 				</h3>
 				<span class="box int_email"> <input type="text" name="email" id="email"
-					class="int" maxlength="100" placeholder="선택입력">
+					class="int" maxlength="100" placeholder="이메일 입력">
 				</span> <span class="error_next_box">이메일 주소를 다시 확인해주세요.</span>
 			</div>
 
@@ -301,7 +325,7 @@
 			<!-- JOIN BTN-->
 			<div class="btn_area">
                     <button type="button" id="btnJoin">
-                        <input type="submit" value="가입하기" style="color: white;">
+                        <input id="joinsubmit" type="submit" value="가입하기" style="color: white;">
                     </button>
             </div>
 			
@@ -365,7 +389,7 @@
  		$(document).on('click','#btnJoin',function(){
  			if($('#id').val() == ''){
  				alert('아이디를 입력하세요');
- 				window.location.href = "main.jsp";
+ 				window.location.href = "RealMain.jsp";
  				return false;
  			}else if($('#pswd1').val() == ''){
  				alert('비밀번호를 입력하세요');
@@ -394,7 +418,7 @@
  				alert('주소 입력하세요');
  				return false;
  			}else {
-    		 window.location.href = "main.jsp";
+    		 window.location.href = "RealMain.jsp";
     		 return true;
     	 }
      

@@ -33,6 +33,7 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/responsive.css" />
 <link rel="stylesheet" href="assets/css/슬라이드.css" />
+<link rel="stylesheet" href="assets/css/메인배너.css" />
 <!---->
 
 
@@ -107,9 +108,10 @@
 								<li><a href="./join.jsp">회원가입</a></li>
 							</c:when>
 							<c:otherwise>
-								<li><a href="LogoutCon">로그아웃</a></li>
+								<li><a href="#">${loginMember.ID}님 환영합니다</a></li>
 								<li><a href="joinUpdate.jsp">회원정보수정</a></li>
 								<li><a href="Mypage.jsp">마이페이지</a></li>
+								<li><a href="LogoutCon">로그아웃</a></li>
 							</c:otherwise>
 						</c:choose>
 					</ul>
@@ -122,73 +124,26 @@
 		<!--Home Sections-->
 
 		<section id="home" class="home bg-black fix">
-			<div class="overlay"></div>
-			<div class="container">
-				<div class="row">
-					<div class="main_home text-center">
-						<div class="col-md-12">
-							<div class="hello_slid">
-								<div class="slid_item">
-									<div class="home_text ">
-										<h2 class="text-white">
-											Welcome to <strong>Made</strong>
-										</h2>
-										<h1 class="text-white">We Do Business All Of Time</h1>
-										<h3 class="text-white">
-											- We Create a <strong>Concept</strong> into The Market -
-										</h3>
-									</div>
-
-									<div class="home_btns m-top-40">
-										<a href="" class="btn btn-primary m-top-20">Buy Now</a> <a
-											href="" class="btn btn-default m-top-20">Take a Tour</a>
-									</div>
-								</div>
-								<!-- End off slid item -->
-								<div class="slid_item">
-									<div class="home_text ">
-										<h2 class="text-white">
-											Welcome to <strong>Made</strong>
-										</h2>
-										<h1 class="text-white">We Do Business All Of Time</h1>
-										<h3 class="text-white">
-											- We Create a <strong>Concept</strong> into The Market -
-										</h3>
-									</div>
-
-									<div class="home_btns m-top-40">
-										<a href="" class="btn btn-primary m-top-20">Buy Now</a> <a
-											href="" class="btn btn-default m-top-20">Take a Tour</a>
-									</div>
-								</div>
-								<!-- End off slid item -->
-								<div class="slid_item">
-									<div class="home_text ">
-										<h2 class="text-white">
-											Welcome to <strong>Made</strong>
-										</h2>
-										<h1 class="text-white">We Do Business All Of Time</h1>
-										<h3 class="text-white">
-											- We Create a <strong>Concept</strong> into The Market -
-										</h3>
-									</div>
-
-									<div class="home_btns m-top-40">
-										<a href="" class="btn btn-primary m-top-20">Buy Now</a> <a
-											href="" class="btn btn-default m-top-20">Take a Tour</a>
-									</div>
-								</div>
-								<!-- End off slid item -->
-							</div>
-						</div>
-
-					</div>
-
-
-				</div>
-				<!--End off row-->
+			<div class="slideboxb">
+				<input type="radio" name="slideb" id="slide05" checked> <input
+					type="radio" name="slideb" id="slide06"> <input
+					type="radio" name="slideb" id="slide07">
+				<ul class="slidelistb">
+					<li class="slideitemb"><a href="info.jsp"> <label
+							for="slide05" class="prevb"></label> <img
+							src="./assets/images/메인배너2.png"> <label for="slide06"
+							class="nextb"></label>
+					</a></li>
+					<li class="slideitemb"><a> <label for="slide06"
+							class="prevb"></label> <img src="./assets/images/메인배너1.png">
+							<label for="slide07" class="nextb"></label>
+					</a></li>
+					<li class="slideitemb"><a> <label for="slide07"
+							class="prevb"></label> <img src="./assets/images/메인배너3.png">
+							<label for="slide05" class="nextb"></label>
+					</a></li>
+				</ul>
 			</div>
-			<!--End off container -->
 		</section>
 		<!--End off Home Sections-->
 
@@ -197,8 +152,8 @@
 			<div class="main--match--container">
 				<div id="dateNav" class="sub-header" style="padding-bottom: 10px;">
 					<div class="mat-re">
-						<span id="m1"> <a href="메인.jsp">매치</a> <a href="Rental.jsp"
-							id="m2">구장 예약</a>
+						<span id="m1"> <a href="RealMain.jsp">매치</a> <a
+							href="Rental.jsp" id="m2">구장 예약</a>
 						</span>
 					</div>
 					<!---->
@@ -233,6 +188,7 @@
 						<div class="main--match--filter">
 							<div class="filter--wrapper">
 								<div class="placelist">
+<<<<<<< HEAD
 									<select name="select" class="select-c">
 										<option>내 지역</option>
 										<option>서구</option>
@@ -242,6 +198,16 @@
 										<option>광산구</option>
 									</select> 
 									<select name="select" class="select-c">
+=======
+									<select id="selectValue" name="select" class="select-c">
+										<option value="">내 지역</option>
+										<option value="서구">서구</option>
+										<option value="북구">북구</option>
+										<option value="남구">남구</option>
+										<option value="동구">동구</option>
+										<option value="광산구">광산구</option>
+									</select> <select name="select" class="select-c">
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 										<option>레벨</option>
 										<option>루키</option>
 										<option>비기너</option>
@@ -258,32 +224,10 @@
 				<!--match list-->
 				<div id="list" class="list--match-schedule--container">
 					<ul>
-					
-					
-						<li class="list--match-schedule--item">
-							<a href="참가.html">
-								<div class="list--match-schedule__time">
-									<p>18:00</p>
-								</div>
-								<div class="list--match-schedule__status">
-									<div class="match-status__join">
-										<p>참가하기</p>
-									</div>
-								</div>
-								<div class="list--match-schedule__info">
-									<div class="match-list__title">
-										<h3>HM풋살파크 인천 청라점 *주차15자리*</h3>
-									</div>
-									<div class="label--match-option">
-										<span class="match--option isMix">남녀모두</span> <span>1vs1</span>
-										<span>모든 레벨</span>
-									</div>
-								</div>
-							</a>
-						</li>
-						
-						
-						
+
+						<!-- 예약된 경기 정보 출력 -->
+
+
 					</ul>
 				</div>
 			</div>
@@ -293,136 +237,174 @@
 
 		<footer id="contact" class="footer action-lage bg-black p-top-80">
 			<!--<div class="action-lage"></div>-->
-			<div class="container">
-				<div class="row">
-					<div class="widget_area">
-						<div class="col-md-3">
-							<div class="widget_item widget_about">
-								<h5 class="text-white">About Us</h5>
-								<p class="m-top-20"></p>
-								<div class="widget_ab_item m-top-30">
-									<div class="item_icon">
-										<i class="fa fa-location-arrow"></i>
+			<div class="footercontainer">
+				<div class="container">
+					<div class="row">
+						<div class="widget_area">
+							<div class="col-md-3">
+								<div class="widget_item widget_about">
+									<h5 class="text-white">About Us</h5>
+									<p class="m-top-20"></p>
+									<div class="widget_ab_item m-top-30">
+										<div class="item_icon">
+											<i class="fa fa-location-arrow"></i>
+										</div>
+										<div class="widget_ab_item_text">
+											<h6 class="text-white">Location</h6>
+											<p>광주 동구 예술길 31-15 4층</p>
+										</div>
 									</div>
-									<div class="widget_ab_item_text">
-										<h6 class="text-white">Location</h6>
-										<p>광주 동구 예술길 31-15 4층</p>
+									<div class="widget_ab_item m-top-30">
+										<div class="item_icon">
+											<i class="fa fa-phone"></i>
+										</div>
+										<div class="widget_ab_item_text">
+											<h6 class="text-white">Phone :</h6>
+											<p>+1 2345 6789</p>
+										</div>
+									</div>
+									<div class="widget_ab_item m-top-30">
+										<div class="item_icon">
+											<i class="fa fa-envelope-o"></i>
+										</div>
+										<div class="widget_ab_item_text">
+											<h6 class="text-white">Email Address :</h6>
+											<p>FLIGHT@flight.com</p>
+										</div>
 									</div>
 								</div>
-								<div class="widget_ab_item m-top-30">
-									<div class="item_icon">
-										<i class="fa fa-phone"></i>
-									</div>
-									<div class="widget_ab_item_text">
-										<h6 class="text-white">Phone :</h6>
-										<p>+1 2345 6789</p>
-									</div>
-								</div>
-								<div class="widget_ab_item m-top-30">
-									<div class="item_icon">
-										<i class="fa fa-envelope-o"></i>
-									</div>
-									<div class="widget_ab_item_text">
-										<h6 class="text-white">Email Address :</h6>
-										<p>FLIGHT@flight.com</p>
-									</div>
-								</div>
+								<!-- End off widget item -->
 							</div>
-							<!-- End off widget item -->
-						</div>
-						<!-- End off col-md-3 -->
+							<!-- End off col-md-3 -->
 
-						<div class="col-md-3">
-							<div class="widget_item widget_latest sm-m-top-50">
-								<h5 class="text-white">Latest News</h5>
-								<div class="widget_latst_item m-top-30">
-									<div class="item_icon">
-										<img src="assets/images/ltst-img-1.jpg" alt="" />
+							<div class="col-md-3">
+								<div class="widget_item widget_latest sm-m-top-50">
+									<h5 class="text-white">Developer</h5>
+									<div class="widget_latst_item m-top-30">
+										<div class="item_icon">
+											<img src="assets/images/ltst-img-1.jpg" alt="" />
+										</div>
+										<div class="widget_latst_item_text">
+											<p>프로젝트 총괄, DB 데이터 관리, 웹 프로그래밍</p>
+											<a href="">정구영</a>
+										</div>
 									</div>
-									<div class="widget_latst_item_text">
-										<p>Lorem ipsum dolor sit amet, consectetur</p>
-										<a href="">21<sup>th</sup> July 2016
-										</a>
+									<div class="widget_latst_item m-top-30">
+										<div class="item_icon">
+											<img src="assets/images/ltst-img-2.jpg" alt="" />
+										</div>
+										<div class="widget_latst_item_text">
+											<p>데이터 수집, DB 환경 구축, DB 환경 연결</p>
+											<a href="">이현영</a>
+										</div>
 									</div>
-								</div>
-								<div class="widget_latst_item m-top-30">
-									<div class="item_icon">
-										<img src="assets/images/ltst-img-2.jpg" alt="" />
-									</div>
-									<div class="widget_latst_item_text">
-										<p>Lorem ipsum dolor sit amet, consectetur</p>
-										<a href="">21<sup>th</sup> July 2016
-										</a>
-									</div>
-								</div>
-								<div class="widget_latst_item m-top-30">
-									<div class="item_icon">
-										<img src="assets/images/ltst-img-3.jpg" alt="" />
-									</div>
-									<div class="widget_latst_item_text">
-										<p>Lorem ipsum dolor sit amet, consectetur</p>
-										<a href="">21<sup>th</sup> July 2016
-										</a>
+									<div class="widget_latst_item m-top-30">
+										<div class="item_icon">
+											<img src="assets/images/ltst-img-3.jpg" alt="" />
+										</div>
+										<div class="widget_latst_item_text">
+											<p>웹 페이지 제작, 웹 프로그래밍</p>
+											<a href="">김승현</a>
+										</div>
 									</div>
 								</div>
+								<!-- End off widget item -->
 							</div>
-							<!-- End off widget item -->
-						</div>
-						<!-- End off col-md-3 -->
+							<!-- End off col-md-3 -->
 
-						<div class="col-md-3">
-							<div class="widget_item widget_service sm-m-top-50">
-								<h5 class="text-white">Shortcut</h5>
-								<ul class="m-top-20">
-									<li class="m-top-20"><a href=""><i
-											class="fa fa-angle-right"></i> 매치</a></li>
-									<li class="m-top-20"><a href=""><i
-											class="fa fa-angle-right"></i> 구장 예약</a></li>
-									<li class="m-top-20"><a href=""><i
-											class="fa fa-angle-right"></i> 마이페이지</a></li>
-									<li class="m-top-20"><a href=""><i
-											class="fa fa-angle-right"></i> 회원가입</a></li>
-									<li class="m-top-20"><a href=""><i
-											class="fa fa-angle-right"></i> 로그인</a></li>
-									<li class="m-top-20"><a href=""><i
-											class="fa fa-angle-right"></i> 티어, 매너 안내</a></li>
-								</ul>
-							</div>
-							<!-- End off widget item -->
-						</div>
-						<!-- End off col-md-3 -->
-
-						<div class="col-md-3">
-							<div class="widget_item widget_newsletter sm-m-top-50">
-								<h5 class="text-white">Newsletter</h5>
-								<form class="form-inline m-top-30">
-									<div class="form-group">
-										<input type="email" class="form-control"
-											placeholder="Enter you Email">
-										<button type="submit" class="btn text-center">
-											<i class="fa fa-arrow-right"></i>
-										</button>
+							<!--개발자 추가-->
+							<div class="col-md-3">
+								<div class="widget_item widget_latest sm-m-top-50">
+									<h5 class="text-white">
+										<br>
+									</h5>
+									<div class="widget_latst_item m-top-30" id="widget_item_1">
+										<div class="item_icon">
+											<img src="assets/images/ltst-img-1.jpg" alt="" />
+										</div>
+										<div class="widget_latst_item_text">
+											<p>웹 페이지 제작, 웹 퍼블리싱</p>
+											<a href="">김대현</a>
+										</div>
 									</div>
-
-								</form>
-								<div class="widget_brand m-top-40">
-									<a href="" class="text-uppercase"><img
-										src="assets/images/logo1.png" class="logo" alt=""></a>
-									<p>배드민턴치고 싶을 땐 플라이트</p>
+									<div class="widget_latst_item m-top-30" id="widget_item_2">
+										<div class="item_icon">
+											<img src="assets/images/ltst-img-2.jpg" alt="" />
+										</div>
+										<div class="widget_latst_item_text">
+											<p>웹 총괄, 웹 페이지 개발</p>
+											<a href="">김건우</a>
+										</div>
+									</div>
+									<div class="widget_latst_item m-top-30" id="widget_item_3">
+										<div class="item_icon">
+											<img src="assets/images/ltst-img-3.jpg" alt="" />
+										</div>
+										<div class="widget_latst_item_text">
+											<p>웹 페이지 제작, 웹 프로그래밍</p>
+											<a href="">주나현</a>
+										</div>
+									</div>
 								</div>
-								<ul class="list-inline m-top-20">
-									<li>- <a href=""><i class="fa fa-facebook"></i></a></li>
-									<li><a href=""><i class="fa fa-twitter"></i></a></li>
-									<li><a href=""><i class="fa fa-linkedin"></i></a></li>
-									<li><a href=""><i class="fa fa-google-plus"></i></a></li>
-									<li><a href=""><i class="fa fa-behance"></i></a></li>
-									<li><a href=""><i class="fa fa-dribbble"></i></a> -</li>
-								</ul>
-
+								<!-- End off widget item -->
 							</div>
-							<!-- End off widget item -->
+							<!-- End off col-md-3 -->
+
+
+							<div class="col-md-3">
+								<div class="widget_item widget_service sm-m-top-50">
+									<h5 class="text-white">Shortcut</h5>
+									<ul class="m-top-20">
+										<li class="m-top-20"><a href="RealMain.jsp"><i
+												class="fa fa-angle-right"></i> 매치</a></li>
+										<li class="m-top-20"><a href="Rental.jsp"><i
+												class="fa fa-angle-right"></i> 구장 예약</a></li>
+										<li class="m-top-20"><a href="Mypage.jsp"><i
+												class="fa fa-angle-right"></i> 마이페이지</a></li>
+										<li class="m-top-20"><a href="join.jsp"><i
+												class="fa fa-angle-right"></i> 회원가입</a></li>
+										<li class="m-top-20"><a href="Login.jsp"><i
+												class="fa fa-angle-right"></i> 로그인</a></li>
+										<li class="m-top-20"><a href="info.jsp"><i
+												class="fa fa-angle-right"></i> 티어, 매너 안내</a></li>
+									</ul>
+								</div>
+								<!-- End off widget item -->
+							</div>
+							<!-- End off col-md-3 -->
+
+							<div class="col-md-3fix">
+								<div class="widget_item widget_newsletter sm-m-top-50">
+									<h5 class="text-white">Newsletter</h5>
+									<form class="form-inline m-top-30">
+										<div class="form-group">
+											<input type="email" class="form-control"
+												placeholder="Enter you Email">
+											<button type="submit" class="btn text-center">
+												<i class="fa fa-arrow-right"></i>
+											</button>
+										</div>
+
+									</form>
+									<div class="widget_brand m-top-40">
+										<a href="RealMain.jsp" class="text-uppercase"><img
+											src="assets/images/logo1.png" class="logo" alt=""></a>
+										<p>배드민턴치고 싶을 땐 플라이트</p>
+									</div>
+									<ul class="list-inline m-top-20">
+										<li>- <a href=""><i class="fa fa-facebook"></i></a></li>
+										<li><a href=""><i class="fa fa-twitter"></i></a></li>
+										<li><a href=""><i class="fa fa-linkedin"></i></a></li>
+										<li><a href=""><i class="fa fa-google-plus"></i></a></li>
+										<li><a href=""><i class="fa fa-behance"></i></a></li>
+										<li><a href=""><i class="fa fa-dribbble"></i></a> -</li>
+									</ul>
+
+								</div>
+								<!-- End off widget item -->
+							</div>
+							<!-- End off col-md-3 -->
 						</div>
-						<!-- End off col-md-3 -->
 					</div>
 				</div>
 			</div>
@@ -523,18 +505,11 @@
 		$(document).ready(function() {
 			document.querySelector('.pt1').click();
 		})
+		
 
-		$(document).on('click', '.pt1', function() {
-			year = $(this).children(':nth-child(1)').text();
-			month = $(this).children(':nth-child(2)').text();
-			date = $(this).children(':nth-child(3)').text();
-			day = $(this).children(':nth-child(4)').text();
-			//Ajax방식으로 날짜데이터를 서버에      
-			// 전송해서 해당 날짜에 예약한 경기리스트를 요청      
-			//해당 날짜에 예약한 경기목록   
-			rentalDay = year + '-' + month + '-' + date
-			console.log(rentalDay)
+		
 
+<<<<<<< HEAD
 			$.ajax({
 				method : 'get',
 				url : 'rentalDayCon',
@@ -571,25 +546,179 @@
 					console.log('응답 실패')
 				}
 			})
+=======
+		$(document)
+				.on(
+						'click',
+						'.pt1',
+						function() {
+							year = $(this).children(':nth-child(1)').text();
+							month = $(this).children(':nth-child(2)').text();
+							date = $(this).children(':nth-child(3)').text();
+							day = $(this).children(':nth-child(4)').text();
+							//Ajax방식으로 날짜데이터를 서버에      
+							// 전송해서 해당 날짜에 예약한 경기리스트를 요청      
+							//해당 날짜에 예약한 경기목록   
+							rentalDay = year + '-' + month + '-' + date
+							local = ''
+							$('#selectValue')
+									.change(
+											function(e) {
+												let local = $(this).val();
+												$
+														.ajax({
+															method : 'get',
+															url : 'rentalDayCon',
+															data : {
+																'rentalDay' : rentalDay,
+																'local' : local
+															},
+															dataType : 'json',
+															success : function(data) {
+																let table = '';
+																for (let i = 0; i < data.length; i++) {
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 
-		})
-		
-		$(document).on('click', '.mat', function() {
-			let matno = $(this).children(':nth-child(3)').children(':nth-child(2)').children('#Wang').text();
-			
-			var url = 'MatchingPageCon';
-			var obj = {
-					matno : matno
-			};
-		
-		
-			const queryStr = new URLSearchParams(obj).toString();
-			window.location = url + '?' + queryStr;
-		
-		
-		
-		})
-		
+																	table += '<li class="list--match-schedule--item">';
+																	table += '<a href="#" class="mat">';
+																	table += '<div class="list--match-schedule__time">';
+																	table += '<p>'
+																			+ data[i].RES_TIME
+																			+ '</p></div>';
+																	table += '<div class="list--match-schedule__status">';
+																	table += '<div class="match-status__join">';
+																	table += '<p>참가하기</p></div></div>';
+																	table += '<div class="list--match-schedule__info">';
+																	table += '<div class="match-list__title">';
+																	table += '<h3>'
+																			+ data[i].RES_PLACE
+																			+ '</h3></div>';
+																	table += '<div class="label--match-option">';
+																	table += '<span class="match--option isMix">'
+																			+ data[i].GENDER
+																			+ ' |</span>';
+																	table += '<span> '
+																			+ data[i].UNIT
+																			+ ' |</span><span> '
+																			+ data[i].MAT_MEMBER
+																			+ '인 |</span><span> 매너 점수 '
+																			+ data[i].STN_MANNER
+																			+ '이상 |</span>';
+																	table += '<span> 티어 점수'
+																			+ data[i].STN_TIER
+																			+ '이상 </span><span id="Wang">'
+																			+ data[i].MAT_NO
+																			+ '</span></div></div></a></li>';
+																}
+																console
+																		.log(data)
+																document
+																		.querySelector('#list>ul').innerHTML = table;
+															},
+															error : function() {
+																console
+																		.log('응답 실패')
+															}
+														})
+											})
+
+							$
+									.ajax({
+										method : 'get',
+										url : 'rentalDayCon',
+										data : {
+											'rentalDay' : rentalDay,
+											'local' : local
+										},
+										dataType : 'json',
+										success : function(data) {
+											let table = '';
+											for (let i = 0; i < data.length; i++) {
+
+												table += '<li class="list--match-schedule--item">';
+												table += '<a href="#" class="mat">';
+												table += '<div class="list--match-schedule__time">';
+												table += '<p>'
+														+ data[i].RES_TIME
+														+ '</p></div>';
+												table += '<div class="list--match-schedule__status">';
+												table += '<div class="match-status__join">';
+												table += '<p>참가하기</p></div></div>';
+												table += '<div class="list--match-schedule__info">';
+												table += '<div class="match-list__title">';
+												table += '<h3>'
+														+ data[i].RES_PLACE
+														+ '</h3></div>';
+												table += '<div class="label--match-option">';
+												table += '<span class="match--option isMix">'
+														+ data[i].GENDER
+														+ ' |</span>';
+												table += '<span> '
+														+ data[i].UNIT
+														+ ' |</span><span> '
+														+ data[i].MAT_MEMBER
+														+ '인 |</span><span> 매너 점수 '
+														+ data[i].STN_MANNER
+														+ '이상 |</span>';
+												table += '<span> 티어 점수 '
+														+ data[i].STN_TIER
+														+ '이상 </span><span id="Wang">'
+														+ data[i].MAT_NO
+														+ '</span></div></div></a></li>';
+											}
+											console.log(data)
+											document.querySelector('#list>ul').innerHTML = table;
+										},
+										error : function() {
+											console.log('응답 실패')
+										}
+									})
+
+						})
+		$(document).on(
+				'click',
+				'.mat',
+				function() {
+
+					<c:choose>
+					<c:when test="${empty loginMember}">
+					alert("로그인 후 이용하세요")
+					window.location = 'Login.jsp'
+					</c:when>
+					<c:otherwise>
+
+					let matno = $(this).children(':nth-child(3)').children(
+							':nth-child(2)').children('#Wang').text();
+					
+					$.ajax({
+		 				method : 'get',
+						url : 'MatMemCekCon',
+						data : {'matno' : matno},
+						contentType : 'application/json; charset=utf-8',
+						dataType : 'text',
+						success : function(data){
+							if(data==0){
+								alert("참여 인원이 가득 찼습니다")
+							}else{
+								var url = 'MatchingPageCon';
+								var obj = {
+									matno : matno
+								};
+
+								const queryStr = new URLSearchParams(obj).toString();
+								window.location = url + '?' + queryStr;
+								
+							}
+						},
+						error : function(){
+							alert('응답 실패')
+						}
+					})
+
+					</c:otherwise>
+					</c:choose>
+
+				})
 	</script>
 
 </body>

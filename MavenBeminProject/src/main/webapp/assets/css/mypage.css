@@ -1,12 +1,21 @@
-*{
-    box-sizing: border-box;
-    font-family: 'Alata', sans-serif;
-    width: auto;
-    height: auto;
+@font-face {
+    font-family: 'CookieRun-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+html,body{
+    font-family: 'CookieRun-Regular';
+    transform: skew(0.1deg);
+}
+.mypage-input-wrap list{
+	width: 300px;
+	height: auto;
 }
 html{
     background-color: #eff0f2;
 }
+
 .wrapper{
     background-color: #eff0f2;
 }
@@ -22,14 +31,14 @@ html{
     
 }*/
 .mypage-form-container{
-    width:70%;
+    width:50%;
     height: 100%;
     display: flex;
     flex-direction: row;
     box-shadow: 10px black;
     border-radius: 10px;
-    margin-top: 13%;
-    margin-left: 15%;
+    margin-top: 11%;
+    margin-left: 24%;
 }
 .mypage-container{
     width: 100%;
@@ -52,8 +61,8 @@ html{
     border-width: 3px;
     border-style: solid none solid solid;
     border-color: #5d9dff;
-
 }
+
 .mypage-form-left-side{
     width: 50%;
     border-radius: 10px;
@@ -65,38 +74,41 @@ html{
     border-style: solid solid solid dashed;
     border-color: #5d9dff;
 }
-.mypage-form-right-side h3{
-    color: #2178ff;
-    width:100%;
-    text-align: right;
-    opacity: 0.9;
-    font-weight: bold
-}
+
 
 .mypage-form-left-side p{
     color: #2178ff;
     width:100%;
     text-align: center;
     opacity: 0.9;
-    font-size: 21px;
+    font-size: 30px;
     font-weight: bold
+    
 }
 
 .mypage-form-right-side p{
     padding-top: 50px;
-    font-size:15px;
+    font-size: 22px;
     text-align: center;
     opacity: 0.8;
+}
+.mypage-form-myname{
+	color: #2178ff;
+    width: 100%;
+    text-align: center;
+    opacity: 0.9;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .mypage-form-right-side a{
     padding-top: 50px;
-    font-size:10px;
+    font-size: 15px;
     text-align: center;
     opacity: 0.8;
 }
 .mypage-form-left-side a{
-    font-size:10px;
+    font-size: 15px;
     text-align: center;
     opacity: 0.8;
 }
@@ -105,10 +117,12 @@ html{
     border:  0;
     width:85px;
     height: 35px;
-    font-size: 11px;
+    font-size: 30px;
     color: #2178ff;
     border-radius: 3px;
-
+}
+.mypage-top-wrap{
+	margin-bottom: 30px;
 }
 .mypage-input-container{
     padding:20px;
@@ -140,11 +154,23 @@ html{
 }
 .mypage-btn-wrap{
     width:70px;
-    height: 20px;
+    height: 30px;
     color:white;
     border: 0;
     border-radius: 4px;
     background: rgb(105,163,255);
     background: linear-gradient(162deg, rgba(105,163,255,1) 0%, rgba(43,125,254,1) 50%, rgba(43,125,254,1) 100%);
+}
+/*수정*/
+.mypage-form-email{
+	text-align: center;
+}
 
+.mypage-form-myname>h3{
+	color: #2178ff;
+    width: 100%;
+    text-align: center;
+    opacity: 0.9;
+    font-size: 30px;
+    font-weight: bold;
 }
