@@ -28,10 +28,11 @@ public class rentalDayCon extends HttpServlet {
 		Gson gson = new Gson();
 		
 		String rentalDay = request.getParameter("rentalDay");
+		String local = request.getParameter("local");
 		
 		
 		matchingDAO dao = new matchingDAO();
-		List<MATCHING> list = dao.selectDayMat(rentalDay);
+		List<MATCHING> list = dao.selectDayMat(rentalDay,local);
 		
 
 		//System.out.println(list);
