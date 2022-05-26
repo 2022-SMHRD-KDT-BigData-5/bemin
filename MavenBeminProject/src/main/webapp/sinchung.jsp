@@ -85,91 +85,91 @@
         </nav>
     </div>
 
-	<!--header-->
-	<div class="container">
-		<div id="mymatch" class="page-container">
-			<div class="page-header">
-				<div class="page-title">
-					<h1 name="id">${loginMember.ID}님의 신청 내역</h1>
-				</div>
-				<div class="navigation-container" style="padding: 0px">
-					<div class="navigation-wrapper" style="padding: top 20px;">
-						<div class="navigation-item">
-							<a class="selected" style="margin-left: 0px;">🏃‍♂️소셜 매치</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<form action="JoinMemberCon" method="post">
-	<div class="container">
-		<c:choose>
-			<c:when test="${empty loginMember}">
-				<a href="./Login.jsp">로그인</a>을 하세요
-			</c:when>
-			<c:otherwise>
-				<%
-				matchingDAO dao = new matchingDAO();
-				USER_INFO u_vo = (USER_INFO)session.getAttribute("loginMember");
-				List<MATCHING> matList = dao.selectMatchig(u_vo.getID());
-				pageContext.setAttribute("matList", matList);
-				%>
-				<table id="table_box_bootstrap" class="overview-table-cases custom">
-				<table class="table table-striped">
-				<thread>
-					<tr class="overview-table-headers">
-						<th>번호</th>
-						<th>날짜</th>
-						<th>시간</th>
-						<th>경기장</th>
-						<th>참여인원</th>
-						<th>예약/참가취소</th>
-						<th>멤버보기</th>
-					</tr>
-					</thread>
-					<tbody>
-					<c:forEach var="mat" items="${matList}" varStatus="status">
-					<c:set var="matid" value="${mat.USER_ID}"/>
-					<c:set var="matnum" value="${mat.MAT_NO}"/>
-						<tr>
-							<td>${status.count}</td>
-							<td><c:out value="${mat.RES_DATE}" /></td>
-							<td><c:out value="${mat.RES_TIME}" /></td>
-							<td><c:out value="${mat.RES_PLACE}" /></td>
-							<td><c:out value="${mat.MAT_MEMBER}" /></td>
-							<c:choose>
-								<c:when test="${matid eq loginMember.ID}">
-									<c:if test="${mat.MAT_CPL eq '1'}">
-										<td>취소불가</td>
-									</c:if>
-									<c:if test="${mat.MAT_CPL eq '0'}">
-										<td><button onclick="DelMat(${mat.MAT_NO});">예약취소</button></td>
-									</c:if>
-								</c:when>
-								<c:otherwise>
-									<c:if test="${mat.MAT_CPL eq '1'}">
-										<td>취소불가</td>
-									</c:if>
-									<c:if test="${mat.MAT_CPL eq '0'}">
-										<td><button onclick="DelMatList('${loginMember.ID}', ${mat.MAT_NO});">참가취소</button></td>
-									</c:if>
-								</c:otherwise>
-								</c:choose>
-							 		<td>
-										<input type="hidden" name="user_id" value="${mat.USER_ID}">
-										<input type="hidden" name="mat_no" value="${mat.MAT_NO}">
-										<button id="show" type="button" value="${mat.USER_ID}">멤버보기</button>
-									</td>
-								</tr>	
-						</c:forEach>
-						</tbody>
-					</table>
-				</table>
-			</c:otherwise>
-		</c:choose>
-	</div>
-	</form>
+   <!--header-->
+   <div class="container">
+      <div id="mymatch" class="page-container">
+         <div class="page-header">
+            <div class="page-title">
+               <h1 name="id">${loginMember.ID}</h1>
+            </div>
+            <div class="navigation-container" style="padding: 0px">
+               <div class="navigation-wrapper" style="padding: top 20px;">
+                  <div class="navigation-item">
+                     <a class="selected" style="margin-left: 0px;">🏃 ♂️소셜 매치</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <form action="JoinMemberCon" method="post">
+   <div class="container">
+      <c:choose>
+         <c:when test="${empty loginMember}">
+            <a href="./Login.jsp">로그인</a>을 하세요
+         </c:when>
+         <c:otherwise>
+            <%
+            matchingDAO dao = new matchingDAO();
+            USER_INFO u_vo = (USER_INFO)session.getAttribute("loginMember");
+            List<MATCHING> matList = dao.selectMatchig(u_vo.getID());
+            pageContext.setAttribute("matList", matList);
+            %>
+            <table id="table_box_bootstrap" class="overview-table-cases custom">
+            <table class="table table-striped">
+            <thread>
+               <tr class="overview-table-headers">
+                  <th>번호</th>
+                  <th>날짜</th>
+                  <th>시간</th>
+                  <th>경기장</th>
+                  <th>참여인원</th>
+                  <th>예약/참가취소</th>
+                  <th>멤버보기</th>
+               </tr>
+               </thread>
+               <tbody>
+               <c:forEach var="mat" items="${matList}" varStatus="status">
+               <c:set var="matid" value="${mat.USER_ID}"/>
+               <c:set var="matnum" value="${mat.MAT_NO}"/>
+                  <tr>
+                     <td>${status.count}</td>
+                     <td><c:out value="${mat.RES_DATE}" /></td>
+                     <td><c:out value="${mat.RES_TIME}" /></td>
+                     <td><c:out value="${mat.RES_PLACE}" /></td>
+                     <td><c:out value="${mat.MAT_MEMBER}" /></td>
+                     <c:choose>
+                        <c:when test="${matid eq loginMember.ID}">
+                           <c:if test="${mat.MAT_CPL eq '1'}">
+                              <td>취소불가</td>
+                           </c:if>
+                           <c:if test="${mat.MAT_CPL eq '0'}">
+                              <td><button onclick="DelMat(${mat.MAT_NO});">예약취소</button></td>
+                           </c:if>
+                        </c:when>
+                        <c:otherwise>
+                           <c:if test="${mat.MAT_CPL eq '1'}">
+                              <td>취소불가</td>
+                           </c:if>
+                           <c:if test="${mat.MAT_CPL eq '0'}">
+                              <td><button onclick="DelMatList('${loginMember.ID}', ${mat.MAT_NO});">참가취소</button></td>
+                           </c:if>
+                        </c:otherwise>
+                        </c:choose>
+                            <td>
+                              <input type="hidden" name="user_id" value="${mat.USER_ID}">
+                              <input type="hidden" name="mat_no" value="${mat.MAT_NO}">
+                              <button id="show" type="button" value="${mat.USER_ID}">멤버보기</button>
+                           </td>
+                        </tr>   
+                  </c:forEach>
+                  </tbody>
+               </table>
+            </table>
+         </c:otherwise>
+      </c:choose>
+   </div>
+   </form>
    <div id="pager">
    <div id="paginator">
    <button onclick="previousPage()" class="paginator-button" disabled>❮</button>
@@ -203,55 +203,47 @@
       <!-- content-->
       <div id="content">
 
-			<!-- 메인으로 이동 BTN-->
-			<div class="btn_area">
-				<button type="button" id="btnJoin">
-<<<<<<< HEAD
-					<a href="./RealMain.jsp">매칭 게시판으로 이동</a>
-				</button>	
-			</div>
-      	</div>
-=======
-					<a href="./RealMain.jsp">매칭 게시판으로 이동</a>
          <!-- 메인으로 이동 BTN-->
          <div class="btn_area">
             <button type="button" id="btnJoin">
-               <a href="RealMain.jsp">매칭 게시판으로 이동</a>
-            </button>
+               <a href="./RealMain.jsp">매칭 게시판으로 이동</a>
+            </button>   
          </div>
-      </div>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
+         </div>
+
+
+
       <!-- content-->
 <div class="background">
-		<div class="window">
-			<div class="popup">
-				<button id="close">
-					<a href="#" class="close-x">X</a>
-				</button>				
-				<table class="modal-table">
-					<!-- 반복 될 구간 -->
-					<tr class="tier-table">
-						<th>번호</th>
-						<th>ID</th>
-						<th>이름</th>
-						<th>티어</th>
-						<th>평가하기</th>
-					</tr>	
-				<tbody id="showmember">
-					
-					
-				</tbody>
-				</table>
-				<div class="move-tire">
-					<a href="info.jsp" class="tier-ckeck">📢티어정보 확인하기</a>
-				</div>
+      <div class="window">
+         <div class="popup">
+            <button id="close">
+               <a href="#" class="close-x">X</a>
+            </button>            
+            <table class="modal-table">
+               <!-- 반복 될 구간 -->
+               <tr class="tier-table">
+                  <th>번호</th>
+                  <th>ID</th>
+                  <th>이름</th>
+                  <th>티어</th>
+                  <th>평가하기</th>
+               </tr>   
+            <tbody id="showmember">
+               
+               
+            </tbody>
+            </table>
+            <div class="move-tire">
+               <a href="info.jsp" class="tier-ckeck">📢티어정보 확인하기</a>
+            </div>
 
-				<div style="margin: 10px 5px 10px 10px;">
-					<input id="sub_bt" type="button" value="닫기">
-				</div>
-			</div>
-		</div>
-	</div> --> 
+            <div style="margin: 10px 5px 10px 10px;">
+               <input id="sub_bt" type="button" value="닫기">
+            </div>
+         </div>
+      </div>
+   </div>
 
    <!-- wrapper -->
    
@@ -285,12 +277,12 @@
             type : "get",
             data : query,
             success : function(data) {
-            	console.log(data);
+               console.log(data);
                 alert("예약 취소 성공");
-				location.reload();
-           		},
+            location.reload();
+                 },
             error : function(data) {
-				console.log(data);
+            console.log(data);
                 alert("예약 취소 실패");
                 location.reload();
             }
@@ -308,12 +300,12 @@
             type : "get",
             data : query,
             success : function(data) {
-            	console.log(data);
+               console.log(data);
                 alert("신청 취소 성공");
                 location.reload();
             },
-            error : function(data) {	
-            	console.log(data);
+            error : function(data) {   
+               console.log(data);
                 alert("신청 취소 실패");
                 location.reload();
             }
@@ -325,98 +317,104 @@
    
    <script>
    $(document).on('click', '#show', function(){
-	  	let matNO = $(this).prev().val();
-		let loginID = $('h1[name=id]').text();
-		
-		console.log(matNO)
-		console.log(loginID)
-		
-	  $.ajax({
+        let matNO = $(this).prev().val();
+      let loginID = $('h1[name=id]').text();
+      
+     $.ajax({
           url  : "JoinMemberCon",
           method  : "get",
           data : {
-        	  matNO : matNO
-        	  },
+             matNO : matNO
+             },
           dataType : 'json',
           success : function(data) {
-        	  
-        	  
-        	 let table='';
-        		
-        	 
-        	 for(let i=0;i<data.length;i++){
-        		//table += '<form action="tierUpdateCon" method="get">'
-        		table += '<tr>';
-        		table += '<td>'+ (i+1)+'</td>';
-        		table += '<td id="apped_id">'+data[i].ID+'</td>';
-      			table += '<td>'+data[i].NAME+'</td>';
-      			table += '<td>'+data[i].USER_TIER+'</td>';
-				if(data[i].NAME ==loginID){
-					table += '<td>본인 평가 불가</td>'
-				}else{
-				table += '<td>';
-				table += '<select id="tier_app" name="pyoung">';
-				table += '<option value="50">루키</option>';
-				table += '<option value="150">비기너</option>';
-				table += '<option value="250">주니어</option>';
-				table += '<option value="350">시니어</option>';
-				table += '<option value="450">프로</option>';
-				table += '<option value="550">플라이트</option>';
-				table += '</select>';
-				table += '</td><td><input type="submit" value="평가"></td></tr>;
-				//table += '</form>'
-				}
-        	 }	
-			console.log(data)
-        	document.querySelector('#showmember').innerHTML = table;
+             
+             
+            let table='';
+              
+            
+            for(let i=0;i<data.length;i++){
+            	console.log("데이터 아이디 :"+data[i].ID)
+            	console.log("로그인 아이디 :"+loginID)
+              table += '<tr>';
+              table += '<td>'+ (i+1)+'</td>';
+              table += '<td id="apped_id">'+data[i].ID+'</td>';
+               table += '<td>'+data[i].NAME+'</td>';
+               table += '<td>'+data[i].USER_TIER+'</td>';
+            if(data[i].ID ==loginID){
+               table += '<td>평가 불가</td>'
+            }else{
+            table += '<td>';
+            table += '<select id="tier_app" name="pyoung">';
+            table += '<option value="50">루키</option>';
+            table += '<option value="150">비기너</option>';
+            table += '<option value="250">주니어</option>';
+            table += '<option value="350">시니어</option>';
+            table += '<option value="450">프로</option>';
+            table += '<option value="550">플라이트</option>';
+            table += '</select>';
+            table += '</td>';
+            table += '<td>'
+            	table += '<input id="pyoung"type="button" value="평가">'
+            	table += '</td>'
+            table += '</tr>';
+            }
+           }   
+         console.log(data)
+         document.querySelector('#showmember').innerHTML = table;
+         table=''
 
           },
-          error : function(data) {	
+          error : function(data) {   
 
           }
-      });	  
-	  
+      });     
+     
    })
    
    
    </script>
    
-   	<script>
-		function show() {
-			document.querySelector(".background").className = "background show";
-		}
+      <script>
+      function show() {
+         document.querySelector(".background").className = "background show";
+      }
 
-		function close() {
-			document.querySelector(".background").className = "background";
-		}
+      function close() {
+         document.querySelector(".background").className = "background";
+      }
 
-		document.querySelector("#show").addEventListener("click", show);
-		document.querySelector("#close").addEventListener("click", close);
-		document.querySelector("#sub_bt").addEventListener("click", close);
-		
-		$(document).on('click', '#sub_bt', function(){
-			let apped_id = $('td[id=apped_id]').text();
-			let tier_app = $('selet[id=tier_app]').text();
-			let app_id = $('h1[name=id]').text();
-			
-			$.ajax({
-					url : "tierUpdateCon",
-				  	method  : "post",
-				   	data : {tier_app : tier_app, 
-				   			apped_id : apped_id, 
-				   			app_id : app_id
-				   			},
-				    dataType : 'data',
-				    
-				    success : function(data) {
-				    	console.log(data)
-				   },error : function(data) {	
-
-				   }
-				})
-			})
-		
-	</script>
+      document.querySelector("#show").addEventListener("click", show);
+      document.querySelector("#close").addEventListener("click", close);
+      document.querySelector("#sub_bt").addEventListener("click", close);
+      
+	 $(document).on('click', '#pyoung', function(){
+         let apped_id = $(this).parent().parent().children('#apped_id').text();
+         let tier_app = $(this).parent().prev().children('select[name=pyoung]').val();
+         let app_id = $('h1[name=id]').text();
+         console.log(apped_id)
+         console.log(tier_app)
+         console.log(app_id)
+         
+         $.ajax({
+               url : "tierUpdateCon",
+                 method  : "get",
+                  data : {tier_app : tier_app, 
+                        apped_id : apped_id, 
+                        app_id : app_id
+                        },
+                dataType : 'data',
+                
+                success : function(data) {
+                   alert("평가가 반영 되었습니다")
+                   
+               },error : function(data) {   
+            	   alert("평가가 반영 되었습니다")
+               }
+         });
+      })
+      
+   </script>
    
 </body>
 </html>

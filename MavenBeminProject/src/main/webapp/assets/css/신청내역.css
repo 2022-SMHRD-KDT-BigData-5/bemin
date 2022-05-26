@@ -3,7 +3,7 @@ body {
     margin: 0;
     height: 100%;
     background: #f5f6f7;
-    font-family: Dotum,'돋움',Helvetica,sans-serif;
+
 }
 #logo {
     margin-top: 100px;
@@ -76,7 +76,7 @@ h3 {
 }
 
 input {
-    font-family: Dotum,'돋움',Helvetica,sans-serif;    
+
 }
 
 .box.int_id {
@@ -148,9 +148,18 @@ select {
     text-align: start;
     border: none;
     cursor: default;
-    font-family: Dotum,'돋움',Helvetica,sans-serif;
-}
 
+}
+@font-face {
+    font-family: 'CookieRun-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+html,body{
+   font-family: 'CookieRun-Regular';
+   transform: skew(-0.1deg);
+}
 /* 에러메세지 */
 
 .error_next_box {
@@ -184,7 +193,7 @@ select {
     background-color: gainsboro;
     font-size: 20px;
     font-weight: 400;
-    font-family: Dotum,'돋움',Helvetica,sans-serif;
+
     
 }
 
@@ -196,7 +205,7 @@ select {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Alata', sans-serif;
+
 }
 /*  */
 .page-container{
@@ -372,7 +381,7 @@ background: linear-gradient(162deg, rgba(105,163,255,1) 0%, rgba(43,125,254,1) 5
     appearance: auto;
     writing-mode: horizontal-tb !important;
     font-size: 10;
-    font-family: 10;
+
     text-rendering: auto;
     color: buttontext;
     letter-spacing: normal;

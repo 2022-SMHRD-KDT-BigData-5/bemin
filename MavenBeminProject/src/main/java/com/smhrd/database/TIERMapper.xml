@@ -7,7 +7,7 @@
 
 	<!-- 티어 점수 넣기 -->
 	<insert id="tierInsert" parameterType="com.smhrd.domain.TIER">
-		insert into tier values (TIER_tier_app_no.nextval, APP_TIER=#{APP_TIER}, APP_ID=#{APP_ID}, APPED_ID=#{APPED_ID})
+		insert into tier values (tier_app_no.nextval, #{APP_TIER}, #{APP_ID}, #{APPED_ID}, 0)
 	</insert>
 
 </mapper>

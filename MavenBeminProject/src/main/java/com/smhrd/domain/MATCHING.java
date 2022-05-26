@@ -156,13 +156,6 @@ public class MATCHING {
 		
 	}
 
-<<<<<<< HEAD
-
-
-
-	
-	
-=======
 	public String getGENDER() {
 		return GENDER;
 	}
@@ -171,5 +164,5 @@ public class MATCHING {
 		GENDER = gENDER;
 	}
 
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
+
 }

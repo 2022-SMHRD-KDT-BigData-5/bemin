@@ -121,12 +121,12 @@
 		<servlet-class>com.smhrd.controller.rentalDayCon</servlet-class>
 	</servlet>
 	<servlet>
-<<<<<<< HEAD
 		<servlet-name>tierUpdateCon</servlet-name>
 		<display-name>tierUpdateCon</display-name>
 		<description></description>
 		<servlet-class>com.smhrd.controller.tierUpdateCon</servlet-class>
-=======
+	</servlet>
+	<servlet>
 		<servlet-name>MatchingPageCon</servlet-name>
 		<display-name>MatchingPageCon</display-name>
 		<description></description>
@@ -143,7 +143,6 @@
 		<display-name>MatchSuccessCon</display-name>
 		<description></description>
 		<servlet-class>com.smhrd.controller.MatchSuccessCon</servlet-class>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 	</servlet>	
 
 	<servlet-mapping>

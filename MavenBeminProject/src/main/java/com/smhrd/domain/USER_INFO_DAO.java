@@ -1,7 +1,9 @@
 package com.smhrd.domain;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -213,4 +215,30 @@ public class USER_INFO_DAO {
 		return arr;
 
 	}// 신청 내역 경기 맴머 보기 끝
+	
+	//회원정보수정
+	public int updatetier(String a) {
+		SqlSession sqlSession=sqlSessionFactory.openSession();
+//	     Map map = new HashMap();
+//	      map.put("APP_ID", a);
+//	      map.put("ID", b);
+		
+		int cnt=0;
+		try {
+			cnt=sqlSession.update("com.smhrd.domain.USER_INFO_DAO.userTierUpdate",a);
+			
+			if(cnt>0) {
+				sqlSession.commit();
+				
+			}else {
+				sqlSession.rollback();
+				
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+			return cnt;
+	}
 }

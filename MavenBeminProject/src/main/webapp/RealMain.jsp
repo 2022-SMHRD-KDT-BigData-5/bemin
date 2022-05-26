@@ -188,17 +188,6 @@
 						<div class="main--match--filter">
 							<div class="filter--wrapper">
 								<div class="placelist">
-<<<<<<< HEAD
-									<select name="select" class="select-c">
-										<option>내 지역</option>
-										<option>서구</option>
-										<option>북구</option>
-										<option>남구</option>
-										<option>동구</option>
-										<option>광산구</option>
-									</select> 
-									<select name="select" class="select-c">
-=======
 									<select id="selectValue" name="select" class="select-c">
 										<option value="">내 지역</option>
 										<option value="서구">서구</option>
@@ -207,7 +196,6 @@
 										<option value="동구">동구</option>
 										<option value="광산구">광산구</option>
 									</select> <select name="select" class="select-c">
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 										<option>레벨</option>
 										<option>루키</option>
 										<option>비기너</option>
@@ -509,44 +497,7 @@
 
 		
 
-<<<<<<< HEAD
-			$.ajax({
-				method : 'get',
-				url : 'rentalDayCon',
-				data : {
-					'rentalDay' : rentalDay,
-				},
-				dataType : 'json',
-				success : function(data) {
-					let table='';
-					
-					
-					for(let i=0;i<data.length;i++){
-						
-						table += '<li class="list--match-schedule--item">';
-						table += '<a class="mat">';
-						table += '<div class="list--match-schedule__time">';
-						table += '<p>'+data[i].RES_TIME+'</p></div>';
-						table += '<div class="list--match-schedule__status">';
-						table += '<div class="match-status__join">';
-						table += '<p>참가하기</p></div></div>';
-						table += '<div class="list--match-schedule__info">';
-						table += '<div class="match-list__title">';
-						table += '<h3>'+data[i].RES_PLACE+'</h3></div>';
-						table += '<div class="label--match-option">';
-						table += '<span class="match--option isMix">'+data[i].GENDER+' |</span>';
-						table += '<span> '+data[i].UNIT+' |</span><span> '+data[i].MAT_MEMBER+'인 |</span><span> 매너 점수 '+data[i].STN_MANNER+'이상 |</span>';
-						table += '<span> 티어 점수'+data[i].STN_TIER+'이상 </span><span id="Wang">'+data[i].MAT_NO+'</span></div></div></a></li>';
-					}
-					console.log(data)
-					$('#list').children('ul').append(table);
-					table=''
-				},
-				error : function() {
-					console.log('응답 실패')
-				}
-			})
-=======
+
 		$(document)
 				.on(
 						'click',
@@ -577,7 +528,7 @@
 															success : function(data) {
 																let table = '';
 																for (let i = 0; i < data.length; i++) {
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
+
 
 																	table += '<li class="list--match-schedule--item">';
 																	table += '<a href="#" class="mat">';

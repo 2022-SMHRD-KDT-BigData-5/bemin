@@ -94,11 +94,9 @@
 						data-target="#navbar-menu">
 						<i class="fa fa-bars"></i>
 					</button>
-<<<<<<< HEAD
-					<a class="navbar-brand" href="./RealMain.jsp"> <img
-=======
+
 					<a class="navbar-brand" href="RealMain.jsp"> <img
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
+
 						src="assets/images/bluelogo.png" class="logo" alt=""> <!-- <a>FLIGHT</a> -->
 						<!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
 					</a>
@@ -107,30 +105,13 @@
 				<!-- End Header Navigation -->
 
 				<!-- navbar menu -->
-<<<<<<< HEAD
+
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
 
-=======
-				<div class="collapse navbar-collapse" id="navbar-menu">
-					<ul class="nav navbar-nav navbar-right">
 
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 						<c:choose>
-<<<<<<< HEAD
-								<c:when test="${empty loginMember}">
-                            		<li><a href="./RealMain.jsp">Home</a></li>                    
-									<li><a href="./Login.jsp">로그인</a></li>
-                            		<li><a href="./join.jsp">회원가입</a></li>
-								</c:when>
-								<c:otherwise>
-									<% System.out.println("로그인했음!"); %>
-									<li><a href="./RealMain.jsp">Home</a></li>
-                            		<li><a href="./Maypage.jsp">마이페이지</a></li>
-									<li><a href="./LogoutCon">로그아웃</a></li>									
-							</c:otherwise>				
-						</c:choose>
-=======
+
 							<c:when test="${empty loginMember}">
 								<li><a href="RealMain.jsp">Home</a></li>
 								<li><a href="Login.jsp">로그인</a></li>
@@ -147,7 +128,6 @@
 						</c:choose>
 						<!-- <li><a href="#test">Blog</a></li> -->
 						<!-- <li><a href="#contact">Contact</a></li> -->
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
@@ -163,12 +143,9 @@
 			<div class="main--match--container">
 				<div id="dateNav" class="sub-header" style="padding-bottom: 10px;">
 					<div class="mat-re">
-<<<<<<< HEAD
-						<span id="m1"> <a href="./RealMain.jsp">매치</a> <a href="Rental.jsp" id="m2">구장 예약</a>
-=======
 						<span id="m1"> <a href="RealMain.jsp">매치</a> <a
 							href="Rental.jsp" id="m2">구장 예약</a>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
+
 						</span>
 					</div>
 					<!---->

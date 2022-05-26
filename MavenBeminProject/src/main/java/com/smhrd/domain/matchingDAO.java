@@ -200,8 +200,7 @@ public class matchingDAO {
 	      return num;
 
 	   }//예약한 마지막 시퀀스 번호 조회   끝---------------------------------------------------------
-<<<<<<< HEAD
-=======
+
 
 	 //매칭번호리스트 보기-----------------------------------------------------------
     public MATCHING matnoMatching(BigDecimal mn) {
@@ -224,7 +223,7 @@ public class matchingDAO {
        return Matching_no;
     }//매칭번호리스트 보기 끝-----------------------------------------------------------   
 
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/bemin.git
+
 	
 	   // 매칭테이블 리스트로 불러오기 ---------------------------------------------------------
 	   public MATCHING selectMatno(MATCHING mat_vo) {

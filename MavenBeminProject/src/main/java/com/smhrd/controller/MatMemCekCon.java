@@ -32,7 +32,7 @@ public class MatMemCekCon extends HttpServlet {
 		
 		
 		MatchingListDAO listdao = new MatchingListDAO();
-		List<MATCHING_LIST> listdata = listdao.ViewMatching(MAT_NO);
+		List<String> listdata = listdao.ViewMatching(MAT_NO);
 		
 		int member = Integer.parseInt(matdata.getMAT_MEMBER());
 		

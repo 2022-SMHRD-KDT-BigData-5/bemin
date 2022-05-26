@@ -48,8 +48,8 @@
 	</update>
 
 	<!-- 유저티어 업데이트 -->
-	<update id="userTierUpdate" parameterType="com.smhrd.domain.USER_INFO">
-		update user_info set USER_TIER = (select avg(APP_TIER) from tier group by APPED_ID) where id = #{APP_ID}
+	<update id="userTierUpdate" parameterType="String">
+		update user_info set USER_TIER = (select user_tier as AVG(APP_TIER) from tier where APP_ID =#{APP_ID} group by APP_ID) where ID = #{ID}
 	</update>
 
 

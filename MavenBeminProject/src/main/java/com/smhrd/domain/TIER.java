@@ -1,14 +1,16 @@
 package com.smhrd.domain;
 
+import java.math.BigDecimal;
+
 public class TIER {
 	
-	private int APP_NO;
+	private BigDecimal APP_NO;
 	private String APP_ID;
 	private String APPED_ID;
 	private String APP_TIER;
-	private int APP_MANNER;
+	private BigDecimal APP_MANNER;
 	
-	public TIER(int APP_NO, String APP_ID, String APPED_ID, String APP_TIER, int APP_MANNER) {
+	public TIER(BigDecimal APP_NO, String APP_ID, String APPED_ID, String APP_TIER, BigDecimal APP_MANNER) {
 		super();
 		this.APP_NO = APP_NO;
 		this.APP_ID = APP_ID;
@@ -24,10 +26,10 @@ public class TIER {
 		this.APPED_ID = APPED_ID;
 	}
 
-	public int getAPP_NO() {
+	public BigDecimal getAPP_NO() {
 		return APP_NO;
 	}
-	public void setAPP_NO(int APP_NO) {
+	public void setAPP_NO(BigDecimal APP_NO) {
 		this.APP_NO = APP_NO;
 	}
 
@@ -49,10 +51,10 @@ public class TIER {
 	public void setAPP_TIER(String APP_TIER) {
 		this.APP_TIER = APP_TIER;
 	}
-	public int getAPP_MANNER() {
+	public BigDecimal getAPP_MANNER() {
 		return APP_MANNER;
 	}
-	public void setAPP_MANNER(int APP_MANNER) {
+	public void setAPP_MANNER(BigDecimal APP_MANNER) {
 		this.APP_MANNER = APP_MANNER;
 	}
 	
