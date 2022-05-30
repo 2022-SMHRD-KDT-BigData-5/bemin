@@ -1,4 +1,4 @@
-# 배민(팀명: MATCH&FIX)
+# 배민(팀명: 상대팀찾아조)
 ![플라이트 메인](https://user-images.githubusercontent.com/100273022/170900835-cf4c5fd6-f9c5-41a1-b82c-fb1fbb2a3efd.png)
 
 ## 1. 프로젝트명
