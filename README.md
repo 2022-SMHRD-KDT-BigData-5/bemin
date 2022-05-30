@@ -2,24 +2,22 @@
 ![플라이트 메인](https://user-images.githubusercontent.com/100273022/170900835-cf4c5fd6-f9c5-41a1-b82c-fb1fbb2a3efd.png)
 
 ## 1. 프로젝트명
-* 모바일 앱을 활용한 IoT 스마트 옷장
-* 서비스설명: 
+* 웹페이지를 활용한 배드민턴 소셜 매칭 서비스
+* 서비스설명: 광주 지역 내 배드민턴 경기장 예약과 원하는 상대와 경기할 수 있는 소셜 매칭 웹서비스
 
 ## 2. 주요기능
-* 기능1
-* 기능2
-* 기능3
-* 기능4
-* 기능5
+* 경기장 예약 기능
+* 예약된 매칭 경기에 참가
+* 진행된 경기별 참여회원들 평가
 
 ## 3. 개발환경
 |구분|내용|
 |------|---|
 |사용언어|Java, HTML, CSS, JavaScript|
-|사용한 라이브러리| Bootstrap / Kakao Map / etc...|
-|개발도구|Eclipse / RaspberryPi  /  Arduino  /  VisualStudioCode  /  AndroidStudio  / SpringFramework / etc...|
+|사용한 라이브러리| mybatis / maven / JSTL / Kakao Map / etc...|
+|개발도구|Eclipse /  VisualStudioCode / etc...|
 |서버환경|tomcat 9.0|
-|데이터베이스|Firebase  /  oracle 11g / etc..|
+|데이터베이스| oracle 11g / etc..|
 
 ## 4. 아키텍처(구조)
 ![서비스 아키텍처](https://user-images.githubusercontent.com/25995055/169925538-15867bd9-aa0b-42fc-a39b-88981e926e51.png)
