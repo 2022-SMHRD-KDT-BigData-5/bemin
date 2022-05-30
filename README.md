@@ -38,7 +38,9 @@
 ## 6 SW 동작 화면
 
 ### 로그인/회원가입/회원괸리/회원수정/회원탈퇴
-![image](https://user-images.githubusercontent.com/99248886/166612486-a17733a6-a3bb-4fd5-873f-57020ab80a16.png)
+![로그인](https://user-images.githubusercontent.com/100273022/170904348-a61a9d01-ee54-455c-9869-b11c296664e9.png)
+![회원가입](https://user-images.githubusercontent.com/100273022/170904380-a8b85835-e5d5-4ea6-8b53-511dd130bb8a.png)
+![마이페이지](https://user-images.githubusercontent.com/100273022/170904390-ca257129-a7bc-4386-9634-c4238d2b2fd9.png)
 
 ### 경기 예약
 ![예약페이지](https://user-images.githubusercontent.com/100273022/170901578-62cb93d9-5b6f-4af2-865a-8779df2b59a3.png)
