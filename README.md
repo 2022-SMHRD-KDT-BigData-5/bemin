@@ -1,5 +1,5 @@
 # 배민(팀명: MATCH&FIX)
-![image](https://user-images.githubusercontent.com/99248886/166611412-9fc116d1-6efe-40ea-acc6-2ddd7b4f26e7.png)
+![image](https://user-ima![플라이트 메인](https://user-images.githubusercontent.com/100273022/170900811-bf8ec847-03d3-4b6f-9f78-8c8b38b8bc60.png)
 
 ## 1. 프로젝트명
 * 모바일 앱을 활용한 IoT 스마트 옷장
