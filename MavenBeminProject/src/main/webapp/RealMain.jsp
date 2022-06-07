@@ -534,7 +534,11 @@
 											}
 											
 											table += '<div class="match-status__join">';
-											table += '<p>참가하기</p></div></div>';
+											if(data[i].MAT_MEMBER > data[i].NOW_MEMBER){
+												table += '<p>참가하기</p></div></div>';
+											}else{
+												table += '<p>마감</p></div></div>';
+											}
 											table += '<div class="list--match-schedule__info">';
 											table += '<div class="match-list__title">';
 											table += '<h3>'+ data[i].RES_PLACE+ '</h3></div>';
@@ -578,7 +582,11 @@
 													table += '<div class="list--match-schedule__status_b">';
 												}
 												table += '<div class="match-status__join">';
-												table += '<p>참가하기</p></div></div>';
+												if(data[i].MAT_MEMBER > data[i].NOW_MEMBER){
+													table += '<p>참가하기</p></div></div>';
+												}else{
+													table += '<p>마감</p></div></div>';
+												}
 												table += '<div class="list--match-schedule__info">';
 												table += '<div class="match-list__title">';
 												table += '<h3>'
@@ -634,12 +642,12 @@
 									var url = 'MatchingPageCon';
 									var obj = {
 									matno : matno
-								};
+									};
 
-								const queryStr = new URLSearchParams(obj).toString();
-								window.location = url + '?' + queryStr;
+									const queryStr = new URLSearchParams(obj).toString();
+									window.location = url + '?' + queryStr;
 								
-							}
+								}
 					},
 					error : function(){
 							alert('응답 실패')

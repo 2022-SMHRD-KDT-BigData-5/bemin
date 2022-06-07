@@ -37,30 +37,39 @@ public class MatchSuccessCon extends HttpServlet {
 
       list.setMAT_NO(matno);
       list.setID(USER_ID);
-      
       MatchingListDAO listDao = new MatchingListDAO();
       MatchingListDAO listDao2 = new MatchingListDAO();
-      int cnt=listDao.insertrental(list); 
       
-      //matching_list에 insert하면 해당 mat no 갯수를
-      BigDecimal num = new BigDecimal(matno);
-      List<String> numlist = listDao2.ViewMatching(num);
-      int Size = numlist.size();
-      String listSize = Integer.toString(Size);
-      System.out.println(listSize);
-      //matching NOW_MEMBER에 update
-      MATCHING vo = new MATCHING(num, listSize);
-      matchingDAO matDao = new matchingDAO();
-      int memberCnt = matDao.updatemember(vo);
+      MATCHING_LIST l_vo = listDao.MatchingCheck(list);
       
-      if(cnt>0 && memberCnt>0) {
-         System.out.println("신청 완료");
-         response.sendRedirect("MatSuccess.html");
- 
+      if(l_vo!=null) {
+    	  System.out.println("이미 참여");
+    	  response.sendRedirect("nonMatch.html");
       }else {
-         System.out.println("신청 실패");
-         response.sendRedirect("match.jsp");
+    	  int cnt=listDao.insertrental(list); 
+      
+    	  //matching_list에 insert하면 해당 mat no 갯수를
+    	  BigDecimal num = new BigDecimal(matno);
+    	  List<String> numlist = listDao2.ViewMatching(num);
+    	  int Size = numlist.size();
+    	  String listSize = Integer.toString(Size);
+      
+    	  //matching NOW_MEMBER에 update
+    	  MATCHING vo = new MATCHING(num, listSize);
+    	  matchingDAO matDao = new matchingDAO();
+    	  int memberCnt = matDao.updatemember(vo);
+      
+    	  if(cnt>0 && memberCnt>0) {
+    		  System.out.println("신청 완료");
+    		  response.sendRedirect("MatSuccess.html");      		
+    	  }else {
+    		  System.out.println("신청 실패");
+    		  response.sendRedirect("match.jsp");
+    	  }
       }
+      
+      
+      
    }
 
 

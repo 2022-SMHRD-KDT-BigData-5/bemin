@@ -140,4 +140,26 @@ public class MatchingListDAO {
 			return cnt;
 		}// 예약 끝 --------------------------------------------------------	
 
+		
+		//참가 여부 확인하기
+		public MATCHING_LIST MatchingCheck(MATCHING_LIST list) {
+			MATCHING_LIST vo = null;
+			try {
+				vo = sqlSession.selectOne("com.smhrd.domain.MatchingListDAO.nameMatchingList", list);
+				if(vo !=null) {
+					System.out.println("커밋");
+					sqlSession.commit();
+				} else {
+					System.out.println("롤백");
+					sqlSession.rollback();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			return vo;
+		} //
+		
+		
 }
