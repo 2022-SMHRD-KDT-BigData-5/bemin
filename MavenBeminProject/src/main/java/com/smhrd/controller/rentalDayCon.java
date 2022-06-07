@@ -15,6 +15,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.smhrd.domain.MATCHING;
+import com.smhrd.domain.MatchingListDAO;
 import com.smhrd.domain.matchingDAO;
 
 
@@ -33,6 +34,13 @@ public class rentalDayCon extends HttpServlet {
 		
 		matchingDAO dao = new matchingDAO();
 		List<MATCHING> list = dao.selectDayMat(rentalDay,local);
+		
+//		matchingDAO matdao = new matchingDAO();
+//		MATCHING matdata = matdao.matnoMatching(MAT_NO);
+//		
+//		
+//		MatchingListDAO listdao = new MatchingListDAO();
+//		List<String> listdata = listdao.ViewMatching(MAT_NO);
 		
 
 		//System.out.println(list);

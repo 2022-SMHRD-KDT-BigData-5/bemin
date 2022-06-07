@@ -2,6 +2,7 @@ package com.smhrd.controller;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -38,9 +39,21 @@ public class MatchSuccessCon extends HttpServlet {
       list.setID(USER_ID);
       
       MatchingListDAO listDao = new MatchingListDAO();
+      MatchingListDAO listDao2 = new MatchingListDAO();
       int cnt=listDao.insertrental(list); 
       
-      if(cnt>0) {
+      //matching_list에 insert하면 해당 mat no 갯수를
+      BigDecimal num = new BigDecimal(matno);
+      List<String> numlist = listDao2.ViewMatching(num);
+      int Size = numlist.size();
+      String listSize = Integer.toString(Size);
+      System.out.println(listSize);
+      //matching NOW_MEMBER에 update
+      MATCHING vo = new MATCHING(num, listSize);
+      matchingDAO matDao = new matchingDAO();
+      int memberCnt = matDao.updatemember(vo);
+      
+      if(cnt>0 && memberCnt>0) {
          System.out.println("신청 완료");
          response.sendRedirect("MatSuccess.html");
  
@@ -49,5 +62,11 @@ public class MatchSuccessCon extends HttpServlet {
          response.sendRedirect("match.jsp");
       }
    }
+
+
+private String toString(int size) {
+	// TODO Auto-generated method stub
+	return null;
+}
 
 }

@@ -409,7 +409,7 @@
                    alert("평가가 반영 되었습니다")
                    
                },error : function(data) {   
-            	   alert("평가가 반영 되었습니다")
+            	   alert("평가가 반영 실패")
                }
          });
       })

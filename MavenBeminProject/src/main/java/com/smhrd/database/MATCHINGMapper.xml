@@ -27,7 +27,7 @@
     </delete>    	
 	<!-- 예약하기 -->
 	<insert id="insertRental" parameterType="com.smhrd.domain.MATCHING">
-		insert into MATCHING values(matching_mat_no.nextval,#{RES_DATE},#{RES_TIME},#{RES_PLACE},#{USER_ID},#{UNIT},#{MAT_MEMBER},#{STN_TIER},#{STN_MANNER},'0',#{GENDER})		
+		insert into MATCHING values(matching_mat_no.nextval,#{RES_DATE},#{RES_TIME},#{RES_PLACE},#{USER_ID},#{UNIT},#{MAT_MEMBER},#{STN_TIER},#{STN_MANNER},'0',#{GENDER},'1')		
 	</insert>
 	
 
@@ -53,6 +53,10 @@
    <select id="matnoMatching" resultType="com.smhrd.domain.MATCHING" parameterType="BigDecimal">
       select * from MATCHING where MAT_NO=#{MAT_NO}
    </select>
+     <!-- 참여인원 업데이트 -->
+   <update id="updatemember" parameterType="com.smhrd.domain.MATCHING">
+		update MATCHING set NOW_MEMBER = #{NOW_MEMBER} where MAT_NO = #{MAT_NO}
+	</update>
 
 
 </mapper>

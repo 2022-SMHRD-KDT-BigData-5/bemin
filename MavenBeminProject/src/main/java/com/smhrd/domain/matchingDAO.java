@@ -242,6 +242,30 @@ public class matchingDAO {
 	      }
 	      return matchingno;
 	   } // 매치들 끝 --------------------------------------------------------------------
+	   
+	   
+	 //현재 참여 인원수 업데이트(참여)
+		public int updatemember(MATCHING num) {
+			SqlSession sqlSession = sqlSessionFactory.openSession();
+			
+			int cnt = 0;
+
+	        try {
+	            cnt = sqlSession.update("com.smhrd.domain.matchingDAO.updatemember",num);
+				
+				if(cnt>0) {
+					sqlSession.commit();
+				}else {
+					sqlSession.rollback();
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				sqlSession.close();
+			}
+			return cnt;
+		}//현재 참여 인원수 업데이트(참여) - 끝 - 
 
 	   
 

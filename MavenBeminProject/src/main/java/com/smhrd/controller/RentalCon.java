@@ -84,6 +84,8 @@ public class RentalCon extends HttpServlet {
 
 		int rentalCnt = rentalDao.insertRental(rental);
 		
+		
+		
 		if (cashCnt > 0 && rentalCnt>0 && cnt>0) {
 			System.out.println("예약 성공");
 			response.sendRedirect("PayFin.jsp");
